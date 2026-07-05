@@ -88,9 +88,12 @@
 
         <form id="profileForm" class="profile-form glass-card animate-on-scroll">
           <div class="form-grid">
-            <div class="form-group full-width">
-              <label for="studentName">Student Name</label>
-              <input type="text" id="studentName" placeholder="Enter full name" required>
+            <div class="form-group full-width name-optional">
+              <label class="optional-toggle" onclick="toggleNameField()">
+                <span class="toggle-text">+ Add Student Name</span>
+                <span class="optional-tag">optional</span>
+              </label>
+              <input type="text" id="studentName" placeholder="Enter name (optional)" class="name-input-hidden">
             </div>
 
             <div class="form-group">

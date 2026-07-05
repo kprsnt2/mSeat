@@ -675,48 +675,293 @@ body {
 }
 .animate-on-scroll.animate-in { opacity: 1; transform: translateY(0); }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  .container { padding: 0 16px; }
-  .header-inner { flex-wrap: wrap; gap: 10px; }
-  .brand-name { font-size: 1.2rem; }
-
-  .step-connector { width: 40px; }
-  .step-label { font-size: 0.6rem; }
-
-  .form-grid { grid-template-columns: 1fr; }
-
-  .rank-cards { grid-template-columns: repeat(2, 1fr); }
-
-  .eligibility-stats { flex-direction: column; }
-
-  .counselling-toolbar { flex-direction: column; }
-  .search-box { min-width: 100%; }
-
-  .college-card { flex-direction: column; align-items: flex-start; }
-  .college-actions { flex-direction: row; align-self: flex-end; }
-  .college-ranks { width: 100%; }
-
-  .alloc-details-grid { grid-template-columns: repeat(2, 1fr); }
-  .alloc-student-row { flex-direction: column; gap: 8px; }
-
-  .step-nav { flex-direction: column; gap: 12px; }
-  .step-nav .btn-secondary { order: 2; }
-  .step-nav .btn-primary { order: 1; width: 100%; justify-content: center; }
+/* --- Optional Name Field --- */
+.name-optional { margin-bottom: 0 !important; }
+.optional-toggle {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  padding: 6px 0; user-select: none;
+}
+.toggle-text { color: var(--accent-teal); font-size: 0.82rem; font-weight: 500; }
+.optional-tag {
+  font-size: 0.65rem; color: var(--text-muted); padding: 2px 6px;
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 4px;
+}
+.name-input-hidden { display: none !important; }
+.name-input-visible {
+  display: block !important; margin-top: 8px;
+  animation: slideDown 0.25s ease;
+}
+@keyframes slideDown {
+  from { opacity: 0; max-height: 0; transform: translateY(-8px); }
+  to { opacity: 1; max-height: 60px; transform: translateY(0); }
 }
 
-@media (max-width: 480px) {
-  .rank-cards { grid-template-columns: 1fr; }
+/* --- Difficulty Section --- */
+.difficulty-section { margin-top: 4px; }
+.difficulty-section > label { margin-bottom: 12px; }
+.label-hint { font-weight: 400; color: var(--text-muted); font-size: 0.75rem; }
+.difficulty-context { margin-bottom: 14px; }
+.subject-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.subject-chip {
+  padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
+}
+.chip-easy { background: rgba(52, 211, 153, 0.1); color: var(--accent-green); border: 1px solid rgba(52, 211, 153, 0.15); }
+.chip-tough { background: rgba(248, 113, 113, 0.1); color: var(--accent-red); border: 1px solid rgba(248, 113, 113, 0.15); }
+
+.difficulty-slider-wrap { margin-bottom: 12px; }
+.difficulty-labels {
+  display: flex; justify-content: space-between; font-size: 0.68rem;
+  color: var(--text-muted); margin-bottom: 6px; padding: 0 2px;
+}
+.difficulty-slider {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 6px; border-radius: 3px; margin: 0;
+  background: linear-gradient(90deg, #34d399 0%, #fbbf24 40%, #fb923c 70%, #f87171 100%);
+  outline: none; cursor: pointer;
+}
+.difficulty-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%;
+  background: #fff; border: 3px solid var(--accent-orange); cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.difficulty-slider::-moz-range-thumb {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #fff; border: 3px solid var(--accent-orange); cursor: pointer;
+}
+
+.difficulty-value {
+  display: flex; align-items: center; gap: 10px; margin-top: 8px; flex-wrap: wrap;
+}
+.diff-badge {
+  padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+}
+.diff-normal { background: rgba(52, 211, 153, 0.12); color: var(--accent-green); }
+.diff-slight { background: rgba(251, 191, 36, 0.12); color: var(--accent-gold); }
+.diff-tough { background: rgba(251, 146, 60, 0.12); color: var(--accent-orange); }
+.diff-very-tough { background: rgba(248, 113, 113, 0.12); color: var(--accent-red); }
+.diff-detail { font-size: 0.78rem; color: var(--text-muted); }
+.diff-detail strong { color: var(--text-secondary); }
+
+.form-hint {
+  font-size: 0.76rem; color: var(--text-muted); margin-top: 10px;
+  padding: 10px 12px; background: rgba(0, 212, 170, 0.04);
+  border-radius: var(--radius-sm); border-left: 3px solid rgba(0, 212, 170, 0.2);
+  line-height: 1.5;
+}
+.form-hint strong { color: var(--accent-teal); }
+
+/* --- Score Preview Additions --- */
+.preview-adjusted { color: var(--accent-gold); }
+.preview-adjusted strong { color: var(--accent-gold); }
+.preview-boost {
+  color: var(--accent-green); font-weight: 600;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .container { padding: 0 12px; }
+
+  /* Header */
+  .header { padding: 10px 0; }
+  .header-inner { gap: 8px; }
+  .brand { gap: 8px; }
+  .brand-icon { width: 36px; height: 36px; border-radius: 8px; }
+  .brand-icon svg { width: 20px; height: 20px; }
+  .brand-name { font-size: 1.1rem; }
+  .brand-subtitle { font-size: 0.6rem; }
+  .header-actions .btn-outline { padding: 6px 10px; font-size: 0.75rem; }
+
+  /* Step Indicator */
+  .step-indicator-wrapper { padding: 14px 0 10px; top: 56px; }
+  .step-connector { width: 24px; margin: 0 2px; margin-bottom: 16px; }
+  .step-number { width: 30px; height: 30px; font-size: 0.75rem; }
+  .step-label { font-size: 0.58rem; letter-spacing: 0; }
+
+  /* Step Header */
+  .step-header { margin-bottom: 20px; }
+  .step-header h2 { font-size: 1.3rem; }
+  .step-header p { font-size: 0.82rem; }
+  .step-icon svg { width: 36px; height: 36px; }
+
+  /* Glass Cards */
+  .glass-card { padding: 16px; border-radius: var(--radius-md); }
+
+  /* Form */
+  .form-grid { grid-template-columns: 1fr; gap: 14px; }
+  .form-group label { font-size: 0.78rem; margin-bottom: 6px; }
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group select { padding: 11px 12px; font-size: 0.9rem; }
+
+  /* Difficulty */
+  .subject-chips { gap: 6px; }
+  .subject-chip { padding: 4px 9px; font-size: 0.68rem; }
+  .difficulty-labels { font-size: 0.6rem; }
+  .form-hint { font-size: 0.72rem; padding: 8px 10px; }
+
+  /* Score Preview */
+  .score-preview-content {
+    flex-direction: column; gap: 4px; font-size: 0.78rem;
+  }
+
+  /* Buttons */
+  .btn-primary { padding: 13px 24px; font-size: 0.92rem; }
+  .btn-lg { padding: 14px 28px; font-size: 0.95rem; }
+  .btn-secondary { padding: 10px 18px; font-size: 0.85rem; }
+  .form-actions { margin-top: 20px; }
+
+  /* Reservation */
+  .reservation-overview { padding: 16px; }
+  .reservation-overview h3 { font-size: 0.95rem; margin-bottom: 14px; }
+  .quota-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .quota-item { padding: 10px 4px; }
+  .quota-percent { font-size: 1rem; }
+  .quota-label { font-size: 0.62rem; }
+  .quota-note { font-size: 0.68rem; flex-wrap: wrap; justify-content: center; }
+
+  /* Step 2: Results */
+  .student-summary { gap: 12px; padding: 14px; }
+  .student-avatar { width: 42px; height: 42px; }
+  .student-avatar svg { width: 28px; height: 28px; }
+  .student-details h3 { font-size: 1rem; }
+  .student-tags { gap: 5px; }
+  .tag { padding: 3px 8px; font-size: 0.68rem; }
+
+  .rank-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .rank-card { padding: 16px 10px; }
+  .rank-card-icon { font-size: 1.4rem; margin-bottom: 4px; }
+  .rank-card-label { font-size: 0.65rem; }
+  .rank-card-value { font-size: 1.3rem; }
+  .rank-card-note { font-size: 0.62rem; }
+
+  .eligibility-summary { padding: 16px; }
+  .eligibility-summary h3 { font-size: 0.95rem; margin-bottom: 14px; }
+  .eligibility-stats { flex-direction: column; gap: 14px; }
+  .elig-stat { padding: 12px; }
+  .elig-number { font-size: 1.6rem; }
+  .elig-total .elig-number { font-size: 2rem; }
+  .elig-label { font-size: 0.78rem; }
+
+  .step-nav {
+    flex-direction: column; gap: 10px;
+    margin-top: 24px; padding-top: 18px;
+  }
+  .step-nav .btn-secondary { order: 2; width: 100%; justify-content: center; }
+  .step-nav .btn-primary { order: 1; width: 100%; justify-content: center; }
+
+  /* Step 3: Counselling */
+  .counselling-toolbar {
+    flex-direction: column; gap: 10px; padding: 12px;
+  }
+  .filter-group { width: 100%; }
+  .filter-btn { flex: 1; padding: 8px 8px; font-size: 0.75rem; text-align: center; }
+  .search-box { min-width: 100%; padding: 8px 12px; }
+  .search-box input { font-size: 0.85rem; }
+
+  .college-list { gap: 8px; }
+  .college-card {
+    flex-direction: row; flex-wrap: wrap;
+    padding: 12px; gap: 10px;
+  }
+  .college-rank-badge { width: 36px; height: 36px; font-size: 0.78rem; }
+  .college-info { min-width: 0; width: calc(100% - 100px); }
+  .college-name { font-size: 0.85rem; }
+  .college-type-badge { font-size: 0.6rem; }
+  .college-details { gap: 8px; margin-bottom: 6px; }
+  .college-detail { font-size: 0.7rem; gap: 3px; }
+  .college-detail svg { width: 12px; height: 12px; }
+  .college-ranks {
+    width: 100%; gap: 6px; padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    flex-wrap: nowrap; justify-content: space-between;
+  }
+  .rank-label { font-size: 0.58rem; }
+  .rank-value { font-size: 0.8rem; }
+  .rank-vs { font-size: 0.75rem; }
+  .eligibility-tag { font-size: 0.65rem; padding: 3px 8px; white-space: nowrap; }
+  .college-actions {
+    flex-direction: row; position: absolute; top: 10px; right: 10px;
+    gap: 3px;
+  }
+  .move-btn { width: 28px; height: 26px; }
+
+  /* Step 4: Allocation */
+  .allocation-card { padding: 24px 16px; }
+  .alloc-badge { font-size: 0.95rem; padding: 6px 18px; }
+  .alloc-college-name { font-size: 1.3rem; }
+  .alloc-college-place { font-size: 0.88rem; margin-bottom: 20px; }
+  .alloc-details-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .alloc-detail { padding: 10px; }
+  .alloc-detail-label { font-size: 0.65rem; }
+  .alloc-detail-value { font-size: 0.85rem; }
+  .alloc-student-row { flex-direction: column; gap: 6px; padding: 12px; }
+  .alloc-student-info { font-size: 0.8rem; }
+
+  .alternatives-section { padding: 16px; }
+  .alt-college-card { padding: 10px 12px; gap: 10px; flex-wrap: wrap; }
+  .alt-pref { width: 28px; font-size: 0.82rem; }
+  .alt-info strong { font-size: 0.82rem; }
+  .alt-info span { font-size: 0.7rem; }
+  .alt-rank { font-size: 0.72rem; }
+
+  .not-allocated-card { padding: 32px 16px; }
+  .not-alloc-icon { font-size: 3rem; }
+  .not-allocated-card h3 { font-size: 1.2rem; }
+  .not-alloc-details { flex-direction: column; gap: 8px; font-size: 0.85rem; }
+
+  /* Modal */
+  .modal { width: 95%; max-height: 90vh; padding: 18px; }
+  .modal-header h2 { font-size: 1rem; }
+  .modal-section h3 { font-size: 0.9rem; }
+  .info-table { font-size: 0.75rem; }
+  .info-table th, .info-table td { padding: 8px 6px; }
+  .modal-disclaimer { font-size: 0.75rem; padding: 12px; }
+
+  /* Footer */
+  .footer { padding: 20px 0; }
+  .footer-content p { font-size: 0.78rem; }
+  .footer-disclaimer { font-size: 0.68rem !important; }
+
+  /* Toast */
+  .toast { bottom: 12px; right: 12px; left: 12px; max-width: none; padding: 12px 14px; }
+  .toast-message { font-size: 0.82rem; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 8px; }
+  .glass-card { padding: 12px; }
+
+  .rank-cards { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .rank-card { padding: 12px 6px; }
+  .rank-card-value { font-size: 1.1rem; }
+
   .alloc-details-grid { grid-template-columns: 1fr; }
   .quota-grid { grid-template-columns: repeat(3, 1fr); }
   .filter-group { flex-wrap: wrap; }
+  .filter-btn { font-size: 0.7rem; }
+
+  .college-name { font-size: 0.8rem; }
+  .college-details { gap: 6px; }
+  .step-header h2 { font-size: 1.1rem; }
 }
 
 /* --- Scrollbar --- */
-::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.12); }
 
 /* --- Selection --- */
 ::selection { background: rgba(0, 212, 170, 0.3); color: #fff; }
+
+/* --- Touch-friendly --- */
+@media (hover: none) and (pointer: coarse) {
+  .move-btn { width: 36px; height: 34px; }
+  .filter-btn { min-height: 40px; }
+  .btn-primary { min-height: 48px; }
+  .btn-secondary { min-height: 44px; }
+  .score-slider, .difficulty-slider { height: 8px; }
+  .score-slider::-webkit-slider-thumb,
+  .difficulty-slider::-webkit-slider-thumb { width: 26px; height: 26px; }
+  .college-card { position: relative; }
+}

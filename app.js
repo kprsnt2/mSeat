@@ -367,7 +367,7 @@ function updateScorePreview(score) {
 function handleProfileSubmit(e) {
   e.preventDefault();
 
-  const name = document.getElementById('studentName').value.trim();
+  const name = document.getElementById('studentName').value.trim() || 'Student';
   const score = parseInt(document.getElementById('neetScore').value);
   const category = document.getElementById('categorySelect').value;
   const gender = document.getElementById('genderSelect').value;
@@ -375,7 +375,6 @@ function handleProfileSubmit(e) {
   const pwd = document.getElementById('pwdCheckbox').checked;
 
   // Validation
-  if (!name) { showToast('Please enter student name', 'error'); return; }
   if (isNaN(score) || score < 1 || score > 720) { showToast('Please enter a valid NEET score (1-720)', 'error'); return; }
 
   const cutoff = qualifyingCutoffs[category] || 144;
@@ -697,6 +696,23 @@ function closeQuotaInfo() {
   if (modal) {
     modal.classList.remove('show');
     document.body.style.overflow = '';
+  }
+}
+
+// --- Toggle Name Field ---
+function toggleNameField() {
+  const input = document.getElementById('studentName');
+  const toggle = document.querySelector('.optional-toggle .toggle-text');
+  if (input.classList.contains('name-input-hidden')) {
+    input.classList.remove('name-input-hidden');
+    input.classList.add('name-input-visible');
+    toggle.textContent = '− Hide Name';
+    input.focus();
+  } else {
+    input.classList.add('name-input-hidden');
+    input.classList.remove('name-input-visible');
+    toggle.textContent = '+ Add Student Name';
+    input.value = '';
   }
 }
 
