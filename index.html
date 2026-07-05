@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Telangana MBBS Mock Counselling 2026 - Simulate your NEET seat allocation across Government and Private medical colleges in Telangana.">
+  <title>Telangana MBBS Mock Counselling 2026 | MSeat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#brandGrad)" stroke-width="2">
+            <defs><linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4aa"/><stop offset="100%" stop-color="#0ea5e9"/></linearGradient></defs>
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-name">MSeat</h1>
+          <span class="brand-subtitle">Telangana MBBS Mock Counselling 2026</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-outline" onclick="showQuotaInfo()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          Quota Info
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Step Indicator -->
+  <div class="step-indicator-wrapper">
+    <div class="container">
+      <div class="step-indicator">
+        <div class="step-dot active" data-step="1">
+          <div class="step-number">1</div>
+          <div class="step-label">Profile</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-step="2">
+          <div class="step-number">2</div>
+          <div class="step-label">Results</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-step="3">
+          <div class="step-number">3</div>
+          <div class="step-label">Counselling</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-dot" data-step="4">
+          <div class="step-number">4</div>
+          <div class="step-label">Allocation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- ====== STEP 1: Student Profile ====== -->
+      <div id="step1" class="step-content active" style="display:block;">
+        <div class="step-header animate-on-scroll">
+          <div class="step-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#grad1)" stroke-width="1.5">
+              <defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4aa"/><stop offset="100%" stop-color="#0ea5e9"/></linearGradient></defs>
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h2>Student Profile</h2>
+          <p>Enter your NEET Re-Exam 2026 details to estimate your rank and explore eligible colleges</p>
+        </div>
+
+        <form id="profileForm" class="profile-form glass-card animate-on-scroll">
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="studentName">Student Name</label>
+              <input type="text" id="studentName" placeholder="Enter full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="neetScore">NEET Score (out of 720)</label>
+              <input type="number" id="neetScore" min="1" max="720" placeholder="e.g. 520" required>
+              <input type="range" id="scoreSlider" min="100" max="720" value="400" class="score-slider">
+              <div id="scorePreview" class="score-preview"></div>
+            </div>
+
+            <div class="form-group full-width difficulty-section">
+              <label for="difficultySlider">
+                🎯 2026 Exam Difficulty Adjustment
+                <span class="label-hint">(optional — slide to match how tough the exam felt)</span>
+              </label>
+              <div class="difficulty-context">
+                <div class="subject-chips">
+                  <span class="subject-chip chip-easy">🧬 Biology — Easy</span>
+                  <span class="subject-chip chip-tough">⚛️ Physics — Very Tough</span>
+                  <span class="subject-chip chip-tough">🧪 Chemistry — Very Tough</span>
+                </div>
+              </div>
+              <div class="difficulty-slider-wrap">
+                <div class="difficulty-labels">
+                  <span>Normal (2025)</span>
+                  <span>Slightly Tough</span>
+                  <span>Tough</span>
+                  <span>Very Tough</span>
+                </div>
+                <input type="range" id="difficultySlider" min="0" max="60" value="35" step="5" class="difficulty-slider">
+                <div class="difficulty-value" id="difficultyValue">
+                  <span class="diff-badge diff-tough">Very Tough</span>
+                  <span class="diff-detail">Your score treated as <strong>+35 marks</strong> higher for rank estimation</span>
+                </div>
+              </div>
+              <p class="form-hint">💡 Since Physics & Chemistry were very tough in 2026, everyone scored lower → same score gets a <strong>better rank</strong> than 2025</p>
+            </div>
+
+            <div class="form-group">
+              <label for="categorySelect">Category / Caste</label>
+              <select id="categorySelect" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="OC">OC — Open Category (General)</option>
+                <option value="EWS">EWS — Economically Weaker Section</option>
+                <option value="BC_A">BC-A — Backward Class Group A (7%)</option>
+                <option value="BC_B">BC-B — Backward Class Group B (10%)</option>
+                <option value="BC_C">BC-C — Backward Class Group C (1%)</option>
+                <option value="BC_D">BC-D — Backward Class Group D (7%)</option>
+                <option value="BC_E">BC-E — Backward Class Group E (4%)</option>
+                <option value="SC">SC — Scheduled Caste (15%)</option>
+                <option value="ST">ST — Scheduled Tribe (10%)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="genderSelect">Gender</label>
+              <select id="genderSelect" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="localSelect">Local / Non-Local Status</label>
+              <select id="localSelect" required>
+                <option value="" disabled selected>Select Status</option>
+                <option value="local">Local (Telangana Domicile)</option>
+                <option value="nonlocal">Non-Local</option>
+              </select>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="pwdCheckbox">
+                <span class="checkbox-custom"></span>
+                <span>PwD (Person with Disability — 40%+ disability)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary btn-lg">
+              <span>Estimate My Rank</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </form>
+
+        <!-- Quick Reservation Info -->
+        <div class="reservation-overview glass-card animate-on-scroll">
+          <h3>Telangana MBBS Reservation Quota</h3>
+          <div class="quota-grid">
+            <div class="quota-item" style="--quota-color: #60a5fa"><span class="quota-percent">~36%</span><span class="quota-label">OC (Unreserved)</span></div>
+            <div class="quota-item" style="--quota-color: #fbbf24"><span class="quota-percent">10%</span><span class="quota-label">BC-B</span></div>
+            <div class="quota-item" style="--quota-color: #34d399"><span class="quota-percent">7%</span><span class="quota-label">BC-A</span></div>
+            <div class="quota-item" style="--quota-color: #fb923c"><span class="quota-percent">7%</span><span class="quota-label">BC-D</span></div>
+            <div class="quota-item" style="--quota-color: #2dd4bf"><span class="quota-percent">4%</span><span class="quota-label">BC-E</span></div>
+            <div class="quota-item" style="--quota-color: #f87171"><span class="quota-percent">1%</span><span class="quota-label">BC-C</span></div>
+            <div class="quota-item" style="--quota-color: #c084fc"><span class="quota-percent">15%</span><span class="quota-label">SC</span></div>
+            <div class="quota-item" style="--quota-color: #f472b6"><span class="quota-percent">10%</span><span class="quota-label">ST</span></div>
+            <div class="quota-item" style="--quota-color: #a78bfa"><span class="quota-percent">10%</span><span class="quota-label">EWS</span></div>
+          </div>
+          <div class="quota-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            85% State Quota (KNRUHS) · 15% All India Quota (MCC) · Women 33⅓% horizontal reservation
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== STEP 2: Rank Estimation Results ====== -->
+      <div id="step2" class="step-content" style="display:none;">
+        <div class="step-header">
+          <div class="step-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#grad2)" stroke-width="1.5">
+              <defs><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#f472b6"/></linearGradient></defs>
+              <path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/>
+            </svg>
+          </div>
+          <h2>Rank Estimation & Eligibility</h2>
+          <p>Based on NEET 2025 data analysis and Telangana state counselling trends</p>
+        </div>
+
+        <!-- Student Summary -->
+        <div class="student-summary glass-card">
+          <div class="student-avatar">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="student-details">
+            <h3 id="resultStudentName">—</h3>
+            <div class="student-tags">
+              <span class="tag tag-score" id="resultScore">—</span>
+              <span class="tag tag-category" id="resultCategory">—</span>
+              <span class="tag tag-gender" id="resultGender">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rank Cards -->
+        <div class="rank-cards">
+          <div class="rank-card glass-card rank-air">
+            <div class="rank-card-icon">🏆</div>
+            <div class="rank-card-label">Estimated All India Rank</div>
+            <div class="rank-card-value" id="airValue">—</div>
+            <div class="rank-card-note">Based on NEET 2025 trends</div>
+          </div>
+          <div class="rank-card glass-card rank-state">
+            <div class="rank-card-icon">📍</div>
+            <div class="rank-card-label">Estimated State Rank</div>
+            <div class="rank-card-value" id="stateRankValue">—</div>
+            <div class="rank-card-note">Telangana (KNRUHS)</div>
+          </div>
+          <div class="rank-card glass-card rank-cat">
+            <div class="rank-card-icon">🏷️</div>
+            <div class="rank-card-label">Estimated Category Rank</div>
+            <div class="rank-card-value" id="catRankValue">—</div>
+            <div class="rank-card-note">Within your category</div>
+          </div>
+          <div class="rank-card glass-card rank-pct">
+            <div class="rank-card-icon">📊</div>
+            <div class="rank-card-label">Percentile</div>
+            <div class="rank-card-value" id="percentileValue">—</div>
+            <div class="rank-card-note">Out of 22.09L candidates</div>
+          </div>
+        </div>
+
+        <!-- Eligibility Summary -->
+        <div class="eligibility-summary glass-card">
+          <h3>College Eligibility Overview</h3>
+          <div class="eligibility-stats">
+            <div class="elig-stat">
+              <div class="elig-number" id="govtEligibleCount">0</div>
+              <div class="elig-label">Govt Colleges</div>
+              <div class="elig-bar-wrap"><div class="elig-bar elig-bar-govt" id="govtEligibilityBar"></div></div>
+              <div class="elig-sub">out of 36</div>
+            </div>
+            <div class="elig-stat">
+              <div class="elig-number" id="pvtEligibleCount">0</div>
+              <div class="elig-label">Pvt Colleges (Cat-A)</div>
+              <div class="elig-bar-wrap"><div class="elig-bar elig-bar-pvt" id="pvtEligibilityBar"></div></div>
+              <div class="elig-sub">out of 27</div>
+            </div>
+            <div class="elig-stat elig-total">
+              <div class="elig-number" id="totalEligibleCount">0</div>
+              <div class="elig-label">Total Eligible</div>
+              <div class="elig-sub">colleges</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-nav">
+          <button class="btn-secondary" onclick="goToStep(1)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+            Back
+          </button>
+          <button class="btn-primary btn-lg" onclick="goToStep(3)">
+            Start Mock Counselling
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ====== STEP 3: Mock Counselling ====== -->
+      <div id="step3" class="step-content" style="display:none;">
+        <div class="step-header">
+          <div class="step-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#grad3)" stroke-width="1.5">
+              <defs><linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f97316"/></linearGradient></defs>
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <h2>Mock Counselling — Set Preferences</h2>
+          <p>Review your college preferences below. Use the ↑↓ arrows to reorder. Colleges are pre-ordered by your given preference list.</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="counselling-toolbar glass-card">
+          <div class="filter-group">
+            <button class="filter-btn active" data-filter="all">All Colleges</button>
+            <button class="filter-btn" data-filter="govt">Government</button>
+            <button class="filter-btn" data-filter="pvt">Private (Cat-A)</button>
+          </div>
+          <div class="search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" id="searchInput" placeholder="Search colleges...">
+          </div>
+        </div>
+
+        <!-- College List -->
+        <div id="collegeList" class="college-list"></div>
+
+        <div class="step-nav">
+          <button class="btn-secondary" onclick="goToStep(2)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+            Back
+          </button>
+          <button class="btn-primary btn-lg btn-glow" onclick="showAllocationResult()">
+            🎯 Run Seat Allocation
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ====== STEP 4: Allocation Result ====== -->
+      <div id="step4" class="step-content" style="display:none;">
+        <div class="step-header">
+          <div class="step-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#grad4)" stroke-width="1.5">
+              <defs><linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h2>Seat Allocation Result</h2>
+          <p>Based on your rank, category, and preferences — here's your simulated seat allocation</p>
+        </div>
+
+        <div id="allocationResult">
+          <!-- Allocated Section -->
+          <div id="allocatedSection" style="display:none;">
+            <div class="allocation-card glass-card">
+              <div class="alloc-badge">🎉 Seat Allocated!</div>
+              <div class="alloc-college-name" id="allocCollegeName">—</div>
+              <div class="alloc-college-place" id="allocCollegePlace">—</div>
+
+              <div class="alloc-details-grid">
+                <div class="alloc-detail">
+                  <span class="alloc-detail-label">College Type</span>
+                  <span class="alloc-detail-value" id="allocCollegeType">—</span>
+                </div>
+                <div class="alloc-detail">
+                  <span class="alloc-detail-label">Annual Fee</span>
+                  <span class="alloc-detail-value" id="allocCollegeFee">—</span>
+                </div>
+                <div class="alloc-detail">
+                  <span class="alloc-detail-label">Total Intake</span>
+                  <span class="alloc-detail-value" id="allocCollegeIntake">—</span>
+                </div>
+                <div class="alloc-detail">
+                  <span class="alloc-detail-label">Your Preference</span>
+                  <span class="alloc-detail-value highlight" id="allocPrefNo">—</span>
+                </div>
+                <div class="alloc-detail">
+                  <span class="alloc-detail-label">Closing Rank (Est.)</span>
+                  <span class="alloc-detail-value" id="allocClosingRank">—</span>
+                </div>
+                <div class="alloc-detail">
+                  <span class="alloc-detail-label">Category</span>
+                  <span class="alloc-detail-value" id="allocCategory">—</span>
+                </div>
+              </div>
+
+              <div class="alloc-student-row">
+                <div class="alloc-student-info">
+                  <span class="alloc-label">Student:</span> <span id="allocStudentName">—</span>
+                </div>
+                <div class="alloc-student-info">
+                  <span class="alloc-label">Score:</span> <span id="allocStudentScore">—</span>
+                </div>
+                <div class="alloc-student-info">
+                  <span class="alloc-label">AIR:</span> <span id="allocStudentRank">—</span>
+                </div>
+                <div class="alloc-student-info">
+                  <span class="alloc-label">Safety Margin:</span> <span id="allocMargin">—</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alternatives -->
+            <div class="alternatives-section glass-card">
+              <h3>Other Eligible Options in Your List</h3>
+              <div id="alternativesList"></div>
+            </div>
+          </div>
+
+          <!-- Not Allocated Section -->
+          <div id="notAllocated" style="display:none;">
+            <div class="not-allocated-card glass-card">
+              <div class="not-alloc-icon">😔</div>
+              <h3>No Seat Allocated</h3>
+              <p>Based on your estimated rank, no colleges in your preference list have a matching closing rank for your category.</p>
+              <div class="not-alloc-details">
+                <span>Your Score: <strong id="notAllocatedScore">—</strong></span>
+                <span>Estimated AIR: <strong id="notAllocatedRank">—</strong></span>
+              </div>
+              <div class="not-alloc-suggestions">
+                <h4>💡 Suggestions</h4>
+                <ul>
+                  <li>Consider adding more colleges to your preference list</li>
+                  <li>Check Cat-B (Management Quota) options in private colleges</li>
+                  <li>Wait for later counselling rounds — closing ranks may increase</li>
+                  <li>Explore colleges in other states via All India Quota (MCC)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-nav">
+          <button class="btn-secondary" onclick="goToStep(3)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+            Back to Preferences
+          </button>
+          <button class="btn-primary btn-lg" onclick="resetApp()">
+            🔄 Start New Counselling
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Quota Info Modal -->
+  <div id="quotaModal" class="modal-overlay" onclick="if(event.target===this)closeQuotaInfo()">
+    <div class="modal glass-card">
+      <div class="modal-header">
+        <h2>Telangana MBBS Reservation & Quota Details</h2>
+        <button class="modal-close" onclick="closeQuotaInfo()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>📋 Seat Distribution</h3>
+          <table class="info-table">
+            <thead><tr><th>Quota</th><th>Share</th><th>Authority</th></tr></thead>
+            <tbody>
+              <tr><td>All India Quota (AIQ)</td><td>15%</td><td>MCC (Central)</td></tr>
+              <tr><td>State Quota</td><td>85%</td><td>KNRUHS (Telangana)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-section">
+          <h3>🏷️ Caste-wise Reservation (State Quota)</h3>
+          <table class="info-table">
+            <thead><tr><th>Category</th><th>Reservation %</th></tr></thead>
+            <tbody>
+              <tr><td>OC (Open Category)</td><td>~36% (Unreserved)</td></tr>
+              <tr><td>BC-A</td><td>7%</td></tr>
+              <tr><td>BC-B</td><td>10%</td></tr>
+              <tr><td>BC-C</td><td>1%</td></tr>
+              <tr><td>BC-D</td><td>7%</td></tr>
+              <tr><td>BC-E</td><td>4%</td></tr>
+              <tr><td>SC</td><td>15%</td></tr>
+              <tr><td>ST</td><td>10%</td></tr>
+              <tr><td>EWS</td><td>10% (Supernumerary)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-section">
+          <h3>🏥 Private College Categories</h3>
+          <table class="info-table">
+            <thead><tr><th>Category</th><th>Share</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td>CAT-A (Convener)</td><td>50%</td><td>Telangana Domicile Only · ~₹60K/yr</td></tr>
+              <tr><td>CAT-B (Management)</td><td>35%</td><td>Open All India · ₹11.5-15L/yr</td></tr>
+              <tr><td>CAT-C (NRI)</td><td>15%</td><td>NRI Sponsor · ₹23-26L/yr</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-section">
+          <h3>👩 Horizontal Reservations</h3>
+          <table class="info-table">
+            <thead><tr><th>Category</th><th>Quota</th></tr></thead>
+            <tbody>
+              <tr><td>Women</td><td>33⅓% within each category</td></tr>
+              <tr><td>PwD (Persons with Disabilities)</td><td>5%</td></tr>
+              <tr><td>CAP (Armed Forces)</td><td>1%</td></tr>
+              <tr><td>Sports</td><td>~0.5%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-disclaimer">
+          <strong>⚠️ Disclaimer:</strong> This is a mock counselling tool based on estimated data from NEET 2025 trends. 
+          Actual ranks, closing ranks, and allocations for 2026 may differ. Always refer to the official 
+          <strong>KNRUHS</strong> (knruhs.telangana.gov.in) prospectus for final counselling.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>⚕️ MSeat — Telangana MBBS Mock Counselling Tool 2026</p>
+        <p class="footer-disclaimer">This is a simulation tool for educational purposes only. Ranks and allocations are estimates based on NEET 2025 data. For official counselling, visit <strong>knruhs.telangana.gov.in</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
