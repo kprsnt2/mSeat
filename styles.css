@@ -418,6 +418,39 @@ body {
   color: var(--accent-teal);
 }
 
+.sort-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-select {
+  background-color: #1e1b4b !important;
+  color: #ffffff !important;
+  border: 1px solid var(--border-glass) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 8px 12px !important;
+  font-size: 0.85rem !important;
+  font-family: var(--font-main) !important;
+  cursor: pointer !important;
+  outline: none !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+  max-width: 100% !important;
+  transition: all var(--transition-fast) !important;
+}
+
+.sort-select:hover, .sort-select:focus {
+  border-color: var(--accent-teal) !important;
+  background-color: #0f172a !important;
+}
+
+.sort-select option {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  padding: 10px !important;
+  font-size: 0.85rem !important;
+}
+
 .search-box {
   display: flex; align-items: center; gap: 8px;
   padding: 8px 14px; border-radius: var(--radius-sm);
@@ -797,10 +830,12 @@ body {
 
   /* Step 3: Counselling */
   .counselling-toolbar {
-    flex-direction: column; gap: 10px; padding: 12px;
+    flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; width: 100%;
   }
-  .filter-group { width: 100%; }
-  .filter-btn { flex: 1; padding: 8px 8px; font-size: 0.75rem; text-align: center; }
+  .filter-group { width: 100%; display: flex; }
+  .filter-btn { flex: 1; padding: 8px 6px; font-size: 0.72rem; text-align: center; white-space: nowrap; }
+  .sort-group { width: 100%; display: flex; align-items: center; gap: 8px; }
+  .sort-select { width: 100%; flex: 1; min-width: 0; font-size: 0.78rem !important; }
   .search-box { min-width: 100%; padding: 8px 12px; }
   .search-box input { font-size: 0.85rem; }
 

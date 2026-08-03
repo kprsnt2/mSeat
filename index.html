@@ -338,11 +338,11 @@
             <button class="filter-btn" data-filter="pvt">Private (Cat-A)</button>
           </div>
           
-          <div class="sort-group" style="display: flex; align-items: center; gap: 8px;">
-            <label for="sortStrategy" style="font-size: 0.84rem; color: rgba(255,255,255,0.7); font-weight: 500;">Ordering:</label>
-            <select id="sortStrategy" onchange="changeSortMode(this.value)" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 8px; padding: 6px 12px; font-size: 0.84rem; cursor: pointer;">
-              <option value="categorized" selected>🏛️ Categorized (Top Govt ➔ Top Pvt ➔ Minority Last)</option>
-              <option value="mixed">🏆 Combined Top Colleges (Govt + Top Pvt Mixed)</option>
+          <div class="sort-group">
+            <label for="sortStrategy" style="font-size: 0.84rem; color: rgba(255,255,255,0.7); font-weight: 500; white-space: nowrap;">Ordering:</label>
+            <select id="sortStrategy" class="sort-select" onchange="changeSortMode(this.value)">
+              <option value="categorized" selected>🏛️ Categorized (Govt ➔ Pvt ➔ Minority)</option>
+              <option value="mixed">🏆 Mixed (Combined Cutoff Rank)</option>
             </select>
           </div>
 
@@ -598,6 +598,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=20260803_v13"></script>
+  <script src="app.js?v=20260803_v14"></script>
 </body>
 </html>
