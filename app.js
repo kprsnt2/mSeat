@@ -3751,9 +3751,40 @@ function init() {
     renderCollegeList();
   });
 
-  // Score slider sync
-  const scoreSlider = document.getElementById('scoreSlider');
+  // Score & Rank inputs sync
+  const airInput = document.getElementById('neetAIR');
+  const snoInput = document.getElementById('stateSno');
   const scoreInput = document.getElementById('neetScore');
+  const scoreSlider = document.getElementById('scoreSlider');
+
+  if (airInput) {
+    airInput.addEventListener('input', function () {
+      const air = parseInt(this.value);
+      if (!isNaN(air) && air > 0) {
+        const estScore = estimateScoreFromAIR(air);
+        const estSno = estimateStateRank(air);
+        if (scoreInput) scoreInput.value = estScore;
+        if (scoreSlider) scoreSlider.value = estScore;
+        if (snoInput && !snoInput.value) snoInput.placeholder = `Est: ${estSno}`;
+        updateScorePreview(estScore, air, estSno);
+      }
+    });
+  }
+
+  if (snoInput) {
+    snoInput.addEventListener('input', function () {
+      const sno = parseInt(this.value);
+      if (!isNaN(sno) && sno > 0) {
+        const estAir = estimateAIRFromSno(sno);
+        const estScore = estimateScoreFromAIR(estAir);
+        if (airInput && !airInput.value) airInput.placeholder = `Est: ${estAir.toLocaleString()}`;
+        if (scoreInput) scoreInput.value = estScore;
+        if (scoreSlider) scoreSlider.value = estScore;
+        updateScorePreview(estScore, estAir, sno);
+      }
+    });
+  }
+
   if (scoreSlider && scoreInput) {
     scoreSlider.addEventListener('input', function () {
       scoreInput.value = this.value;
@@ -3769,20 +3800,52 @@ function init() {
   animateOnScroll();
 }
 
-function updateScorePreview(score) {
+function estimateAIRFromSno(sno) {
+  const data = scoreRankData;
+  for (let i = 0; i < data.length - 1; i++) {
+    if (sno >= data[i].stateSno && sno <= data[i + 1].stateSno) {
+      const sDiff = data[i + 1].stateSno - data[i].stateSno;
+      if (sDiff === 0) return data[i].rank;
+      const rDiff = data[i + 1].rank - data[i].rank;
+      const ratio = (sno - data[i].stateSno) / sDiff;
+      return Math.round(data[i].rank + ratio * rDiff);
+    }
+  }
+  return Math.round(sno * 32.5);
+}
+
+function estimateScoreFromAIR(air) {
+  const data = scoreRankData;
+  for (let i = 0; i < data.length - 1; i++) {
+    if (air >= data[i].rank && air <= data[i + 1].rank) {
+      const rDiff = data[i + 1].rank - data[i].rank;
+      if (rDiff === 0) return data[i].score;
+      const scDiff = data[i].score - data[i + 1].score;
+      const ratio = (air - data[i].rank) / rDiff;
+      return Math.round(data[i].score - ratio * scDiff);
+    }
+  }
+  return 150;
+}
+
+function updateScorePreview(score, customAIR, customSno) {
   const preview = document.getElementById('scorePreview');
   if (!preview) return;
   score = parseInt(score);
-  if (isNaN(score) || score < 1 || score > 720) {
+  
+  const rank = customAIR || (isNaN(score) ? null : estimateRank(score));
+  const sno = customSno || (rank ? estimateStateRank(rank) : null);
+  const percentile = rank ? Math.max(0, Math.min(100, ((2209000 - rank) / 2209000 * 100))).toFixed(2) : null;
+  
+  if (!rank) {
     preview.innerHTML = '';
     return;
   }
-  const rank = estimateRank(score);
-  const percentile = scoreToPercentile(score);
-  
+
   preview.innerHTML = `
     <div class="score-preview-content">
-      <span class="preview-rank">Est. Rank: <strong>${rank.toLocaleString('en-IN')}</strong></span>
+      <span class="preview-rank">AIR: <strong>${rank.toLocaleString('en-IN')}</strong></span>
+      <span class="preview-rank">State S.No: <strong>${sno.toLocaleString('en-IN')}</strong></span>
       <span class="preview-percentile">Percentile: <strong>${percentile}%</strong></span>
     </div>
   `;
@@ -3792,34 +3855,54 @@ function handleProfileSubmit(e) {
   e.preventDefault();
 
   const name = document.getElementById('studentName').value.trim() || 'Student';
-  const score = parseInt(document.getElementById('neetScore').value);
+  const airInputVal = parseInt(document.getElementById('neetAIR')?.value);
+  const snoInputVal = parseInt(document.getElementById('stateSno')?.value);
+  const scoreInputVal = parseInt(document.getElementById('neetScore')?.value);
   const category = document.getElementById('categorySelect').value;
   const gender = document.getElementById('genderSelect').value;
   const localStatus = document.getElementById('localSelect').value;
   const pwd = document.getElementById('pwdCheckbox').checked;
 
-  // Validation
-  if (isNaN(score) || score < 1 || score > 720) { showToast('Please enter a valid NEET score (1-720)', 'error'); return; }
+  let air = null;
+  let score = null;
+  let stateRank = null;
 
-  const cutoff = qualifyingCutoffs[category] || 144;
+  if (!isNaN(airInputVal) && airInputVal > 0) {
+    air = airInputVal;
+    score = !isNaN(scoreInputVal) ? scoreInputVal : estimateScoreFromAIR(air);
+    stateRank = !isNaN(snoInputVal) ? snoInputVal : estimateStateRank(air);
+  } else if (!isNaN(snoInputVal) && snoInputVal > 0) {
+    stateRank = snoInputVal;
+    air = estimateAIRFromSno(stateRank);
+    score = !isNaN(scoreInputVal) ? scoreInputVal : estimateScoreFromAIR(air);
+  } else if (!isNaN(scoreInputVal) && scoreInputVal > 0) {
+    score = scoreInputVal;
+    air = estimateRank(score);
+    stateRank = estimateStateRank(air);
+  } else {
+    showToast('Please enter All India Rank (AIR), State Serial No, or NEET Score', 'error');
+    return;
+  }
+
+  const cutoff = qualifyingCutoffs[category] || 113;
   if (score < cutoff) {
     showToast(`Score ${score} is below qualifying cutoff (${cutoff}) for ${reservationData[category].label}`, 'error');
     return;
   }
 
-  studentProfile = { name, score, category, gender, localStatus, pwd };
-  estimatedAIR = estimateRank(score);
+  studentProfile = { name, score, category, gender, localStatus, pwd, customAIR: air, customStateRank: stateRank };
+  estimatedAIR = air;
 
   renderRankResults();
   goToStep(2);
 }
 
 function renderRankResults() {
-  const { name, score, category, gender } = studentProfile;
-  const air = estimatedAIR;
-  const stateRank = estimateStateRank(air);
+  const { name, score, category, gender, customAIR, customStateRank } = studentProfile;
+  const air = customAIR || estimatedAIR;
+  const stateRank = customStateRank || estimateStateRank(air);
   const catRank = estimateCategoryRank(air, category);
-  const percentile = scoreToPercentile(score);
+  const percentile = Math.max(0, Math.min(100, ((2209000 - air) / 2209000 * 100))).toFixed(2);
 
   // Update student info header
   document.getElementById('resultStudentName').textContent = name;

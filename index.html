@@ -97,9 +97,19 @@
             </div>
 
             <div class="form-group">
-              <label for="neetScore">NEET Score (out of 720)</label>
-              <input type="number" id="neetScore" min="1" max="720" placeholder="e.g. 520" required>
-              <input type="range" id="scoreSlider" min="100" max="720" value="400" class="score-slider">
+              <label for="neetAIR">NEET All India Rank (AIR) <span class="label-badge">Recommended</span></label>
+              <input type="number" id="neetAIR" placeholder="e.g. 289635">
+            </div>
+
+            <div class="form-group">
+              <label for="stateSno">Telangana State Serial No (S.No) <span class="label-badge">Accurate</span></label>
+              <input type="number" id="stateSno" placeholder="e.g. 8902">
+            </div>
+
+            <div class="form-group full-width">
+              <label for="neetScore">NEET Score (out of 720) <span class="label-hint">(or use score if AIR/S.No unavailable)</span></label>
+              <input type="number" id="neetScore" min="1" max="720" placeholder="e.g. 393">
+              <input type="range" id="scoreSlider" min="100" max="720" value="393" class="score-slider">
               <div id="scorePreview" class="score-preview"></div>
             </div>
 
