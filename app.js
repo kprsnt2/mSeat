@@ -4248,8 +4248,35 @@ function buildPreferences(mode = 'categorized') {
 
 function changeSortMode(mode) {
   preferences = buildPreferences(mode);
+  toggleCollegeList(true);
   renderCollegeList();
   showToast(mode === 'mixed' ? 'Sorted by Combined Cutoff Rank (Mixed)' : 'Sorted by Categorized (Govt ➔ Pvt ➔ Minority)', 'info');
+}
+
+let isCollegeListVisible = false;
+
+function toggleCollegeList(forceShow = false) {
+  const container = document.getElementById('collegeList');
+  const btn = document.getElementById('toggleCollegeListBtn');
+  if (!container || !btn) return;
+
+  if (forceShow) {
+    isCollegeListVisible = true;
+  } else {
+    isCollegeListVisible = !isCollegeListVisible;
+  }
+
+  if (isCollegeListVisible) {
+    container.style.display = 'flex';
+    btn.innerHTML = '🙈 Hide College List';
+    btn.style.borderColor = '#fbbf24';
+    btn.style.color = '#fbbf24';
+  } else {
+    container.style.display = 'none';
+    btn.innerHTML = '👁️ Show / Reorder College List';
+    btn.style.borderColor = 'var(--accent-teal)';
+    btn.style.color = 'var(--accent-teal)';
+  }
 }
 
 function getSummaryText() {
@@ -4316,6 +4343,7 @@ function init() {
   const searchInput = document.getElementById('searchInput');
   if (searchInput) searchInput.addEventListener('input', function () {
     searchQuery = this.value.toLowerCase();
+    if (searchQuery.length > 0) toggleCollegeList(true);
     renderCollegeList();
   });
 
