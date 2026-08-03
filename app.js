@@ -4146,21 +4146,23 @@ function estimateStateRank(air) {
 }
 
 
-function estimateCategoryRank(air, category) {
-  // Approximate category rank based on category population ratios
-  const catRatios = {
-    OC: 0.35, EWS: 0.10, BC_A: 0.07, BC_B: 0.10,
-    BC_C: 0.01, BC_D: 0.07, BC_E: 0.04, SC: 0.15, ST: 0.10
+function estimateCategoryRank(air, category, stateRank) {
+  // Calculate state-level category rank based on state merit list proportions
+  const sRank = stateRank || estimateStateRank(air);
+  const stateCatRatios = {
+    OC: 0.35, EWS: 0.10, BC_A: 0.07, BC_B: 0.18,
+    BC_C: 0.01, BC_D: 0.16, BC_E: 0.04, SC_1: 0.117, SC_2: 0.117, SC_3: 0.117, SC: 0.117, ST: 0.08
   };
-  return Math.max(1, Math.round(air * (catRatios[category] || 0.35)));
+  return Math.max(1, Math.round(sRank * (stateCatRatios[category] || 0.117)));
 }
 
 function getClosingRank(college, category) {
-  // Use known ranks if available (Gandhi MC, Osmania MC)
-  if (college.knownRanks && college.knownRanks[category] !== undefined) {
+  if (college.knownRanks && college.knownRanks[category] !== undefined && college.knownRanks[category] !== null) {
     return college.knownRanks[category];
   }
-  // Compute from OC closing rank using category multipliers
+  if (college.knownRanks && college.knownRanks['SC'] !== undefined && college.knownRanks['SC'] !== null && category.startsWith('SC')) {
+    return college.knownRanks['SC'];
+  }
   const multipliers = getCategoryMultipliers(college.ocClosing);
   const multiplier = multipliers[category] || 1;
   return Math.round(college.ocClosing * multiplier);
@@ -4395,7 +4397,7 @@ function renderRankResults() {
   const { name, score, category, gender, customAIR, customStateRank } = studentProfile;
   const air = customAIR || estimatedAIR;
   const stateRank = customStateRank || estimateStateRank(air);
-  const catRank = estimateCategoryRank(air, category);
+  const catRank = estimateCategoryRank(air, category, stateRank);
   const percentile = Math.max(0, Math.min(100, ((2209000 - air) / 2209000 * 100))).toFixed(2);
 
   // Update student info header
