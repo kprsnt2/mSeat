@@ -4221,12 +4221,84 @@ let searchQuery = '';
 // UI FUNCTIONS
 // ============================================================
 
+let sortStrategy = 'categorized';
+
+function buildPreferences(mode = 'categorized') {
+  sortStrategy = mode;
+  const gList = govtColleges.map(c => ({ ...c, type: 'govt' }));
+  const pList = pvtColleges.map(c => ({ ...c, type: 'pvt' }));
+  
+  if (mode === 'mixed') {
+    // Combined ranking sorted strictly by closing rank / cutoff score
+    const combined = [...gList, ...pList];
+    combined.sort((a, b) => (a.ocClosing || 999999) - (b.ocClosing || 999999));
+    return combined;
+  }
+
+  // Categorized (Default):
+  // 1. Top Govt Colleges (sorted by closing rank)
+  // 2. Top Non-Minority Private Colleges (sorted by closing rank)
+  // 3. Minority Private Colleges at the very end
+  const gSorted = [...gList].sort((a, b) => (a.ocClosing || 999999) - (b.ocClosing || 999999));
+  const pNonMinority = pList.filter(c => !c.name.includes('(Minority)')).sort((a, b) => (a.ocClosing || 999999) - (b.ocClosing || 999999));
+  const pMinority = pList.filter(c => c.name.includes('(Minority)')).sort((a, b) => (a.ocClosing || 999999) - (b.ocClosing || 999999));
+
+  return [...gSorted, ...pNonMinority, ...pMinority];
+}
+
+function changeSortMode(mode) {
+  preferences = buildPreferences(mode);
+  renderCollegeList();
+  showToast(mode === 'mixed' ? 'Sorted by Combined Cutoff Rank (Mixed)' : 'Sorted by Categorized (Govt ➔ Pvt ➔ Minority)', 'info');
+}
+
+function getSummaryText() {
+  const { name, score, category, customAIR, customStateRank } = studentProfile;
+  const air = customAIR || estimatedAIR;
+  const stateRank = customStateRank || estimateStateRank(air);
+  const catRank = estimateCategoryRank(air, category, stateRank);
+
+  let govtEligible = 0, pvtEligible = 0;
+  govtColleges.forEach(c => { if (isEligible(air, c, category)) govtEligible++; });
+  pvtColleges.forEach(c => { if (isEligible(air, c, category)) pvtEligible++; });
+
+  const catLabel = reservationData[category]?.label || category;
+
+  return `⚕️ *MSeat — Telangana MBBS Mock Counselling 2026*\n\n` +
+    `👤 *Candidate:* ${name || 'Student'}\n` +
+    `🎯 *NEET Score:* ${score || '393'} / 720\n` +
+    `🏆 *All India Rank (AIR):* ${air ? air.toLocaleString('en-IN') : '2,89,635'}\n` +
+    `📍 *Telangana State S.No:* ${stateRank ? stateRank.toLocaleString('en-IN') : '8,902'}\n` +
+    `🏷️ *Category Rank (${catLabel}):* #${catRank ? catRank.toLocaleString('en-IN') : '1,041'}\n\n` +
+    `📊 *Seat Eligibility Overview:*\n` +
+    `• Government Colleges Eligible: ${govtEligible} / ${govtColleges.length}\n` +
+    `• Private Cat-A Colleges Eligible: ${pvtEligible} / ${pvtColleges.length}\n` +
+    `• Total Eligible Options: ${govtEligible + pvtEligible}\n\n` +
+    `💡 *Web Options Strategy:* List all 36 Govt Colleges first, followed by top Private Cat-A colleges (Bhaskar, Mamata, MNR, Medicity, Prathima).\n\n` +
+    `🔗 Check your allotment simulation: https://kprsnt2.github.io/mSeat/`;
+}
+
+function shareWhatsApp() {
+  const text = getSummaryText();
+  window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+function copyOptionsSummary() {
+  const text = getSummaryText();
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('📋 Web Options Summary copied to clipboard!', 'success');
+    }).catch(() => {
+      showToast('Failed to copy summary', 'error');
+    });
+  } else {
+    showToast('Clipboard copy not supported in browser', 'error');
+  }
+}
+
 function init() {
-  // Build the initial preference list combining govt and private
-  preferences = [
-    ...govtColleges.map(c => ({ ...c, type: 'govt' })),
-    ...pvtColleges.map(c => ({ ...c, type: 'pvt' }))
-  ];
+  // Build default preference list (Govt first -> Pvt -> Minority last)
+  preferences = buildPreferences('categorized');
 
   // Bind form submission
   const form = document.getElementById('profileForm');
