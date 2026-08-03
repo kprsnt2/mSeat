@@ -489,11 +489,35 @@
               <tr><td>Sports</td><td>~0.5%</td></tr>
             </tbody>
           </table>
+        <div class="modal-section">
+          <h3>❓ FAQ & Allotment Logic</h3>
+          <div class="faq-list" style="display: flex; flex-direction: column; gap: 12px; font-size: 0.84rem; line-height: 1.6;">
+            <div class="faq-item" style="background: rgba(255,255,255,0.03); padding: 12px 14px; border-radius: 8px; border-left: 3px solid var(--accent-teal);">
+              <strong style="color: var(--accent-teal); display: block; margin-bottom: 4px;">Q: How does this tool estimate seat allotments?</strong>
+              <span>It matches your <strong>All India Rank (AIR)</strong> or <strong>State Serial Number (S.No)</strong> against official college closing ranks. It incorporates the <strong>+810 newly added MBBS seats in 2026</strong> (+110 Govt + +700 Private Cat-A) and applies category reservation rules (OC, EWS, BC-A to E, SC1-SC3, ST).</span>
+            </div>
+            
+            <div class="faq-item" style="background: rgba(255,255,255,0.03); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #fbbf24;">
+              <strong style="color: #fbbf24; display: block; margin-bottom: 4px;">Q: What official cutoff data was used to build this tool?</strong>
+              <span><strong>Last year rank based and final rank of SC2 was considered for developing this one which was after Round 3 counselling.</strong> Extracted directly from KNRUHS Round 3 Cutoffs (<code>TS MBBS-College Wise Cut off (OU) ROUND-3.pdf</code>) and Final State Merit List (<code>last_year_merit_list_final_tg.pdf</code>).</span>
+            </div>
+
+            <div class="faq-item" style="background: rgba(255,255,255,0.03); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #f472b6;">
+              <strong style="color: #f472b6; display: block; margin-bottom: 4px;">Q: What were the exact Round 3 closing cutoffs for SC2?</strong>
+              <span>• <strong>Government Colleges</strong>: Closed at <strong>SC2 Rank #399</strong> (AIR 260,591 / 375 Marks - GMC Mulugu).<br>
+              • <strong>Private Colleges (Cat-A)</strong>: Closed at <strong>SC2 Rank #607</strong> (AIR 312,829 / 351 Marks - Nova / Surabhi / TRR).<br>
+              • With +810 seats added in 2026, Private SC2 cutoffs expanded to <strong>SC2 Rank #641</strong> (AIR ~335,000).</span>
+            </div>
+
+            <div class="faq-item" style="background: rgba(255,255,255,0.03); padding: 12px 14px; border-radius: 8px; border-left: 3px solid #34d399;">
+              <strong style="color: #34d399; display: block; margin-bottom: 4px;">Q: If a college does not show as allotted here, does that mean I won't get it?</strong>
+              <span><strong>No, not at all!</strong> This is a simulation tool. Vacancies open up in Mop-Up and Stray Vacancy rounds when candidates move to AIQ/AIIMS. <em>Always fill all your preferred Government and Private colleges during official KNRUHS web options counselling!</em></span>
+            </div>
+          </div>
         </div>
+
         <div class="modal-disclaimer">
-          <strong>⚠️ Disclaimer:</strong> This is a mock counselling tool based on estimated data from NEET 2025 trends. 
-          Actual ranks, closing ranks, and allocations for 2026 may differ. Always refer to the official 
-          <strong>KNRUHS</strong> (knruhs.telangana.gov.in) prospectus for final counselling.
+          <strong>⚠️ Disclaimer:</strong> <strong>Last year rank based and final rank of SC2 was considered for developing this one which was after Round 3 counselling.</strong> Actual ranks and allocations for 2026 official counselling may vary. Always refer to official <strong>KNRUHS</strong> (knruhs.telangana.gov.in) portal for final web options.
         </div>
       </div>
     </div>
@@ -506,6 +530,7 @@
         <p>⚕️ MSeat — Telangana MBBS Mock Counselling Tool 2026</p>
         <div class="disclaimer-banner glass-card" style="margin: 16px auto; max-width: 820px; padding: 18px; border-left: 4px solid #fbbf24; text-align: left; font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.85);">
           <strong style="color: #fbbf24; font-size: 0.92rem; display: block; margin-bottom: 6px;">⚠️ Important Counselling Disclaimer:</strong>
+          <strong>Last year rank based and final rank of SC2 was considered for developing this one which was after Round 3 counselling.</strong><br><br>
           This mock counselling tool is an estimation based on last year's cutoff data, official Telangana State Merit List data, and NMC 2026 seat additions (+810 seats). Actual ranks, closing ranks, and seat allocations for official KNRUHS counselling may vary.<br><br>
           <em>If a specific college does not show as allotted here, <strong>that does NOT mean you won't get it</strong> — this is a simulation tool. Always apply for all your preferred Government and Private colleges during official <strong>KNRUHS (knruhs.telangana.gov.in)</strong> web options counselling!</em>
         </div>
@@ -513,6 +538,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=20260803_v7"></script>
+  <script src="app.js?v=20260803_v8"></script>
 </body>
 </html>
