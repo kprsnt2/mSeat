@@ -4293,10 +4293,10 @@ function getSummaryText() {
 
   return `⚕️ *MSeat — Telangana MBBS Mock Counselling 2026*\n\n` +
     `👤 *Candidate:* ${name || 'Student'}\n` +
-    `🎯 *NEET Score:* ${score || '393'} / 720\n` +
-    `🏆 *All India Rank (AIR):* ${air ? air.toLocaleString('en-IN') : '2,89,635'}\n` +
-    `📍 *Telangana State S.No:* ${stateRank ? stateRank.toLocaleString('en-IN') : '8,902'}\n` +
-    `🏷️ *Category Rank (${catLabel}):* #${catRank ? catRank.toLocaleString('en-IN') : '1,041'}\n\n` +
+    `🎯 *NEET Score:* ${score || '469'} / 720\n` +
+    `🏆 *All India Rank (AIR):* ${air ? air.toLocaleString('en-IN') : '1,34,093'}\n` +
+    `📍 *Telangana State S.No:* ${stateRank ? stateRank.toLocaleString('en-IN') : '2,363'}\n` +
+    `🏷️ *Category Rank (${catLabel}):* #${catRank ? catRank.toLocaleString('en-IN') : '276'}\n\n` +
     `📊 *Seat Eligibility Overview:*\n` +
     `• Government Colleges Eligible: ${govtEligible} / ${govtColleges.length}\n` +
     `• Private Cat-A Colleges Eligible: ${pvtEligible} / ${pvtColleges.length}\n` +
