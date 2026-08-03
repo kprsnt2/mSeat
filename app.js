@@ -1244,7 +1244,6 @@ let estimatedAIR = 0;
 let preferences = [];
 let collegeFilter = 'all';
 let searchQuery = '';
-let difficultyOffset = 35; // Default: Very Tough (2026 PChem tough, Bio easy)
 
 // ============================================================
 // UI FUNCTIONS
@@ -1290,40 +1289,8 @@ function init() {
     });
   }
 
-  // Difficulty slider
-  const diffSlider = document.getElementById('difficultySlider');
-  if (diffSlider) {
-    diffSlider.addEventListener('input', function () {
-      difficultyOffset = parseInt(this.value);
-      updateDifficultyLabel(difficultyOffset);
-      // Re-render score preview with new difficulty
-      const currentScore = document.getElementById('neetScore').value;
-      if (currentScore) updateScorePreview(currentScore);
-    });
-  }
-
   // Animate elements on load
   animateOnScroll();
-}
-
-function updateDifficultyLabel(offset) {
-  const el = document.getElementById('difficultyValue');
-  if (!el) return;
-  let label, badgeClass;
-  if (offset <= 5) { label = 'Normal'; badgeClass = 'diff-normal'; }
-  else if (offset <= 15) { label = 'Slightly Tough'; badgeClass = 'diff-slight'; }
-  else if (offset <= 30) { label = 'Tough'; badgeClass = 'diff-tough'; }
-  else { label = 'Very Tough'; badgeClass = 'diff-very-tough'; }
-  
-  el.innerHTML = `
-    <span class="diff-badge ${badgeClass}">${label}</span>
-    <span class="diff-detail">Your score treated as <strong>+${offset} marks</strong> higher for rank estimation</span>
-  `;
-}
-
-function getAdjustedScore(score) {
-  // In a tough exam, everyone scores lower, so your score is effectively worth more
-  return Math.min(720, score + difficultyOffset);
 }
 
 function updateScorePreview(score) {
@@ -1334,20 +1301,13 @@ function updateScorePreview(score) {
     preview.innerHTML = '';
     return;
   }
-  const adjustedScore = getAdjustedScore(score);
-  const rankNormal = estimateRank(score);
-  const rankAdjusted = estimateRank(adjustedScore);
-  const percentile = scoreToPercentile(adjustedScore);
-  
-  const improvement = rankNormal - rankAdjusted;
-  const showDiff = difficultyOffset > 0;
+  const rank = estimateRank(score);
+  const percentile = scoreToPercentile(score);
   
   preview.innerHTML = `
     <div class="score-preview-content">
-      ${showDiff ? `<span class="preview-adjusted">Adjusted: <strong>${adjustedScore}</strong> effective</span>` : ''}
-      <span class="preview-rank">Est. Rank: <strong>${rankAdjusted.toLocaleString('en-IN')}</strong></span>
+      <span class="preview-rank">Est. Rank: <strong>${rank.toLocaleString('en-IN')}</strong></span>
       <span class="preview-percentile">Percentile: <strong>${percentile}%</strong></span>
-      ${showDiff && improvement > 0 ? `<span class="preview-boost">↑ ${improvement.toLocaleString('en-IN')} ranks better</span>` : ''}
     </div>
   `;
 }
@@ -1371,20 +1331,19 @@ function handleProfileSubmit(e) {
     return;
   }
 
-  const adjustedScore = getAdjustedScore(score);
-  studentProfile = { name, score, adjustedScore, category, gender, localStatus, pwd, difficultyOffset };
-  estimatedAIR = estimateRank(adjustedScore);
+  studentProfile = { name, score, category, gender, localStatus, pwd };
+  estimatedAIR = estimateRank(score);
 
   renderRankResults();
   goToStep(2);
 }
 
 function renderRankResults() {
-  const { name, score, adjustedScore, category, gender } = studentProfile;
+  const { name, score, category, gender } = studentProfile;
   const air = estimatedAIR;
   const stateRank = estimateStateRank(air);
   const catRank = estimateCategoryRank(air, category);
-  const percentile = scoreToPercentile(adjustedScore);
+  const percentile = scoreToPercentile(score);
 
   // Update student info header
   document.getElementById('resultStudentName').textContent = name;

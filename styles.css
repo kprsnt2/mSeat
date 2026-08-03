@@ -696,66 +696,7 @@ body {
   to { opacity: 1; max-height: 60px; transform: translateY(0); }
 }
 
-/* --- Difficulty Section --- */
-.difficulty-section { margin-top: 4px; }
-.difficulty-section > label { margin-bottom: 12px; }
-.label-hint { font-weight: 400; color: var(--text-muted); font-size: 0.75rem; }
-.difficulty-context { margin-bottom: 14px; }
-.subject-chips { display: flex; gap: 8px; flex-wrap: wrap; }
-.subject-chip {
-  padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
-}
-.chip-easy { background: rgba(52, 211, 153, 0.1); color: var(--accent-green); border: 1px solid rgba(52, 211, 153, 0.15); }
-.chip-tough { background: rgba(248, 113, 113, 0.1); color: var(--accent-red); border: 1px solid rgba(248, 113, 113, 0.15); }
 
-.difficulty-slider-wrap { margin-bottom: 12px; }
-.difficulty-labels {
-  display: flex; justify-content: space-between; font-size: 0.68rem;
-  color: var(--text-muted); margin-bottom: 6px; padding: 0 2px;
-}
-.difficulty-slider {
-  -webkit-appearance: none; appearance: none;
-  width: 100%; height: 6px; border-radius: 3px; margin: 0;
-  background: linear-gradient(90deg, #34d399 0%, #fbbf24 40%, #fb923c 70%, #f87171 100%);
-  outline: none; cursor: pointer;
-}
-.difficulty-slider::-webkit-slider-thumb {
-  -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%;
-  background: #fff; border: 3px solid var(--accent-orange); cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-.difficulty-slider::-moz-range-thumb {
-  width: 22px; height: 22px; border-radius: 50%;
-  background: #fff; border: 3px solid var(--accent-orange); cursor: pointer;
-}
-
-.difficulty-value {
-  display: flex; align-items: center; gap: 10px; margin-top: 8px; flex-wrap: wrap;
-}
-.diff-badge {
-  padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
-}
-.diff-normal { background: rgba(52, 211, 153, 0.12); color: var(--accent-green); }
-.diff-slight { background: rgba(251, 191, 36, 0.12); color: var(--accent-gold); }
-.diff-tough { background: rgba(251, 146, 60, 0.12); color: var(--accent-orange); }
-.diff-very-tough { background: rgba(248, 113, 113, 0.12); color: var(--accent-red); }
-.diff-detail { font-size: 0.78rem; color: var(--text-muted); }
-.diff-detail strong { color: var(--text-secondary); }
-
-.form-hint {
-  font-size: 0.76rem; color: var(--text-muted); margin-top: 10px;
-  padding: 10px 12px; background: rgba(0, 212, 170, 0.04);
-  border-radius: var(--radius-sm); border-left: 3px solid rgba(0, 212, 170, 0.2);
-  line-height: 1.5;
-}
-.form-hint strong { color: var(--accent-teal); }
-
-/* --- Score Preview Additions --- */
-.preview-adjusted { color: var(--accent-gold); }
-.preview-adjusted strong { color: var(--accent-gold); }
-.preview-boost {
-  color: var(--accent-green); font-weight: 600;
-}
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
