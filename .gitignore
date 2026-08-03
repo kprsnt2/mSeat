@@ -1,0 +1,14 @@
+node_modules/
+*.txt
+*.json
+scratch/
+extract_pdf.js
+inspect_cutoff.js
+parse_*.js
+read_layout.js
+sc_seat_analysis.js
+update_app_js.js
+merge_app_cutoffs.js
+generate_app_data.js
+print_ordered.js
+detailed_sc2_analysis.js
