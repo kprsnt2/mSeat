@@ -4279,6 +4279,8 @@ function toggleCollegeList(forceShow = false) {
   }
 }
 
+let lastAllocatedResult = null;
+
 function getSummaryText() {
   const { name, score, category, customAIR, customStateRank } = studentProfile;
   const air = customAIR || estimatedAIR;
@@ -4291,7 +4293,22 @@ function getSummaryText() {
 
   const catLabel = reservationData[category]?.label || category;
 
+  let allocHeader = '';
+  if (lastAllocatedResult && lastAllocatedResult.allocated && currentStep === 4) {
+    const c = lastAllocatedResult.college;
+    const isGovt = c.type === 'govt';
+    const feeStr = formatFeeExact(isGovt ? c.fee : c.feeA);
+    allocHeader =
+      `🎉 *MOCK SEAT ALLOCATION RESULT*\n` +
+      `🏫 *Allocated College:* ${c.name} (${c.place})\n` +
+      `📌 *Preference Rank:* #${lastAllocatedResult.preferenceNo} in Web Options\n` +
+      `🏛️ *College Type:* ${isGovt ? 'Government' : 'Private Cat-A (Convener Quota)'}\n` +
+      `💰 *Annual Fee:* ${feeStr}/year\n` +
+      `📈 *Est. Closing Rank:* ${lastAllocatedResult.closingRank.toLocaleString('en-IN')}\n\n`;
+  }
+
   return `⚕️ *MSeat — Telangana MBBS Mock Counselling 2026*\n\n` +
+    allocHeader +
     `👤 *Candidate:* ${name || 'Student'}\n` +
     `🎯 *NEET Score:* ${score || '469'} / 720\n` +
     `🏆 *All India Rank (AIR):* ${air ? air.toLocaleString('en-IN') : '1,34,093'}\n` +
@@ -4301,7 +4318,7 @@ function getSummaryText() {
     `• Government Colleges Eligible: ${govtEligible} / ${govtColleges.length}\n` +
     `• Private Cat-A Colleges Eligible: ${pvtEligible} / ${pvtColleges.length}\n` +
     `• Total Eligible Options: ${govtEligible + pvtEligible}\n\n` +
-    `💡 *Web Options Strategy:* List all 36 Govt Colleges first, followed by top Private Cat-A colleges (Bhaskar, Mamata, MNR, Medicity, Prathima).\n\n` +
+    `💡 *Methodology Note:* Reverse-engineered from official Round 3 closing ranks & State Merit List trends, adjusted for the +810 newly added MBBS seats in 2026 (+110 Govt + +700 Private Cat-A).\n\n` +
     `🔗 Check your allotment simulation: https://kprsnt2.github.io/mSeat/`;
 }
 
@@ -4657,6 +4674,8 @@ function showAllocationResult() {
   const { category, name, score } = studentProfile;
   const air = estimatedAIR;
   const result = runAllocation(air, category, preferences);
+
+  lastAllocatedResult = result;
 
   const container = document.getElementById('allocationResult');
   const notAllocatedEl = document.getElementById('notAllocated');
