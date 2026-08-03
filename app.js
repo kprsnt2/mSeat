@@ -2542,45 +2542,47 @@ const govtColleges = [
     "id": 5,
     "name": "Govt Medical College, Siddipet",
     "place": "Siddipet",
-    "intake": 150,
+    "intake": 200,
     "fee": 41000,
-    "ocClosing": 84460,
+    "ocClosing": 88683,
     "knownRanks": {
-      "OC": 84460,
-      "EWS": 110199,
-      "BC_A": 224244,
-      "BC_B": 118022,
-      "BC_C": 216174,
-      "BC_D": 106760,
-      "BC_E": 110719,
-      "SC_1": 355539,
-      "SC_2": 203607,
-      "SC_3": 191184,
-      "SC": 203607,
-      "ST": 192570
-    }
+      "OC": 91344,
+      "EWS": 119180,
+      "BC_A": 242520,
+      "BC_B": 127641,
+      "BC_C": 233792,
+      "BC_D": 115461,
+      "BC_E": 119743,
+      "SC_1": 384515,
+      "SC_2": 220201,
+      "SC_3": 206766,
+      "SC": 220201,
+      "ST": 208264
+    },
+    "seatsIncreased": 25
   },
   {
     "id": 6,
     "name": "Govt Medical College, Mahabubnagar",
     "place": "Mahabubnagar",
-    "intake": 175,
+    "intake": 200,
     "fee": 41000,
-    "ocClosing": 84460,
+    "ocClosing": 88683,
     "knownRanks": {
-      "OC": 84460,
-      "EWS": 110199,
-      "BC_A": 224244,
-      "BC_B": 118022,
-      "BC_C": 216174,
-      "BC_D": 106760,
-      "BC_E": 110719,
-      "SC_1": 355539,
-      "SC_2": 203607,
-      "SC_3": 191184,
-      "SC": 203607,
-      "ST": 192570
-    }
+      "OC": 91344,
+      "EWS": 119180,
+      "BC_A": 242520,
+      "BC_B": 127641,
+      "BC_C": 233792,
+      "BC_D": 115461,
+      "BC_E": 119743,
+      "SC_1": 384515,
+      "SC_2": 220201,
+      "SC_3": 206766,
+      "SC": 220201,
+      "ST": 208264
+    },
+    "seatsIncreased": 25
   },
   {
     "id": 7,
@@ -2850,32 +2852,34 @@ const govtColleges = [
     "id": 19,
     "name": "RIMS Adilabad",
     "place": "Adilabad",
-    "intake": 120,
+    "intake": 150,
     "fee": 41000,
-    "ocClosing": 100000,
-    "knownRanks": {}
+    "ocClosing": 108750,
+    "knownRanks": {},
+    "seatsIncreased": 30
   },
   {
     "id": 20,
     "name": "Govt Medical College, Nizamabad",
     "place": "Nizamabad",
-    "intake": 175,
+    "intake": 150,
     "fee": 64000,
-    "ocClosing": 84460,
+    "ocClosing": 91850,
     "knownRanks": {
-      "OC": 84460,
-      "EWS": 110199,
-      "BC_A": 224244,
-      "BC_B": 118022,
-      "BC_C": 216174,
-      "BC_D": 106760,
-      "BC_E": 110719,
-      "SC_1": 355539,
-      "SC_2": 203607,
-      "SC_3": 191184,
-      "SC": 203607,
-      "ST": 192570
-    }
+      "OC": 94606,
+      "EWS": 123437,
+      "BC_A": 251181,
+      "BC_B": 132200,
+      "BC_C": 242142,
+      "BC_D": 119585,
+      "BC_E": 124020,
+      "SC_1": 398248,
+      "SC_2": 228065,
+      "SC_3": 214150,
+      "SC": 228065,
+      "ST": 215702
+    },
+    "seatsIncreased": 30
   },
   {
     "id": 21,
@@ -3237,12 +3241,13 @@ const pvtColleges = [
     "id": 101,
     "name": "Bhaskar Medical College",
     "place": "Moinabad, Rangareddy",
-    "intake": 150,
+    "intake": 200,
     "feeA": 60000,
     "feeB": 1155000,
     "feeC": 2300000,
-    "ocClosing": 180000,
-    "knownRanks": {}
+    "ocClosing": 201000,
+    "knownRanks": {},
+    "seatsIncreased": 50
   },
   {
     "id": 102,
@@ -3259,12 +3264,13 @@ const pvtColleges = [
     "id": 103,
     "name": "Maheshwara Medical College",
     "place": "Patancheru, Medak",
-    "intake": 150,
+    "intake": 250,
     "feeA": 60000,
     "feeB": 1155000,
     "feeC": 2300000,
-    "ocClosing": 180000,
-    "knownRanks": {}
+    "ocClosing": 222000,
+    "knownRanks": {},
+    "seatsIncreased": 100
   },
   {
     "id": 104,
@@ -3281,25 +3287,26 @@ const pvtColleges = [
     "id": 105,
     "name": "MNR Medical College",
     "place": "Sangareddy",
-    "intake": 150,
+    "intake": 250,
     "feeA": 60000,
     "feeB": 1300000,
     "feeC": 2600000,
-    "ocClosing": 187070,
+    "ocClosing": 230720,
     "knownRanks": {
-      "OC": 187070,
+      "OC": 258406,
       "EWS": 9999999,
-      "BC_A": 328014,
-      "BC_B": 206597,
-      "BC_C": 290427,
-      "BC_D": 196533,
-      "BC_E": 208155,
+      "BC_A": 453097,
+      "BC_B": 285380,
+      "BC_C": 401176,
+      "BC_D": 271478,
+      "BC_E": 287532,
       "SC_1": 9999999,
-      "SC_2": 307197,
-      "SC_3": 269155,
-      "SC": 307197,
-      "ST": 257962
-    }
+      "SC_2": 424342,
+      "SC_3": 371793,
+      "SC": 424342,
+      "ST": 356331
+    },
+    "seatsIncreased": 100
   },
   {
     "id": 106,
@@ -3417,23 +3424,25 @@ const pvtColleges = [
     "id": 115,
     "name": "Shadan Institute of Medical Sciences",
     "place": "Hyderabad",
-    "intake": 150,
+    "intake": 250,
     "feeA": 60000,
     "feeB": 1300000,
     "feeC": 2400000,
-    "ocClosing": 180000,
-    "knownRanks": {}
+    "ocClosing": 222000,
+    "knownRanks": {},
+    "seatsIncreased": 100
   },
   {
     "id": 116,
     "name": "Mamata Academy of Medical Sciences",
     "place": "Bachupally",
-    "intake": 150,
+    "intake": 200,
     "feeA": 60000,
     "feeB": 1200000,
     "feeC": 2400000,
-    "ocClosing": 180000,
-    "knownRanks": {}
+    "ocClosing": 201000,
+    "knownRanks": {},
+    "seatsIncreased": 50
   },
   {
     "id": 117,
@@ -3483,12 +3492,13 @@ const pvtColleges = [
     "id": 121,
     "name": "S.V.S. Medical College",
     "place": "Mahabubnagar",
-    "intake": 150,
+    "intake": 200,
     "feeA": 60000,
     "feeB": 1250000,
     "feeC": 2500000,
-    "ocClosing": 180000,
-    "knownRanks": {}
+    "ocClosing": 201000,
+    "knownRanks": {},
+    "seatsIncreased": 50
   },
   {
     "id": 122,
@@ -3555,6 +3565,32 @@ const pvtColleges = [
     "feeC": 2400000,
     "ocClosing": 180000,
     "knownRanks": {}
+  },
+  {
+    "id": 128,
+    "name": "Raja Rajeshwari Institute of Medical Sciences (Girls)",
+    "place": "Telangana",
+    "intake": 150,
+    "seatsIncreased": 150,
+    "isNew": true,
+    "feeA": 60000,
+    "feeB": 1155000,
+    "feeC": 2300000,
+    "ocClosing": null,
+    "knownRanks": {
+      "OC": null,
+      "EWS": null,
+      "BC_A": null,
+      "BC_B": null,
+      "BC_C": null,
+      "BC_D": null,
+      "BC_E": null,
+      "SC_1": null,
+      "SC_2": null,
+      "SC_3": null,
+      "SC": null,
+      "ST": null
+    }
   }
 ];
 
