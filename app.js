@@ -4577,8 +4577,6 @@ function init() {
     });
   }
 
-  // Animate elements on load
-  animateOnScroll();
 }
 
 function estimateAIRFromSno(sno) {
@@ -4960,20 +4958,6 @@ function showToast(message, type = 'info') {
     setTimeout(() => toast.remove(), 300);
   }, 3500);
 }
-
-// --- Scroll Animations ---
-function animateOnScroll() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-}
-
 // --- Quota Info Modal ---
 function showQuotaInfo() {
   const modal = document.getElementById('quotaModal');
