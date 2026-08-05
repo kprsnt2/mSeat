@@ -4410,7 +4410,12 @@ function changeSortMode(mode) {
   preferences = buildPreferences(mode);
   toggleCollegeList(true);
   renderCollegeList();
-  showToast(mode === 'mixed' ? 'Sorted by Combined Cutoff Rank (Mixed)' : 'Sorted by Categorized (Govt ➔ Pvt ➔ Minority)', 'info');
+  showToast(
+    mode === 'research' ? 'Sorted by Master Research Order (Govt + Pvt Mixed)' :
+    mode === 'mixed' ? 'Sorted by Combined Cutoff Rank (Mixed)' :
+    'Sorted by Categorized (Govt ➔ Pvt ➔ Minority)',
+    'info'
+  );
 }
 
 let isCollegeListVisible = false;
@@ -4501,6 +4506,9 @@ function copyOptionsSummary() {
 }
 
 function init() {
+  // Pre-render Master Research Table
+  renderMasterTable();
+
   // Build default preference list (Govt first -> Pvt -> Minority last)
   preferences = buildPreferences('categorized');
 

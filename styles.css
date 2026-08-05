@@ -682,6 +682,35 @@ body {
 }
 .info-table td { color: var(--text-secondary); }
 
+#masterExplorerTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+#masterExplorerTable th {
+  position: sticky;
+  top: 0;
+  background: #1e1b4b !important;
+  color: #fbbf24 !important;
+  padding: 12px 10px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-glass);
+  z-index: 5;
+}
+
+#masterExplorerTable td {
+  padding: 10px;
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#masterExplorerTable tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
 .modal-disclaimer {
   padding: 16px; border-radius: var(--radius-sm);
   background: rgba(248, 113, 113, 0.06); border: 1px solid rgba(248, 113, 113, 0.15);
