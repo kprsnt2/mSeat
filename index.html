@@ -33,10 +33,12 @@
           <span class="brand-subtitle">Telangana MBBS Mock Counselling 2026</span>
         </div>
       </div>
-      <div class="header-actions">
+      <div class="header-actions" style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button class="btn-outline" onclick="showMasterTableModal()" style="border-color: #fbbf24; color: #fbbf24;">
+          ⭐ Master College Explorer (66 Colleges)
+        </button>
         <button class="btn-outline" onclick="showQuotaInfo()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-          Quota Info
+          Quota & FAQ Info
         </button>
       </div>
     </div>
@@ -342,7 +344,8 @@
             <label for="sortStrategy" style="font-size: 0.84rem; color: rgba(255,255,255,0.7); font-weight: 500; white-space: nowrap;">Ordering:</label>
             <select id="sortStrategy" class="sort-select" onchange="changeSortMode(this.value)">
               <option value="categorized" selected>🏛️ Categorized (Govt ➔ Pvt ➔ Minority)</option>
-              <option value="mixed">🏆 Mixed (Combined Cutoff Rank)</option>
+              <option value="research">⭐ Master Research Order (Govt + Pvt Mixed)</option>
+              <option value="mixed">🏆 Combined Cutoff Rank Order</option>
             </select>
           </div>
 
@@ -598,6 +601,56 @@
     </div>
   </footer>
 
-  <script src="app.js?v=20260803_v16"></script>
+  <!-- Master Research Table Modal -->
+  <div id="masterTableModal" class="modal-overlay" onclick="if(event.target===this)closeMasterTableModal()">
+    <div class="modal-card glass-card" style="max-width: 1080px; width: 95%;">
+      <div class="modal-header">
+        <h2>⭐ Master College Explorer (66 Colleges)</h2>
+        <button class="modal-close" onclick="closeMasterTableModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.86rem; color: rgba(255,255,255,0.8); margin-bottom: 14px; line-height: 1.5;">
+          Complete research-backed preference list for all <strong>36 Government & 30 Private Medical Colleges</strong> in Telangana based on Establishment Year, PG Seat Status, Clinical Patient Flow, Google Ratings, and Round 3 Cutoffs.
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+          <div class="filter-group">
+            <button class="filter-btn active" onclick="filterMasterTable('all', this)">All (66)</button>
+            <button class="filter-btn" onclick="filterMasterTable('govt', this)">Government (36)</button>
+            <button class="filter-btn" onclick="filterMasterTable('pvt', this)">Private (30)</button>
+          </div>
+          <button class="btn-outline" onclick="copyMasterTableList()" style="font-size: 0.82rem; padding: 6px 12px; border-color: #fbbf24; color: #fbbf24;">
+            📋 Copy Complete Web Options List
+          </button>
+          <div class="search-box" style="min-width: 220px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" id="masterSearchInput" placeholder="Search college, city..." oninput="renderMasterTable()">
+          </div>
+        </div>
+
+        <div class="modal-section" style="max-height: 60vh; overflow-y: auto;">
+          <table class="info-table" id="masterExplorerTable" style="font-size: 0.82rem;">
+            <thead>
+              <tr>
+                <th style="width: 50px;">Pref #</th>
+                <th>College Name</th>
+                <th>Type</th>
+                <th>District / City</th>
+                <th style="width: 70px;">Est. Year</th>
+                <th style="width: 80px;">PG Seats?</th>
+                <th style="width: 80px;">Rating</th>
+                <th>Status / Recommendation Note</th>
+              </tr>
+            </thead>
+            <tbody id="masterTableBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=20260805_v17"></script>
 </body>
 </html>
