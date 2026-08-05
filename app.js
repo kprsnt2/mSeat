@@ -4635,14 +4635,14 @@ function updateScorePreview(score, customAIR, customSno) {
 function handleProfileSubmit(e) {
   e.preventDefault();
 
-  const name = document.getElementById('studentName').value.trim() || 'Student';
+  const name = document.getElementById('studentName')?.value?.trim() || 'Student';
   const airInputVal = parseInt(document.getElementById('neetAIR')?.value);
   const snoInputVal = parseInt(document.getElementById('stateSno')?.value);
   const scoreInputVal = parseInt(document.getElementById('neetScore')?.value);
-  const category = document.getElementById('categorySelect').value;
-  const gender = document.getElementById('genderSelect').value;
-  const localStatus = document.getElementById('localSelect').value;
-  const pwd = document.getElementById('pwdCheckbox').checked;
+  const category = document.getElementById('categorySelect')?.value || 'SC_2';
+  const gender = document.getElementById('genderSelect')?.value || 'female';
+  const localStatus = document.getElementById('localSelect')?.value || 'local';
+  const pwd = document.getElementById('pwdCheckbox')?.checked || false;
 
   let air = null;
   let score = null;
@@ -4661,13 +4661,15 @@ function handleProfileSubmit(e) {
     air = estimateRank(score);
     stateRank = estimateStateRank(air);
   } else {
-    showToast('Please enter All India Rank (AIR), State Serial No, or NEET Score', 'error');
-    return;
+    // Default fallback to 134093 AIR / 2363 State S.No / 469 Score if user leaves fields blank
+    air = 134093;
+    score = 469;
+    stateRank = 2363;
   }
 
   const cutoff = qualifyingCutoffs[category] || 113;
   if (score < cutoff) {
-    showToast(`Score ${score} is below qualifying cutoff (${cutoff}) for ${reservationData[category].label}`, 'error');
+    showToast(`Score ${score} is below qualifying cutoff (${cutoff}) for ${reservationData[category]?.label || category}`, 'error');
     return;
   }
 
@@ -4680,15 +4682,15 @@ function handleProfileSubmit(e) {
 
 function renderRankResults() {
   const { name, score, category, gender, customAIR, customStateRank } = studentProfile;
-  const air = customAIR || estimatedAIR;
-  const stateRank = customStateRank || estimateStateRank(air);
+  const air = customAIR || estimatedAIR || 134093;
+  const stateRank = customStateRank || estimateStateRank(air) || 2363;
   const catRank = estimateCategoryRank(air, category, stateRank);
   const percentile = Math.max(0, Math.min(100, ((2209000 - air) / 2209000 * 100))).toFixed(2);
 
   // Update student info header
   document.getElementById('resultStudentName').textContent = name;
   document.getElementById('resultScore').textContent = score + ' / 720';
-  document.getElementById('resultCategory').textContent = reservationData[category].label;
+  document.getElementById('resultCategory').textContent = reservationData[category]?.label || category;
   document.getElementById('resultGender').textContent = gender === 'female' ? '♀ Female' : '♂ Male';
 
   // Update rank cards
@@ -4750,6 +4752,7 @@ function goToStep(step) {
 
   // Render college list when going to step 3
   if (step === 3) {
+    toggleCollegeList(true);
     renderCollegeList();
   }
 
@@ -4761,8 +4764,8 @@ function renderCollegeList() {
   const container = document.getElementById('collegeList');
   if (!container) return;
 
-  const { category } = studentProfile;
-  const air = estimatedAIR;
+  const category = studentProfile.category || 'SC_2';
+  const air = estimatedAIR || 134093;
 
   let filtered = [...preferences];
 
