@@ -647,10 +647,53 @@
             </tbody>
           </table>
         </div>
+  <!-- AI Chatbot Floating Trigger Button -->
+  <button id="ai-chat-fab" class="ai-chat-fab" title="Ask mSeat AI Predictor (gpt-5.4-mini)">
+    <div class="ai-fab-icon">🤖</div>
+    <span class="ai-fab-label">mSeat AI Predictor</span>
+    <span class="ai-fab-badge">gpt-5.4-mini</span>
+  </button>
+
+  <!-- AI Chatbot Drawer Panel -->
+  <div id="ai-chat-drawer" class="ai-chat-drawer hidden">
+    <div class="ai-chat-header">
+      <div class="ai-header-title">
+        <span class="ai-bot-avatar">🤖</span>
+        <div>
+          <h3>mSeat AI Counselor</h3>
+          <span class="ai-sub-badge">Powered by gpt-5.4-mini + MCP</span>
+        </div>
       </div>
+      <button id="ai-chat-close" class="ai-close-btn" title="Close Chat">&times;</button>
+    </div>
+
+    <!-- Quick Prompt Pills -->
+    <div class="ai-quick-pills">
+      <button class="quick-pill-btn" onclick="sendQuickPrompt('393 marks SC2 female probability')">393 Marks SC2 Female</button>
+      <button class="quick-pill-btn" onclick="sendQuickPrompt('Mamata Bachupally vs CMR Medchal')">Mamata vs CMR</button>
+      <button class="quick-pill-btn" onclick="sendQuickPrompt('2026 seat expansion stats')">2026 Seat Stats</button>
+    </div>
+
+    <!-- Chat Messages Scroll Container -->
+    <div id="ai-chat-messages" class="ai-chat-messages">
+      <div class="chat-msg bot-msg">
+        <div class="msg-avatar">🤖</div>
+        <div class="msg-content">
+          <p>Hello! I am your <strong>mSeat AI Admission Counselor</strong> powered by <code>gpt-5.4-mini</code> & <strong>mSeat MCP Engine</strong>.</p>
+          <p>Ask me anything about NEET scores, State Merit positions, SC1/SC2/SC3 cutoffs, college comparisons, or 2026 seat expansion stats!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Input Form -->
+    <div class="ai-chat-input-container">
+      <textarea id="ai-chat-input" placeholder="Type your query (e.g. '393 marks SC2 female')..." rows="1"></textarea>
+      <button id="ai-chat-send" class="ai-send-btn" title="Send Query">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </button>
     </div>
   </div>
 
-  <script src="app.js?v=20260805_v25"></script>
+  <script src="app.js?v=20260813_v1"></script>
 </body>
 </html>

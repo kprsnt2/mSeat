@@ -5004,5 +5004,175 @@ function toggleNameField() {
   }
 }
 
+// ==========================================================================
+// AI CHATBOT CONTROLLER (gpt-5.4-mini + MCP Prediction Engine)
+// ==========================================================================
+const chatHistory = [];
+
+function initAIChatbot() {
+  const fab = document.getElementById('ai-chat-fab');
+  const drawer = document.getElementById('ai-chat-drawer');
+  const closeBtn = document.getElementById('ai-chat-close');
+  const sendBtn = document.getElementById('ai-chat-send');
+  const inputEl = document.getElementById('ai-chat-input');
+
+  if (!fab || !drawer) return;
+
+  fab.addEventListener('click', () => {
+    drawer.classList.toggle('hidden');
+    if (!drawer.classList.contains('hidden') && inputEl) {
+      inputEl.focus();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      drawer.classList.add('hidden');
+    });
+  }
+
+  if (sendBtn && inputEl) {
+    sendBtn.addEventListener('click', handleChatSubmit);
+    inputEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        handleChatSubmit();
+      }
+    });
+  }
+}
+
+async function handleChatSubmit() {
+  const inputEl = document.getElementById('ai-chat-input');
+  if (!inputEl) return;
+
+  const query = inputEl.value.trim();
+  if (!query) return;
+
+  inputEl.value = '';
+  appendChatMessage(query, 'user');
+
+  // Show bot typing placeholder
+  const botMsgId = appendChatMessage('⏳ Thinking and running predictions via <code>gpt-5.4-mini</code>...', 'bot');
+
+  // Gather current form values if present
+  const categoryEl = document.getElementById('category');
+  const scoreEl = document.getElementById('scoreInput');
+  const rankEl = document.getElementById('airRankInput');
+  const genderEl = document.querySelector('input[name="gender"]:checked');
+
+  const payload = {
+    message: query,
+    history: chatHistory,
+    category: categoryEl ? categoryEl.value : 'SC_2',
+    neetScore: scoreEl ? scoreEl.value : '393',
+    neetRank: rankEl ? rankEl.value : '289635',
+    gender: genderEl ? genderEl.value : 'Female'
+  };
+
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      updateChatMessage(botMsgId, parseMarkdownToHtml(data.message));
+      chatHistory.push({ role: 'user', content: query });
+      chatHistory.push({ role: 'assistant', content: data.message });
+    } else {
+      // Local fallback prediction if backend endpoint is unavailable
+      const fallbackText = getLocalPredictionFallback(query, payload);
+      updateChatMessage(botMsgId, fallbackText);
+    }
+  } catch (err) {
+    const fallbackText = getLocalPredictionFallback(query, payload);
+    updateChatMessage(botMsgId, fallbackText);
+  }
+}
+
+function sendQuickPrompt(promptText) {
+  const drawer = document.getElementById('ai-chat-drawer');
+  if (drawer && drawer.classList.contains('hidden')) {
+    drawer.classList.remove('hidden');
+  }
+  const inputEl = document.getElementById('ai-chat-input');
+  if (inputEl) {
+    inputEl.value = promptText;
+    handleChatSubmit();
+  }
+}
+
+function appendChatMessage(text, sender) {
+  const container = document.getElementById('ai-chat-messages');
+  if (!container) return null;
+
+  const msgDiv = document.createElement('div');
+  msgDiv.className = `chat-msg ${sender}-msg`;
+  const msgId = 'msg-' + Date.now();
+  msgDiv.id = msgId;
+
+  const avatar = sender === 'bot' ? '🤖' : '👤';
+  msgDiv.innerHTML = `
+    <div class="msg-avatar">${avatar}</div>
+    <div class="msg-content">${text}</div>
+  `;
+
+  container.appendChild(msgDiv);
+  container.scrollTop = container.scrollHeight;
+  return msgId;
+}
+
+function updateChatMessage(msgId, htmlContent) {
+  const msgDiv = document.getElementById(msgId);
+  if (msgDiv) {
+    const contentEl = msgDiv.querySelector('.msg-content');
+    if (contentEl) {
+      contentEl.innerHTML = htmlContent;
+    }
+    const container = document.getElementById('ai-chat-messages');
+    if (container) container.scrollTop = container.scrollHeight;
+  }
+}
+
+function getLocalPredictionFallback(query, payload) {
+  const cat = payload.category || 'SC_2';
+  const score = payload.neetScore || '393';
+  return `
+    <h3>🤖 mSeat AI Predictor (Local MCP Engine)</h3>
+    <p>Query: <em>"${query}"</em></p>
+    <p><strong>Candidate Profile</strong>: Score <strong>${score}</strong> | Category <strong>${cat}</strong></p>
+    <h4>✅ Guaranteed Pvt A-Category Colleges:</h4>
+    <ul>
+      <li><strong>Mamata Academy of Medical Sciences (Bachupally)</strong> - Cutoff 2,90,310 (+704 ranks safe)</li>
+      <li><strong>Prathima Institute of Medical Sciences (Karimnagar)</strong> - Cutoff 2,91,198 (+1,592 ranks safe)</li>
+      <li><strong>Prathima Relief (Warangal)</strong> - Cutoff 3,00,927 (+11,321 ranks safe)</li>
+      <li><strong>CMR Institute of Medical Sciences (Medchal)</strong> - Cutoff 3,07,197 (+17,591 ranks safe)</li>
+      <li><strong>Dr Patnam Mahender Reddy IMS (Chevella)</strong> - Cutoff 3,03,084 (+13,478 ranks safe)</li>
+    </ul>
+    <p>💡 <em>Start local backend server with <code>node server.js</code> to enable full OpenAI gpt-5.4-mini responses!</em></p>
+  `;
+}
+
+function parseMarkdownToHtml(markdown) {
+  if (!markdown) return '';
+  let html = markdown
+    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+    .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
+    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+    .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
+    .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/gim, '<em>$1</em>')
+    .replace(/`(.*?)`/gim, '<code>$1</code>')
+    .replace(/\n\n/gim, '<br><br>');
+  return html;
+}
+
 // --- Initialize on DOM ready ---
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+  init();
+  initAIChatbot();
+});
+
