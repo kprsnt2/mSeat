@@ -192,31 +192,95 @@ app.post('/api/mcp', (req, res) => {
   }
 });
 
-function formatFallbackResponse(userMsg, pred) {
-  const { query, summary, eligible_private_colleges, borderline_colleges } = pred;
-  const cat = query.category || 'SC2';
-  const score = query.neet_score || '393';
-  const air = query.neet_rank || 289606;
+function formatFallbackResponse(userMsg, payload) {
+  const qLower = (userMsg || '').toLowerCase();
+
+  // 1. Check for Score override in user query
+  let score = parseFloat(payload ? payload.neetScore : 393) || 393;
+  const scoreMatch = qLower.match(/(\d{3})\s*(marks|score|pts)?/);
+  if (scoreMatch && parseInt(scoreMatch[1]) >= 100 && parseInt(scoreMatch[1]) <= 720) {
+    score = parseInt(scoreMatch[1]);
+  }
+
+  // 2. Check for Category override
+  let catKey = (payload ? payload.category : 'SC_2') || 'SC_2';
+  catKey = catKey.toUpperCase().replace('-', '_');
+
+  if (qLower.includes('oc')) catKey = 'OC';
+  else if (qLower.includes('ews')) catKey = 'EWS';
+  else if (qLower.includes('bc-a') || qLower.includes('bca')) catKey = 'BC_A';
+  else if (qLower.includes('bc-b') || qLower.includes('bcb')) catKey = 'BC_B';
+  else if (qLower.includes('bc-c') || qLower.includes('bcc')) catKey = 'BC_C';
+  else if (qLower.includes('bc-d') || qLower.includes('bcd')) catKey = 'BC_D';
+  else if (qLower.includes('bc-e') || qLower.includes('bce')) catKey = 'BC_E';
+  else if (qLower.includes('sc-1') || qLower.includes('sc1')) catKey = 'SC_1';
+  else if (qLower.includes('sc-2') || qLower.includes('sc2')) catKey = 'SC_2';
+  else if (qLower.includes('sc-3') || qLower.includes('sc3')) catKey = 'SC_3';
+  else if (qLower.includes('st')) catKey = 'ST';
+
+  // 3. Comparison Intent
+  if (qLower.includes(' vs ') || qLower.includes('versus') || qLower.includes('compare')) {
+    const parts = qLower.split(/vs|versus|compare/i);
+    const colA = parts[0]?.trim() || 'mamata';
+    const colB = parts[1]?.trim() || 'cmr';
+    const comp = handleToolCall('compare_colleges', { college_a: colA, college_b: colB, category: catKey });
+    if (comp.college_a && comp.college_b) {
+      const cA = comp.college_a;
+      const cB = comp.college_b;
+      return `### ⚖️ College Comparison (${catKey} Category)\n\n` +
+        `| Metric | **${cA.name}** | **${cB.name}** |\n` +
+        `| :--- | :--- | :--- |\n` +
+        `| **Type** | ${cA.type} | ${cB.type} |\n` +
+        `| **Intake** | ${cA.intake} Seats | ${cB.intake} Seats |\n` +
+        `| **${catKey} Cutoff AIR** | ${cA.cutoffs?.[catKey] || 'N/A'} | ${cB.cutoffs?.[catKey] || 'N/A'} |\n`;
+    }
+  }
+
+  // 4. Seat Stats Intent
+  if (qLower.includes('seat') || qLower.includes('expansion') || qLower.includes('stats') || qLower.includes('increase')) {
+    const stats = handleToolCall('get_seat_expansion_stats', {});
+    let text = `### 📊 2026 Telangana MBBS Seat Expansion Stats\n\n`;
+    text += `* **Total GMC Intake**: ${stats.total_gmc_intake} Seats (${stats.total_gmc_colleges} Colleges)\n`;
+    text += `* **Total Pvt Intake**: ${stats.total_pvt_intake} Seats (${stats.total_pvt_colleges} Colleges)\n\n`;
+    text += `#### Government Seat Increases (+110 seats):\n`;
+    stats.gmc_seat_increases.forEach(s => text += `- **${s.college}**: ${s.increase}\n`);
+    text += `\n#### Private Seat Increases (+350 seats):\n`;
+    stats.pvt_seat_increases.forEach(s => text += `- **${s.college}**: ${s.increase}\n`);
+    return text;
+  }
+
+  // 5. Run prediction tool dynamically
+  const pred = handleToolCall('predict_college_allotment', { neet_score: score, category: catKey });
+  const { query, summary, eligible_govt_colleges, eligible_private_colleges, borderline_colleges } = pred;
 
   let text = `### 🤖 mSeat AI Admission Prediction (${OPENAI_MODEL})\n\n`;
-  text += `**Candidate Profile**: Score **${score}** | AIR **${air.toLocaleString()}** | Category **${cat}**\n\n`;
+  text += `**Evaluated Profile**: Score **${score} Marks** | Est. AIR **${query.neet_rank.toLocaleString()}** | Est. State S.No **#${query.estimated_state_sno.toLocaleString()}** | Category **${catKey}**\n\n`;
+
+  if (eligible_govt_colleges.length > 0) {
+    text += `#### 🏛️ Eligible Government Medical Colleges (${eligible_govt_colleges.length}):\n`;
+    eligible_govt_colleges.slice(0, 5).forEach(c => {
+      text += `- **${c.name}** (${c.place}) - Cutoff AIR ${c.cutoffRank.toLocaleString()} (+${c.safetyMargin.toLocaleString()} ranks safe)\n`;
+    });
+    text += `\n`;
+  } else {
+    text += `ℹ️ *No Government Medical Colleges clear the cutoff at ${score} marks for ${catKey} category.*\n\n`;
+  }
 
   if (eligible_private_colleges.length > 0) {
-    text += `#### ✅ Top Guaranteed A-Category (Convenor) Private Colleges (${eligible_private_colleges.length} Total):\n\n`;
-    text += `| College Name | Location | SC2 Cutoff AIR | Safety Margin |\n| :--- | :--- | :---: | :---: |\n`;
-    eligible_private_colleges.slice(0, 7).forEach(c => {
+    text += `#### ✅ Eligible Private A-Category Colleges (${eligible_private_colleges.length} Total):\n\n`;
+    text += `| College Name | Location | ${catKey} Cutoff AIR | Safety Margin |\n| :--- | :--- | :---: | :---: |\n`;
+    eligible_private_colleges.slice(0, 6).forEach(c => {
       text += `| **${c.name}** | ${c.place} | ${c.cutoffRank.toLocaleString()} | **+${c.safetyMargin.toLocaleString()} ranks safe** |\n`;
     });
   }
 
   if (borderline_colleges.length > 0) {
     text += `\n#### ⚡ Upgradation / Close Call Colleges:\n`;
-    borderline_colleges.slice(0, 4).forEach(c => {
+    borderline_colleges.slice(0, 3).forEach(c => {
       text += `- **${c.name}** (${c.type}): Cutoff AIR ${c.cutoffRank.toLocaleString()} (Short by ${Math.abs(c.safetyMargin).toLocaleString()} ranks)\n`;
     });
   }
 
-  text += `\n> **Summary**: 100% chance for A-Category Private MBBS seats in top colleges like Mamata Academy Bachupally, CMR Medchal, PMR Chevella, and Mahavir Vikarabad!`;
   return text;
 }
 

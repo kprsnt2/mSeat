@@ -5141,22 +5141,151 @@ function updateChatMessage(msgId, htmlContent) {
 }
 
 function getLocalPredictionFallback(query, payload) {
-  const cat = payload.category || 'SC_2';
-  const score = payload.neetScore || '393';
-  return `
-    <h3>🤖 mSeat AI Admission Counselor</h3>
-    <p>Query: <em>"${query}"</em></p>
-    <p><strong>Candidate Profile</strong>: Score <strong>${score}</strong> | Category <strong>${cat}</strong></p>
-    <h4>✅ Guaranteed Pvt A-Category Colleges:</h4>
-    <ul>
-      <li><strong>Mamata Academy of Medical Sciences (Bachupally)</strong> - Cutoff 2,90,310 (+704 ranks safe)</li>
-      <li><strong>Prathima Institute of Medical Sciences (Karimnagar)</strong> - Cutoff 2,91,198 (+1,592 ranks safe)</li>
-      <li><strong>Prathima Relief (Warangal)</strong> - Cutoff 3,00,927 (+11,321 ranks safe)</li>
-      <li><strong>CMR Institute of Medical Sciences (Medchal)</strong> - Cutoff 3,07,197 (+17,591 ranks safe)</li>
-      <li><strong>Dr Patnam Mahender Reddy IMS (Chevella)</strong> - Cutoff 3,03,084 (+13,478 ranks safe)</li>
-    </ul>
-    <p>⚡ <em>Prediction calculated using mSeat 2026 Merit List & Cutoff Engine.</em></p>
-  `;
+  return processDynamicQuery(query, payload);
+}
+
+function processDynamicQuery(query, payload) {
+  const qLower = (query || '').toLowerCase();
+  
+  // 1. Check for Score override in query (e.g. "what about 353 marks", "350 score", "450 marks")
+  let score = parseFloat(payload ? payload.neetScore : 393) || 393;
+  const scoreMatch = qLower.match(/(\d{3})\s*(marks|score|pts)?/);
+  if (scoreMatch && parseInt(scoreMatch[1]) >= 100 && parseInt(scoreMatch[1]) <= 720) {
+    score = parseInt(scoreMatch[1]);
+  }
+
+  // 2. Check for Category override in query
+  let catKey = (payload ? payload.category : 'SC_2') || 'SC_2';
+  catKey = catKey.toUpperCase().replace('-', '_');
+
+  if (qLower.includes('oc')) catKey = 'OC';
+  else if (qLower.includes('ews')) catKey = 'EWS';
+  else if (qLower.includes('bc-a') || qLower.includes('bca')) catKey = 'BC_A';
+  else if (qLower.includes('bc-b') || qLower.includes('bcb')) catKey = 'BC_B';
+  else if (qLower.includes('bc-c') || qLower.includes('bcc')) catKey = 'BC_C';
+  else if (qLower.includes('bc-d') || qLower.includes('bcd')) catKey = 'BC_D';
+  else if (qLower.includes('bc-e') || qLower.includes('bce')) catKey = 'BC_E';
+  else if (qLower.includes('sc-1') || qLower.includes('sc1')) catKey = 'SC_1';
+  else if (qLower.includes('sc-2') || qLower.includes('sc2')) catKey = 'SC_2';
+  else if (qLower.includes('sc-3') || qLower.includes('sc3')) catKey = 'SC_3';
+  else if (qLower.includes('st')) catKey = 'ST';
+
+  // 3. Intent: Comparison (e.g. "Mamata Bachupally vs CMR Medchal" or "compare X and Y")
+  if (qLower.includes(' vs ') || qLower.includes('versus') || qLower.includes('compare')) {
+    const all = [...(typeof govtColleges !== 'undefined' ? govtColleges : []), ...(typeof pvtColleges !== 'undefined' ? pvtColleges : [])];
+    const matches = all.filter(c => qLower.includes(c.name.toLowerCase().split(' ')[0]) || qLower.includes(c.place.toLowerCase()));
+    if (matches.length >= 2) {
+      const colA = matches[0];
+      const colB = matches[1];
+      const rankA = colA.knownRanks?.[catKey] || colA.knownRanks?.SC || 'N/A';
+      const rankB = colB.knownRanks?.[catKey] || colB.knownRanks?.SC || 'N/A';
+      return `
+        <h3>⚖️ College Comparison (${catKey} Category)</h3>
+        <table>
+          <thead>
+            <tr><th>Metric</th><th>${colA.name}</th><th>${colB.name}</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Place</strong></td><td>${colA.place}</td><td>${colB.place}</td></tr>
+            <tr><td><strong>Type</strong></td><td>${colA.type === 'govt' ? 'GOVT' : 'PVT-A'}</td><td>${colB.type === 'govt' ? 'GOVT' : 'PVT-A'}</td></tr>
+            <tr><td><strong>Intake</strong></td><td>${colA.intake} seats</td><td>${colB.intake} seats</td></tr>
+            <tr><td><strong>${catKey} Cutoff AIR</strong></td><td>${typeof rankA === 'number' ? rankA.toLocaleString() : rankA}</td><td>${typeof rankB === 'number' ? rankB.toLocaleString() : rankB}</td></tr>
+          </tbody>
+        </table>
+        <p>💡 <em>Comparative prediction based on official closing cutoffs.</em></p>
+      `;
+    }
+  }
+
+  // 4. Intent: Seat Expansion Stats
+  if (qLower.includes('seat') || qLower.includes('expansion') || qLower.includes('stats') || qLower.includes('increase')) {
+    return `
+      <h3>📊 2026 Telangana MBBS Seat Expansion Stats</h3>
+      <p><strong>Government Medical Colleges Seat Increases (+110 seats)</strong>:</p>
+      <ul>
+        <li>GMC Mahabubnagar: +25 seats (175 ➔ 200)</li>
+        <li>GMC Nizamabad: +30 seats (120 ➔ 150)</li>
+        <li>GMC Siddipet: +25 seats (175 ➔ 200)</li>
+        <li>RIMS Adilabad: +30 seats (120 ➔ 150)</li>
+      </ul>
+      <p><strong>Private Medical Colleges Seat Increases (+350 seats)</strong>:</p>
+      <ul>
+        <li>Bhaskar Medical College: +50 seats (150 ➔ 200)</li>
+        <li>Maheshwara Medical College: +100 seats (150 ➔ 250)</li>
+        <li>Malla Reddy IMS: +50 seats (200 ➔ 250)</li>
+        <li>Mamata Academy Bachupally: +50 seats (150 ➔ 200)</li>
+        <li>MNR Sangareddy: +100 seats (150 ➔ 250)</li>
+      </ul>
+      <p><strong>New Colleges</strong>: Raja Rajeshwari Institute of Medical Sciences (Girls) - 150 Seats</p>
+    `;
+  }
+
+  // 5. Intent: Dynamic Admission Prediction for the extracted score & category
+  const air = typeof estimateRank === 'function' ? estimateRank(score) : 289635;
+  const stateSno = typeof estimateStateRank === 'function' ? estimateStateRank(air) : 8902;
+
+  const gList = typeof govtColleges !== 'undefined' ? govtColleges : [];
+  const pList = typeof pvtColleges !== 'undefined' ? pvtColleges : [];
+
+  const all = [
+    ...gList.map(c => ({ ...c, typeText: 'GOVT' })),
+    ...pList.map(c => ({ ...c, typeText: 'PVT-A' }))
+  ];
+
+  let eligibleGmc = [];
+  let eligiblePvt = [];
+  let borderline = [];
+
+  all.forEach(c => {
+    const cutoff = c.knownRanks?.[catKey] || c.knownRanks?.SC || c.knownRanks?.OC;
+    if (!cutoff || cutoff === 9999999) return;
+    const diff = cutoff - air;
+    const item = { name: c.name, place: c.place, type: c.typeText, cutoffRank: cutoff, safetyMargin: diff };
+
+    if (diff >= 0) {
+      if (c.typeText === 'GOVT') eligibleGmc.push(item);
+      else eligiblePvt.push(item);
+    } else if (diff >= -30000) {
+      borderline.push(item);
+    }
+  });
+
+  eligibleGmc.sort((a, b) => a.cutoffRank - b.cutoffRank);
+  eligiblePvt.sort((a, b) => a.cutoffRank - b.cutoffRank);
+  borderline.sort((a, b) => b.cutoffRank - a.cutoffRank);
+
+  let html = `<h3>🤖 mSeat AI Admission Counselor</h3>`;
+  html += `<p>Query: <em>"${query}"</em></p>`;
+  html += `<p><strong>Evaluated Profile</strong>: Score <strong>${score} Marks</strong> | Est. AIR <strong>${air.toLocaleString()}</strong> | Est. State S.No <strong>#${stateSno.toLocaleString()}</strong> | Category <strong>${catKey}</strong></p>`;
+
+  if (eligibleGmc.length > 0) {
+    html += `<h4>🏛️ Eligible Government Medical Colleges (${eligibleGmc.length}):</h4><ul>`;
+    eligibleGmc.slice(0, 5).forEach(c => {
+      html += `<li><strong>${c.name}</strong> (${c.place}) - Cutoff AIR ${c.cutoffRank.toLocaleString()} (+${c.safetyMargin.toLocaleString()} ranks safe)</li>`;
+    });
+    html += `</ul>`;
+  } else {
+    html += `<p>ℹ️ <em>No Government Medical Colleges clear the cutoff at ${score} marks for ${catKey} category.</em></p>`;
+  }
+
+  if (eligiblePvt.length > 0) {
+    html += `<h4>🏥 Eligible Private A-Category Colleges (${eligiblePvt.length} Total):</h4><ul>`;
+    eligiblePvt.slice(0, 6).forEach(c => {
+      html += `<li><strong>${c.name}</strong> (${c.place}) - Cutoff AIR ${c.cutoffRank.toLocaleString()} (+${c.safetyMargin.toLocaleString()} ranks safe)</li>`;
+    });
+    html += `</ul>`;
+  }
+
+  if (borderline.length > 0) {
+    html += `<h4>⚡ Borderline / Upgradation Possibilities:</h4><ul>`;
+    borderline.slice(0, 3).forEach(c => {
+      html += `<li><strong>${c.name}</strong> (${c.type}) - Cutoff AIR ${c.cutoffRank.toLocaleString()} (Short by ${Math.abs(c.safetyMargin).toLocaleString()} ranks)</li>`;
+    });
+    html += `</ul>`;
+  }
+
+  html += `<p>⚡ <em>Dynamic prediction calculated using mSeat 2026 Merit Engine.</em></p>`;
+  return html;
 }
 
 function parseMarkdownToHtml(markdown) {
