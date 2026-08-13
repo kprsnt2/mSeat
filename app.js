@@ -5089,10 +5089,14 @@ async function handleChatSubmit() {
     } else {
       const fallbackText = getLocalPredictionFallback(query, payload);
       updateChatMessage(botMsgId, fallbackText);
+      chatHistory.push({ role: 'user', content: query });
+      chatHistory.push({ role: 'assistant', content: fallbackText });
     }
   } catch (err) {
     const fallbackText = getLocalPredictionFallback(query, payload);
     updateChatMessage(botMsgId, fallbackText);
+    chatHistory.push({ role: 'user', content: query });
+    chatHistory.push({ role: 'assistant', content: fallbackText });
   }
 }
 
