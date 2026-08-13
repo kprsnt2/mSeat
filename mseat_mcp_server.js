@@ -83,7 +83,7 @@ const TOOLS = [
       type: 'object',
       properties: {
         query: { type: 'string', description: 'Search term: Name, Roll Number, or S.No' },
-        year: { type: 'string', description: '2025 (current) or 2024 (last year). Default 2025' }
+        year: { type: 'string', description: '2026 (current) or 2025 (last year). Default 2026' }
       },
       required: ['query']
     }
@@ -197,7 +197,8 @@ function handleToolCall(name, args) {
 
     case 'search_merit_list': {
       const query = args.query.toLowerCase();
-      const meritFile = args.year === '2024' ? 'last_year_merit_list_final_tg_extracted.txt' : 'merit_list_tg_extracted.txt';
+      const year = args.year || '2026';
+      const meritFile = (year === '2025' || year === '2024') ? 'last_year_merit_list_final_tg_extracted.txt' : 'merit_list_tg_extracted.txt';
       const text = fs.readFileSync(path.join(projectDir, 'docs', meritFile), 'utf8');
 
       const lines = text.split('\n');
@@ -210,7 +211,7 @@ function handleToolCall(name, args) {
         }
       }
 
-      return { year: args.year || '2025', count: matches.length, results: matches };
+      return { year: year, count: matches.length, results: matches };
     }
 
     case 'compare_colleges': {
