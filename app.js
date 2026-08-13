@@ -5053,7 +5053,7 @@ async function handleChatSubmit() {
   appendChatMessage(query, 'user');
 
   // Show bot typing placeholder
-  const botMsgId = appendChatMessage('⏳ Thinking and running predictions via <code>gpt-5.4-mini</code>...', 'bot');
+  const botMsgId = appendChatMessage('⏳ Thinking and running predictions...', 'bot');
 
   // Gather current form values if present
   const categoryEl = document.getElementById('category');
