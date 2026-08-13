@@ -73,9 +73,17 @@ const masterCollegesData = [
 
 let masterTableFilter = 'all';
 
+function pauseBgAnimations() {
+  document.querySelectorAll('.bg-glow').forEach(el => el.style.animationPlayState = 'paused');
+}
+function resumeBgAnimations() {
+  document.querySelectorAll('.bg-glow').forEach(el => el.style.animationPlayState = '');
+}
+
 function showMasterTableModal() {
   const modal = document.getElementById('masterTableModal');
   if (modal) {
+    pauseBgAnimations();
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
     renderMasterTable();
@@ -87,6 +95,7 @@ function closeMasterTableModal() {
   if (modal) {
     modal.classList.remove('show');
     document.body.style.overflow = '';
+    resumeBgAnimations();
   }
 }
 
@@ -4293,6 +4302,7 @@ function estimateStateRank(air) {
 }
 
 
+
 function estimateCategoryRank(air, category, stateRank) {
   // Calculate state-level category rank based on state merit list proportions
   const sRank = stateRank || estimateStateRank(air);
@@ -4962,6 +4972,7 @@ function showToast(message, type = 'info') {
 function showQuotaInfo() {
   const modal = document.getElementById('quotaModal');
   if (modal) {
+    pauseBgAnimations();
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
   }
@@ -4972,6 +4983,7 @@ function closeQuotaInfo() {
   if (modal) {
     modal.classList.remove('show');
     document.body.style.overflow = '';
+    resumeBgAnimations();
   }
 }
 
