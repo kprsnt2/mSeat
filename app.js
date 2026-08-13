@@ -5147,28 +5147,47 @@ function getLocalPredictionFallback(query, payload) {
 function processDynamicQuery(query, payload) {
   const qLower = (query || '').toLowerCase();
   
-  // 1. Check for Score override in query (e.g. "what about 353 marks", "350 score", "450 marks")
+  let conversationText = '';
+  if (payload && payload.history) {
+    conversationText = payload.history.filter(h => h.role === 'user').map(h => h.content).join(' ');
+  }
+  conversationText += ' ' + qLower;
+  const fullText = conversationText.toLowerCase();
+
+  // 1. Check for Score override in history or query
   let score = parseFloat(payload ? payload.neetScore : 393) || 393;
-  const scoreMatch = qLower.match(/(\d{3})\s*(marks|score|pts)?/);
-  if (scoreMatch && parseInt(scoreMatch[1]) >= 100 && parseInt(scoreMatch[1]) <= 720) {
-    score = parseInt(scoreMatch[1]);
+  const scoreMatches = fullText.match(/(\d{3})\s*(marks|score|pts)?/g);
+  if (scoreMatches && scoreMatches.length > 0) {
+    const lastMatch = scoreMatches[scoreMatches.length - 1];
+    const match = lastMatch.match(/(\d{3})/);
+    if (match && parseInt(match[1]) >= 100 && parseInt(match[1]) <= 720) {
+      score = parseInt(match[1]);
+    }
   }
 
-  // 2. Check for Category override in query
+  // 2. Check for Category override in history or query
   let catKey = (payload ? payload.category : 'SC_2') || 'SC_2';
   catKey = catKey.toUpperCase().replace('-', '_');
 
-  if (qLower.includes('oc')) catKey = 'OC';
-  else if (qLower.includes('ews')) catKey = 'EWS';
-  else if (qLower.includes('bc-a') || qLower.includes('bca')) catKey = 'BC_A';
-  else if (qLower.includes('bc-b') || qLower.includes('bcb')) catKey = 'BC_B';
-  else if (qLower.includes('bc-c') || qLower.includes('bcc')) catKey = 'BC_C';
-  else if (qLower.includes('bc-d') || qLower.includes('bcd')) catKey = 'BC_D';
-  else if (qLower.includes('bc-e') || qLower.includes('bce')) catKey = 'BC_E';
-  else if (qLower.includes('sc-1') || qLower.includes('sc1')) catKey = 'SC_1';
-  else if (qLower.includes('sc-2') || qLower.includes('sc2')) catKey = 'SC_2';
-  else if (qLower.includes('sc-3') || qLower.includes('sc3')) catKey = 'SC_3';
-  else if (qLower.includes('st')) catKey = 'ST';
+  const categories = ['oc', 'ews', 'bc-a', 'bca', 'bc-b', 'bcb', 'bc-c', 'bcc', 'bc-d', 'bcd', 'bc-e', 'bce', 'sc-1', 'sc1', 'sc-2', 'sc2', 'sc-3', 'sc3', 'st'];
+  let latestCatIndex = -1;
+  categories.forEach(cat => {
+    const idx = fullText.lastIndexOf(cat);
+    if (idx > latestCatIndex) {
+      latestCatIndex = idx;
+      if (cat === 'oc') catKey = 'OC';
+      else if (cat === 'ews') catKey = 'EWS';
+      else if (cat === 'bc-a' || cat === 'bca') catKey = 'BC_A';
+      else if (cat === 'bc-b' || cat === 'bcb') catKey = 'BC_B';
+      else if (cat === 'bc-c' || cat === 'bcc') catKey = 'BC_C';
+      else if (cat === 'bc-d' || cat === 'bcd') catKey = 'BC_D';
+      else if (cat === 'bc-e' || cat === 'bce') catKey = 'BC_E';
+      else if (cat === 'sc-1' || cat === 'sc1') catKey = 'SC_1';
+      else if (cat === 'sc-2' || cat === 'sc2') catKey = 'SC_2';
+      else if (cat === 'sc-3' || cat === 'sc3') catKey = 'SC_3';
+      else if (cat === 'st') catKey = 'ST';
+    }
+  });
 
   // 3. Intent: Comparison (e.g. "Mamata Bachupally vs CMR Medchal" or "compare X and Y")
   if (qLower.includes(' vs ') || qLower.includes('versus') || qLower.includes('compare')) {
