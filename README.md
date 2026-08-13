@@ -34,18 +34,13 @@ For rich, conversational AI responses powered by `gpt-5.4-mini`, you can run the
 5. Start the server: `node server.js`
 6. Open your browser to `http://localhost:3000`. The Chat UI will automatically detect the local backend and route your queries through the OpenAI model!
 
-### 3. MCP Server Mode (For Claude Desktop / Cursor / Other AI Agents)
-mSeat exposes a standard **Model Context Protocol (MCP)** server that you can plug into any MCP-compatible AI assistant! This allows Claude or Cursor to query the Telangana medical cutoffs directly.
+### 3. MCP Server Mode (For Claude Desktop / Cursor / Custom Clients)
+mSeat exposes a standard **Model Context Protocol (MCP)** server that you can plug into any MCP-compatible AI assistant! 
 
-**Available MCP Tools**:
-* `predict_college_allotment`: Predicts eligible colleges based on NEET score and category.
-* `get_college_cutoffs`: Retrieves detailed round-wise cutoffs for a specific college.
-* `search_merit_list`: Searches the official 2025/2026 State Merit Lists for specific candidates by Name, Roll No, or S.No.
-* `compare_colleges`: Compares two medical colleges side-by-side.
-* `get_seat_expansion_stats`: Returns data on the 810+ newly added MBBS seats in Telangana for 2026.
+**Two Ways to Connect**:
 
-**How to connect (e.g. Claude Desktop)**:
-Add the following to your `claude_desktop_config.json`:
+**A. Local Stdio (Claude Desktop)**
+Add this to your `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
@@ -56,6 +51,12 @@ Add the following to your `claude_desktop_config.json`:
   }
 }
 ```
+
+**B. Remote API via SSE (Server-Sent Events)**
+When you run `node server.js`, it automatically hosts a full-scale MCP SSE server!
+You can connect external clients or custom web applications directly to the API endpoint:
+* **SSE Endpoint**: `http://localhost:3000/api/mcp/sse`
+* **Message POST Endpoint**: `http://localhost:3000/api/mcp/messages`
 Restart Claude Desktop, and you can now ask Claude to *"Check the Telangana SC2 medical cutoffs for 393 marks using mSeat"*!
 
 ---

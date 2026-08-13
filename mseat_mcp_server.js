@@ -335,4 +335,4 @@ if (process.argv.includes('--test')) {
   console.log(JSON.stringify(handleToolCall('get_seat_expansion_stats', {}), null, 2));
 }
 
-module.exports = { handleToolCall };
+module.exports = { handleToolCall, TOOLS };

@@ -1,7 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const { handleToolCall } = require('./mseat_mcp_server');
+const { handleToolCall, TOOLS } = require('./mseat_mcp_server');
+const { Server } = require("@modelcontextprotocol/sdk/server/index.js");
+const { SSEServerTransport } = require("@modelcontextprotocol/sdk/server/sse.js");
+const { CallToolRequestSchema, ListToolsRequestSchema } = require("@modelcontextprotocol/sdk/types.js");
 
 const app = express();
 app.use(cors());
@@ -181,14 +184,46 @@ Rules:
   }
 });
 
-// Direct Tool Endpoint for MCP integration
-app.post('/api/mcp', (req, res) => {
-  const { tool, args } = req.body;
+// Official MCP Server Integration over SSE
+const mcpServer = new Server({
+  name: "mseat",
+  version: "1.0.0"
+}, {
+  capabilities: {
+    tools: {}
+  }
+});
+
+mcpServer.setRequestHandler(ListToolsRequestSchema, async () => {
+  return { tools: TOOLS };
+});
+
+mcpServer.setRequestHandler(CallToolRequestSchema, async (request) => {
   try {
-    const result = handleToolCall(tool, args || {});
-    res.json({ success: true, tool, result });
-  } catch (err) {
-    res.status(500).json({ success: false, error: err.message });
+    const result = handleToolCall(request.params.name, request.params.arguments || {});
+    return {
+      content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
+    };
+  } catch (error) {
+    return {
+      isError: true,
+      content: [{ type: "text", text: error.message }]
+    };
+  }
+});
+
+let transport = null;
+
+app.get('/api/mcp/sse', async (req, res) => {
+  transport = new SSEServerTransport("/api/mcp/messages", res);
+  await mcpServer.connect(transport);
+});
+
+app.post('/api/mcp/messages', async (req, res) => {
+  if (transport) {
+    await transport.handlePostMessage(req, res);
+  } else {
+    res.status(400).send("No active SSE connection");
   }
 });
 
