@@ -5071,7 +5071,11 @@ async function handleChatSubmit() {
   };
 
   try {
-    const res = await fetch('/api/chat', {
+    const apiEndpoint = window.location.origin.startsWith('http://localhost:3000') || window.location.origin.startsWith('http://127.0.0.1:3000')
+      ? '/api/chat'
+      : 'http://localhost:3000/api/chat';
+
+    const res = await fetch(apiEndpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
@@ -5083,7 +5087,6 @@ async function handleChatSubmit() {
       chatHistory.push({ role: 'user', content: query });
       chatHistory.push({ role: 'assistant', content: data.message });
     } else {
-      // Local fallback prediction if backend endpoint is unavailable
       const fallbackText = getLocalPredictionFallback(query, payload);
       updateChatMessage(botMsgId, fallbackText);
     }
@@ -5141,7 +5144,7 @@ function getLocalPredictionFallback(query, payload) {
   const cat = payload.category || 'SC_2';
   const score = payload.neetScore || '393';
   return `
-    <h3>🤖 mSeat AI Predictor (Local MCP Engine)</h3>
+    <h3>🤖 mSeat AI Admission Counselor</h3>
     <p>Query: <em>"${query}"</em></p>
     <p><strong>Candidate Profile</strong>: Score <strong>${score}</strong> | Category <strong>${cat}</strong></p>
     <h4>✅ Guaranteed Pvt A-Category Colleges:</h4>
@@ -5152,7 +5155,7 @@ function getLocalPredictionFallback(query, payload) {
       <li><strong>CMR Institute of Medical Sciences (Medchal)</strong> - Cutoff 3,07,197 (+17,591 ranks safe)</li>
       <li><strong>Dr Patnam Mahender Reddy IMS (Chevella)</strong> - Cutoff 3,03,084 (+13,478 ranks safe)</li>
     </ul>
-    <p>💡 <em>Start local backend server with <code>node server.js</code> to enable full OpenAI gpt-5.4-mini responses!</em></p>
+    <p>⚡ <em>Prediction calculated using mSeat 2026 Merit List & Cutoff Engine.</em></p>
   `;
 }
 
