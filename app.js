@@ -2694,7 +2694,8 @@ const govtColleges = [
       "SC_3": 18,
       "SC": 47,
       "ST": 62
-    }
+    },
+    "ocClosingCatRank": 220
   },
   {
     "id": 2,
@@ -2731,8 +2732,9 @@ const govtColleges = [
       "SC_2": 40,
       "SC_3": 32,
       "SC": 82,
-      "ST": 1412
-    }
+      "ST": 55
+    },
+    "ocClosingCatRank": 300
   },
   {
     "id": 3,
@@ -2770,7 +2772,8 @@ const govtColleges = [
       "SC_3": 33,
       "SC": 97,
       "ST": 94
-    }
+    },
+    "ocClosingCatRank": 328
   },
   {
     "id": 4,
@@ -2799,7 +2802,7 @@ const govtColleges = [
       "OC": 461,
       "EWS": 89,
       "BC_A": 74,
-      "BC_B": 1030,
+      "BC_B": 188,
       "BC_C": 10,
       "BC_D": 105,
       "BC_E": 68,
@@ -2808,7 +2811,8 @@ const govtColleges = [
       "SC_3": 46,
       "SC": 118,
       "ST": 92
-    }
+    },
+    "ocClosingCatRank": 461
   },
   {
     "id": 5,
@@ -2836,18 +2840,19 @@ const govtColleges = [
     },
     "knownCatRanks": {
       "OC": 919,
-      "EWS": 1508,
-      "BC_A": 4623,
-      "BC_B": 1248,
-      "BC_C": 1925,
-      "BC_D": 1048,
-      "BC_E": 1446,
-      "SC_1": 10275,
-      "SC_2": 3257,
-      "SC_3": 2538,
-      "SC": 3257,
-      "ST": 2663
-    }
+      "EWS": 163,
+      "BC_A": 144,
+      "BC_B": 231,
+      "BC_C": 10,
+      "BC_D": 153,
+      "BC_E": 139,
+      "SC_1": 18,
+      "SC_2": 117,
+      "SC_3": 65,
+      "SC": 213,
+      "ST": 142
+    },
+    "ocClosingCatRank": 919
   },
   {
     "id": 6,
@@ -2875,18 +2880,19 @@ const govtColleges = [
     },
     "knownCatRanks": {
       "OC": 1075,
-      "EWS": 1434,
-      "BC_A": 4164,
+      "EWS": 154,
+      "BC_A": 130,
       "BC_B": 248,
-      "BC_C": 2509,
-      "BC_D": 1274,
-      "BC_E": 1288,
-      "SC_1": 9535,
-      "SC_2": 3496,
-      "SC_3": 2869,
-      "SC": 3496,
-      "ST": 2863
-    }
+      "BC_C": 16,
+      "BC_D": 198,
+      "BC_E": 121,
+      "SC_1": 13,
+      "SC_2": 134,
+      "SC_3": 75,
+      "SC": 244,
+      "ST": 156
+    },
+    "ocClosingCatRank": 1075
   },
   {
     "id": 7,
@@ -2914,18 +2920,19 @@ const govtColleges = [
     },
     "knownCatRanks": {
       "OC": 1530,
-      "EWS": 2148,
+      "EWS": 240,
       "BC_A": 182,
-      "BC_B": 1814,
-      "BC_C": 4904,
-      "BC_D": 1596,
-      "BC_E": 2373,
-      "SC_1": 12684,
-      "SC_2": 4790,
-      "SC_3": 3886,
-      "SC": 4790,
-      "ST": 3596
-    }
+      "BC_B": 340,
+      "BC_C": 29,
+      "BC_D": 256,
+      "BC_E": 265,
+      "SC_1": 27,
+      "SC_2": 224,
+      "SC_3": 125,
+      "SC": 392,
+      "ST": 235
+    },
+    "ocClosingCatRank": 1530
   },
   {
     "id": 8,
@@ -2953,18 +2960,19 @@ const govtColleges = [
     },
     "knownCatRanks": {
       "OC": 1048,
-      "EWS": 1506,
-      "BC_A": 4292,
-      "BC_B": 1370,
-      "BC_C": 3405,
-      "BC_D": 1218,
-      "BC_E": 1218,
-      "SC_1": 10371,
-      "SC_2": 3607,
-      "SC_3": 3110,
-      "SC": 3607,
-      "ST": 2926
-    }
+      "EWS": 163,
+      "BC_A": 134,
+      "BC_B": 250,
+      "BC_C": 20,
+      "BC_D": 181,
+      "BC_E": 111,
+      "SC_1": 18,
+      "SC_2": 139,
+      "SC_3": 92,
+      "SC": 253,
+      "ST": 165
+    },
+    "ocClosingCatRank": 1048
   },
   {
     "id": 9,
@@ -3002,7 +3010,8 @@ const govtColleges = [
       "SC_3": 118,
       "SC": 271,
       "ST": 175
-    }
+    },
+    "ocClosingCatRank": 1194
   },
   {
     "id": 10,
@@ -3040,7 +3049,8 @@ const govtColleges = [
       "SC_3": 122,
       "SC": 327,
       "ST": 196
-    }
+    },
+    "ocClosingCatRank": 1440
   },
   {
     "id": 11,
@@ -3078,7 +3088,8 @@ const govtColleges = [
       "SC_3": 98,
       "SC": 333,
       "ST": 212
-    }
+    },
+    "ocClosingCatRank": 1320
   },
   {
     "id": 12,
@@ -3116,7 +3127,8 @@ const govtColleges = [
       "SC_3": 153,
       "SC": 370,
       "ST": 230
-    }
+    },
+    "ocClosingCatRank": 1782
   },
   {
     "id": 13,
@@ -3154,7 +3166,8 @@ const govtColleges = [
       "SC_3": 141,
       "SC": 445,
       "ST": 273
-    }
+    },
+    "ocClosingCatRank": 1753
   },
   {
     "id": 14,
@@ -3192,7 +3205,8 @@ const govtColleges = [
       "SC_3": 170,
       "SC": 454,
       "ST": 308
-    }
+    },
+    "ocClosingCatRank": 2253
   },
   {
     "id": 15,
@@ -3204,7 +3218,8 @@ const govtColleges = [
     "type": "govt",
     "ocClosing": 100000,
     "knownRanks": {},
-    "knownCatRanks": {}
+    "knownCatRanks": {},
+    "ocClosingCatRank": 1407
   },
   {
     "id": 16,
@@ -3242,7 +3257,8 @@ const govtColleges = [
       "SC_3": 130,
       "SC": 352,
       "ST": 275
-    }
+    },
+    "ocClosingCatRank": 1092
   },
   {
     "id": 17,
@@ -3280,7 +3296,8 @@ const govtColleges = [
       "SC_3": 137,
       "SC": 403,
       "ST": 284
-    }
+    },
+    "ocClosingCatRank": 1973
   },
   {
     "id": 18,
@@ -3318,7 +3335,8 @@ const govtColleges = [
       "SC_3": 215,
       "SC": 497,
       "ST": 377
-    }
+    },
+    "ocClosingCatRank": 1949
   },
   {
     "id": 19,
@@ -3330,7 +3348,8 @@ const govtColleges = [
     "type": "govt",
     "ocClosing": 100000,
     "knownRanks": {},
-    "knownCatRanks": {}
+    "knownCatRanks": {},
+    "ocClosingCatRank": 1407
   },
   {
     "id": 20,
@@ -3368,7 +3387,8 @@ const govtColleges = [
       "SC_3": 223,
       "SC": 568,
       "ST": 379
-    }
+    },
+    "ocClosingCatRank": 3113
   },
   {
     "id": 21,
@@ -3406,7 +3426,8 @@ const govtColleges = [
       "SC_3": 210,
       "SC": 609,
       "ST": 324
-    }
+    },
+    "ocClosingCatRank": 2642
   },
   {
     "id": 22,
@@ -3444,7 +3465,8 @@ const govtColleges = [
       "SC_3": 183,
       "SC": 592,
       "ST": 404
-    }
+    },
+    "ocClosingCatRank": 2994
   },
   {
     "id": 23,
@@ -3482,7 +3504,8 @@ const govtColleges = [
       "SC_3": 236,
       "SC": 507,
       "ST": 424
-    }
+    },
+    "ocClosingCatRank": 2993
   },
   {
     "id": 24,
@@ -3520,7 +3543,8 @@ const govtColleges = [
       "SC_3": 227,
       "SC": 549,
       "ST": 365
-    }
+    },
+    "ocClosingCatRank": 2876
   },
   {
     "id": 25,
@@ -3558,7 +3582,8 @@ const govtColleges = [
       "SC_3": 240,
       "SC": 636,
       "ST": 444
-    }
+    },
+    "ocClosingCatRank": 3342
   },
   {
     "id": 26,
@@ -3570,7 +3595,8 @@ const govtColleges = [
     "type": "govt",
     "ocClosing": 100000,
     "knownRanks": {},
-    "knownCatRanks": {}
+    "knownCatRanks": {},
+    "ocClosingCatRank": 1407
   },
   {
     "id": 27,
@@ -3608,7 +3634,8 @@ const govtColleges = [
       "SC_3": 184,
       "SC": 535,
       "ST": 356
-    }
+    },
+    "ocClosingCatRank": 2725
   },
   {
     "id": 28,
@@ -3646,7 +3673,8 @@ const govtColleges = [
       "SC_3": 163,
       "SC": 551,
       "ST": 410
-    }
+    },
+    "ocClosingCatRank": 2675
   },
   {
     "id": 29,
@@ -3684,7 +3712,8 @@ const govtColleges = [
       "SC_3": 252,
       "SC": 711,
       "ST": 468
-    }
+    },
+    "ocClosingCatRank": 3430
   },
   {
     "id": 30,
@@ -3722,7 +3751,8 @@ const govtColleges = [
       "SC_3": 257,
       "SC": 646,
       "ST": 440
-    }
+    },
+    "ocClosingCatRank": 3379
   },
   {
     "id": 31,
@@ -3760,7 +3790,8 @@ const govtColleges = [
       "SC_3": 248,
       "SC": 631,
       "ST": 419
-    }
+    },
+    "ocClosingCatRank": 3093
   },
   {
     "id": 32,
@@ -3798,7 +3829,8 @@ const govtColleges = [
       "SC_3": 263,
       "SC": 729,
       "ST": 492
-    }
+    },
+    "ocClosingCatRank": 3542
   },
   {
     "id": 33,
@@ -3836,7 +3868,8 @@ const govtColleges = [
       "SC_3": 230,
       "SC": 648,
       "ST": 475
-    }
+    },
+    "ocClosingCatRank": 3466
   },
   {
     "id": 34,
@@ -3874,7 +3907,8 @@ const govtColleges = [
       "SC_3": 264,
       "SC": 682,
       "ST": 509
-    }
+    },
+    "ocClosingCatRank": 3547
   },
   {
     "id": 35,
@@ -3912,7 +3946,8 @@ const govtColleges = [
       "SC_3": 233,
       "SC": 617,
       "ST": 482
-    }
+    },
+    "ocClosingCatRank": 3229
   },
   {
     "id": 36,
@@ -3950,7 +3985,8 @@ const govtColleges = [
       "SC_3": 265,
       "SC": 569,
       "ST": 495
-    }
+    },
+    "ocClosingCatRank": 3221
   }
 ];
 
@@ -3994,7 +4030,8 @@ const pvtColleges = [
       "SC_3": 218,
       "SC": 710,
       "ST": 484
-    }
+    },
+    "ocClosingCatRank": 3181
   },
   {
     "id": 102,
@@ -4034,7 +4071,8 @@ const pvtColleges = [
       "SC_3": 89,
       "SC": 270,
       "ST": 294
-    }
+    },
+    "ocClosingCatRank": 520
   },
   {
     "id": 103,
@@ -4064,18 +4102,19 @@ const pvtColleges = [
     },
     "knownCatRanks": {
       "OC": 993,
-      "EWS": 15941,
-      "BC_A": 6933,
-      "BC_B": 2322,
-      "BC_C": 5278,
-      "BC_D": 1772,
-      "BC_E": 2393,
-      "SC_1": 11308,
-      "SC_2": 7925,
-      "SC_3": 4542,
-      "SC": 7925,
-      "ST": 6063
-    }
+      "EWS": 1094,
+      "BC_A": 262,
+      "BC_B": 449,
+      "BC_C": 32,
+      "BC_D": 288,
+      "BC_E": 267,
+      "SC_1": 21,
+      "SC_2": 496,
+      "SC_3": 155,
+      "SC": 886,
+      "ST": 524
+    },
+    "ocClosingCatRank": 993
   },
   {
     "id": 104,
@@ -4090,7 +4129,8 @@ const pvtColleges = [
     "type": "pvt",
     "ocClosing": 180000,
     "knownRanks": {},
-    "knownCatRanks": {}
+    "knownCatRanks": {},
+    "ocClosingCatRank": 3593
   },
   {
     "id": 105,
@@ -4125,12 +4165,13 @@ const pvtColleges = [
       "BC_C": 33,
       "BC_D": 345,
       "BC_E": 248,
-      "SC_1": 6183,
+      "SC_1": 3,
       "SC_2": 419,
       "SC_3": 239,
       "SC": 731,
       "ST": 522
-    }
+    },
+    "ocClosingCatRank": 1783
   },
   {
     "id": 106,
@@ -4165,12 +4206,13 @@ const pvtColleges = [
       "BC_C": 56,
       "BC_D": 559,
       "BC_E": 522,
-      "SC_1": 6564,
+      "SC_1": 4,
       "SC_2": 445,
       "SC_3": 274,
       "SC": 784,
       "ST": 516
-    }
+    },
+    "ocClosingCatRank": 2651
   },
   {
     "id": 107,
@@ -4200,18 +4242,19 @@ const pvtColleges = [
     },
     "knownCatRanks": {
       "OC": 3333,
-      "EWS": 3870,
-      "BC_A": 9940,
+      "EWS": 414,
+      "BC_A": 482,
       "BC_B": 784,
-      "BC_C": 8646,
-      "BC_D": 4235,
-      "BC_E": 4942,
-      "SC_1": 14292,
-      "SC_2": 8909,
-      "SC_3": 6909,
-      "SC": 8909,
-      "ST": 6821
-    }
+      "BC_C": 67,
+      "BC_D": 772,
+      "BC_E": 616,
+      "SC_1": 34,
+      "SC_2": 619,
+      "SC_3": 301,
+      "SC": 1097,
+      "ST": 625
+    },
+    "ocClosingCatRank": 3333
   },
   {
     "id": 108,
@@ -4251,7 +4294,8 @@ const pvtColleges = [
       "SC_3": 254,
       "SC": 845,
       "ST": 519
-    }
+    },
+    "ocClosingCatRank": 2090
   },
   {
     "id": 109,
@@ -4291,7 +4335,8 @@ const pvtColleges = [
       "SC_3": 276,
       "SC": 860,
       "ST": 547
-    }
+    },
+    "ocClosingCatRank": 3298
   },
   {
     "id": 110,
@@ -4331,7 +4376,8 @@ const pvtColleges = [
       "SC_3": 294,
       "SC": 896,
       "ST": 558
-    }
+    },
+    "ocClosingCatRank": 3200
   },
   {
     "id": 111,
@@ -4366,12 +4412,13 @@ const pvtColleges = [
       "BC_C": 65,
       "BC_D": 705,
       "BC_E": 590,
-      "SC_1": 7735,
+      "SC_1": 9,
       "SC_2": 494,
       "SC_3": 289,
       "SC": 879,
       "ST": 546
-    }
+    },
+    "ocClosingCatRank": 3678
   },
   {
     "id": 112,
@@ -4402,17 +4449,18 @@ const pvtColleges = [
     "knownCatRanks": {
       "OC": 4694,
       "EWS": 9999999,
-      "BC_A": 11453,
-      "BC_B": 6355,
-      "BC_C": 10565,
-      "BC_D": 5479,
-      "BC_E": 6185,
-      "SC_1": 10190,
-      "SC_2": 10508,
+      "BC_A": 593,
+      "BC_B": 1218,
+      "BC_C": 86,
+      "BC_D": 990,
+      "BC_E": 791,
+      "SC_1": 18,
+      "SC_2": 833,
       "SC_3": 505,
-      "SC": 10508,
-      "ST": 8764
-    }
+      "SC": 1466,
+      "ST": 909
+    },
+    "ocClosingCatRank": 4694
   },
   {
     "id": 113,
@@ -4452,7 +4500,8 @@ const pvtColleges = [
       "SC_3": 313,
       "SC": 983,
       "ST": 586
-    }
+    },
+    "ocClosingCatRank": 3874
   },
   {
     "id": 114,
@@ -4492,7 +4541,8 @@ const pvtColleges = [
       "SC_3": 312,
       "SC": 1023,
       "ST": 599
-    }
+    },
+    "ocClosingCatRank": 3812
   },
   {
     "id": 115,
@@ -4527,12 +4577,13 @@ const pvtColleges = [
       "BC_C": 64,
       "BC_D": 717,
       "BC_E": 558,
-      "SC_1": 8282,
+      "SC_1": 9,
       "SC_2": 545,
       "SC_3": 279,
       "SC": 966,
       "ST": 607
-    }
+    },
+    "ocClosingCatRank": 3742
   },
   {
     "id": 116,
@@ -4563,17 +4614,18 @@ const pvtColleges = [
     "knownCatRanks": {
       "OC": 5628,
       "EWS": 9999999,
-      "BC_A": 11544,
-      "BC_B": 6788,
-      "BC_C": 11461,
-      "BC_D": 6372,
-      "BC_E": 6867,
-      "SC_1": 10307,
-      "SC_2": 10519,
-      "SC_3": 9630,
-      "SC": 10519,
-      "ST": 9132
-    }
+      "BC_A": 599,
+      "BC_B": 1280,
+      "BC_C": 99,
+      "BC_D": 1150,
+      "BC_E": 892,
+      "SC_1": 18,
+      "SC_2": 834,
+      "SC_3": 541,
+      "SC": 1470,
+      "ST": 970
+    },
+    "ocClosingCatRank": 5628
   },
   {
     "id": 117,
@@ -4587,7 +4639,8 @@ const pvtColleges = [
     "type": "pvt",
     "ocClosing": 180000,
     "knownRanks": {},
-    "knownCatRanks": {}
+    "knownCatRanks": {},
+    "ocClosingCatRank": 3593
   },
   {
     "id": 118,
@@ -4622,12 +4675,13 @@ const pvtColleges = [
       "BC_C": 9999999,
       "BC_D": 721,
       "BC_E": 507,
-      "SC_1": 7250,
+      "SC_1": 8,
       "SC_2": 546,
       "SC_3": 318,
       "SC": 970,
       "ST": 619
-    }
+    },
+    "ocClosingCatRank": 3084
   },
   {
     "id": 119,
@@ -4662,12 +4716,13 @@ const pvtColleges = [
       "BC_C": 68,
       "BC_D": 801,
       "BC_E": 575,
-      "SC_1": 8632,
+      "SC_1": 10,
       "SC_2": 585,
       "SC_3": 320,
       "SC": 1039,
       "ST": 630
-    }
+    },
+    "ocClosingCatRank": 4050
   },
   {
     "id": 120,
@@ -4702,12 +4757,13 @@ const pvtColleges = [
       "BC_C": 72,
       "BC_D": 863,
       "BC_E": 641,
-      "SC_1": 8695,
+      "SC_1": 10,
       "SC_2": 601,
       "SC_3": 336,
       "SC": 1064,
       "ST": 668
-    }
+    },
+    "ocClosingCatRank": 4453
   },
   {
     "id": 121,
@@ -4742,12 +4798,13 @@ const pvtColleges = [
       "BC_C": 74,
       "BC_D": 876,
       "BC_E": 644,
-      "SC_1": 8710,
+      "SC_1": 10,
       "SC_2": 604,
       "SC_3": 339,
       "SC": 1069,
       "ST": 671
-    }
+    },
+    "ocClosingCatRank": 4465
   },
   {
     "id": 122,
@@ -4782,12 +4839,13 @@ const pvtColleges = [
       "BC_C": 70,
       "BC_D": 842,
       "BC_E": 588,
-      "SC_1": 8259,
+      "SC_1": 9,
       "SC_2": 567,
       "SC_3": 325,
       "SC": 1007,
       "ST": 644
-    }
+    },
+    "ocClosingCatRank": 4440
   },
   {
     "id": 123,
@@ -4827,7 +4885,8 @@ const pvtColleges = [
       "SC_3": 9999999,
       "SC": 9999999,
       "ST": 9999999
-    }
+    },
+    "ocClosingCatRank": 2067
   },
   {
     "id": 124,
@@ -4862,13 +4921,14 @@ const pvtColleges = [
       "BC_B": 919,
       "BC_C": 9999999,
       "BC_D": 9999999,
-      "BC_E": 5147,
+      "BC_E": 646,
       "SC_1": 9999999,
       "SC_2": 9999999,
       "SC_3": 9999999,
       "SC": 9999999,
       "ST": 9999999
-    }
+    },
+    "ocClosingCatRank": 5156
   },
   {
     "id": 125,
@@ -4882,7 +4942,8 @@ const pvtColleges = [
     "type": "pvt",
     "ocClosing": 180000,
     "knownRanks": {},
-    "knownCatRanks": {}
+    "knownCatRanks": {},
+    "ocClosingCatRank": 3593
   },
   {
     "id": 126,
@@ -4922,7 +4983,8 @@ const pvtColleges = [
       "SC_3": 9999999,
       "SC": 9999999,
       "ST": 9999999
-    }
+    },
+    "ocClosingCatRank": 5076
   },
   {
     "id": 127,
@@ -4964,7 +5026,8 @@ const pvtColleges = [
       "SC_3": 9999999,
       "SC": 9999999,
       "ST": 9999999
-    }
+    },
+    "ocClosingCatRank": 9999999
   },
   {
     "id": 128,
@@ -4994,18 +5057,19 @@ const pvtColleges = [
     },
     "knownCatRanks": {
       "OC": 2109,
-      "EWS": 2404,
-      "BC_A": 7635,
+      "EWS": 271,
+      "BC_A": 309,
       "BC_B": 592,
-      "BC_C": 8462,
-      "BC_D": 3368,
-      "BC_E": 3726,
-      "SC_1": 9199,
-      "SC_2": 9431,
-      "SC_3": 8042,
+      "BC_C": 66,
+      "BC_D": 590,
+      "BC_E": 448,
+      "SC_1": 12,
+      "SC_2": 673,
+      "SC_3": 393,
       "SC": 1205,
-      "ST": 6734
-    }
+      "ST": 610
+    },
+    "ocClosingCatRank": 2109
   },
   {
     "id": 129,
@@ -5035,18 +5099,19 @@ const pvtColleges = [
     },
     "knownCatRanks": {
       "OC": 2109,
-      "EWS": 2404,
-      "BC_A": 7635,
+      "EWS": 271,
+      "BC_A": 309,
       "BC_B": 592,
-      "BC_C": 8462,
-      "BC_D": 3368,
-      "BC_E": 3726,
-      "SC_1": 9199,
-      "SC_2": 9431,
-      "SC_3": 8042,
+      "BC_C": 66,
+      "BC_D": 590,
+      "BC_E": 448,
+      "SC_1": 12,
+      "SC_2": 673,
+      "SC_3": 393,
       "SC": 1205,
-      "ST": 6734
-    }
+      "ST": 610
+    },
+    "ocClosingCatRank": 2109
   },
   {
     "id": 130,
@@ -5075,18 +5140,19 @@ const pvtColleges = [
     },
     "knownCatRanks": {
       "OC": 2367,
-      "EWS": 2627,
-      "BC_A": 7898,
+      "EWS": 304,
+      "BC_A": 323,
       "BC_B": 703,
-      "BC_C": 8289,
-      "BC_D": 3736,
-      "BC_E": 4103,
-      "SC_1": 8651,
-      "SC_2": 8730,
-      "SC_3": 7290,
-      "SC": 8730,
-      "ST": 6320
-    }
+      "BC_C": 64,
+      "BC_D": 681,
+      "BC_E": 507,
+      "SC_1": 10,
+      "SC_2": 601,
+      "SC_3": 327,
+      "SC": 1063,
+      "ST": 559
+    },
+    "ocClosingCatRank": 2367
   }
 ];
 
@@ -5201,22 +5267,26 @@ function computeAdjustedCatRanks() {
 computeAdjustedCatRanks();
 
 function getClosingRank(college, category) {
-  let normCat = category.replace('-', '').replace('_', '');
-  if (normCat === 'OPEN') normCat = 'OC';
-  
-  if (college.adjustedCatRanks && college.adjustedCatRanks[normCat]) {
-    return college.adjustedCatRanks[normCat];
+  // Normalize category to match knownCatRanks keys (e.g. BC_A, SC_2)
+  let searchCat = category;
+  if (searchCat === 'OPEN' || searchCat === 'OC') searchCat = 'OC';
+  else if (searchCat.length === 3 && (searchCat.startsWith('BC') || searchCat.startsWith('SC'))) {
+    searchCat = searchCat.substring(0, 2) + '_' + searchCat.substring(2);
   }
-  if (college.adjustedCatRanks && college.adjustedCatRanks['SC'] && normCat.startsWith('SC')) {
+
+  if (college.adjustedCatRanks && college.adjustedCatRanks[searchCat] !== undefined) {
+    return college.adjustedCatRanks[searchCat];
+  }
+  if (college.adjustedCatRanks && college.adjustedCatRanks['SC'] !== undefined && searchCat.startsWith('SC')) {
     return college.adjustedCatRanks['SC'];
   }
   
-  const ocRank = college.adjustedCatRanks ? college.adjustedCatRanks['OC'] : (college.ocClosingCatRank || 9999999);
+  const ocRank = (college.adjustedCatRanks && college.adjustedCatRanks['OC']) ? college.adjustedCatRanks['OC'] : (college.ocClosingCatRank || 9999999);
   const stateCatRatios = {
     OC: 0.35, EWS: 0.10, BC_A: 0.07, BC_B: 0.18,
-    BC_C: 0.01, BC_D: 0.16, BC_E: 0.04, SC_1: 0.117, SC_2: 0.117, SC_3: 0.117, SC: 0.117, ST: 0.08
+    BC_C: 0.01, BC_D: 0.16, BC_E: 0.04, SC_1: 0.15, SC_2: 0.15, SC_3: 0.15, SC: 0.15, ST: 0.10
   };
-  return Math.round(ocRank * (stateCatRatios[category] || 0.117) / 0.35);
+  return Math.round(ocRank * (stateCatRatios[category] || 0.15) / 0.35);
 }
 
 function isEligible(rank, college, category) {
@@ -6265,3 +6335,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+// 1-Click Quick Predict Logic
+function quickPredict() {
+  const snoInput = document.getElementById('stateSno').value;
+  const airInput = document.getElementById('neetAIR').value;
+  
+  if (!snoInput && !airInput) {
+    alert("Please enter either your State S.No or NEET AIR for quick predict.");
+    return;
+  }
+
+  // Ensure autofill data is loaded if only S.No is provided
+  if (snoInput && !airInput && snoToCatRanks2026[snoInput]) {
+    const data = snoToCatRanks2026[snoInput];
+    document.getElementById('neetAIR').value = data.air;
+    document.getElementById('neetScore').value = data.score;
+    let mappedCat = data.cat;
+    if (mappedCat.length === 3 && (mappedCat.startsWith('BC') || mappedCat.startsWith('SC'))) {
+       mappedCat = mappedCat.substring(0,2) + '_' + mappedCat.substring(2);
+    }
+    if (data.ews && mappedCat === 'OC') {
+       mappedCat = 'EWS';
+    }
+    document.getElementById('categorySelect').value = mappedCat || document.getElementById('categorySelect').value;
+    document.getElementById('genderSelect').value = data.gender || document.getElementById('genderSelect').value;
+  }
+
+  // Validate form quickly
+  const form = document.getElementById('profileForm');
+  if(!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  // Prepare standard combined preferences (Govt + Pvt Cat-A) sorted by category cutoff
+  const category = document.getElementById('categorySelect').value;
+  const rawAir = parseInt(document.getElementById('neetAIR').value);
+  const air = isNaN(rawAir) ? estimateRank(parseInt(document.getElementById('neetScore').value)) : rawAir;
+  
+  // Actually, wait, let's trigger the normal submission to populate globals, then immediately skip to Step 4
+  const event = new Event('submit', { cancelable: true });
+  form.dispatchEvent(event);
+  
+  // Set default preference: Mixed Combined
+  document.getElementById('prefType').value = 'mixed';
+  
+  // Fake the process steps
+  setTimeout(() => {
+    // Generate the mixed preferences dynamically
+    const combinedColleges = [...govtColleges, ...pvtColleges].sort((a, b) => getClosingRank(a, category) - getClosingRank(b, category));
+    
+    // Run allocation
+    const result = runAllocation(air, category, combinedColleges);
+    
+    if (result.allocated) {
+      document.getElementById('allocSuccess').style.display = 'block';
+      document.getElementById('allocFailure').style.display = 'none';
+      document.getElementById('allocCollegeName').textContent = result.college.name;
+      document.getElementById('allocCollegePlace').textContent = result.college.place;
+      document.getElementById('allocCollegeType').textContent = result.college.type === 'govt' ? 'Government Medical College' : 'Private Medical College (Cat-A)';
+      document.getElementById('allocClosingRank').textContent = result.closingRank.toLocaleString('en-IN');
+      const fee = result.college.fee || (result.college.type === 'govt' ? 29000 : 60000);
+      document.getElementById('allocCollegeFee').textContent = '₹' + fee.toLocaleString('en-IN') + ' / year';
+      document.getElementById('allocStudentRank').textContent = estimateCategoryRank(air, category).toLocaleString('en-IN') + ' (Cat Rank)';
+      
+      const margin = result.closingRank - estimateCategoryRank(air, category);
+      document.getElementById('allocMarginVal').textContent = margin.toLocaleString('en-IN');
+      document.getElementById('allocMargin').className = margin > 50 ? 'margin-safe' : margin > 10 ? 'margin-moderate' : 'margin-tight';
+    } else {
+      document.getElementById('allocSuccess').style.display = 'none';
+      document.getElementById('allocFailure').style.display = 'block';
+      document.getElementById('notAllocatedRank').textContent = estimateCategoryRank(air, category).toLocaleString('en-IN');
+    }
+    
+    // Go to step 4
+    goToStep(4);
+  }, 100);
+}
