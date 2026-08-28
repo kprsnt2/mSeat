@@ -6023,7 +6023,7 @@ function goToStep(step) {
   // Show/Hide step indicator (hidden on homepage Step 1, visible on steps 2, 3, 4)
   const stepIndicator = document.querySelector('.step-indicator-wrapper');
   if (stepIndicator) {
-    stepIndicator.style.display = (step === 1) ? 'none' : 'block';
+    stepIndicator.style.display = 'block';
   }
 
   // Hide all steps

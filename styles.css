@@ -1872,3 +1872,26 @@ body {
   -webkit-backdrop-filter: blur(20px) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+/* Prominent Glowing Step Connectors */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.step-connector {
+  width: 60px !important;
+  height: 3px !important;
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-radius: 4px !important;
+  margin: 0 8px !important;
+  margin-bottom: 22px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.step-connector.completed {
+  background: linear-gradient(90deg, #00f2fe, #10b981) !important;
+  box-shadow: 0 0 14px rgba(0, 242, 254, 0.7) !important;
+}
