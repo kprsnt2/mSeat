@@ -1849,3 +1849,26 @@ body {
   background: linear-gradient(90deg, #10b981, #00f2fe) !important;
   box-shadow: 0 0 10px rgba(0, 242, 254, 0.4) !important;
 }
+
+/* Seamless Header & App Background */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5, 8, 17, 0.6) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 16px 0 !important;
+}
+
+.step-indicator-wrapper {
+  padding: 16px 0 12px;
+  position: sticky;
+  top: 68px;
+  z-index: 90;
+  background: rgba(5, 8, 17, 0.75) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}

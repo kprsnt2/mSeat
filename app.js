@@ -6020,6 +6020,12 @@ function renderEligibilityBar(govtCount, pvtCount) {
 }
 
 function goToStep(step) {
+  // Show/Hide step indicator (hidden on homepage Step 1, visible on steps 2, 3, 4)
+  const stepIndicator = document.querySelector('.step-indicator-wrapper');
+  if (stepIndicator) {
+    stepIndicator.style.display = (step === 1) ? 'none' : 'block';
+  }
+
   // Hide all steps
   document.querySelectorAll('.step-content').forEach(el => {
     el.classList.remove('active');
@@ -6054,7 +6060,9 @@ function goToStep(step) {
   }
 
   // Scroll to top
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (typeof window !== 'undefined' && window.scrollTo) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 
 function renderCollegeList() {
