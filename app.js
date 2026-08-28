@@ -6292,7 +6292,7 @@ function renderCollegeList() {
 
   container.innerHTML = filtered.map((college, idx) => {
     const closingRank = getClosingRank(college, category);
-    const eligible = air <= closingRank;
+    const eligible = isEligible(air, college, category);
     const prefIndex = preferences.indexOf(college);
     const isGovt = college.type === 'govt';
     const fee = isGovt ? college.fee : college.feeA;
@@ -6551,19 +6551,21 @@ async function handleChatSubmit() {
   // Show bot typing placeholder
   const botMsgId = appendChatMessage('⏳ Thinking and running predictions...', 'bot');
 
-  // Gather current form values if present
-  const categoryEl = document.getElementById('category');
-  const scoreEl = document.getElementById('scoreInput');
-  const rankEl = document.getElementById('airRankInput');
-  const genderEl = document.querySelector('input[name="gender"]:checked');
+  // Gather current profile and form values
+  const categoryEl = document.getElementById('categorySelect');
+  const scoreEl = document.getElementById('neetScore');
+  const rankEl = document.getElementById('neetAIR');
+  const snoEl = document.getElementById('stateSno');
+  const genderEl = document.getElementById('genderSelect');
 
   const payload = {
     message: query,
     history: chatHistory,
-    category: categoryEl ? categoryEl.value : 'SC_2',
-    neetScore: scoreEl ? scoreEl.value : '393',
-    neetRank: rankEl ? rankEl.value : '289635',
-    gender: genderEl ? genderEl.value : 'Female'
+    category: (studentProfile && studentProfile.category) || (categoryEl ? categoryEl.value : 'SC_2'),
+    neetScore: (studentProfile && studentProfile.score) || (scoreEl ? scoreEl.value : '393'),
+    neetRank: (studentProfile && studentProfile.customAIR) || (rankEl ? rankEl.value : '289635'),
+    stateSno: (studentProfile && studentProfile.customStateRank) || (snoEl ? snoEl.value : '8367'),
+    gender: (studentProfile && studentProfile.gender) || (genderEl ? genderEl.value : 'female')
   };
 
   try {
