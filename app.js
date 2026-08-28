@@ -5786,6 +5786,88 @@ function updateScorePreview(score, customAIR, customSno) {
   `;
 }
 
+// ==========================================================================
+// CORE COUNSELLING & ALLOCATION ENGINE
+// ==========================================================================
+
+function formatFeeExact(fee) {
+  if (!fee || isNaN(fee)) return '₹10,000';
+  return '₹' + Number(fee).toLocaleString('en-IN');
+}
+
+function formatFee(fee) {
+  if (!fee || isNaN(fee)) return '₹10K';
+  if (fee >= 100000) return '₹' + (fee / 100000).toFixed(1) + 'L';
+  return '₹' + (fee / 1000).toFixed(0) + 'K';
+}
+
+function estimateCategoryRank(air, category, stateRank) {
+  const sRank = stateRank || (studentProfile && studentProfile.customStateRank) || estimateStateRank(air);
+  
+  if (typeof snoToCatRanks2026 !== 'undefined' && snoToCatRanks2026[sRank] && snoToCatRanks2026[sRank].ranks) {
+    const ranks = snoToCatRanks2026[sRank].ranks;
+    let normCat = category ? category.replace('-', '').replace('_', '') : 'OC';
+    if (normCat === 'OPEN') normCat = 'OC';
+    let underscoreCat = category;
+    if (category && category.length === 3 && (category.startsWith('BC') || category.startsWith('SC'))) {
+      underscoreCat = category.substring(0, 2) + '_' + category.substring(2);
+    }
+    
+    if (ranks[category] !== undefined) return ranks[category];
+    if (ranks[underscoreCat] !== undefined) return ranks[underscoreCat];
+    if (ranks[normCat] !== undefined) return ranks[normCat];
+    if (category && category.startsWith('SC') && ranks['SC'] !== undefined) return ranks['SC'];
+    if ((category === 'OC' || category === 'OPEN') && ranks['OC'] !== undefined) return ranks['OC'];
+  }
+
+  const stateCatRatios = {
+    OC: 0.35, EWS: 0.10, BC_A: 0.07, BC_B: 0.18,
+    BC_C: 0.01, BC_D: 0.16, BC_E: 0.04, SC_1: 0.007, SC_2: 0.06, SC_3: 0.035, SC_4: 0.005, SC: 0.117, ST: 0.10
+  };
+  return Math.max(1, Math.round(sRank * (stateCatRatios[category] || 0.06)));
+}
+
+function getClosingRank(college, category) {
+  let searchCat = category || 'OC';
+  if (searchCat === 'OPEN' || searchCat === 'OC') searchCat = 'OC';
+  else if (searchCat.length === 3 && (searchCat.startsWith('BC') || searchCat.startsWith('SC'))) {
+    searchCat = searchCat.substring(0, 2) + '_' + searchCat.substring(2);
+  }
+
+  if (college.adjustedCatRanks && college.adjustedCatRanks[searchCat] !== undefined) {
+    return college.adjustedCatRanks[searchCat];
+  }
+  if (college.knownCatRanks && college.knownCatRanks[searchCat] !== undefined) {
+    return college.knownCatRanks[searchCat];
+  }
+  if (college.knownRanks && college.knownRanks[searchCat] !== undefined) {
+    return college.knownRanks[searchCat];
+  }
+  return college.ocClosing || 999999;
+}
+
+function isEligible(air, college, category, stateRank) {
+  const catRank = estimateCategoryRank(air, category, stateRank);
+  const closing = getClosingRank(college, category);
+  return catRank <= closing;
+}
+
+function runAllocation(air, category, preferenceList) {
+  const prefs = preferenceList || preferences || [];
+  for (let i = 0; i < prefs.length; i++) {
+    const col = prefs[i];
+    if (isEligible(air, col, category)) {
+      return {
+        allocated: true,
+        college: col,
+        preferenceNo: i + 1,
+        closingRank: getClosingRank(col, category)
+      };
+    }
+  }
+  return { allocated: false, college: null, preferenceNo: -1, closingRank: 0 };
+}
+
 function handleProfileSubmit(e) {
   if (e && e.preventDefault) e.preventDefault();
 
@@ -6703,6 +6785,12 @@ function init() {
 }
 
 // 1-Click Quick Predict & Auto Counselling Logic (Merit List Auto-Load + User Override)
+function buildPreferences(mode) {
+  const gList = (typeof govtColleges !== 'undefined' ? govtColleges : []).map(c => ({ ...c, type: 'govt' }));
+  const pList = (typeof pvtColleges !== 'undefined' ? pvtColleges : []).map(c => ({ ...c, type: 'pvt' }));
+  return [...gList, ...pList];
+}
+
 function quickPredict() {
   const snoInput = document.getElementById('stateSno');
   const airInput = document.getElementById('neetAIR');
