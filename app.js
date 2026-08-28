@@ -6666,166 +6666,231 @@ function getLocalPredictionFallback(query, payload) {
 }
 
 function processDynamicQuery(query, payload) {
-  const qLower = (query || '').toLowerCase();
-  
-  let conversationText = '';
-  if (payload && payload.history) {
-    conversationText = payload.history.filter(h => h.role === 'user').map(h => h.content).join(' ');
+  const q = (query || '').trim();
+  const qLower = q.toLowerCase();
+
+  // Helper to extract score from query
+  const scoreMatch = qLower.match(/(\d{3})\s*(marks|score|pts)?/);
+  const rankMatch = qLower.match(/(air|rank)\s*[:=]?\s*(\d{4,6})/i) || qLower.match(/(\d{4,6})\s*(air|rank)/i);
+
+  // Helper to extract category from query
+  let extractedCat = null;
+  if (/\b(sc[-_]?2|sc2)\b/i.test(qLower)) extractedCat = 'SC_2';
+  else if (/\b(sc[-_]?1|sc1)\b/i.test(qLower)) extractedCat = 'SC_1';
+  else if (/\b(sc[-_]?3|sc3)\b/i.test(qLower)) extractedCat = 'SC_3';
+  else if (/\b(sc)\b/i.test(qLower)) extractedCat = 'SC';
+  else if (/\b(st)\b/i.test(qLower)) extractedCat = 'ST';
+  else if (/\b(bc[-_]?a|bca)\b/i.test(qLower)) extractedCat = 'BC_A';
+  else if (/\b(bc[-_]?b|bcb)\b/i.test(qLower)) extractedCat = 'BC_B';
+  else if (/\b(bc[-_]?c|bcc)\b/i.test(qLower)) extractedCat = 'BC_C';
+  else if (/\b(bc[-_]?d|bcd)\b/i.test(qLower)) extractedCat = 'BC_D';
+  else if (/\b(bc[-_]?e|bce)\b/i.test(qLower)) extractedCat = 'BC_E';
+  else if (/\b(ews)\b/i.test(qLower)) extractedCat = 'EWS';
+  else if (/\b(oc|open|general)\b/i.test(qLower)) extractedCat = 'OC';
+
+  const gList = typeof govtColleges !== 'undefined' ? govtColleges : [];
+  const pList = typeof pvtColleges !== 'undefined' ? pvtColleges : [];
+  const allColleges = [
+    ...gList.map(c => ({ ...c, typeLabel: 'Government' })),
+    ...pList.map(c => ({ ...c, typeLabel: 'Private (Cat-A)' }))
+  ];
+
+  // 1. GREETING / HELP
+  if (/^(hi|hello|hey|help|who are you|good morning|good evening)/i.test(qLower) && !scoreMatch && !rankMatch) {
+    return `
+      <h3>👋 Welcome to mSeat AI Admission Counselor!</h3>
+      <p>I am your specialized assistant for <strong>Telangana KNRUHS MBBS Admissions 2026</strong>. How can I help you today?</p>
+      <p><strong>Popular topics you can ask me:</strong></p>
+      <ul>
+        <li>🎯 <em>"Will I get a seat for 420 marks in BC-B?"</em></li>
+        <li>🏛️ <em>"Tell me about Osmania / Gandhi / Mamata Medical College"</em></li>
+        <li>💰 <em>"What is the annual fee structure for Govt & Private colleges?"</em></li>
+        <li>📜 <em>"What documents are required for certificate verification?"</em></li>
+        <li>⚖️ <em>"Mamata Bachupally vs CMR Medchal comparison"</em></li>
+        <li>📊 <em>"How many MBBS seats are available in 2026?"</em></li>
+      </ul>
+    `;
   }
-  conversationText += ' ' + qLower;
-  const fullText = conversationText.toLowerCase();
 
-  // 1. Check for Score override in history or query
-  let score = parseFloat(payload ? payload.neetScore : 393) || 393;
-  const scoreMatches = fullText.match(/(\d{3})\s*(marks|score|pts)?/g);
-  if (scoreMatches && scoreMatches.length > 0) {
-    const lastMatch = scoreMatches[scoreMatches.length - 1];
-    const match = lastMatch.match(/(\d{3})/);
-    if (match && parseInt(match[1]) >= 100 && parseInt(match[1]) <= 720) {
-      score = parseInt(match[1]);
-    }
-  }
-
-  // 2. Check for Category override in history or query
-  let catKey = (payload ? payload.category : 'SC_2') || 'SC_2';
-  catKey = catKey.toUpperCase().replace('-', '_');
-
-  const categories = ['oc', 'ews', 'bc-a', 'bca', 'bc-b', 'bcb', 'bc-c', 'bcc', 'bc-d', 'bcd', 'bc-e', 'bce', 'sc-1', 'sc1', 'sc-2', 'sc2', 'sc-3', 'sc3', 'st'];
-  let latestCatIndex = -1;
-  categories.forEach(cat => {
-    const idx = fullText.lastIndexOf(cat);
-    if (idx > latestCatIndex) {
-      latestCatIndex = idx;
-      if (cat === 'oc') catKey = 'OC';
-      else if (cat === 'ews') catKey = 'EWS';
-      else if (cat === 'bc-a' || cat === 'bca') catKey = 'BC_A';
-      else if (cat === 'bc-b' || cat === 'bcb') catKey = 'BC_B';
-      else if (cat === 'bc-c' || cat === 'bcc') catKey = 'BC_C';
-      else if (cat === 'bc-d' || cat === 'bcd') catKey = 'BC_D';
-      else if (cat === 'bc-e' || cat === 'bce') catKey = 'BC_E';
-      else if (cat === 'sc-1' || cat === 'sc1') catKey = 'SC_1';
-      else if (cat === 'sc-2' || cat === 'sc2') catKey = 'SC_2';
-      else if (cat === 'sc-3' || cat === 'sc3') catKey = 'SC_3';
-      else if (cat === 'st') catKey = 'ST';
-    }
+  // 2. SPECIFIC COLLEGE LOOKUP (e.g. Gandhi, Osmania, ESIC, Mamata, Apollo, etc.)
+  const matchedCollege = allColleges.find(c => {
+    const code = (c.code || '').toLowerCase();
+    const namePart = (c.name || '').toLowerCase();
+    return (code && qLower.includes(code)) || 
+           (namePart.includes('gandhi') && qLower.includes('gandhi')) ||
+           (namePart.includes('osmania') && qLower.includes('osmania')) ||
+           (namePart.includes('esic') && qLower.includes('esic')) ||
+           (namePart.includes('apollo') && qLower.includes('apollo')) ||
+           (namePart.includes('kamineni') && qLower.includes('kamineni')) ||
+           (namePart.includes('bhaskar') && qLower.includes('bhaskar')) ||
+           (namePart.includes('patnam') && qLower.includes('patnam')) ||
+           (namePart.includes('arundathi') && qLower.includes('arundathi')) ||
+           (namePart.includes('maheshwara') && qLower.includes('maheshwara')) ||
+           (namePart.includes('mediciti') && qLower.includes('mediciti')) ||
+           (namePart.includes('chalmeda') && qLower.includes('chalmeda')) ||
+           (namePart.includes('mamata') && qLower.includes('mamata'));
   });
 
-  // 3. Intent: Comparison (e.g. "Mamata Bachupally vs CMR Medchal" or "compare X and Y")
+  if (matchedCollege && !qLower.includes(' vs ') && !qLower.includes('versus') && !qLower.includes('compare') && !scoreMatch) {
+    const isGovt = matchedCollege.type === 'govt';
+    const feeStr = isGovt ? '₹10,000 - ₹29,000 / year' : '₹60,000 / year (Cat-A Convenor)';
+    return `
+      <h3>🏛️ ${matchedCollege.name}</h3>
+      <div style="margin: 10px 0; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+        <p><strong>Code:</strong> <code>${matchedCollege.code}</code> · <strong>Type:</strong> ${matchedCollege.typeLabel}</p>
+        <p><strong>Location:</strong> ${matchedCollege.place} (${matchedCollege.distKm || '—'} km from Rajendranagar)</p>
+        <p><strong>Annual Tuition Fee:</strong> ${feeStr}</p>
+        <p><strong>Intake:</strong> ${matchedCollege.intake || 100} seats</p>
+      </div>
+      <p>💡 <em>Tip: You can ask "What are my chances in ${matchedCollege.name} with [your score] marks?"</em></p>
+    `;
+  }
+
+  // 3. COLLEGE COMPARISON (e.g. Mamata vs CMR, Apollo vs Kamineni)
   if (qLower.includes(' vs ') || qLower.includes('versus') || qLower.includes('compare')) {
-    const all = [...(typeof govtColleges !== 'undefined' ? govtColleges : []), ...(typeof pvtColleges !== 'undefined' ? pvtColleges : [])];
-    const matches = all.filter(c => qLower.includes(c.name.toLowerCase().split(' ')[0]) || qLower.includes(c.place.toLowerCase()));
+    const matches = allColleges.filter(c => qLower.includes(c.name.toLowerCase().split(' ')[0]) || (c.code && qLower.includes(c.code.toLowerCase())));
     if (matches.length >= 2) {
-      const colA = matches[0];
-      const colB = matches[1];
-      const rankA = colA.knownRanks?.[catKey] || colA.knownRanks?.SC || 'N/A';
-      const rankB = colB.knownRanks?.[catKey] || colB.knownRanks?.SC || 'N/A';
+      const c1 = matches[0];
+      const c2 = matches[1];
       return `
-        <h3>⚖️ College Comparison (${catKey} Category)</h3>
+        <h3>⚖️ College Comparison: ${c1.name} vs ${c2.name}</h3>
         <table>
           <thead>
-            <tr><th>Metric</th><th>${colA.name}</th><th>${colB.name}</th></tr>
+            <tr><th>Metric</th><th>${c1.name}</th><th>${c2.name}</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Place</strong></td><td>${colA.place}</td><td>${colB.place}</td></tr>
-            <tr><td><strong>Type</strong></td><td>${colA.type === 'govt' ? 'GOVT' : 'PVT-A'}</td><td>${colB.type === 'govt' ? 'GOVT' : 'PVT-A'}</td></tr>
-            <tr><td><strong>Intake</strong></td><td>${colA.intake} seats</td><td>${colB.intake} seats</td></tr>
-            <tr><td><strong>${catKey} Cutoff AIR</strong></td><td>${typeof rankA === 'number' ? rankA.toLocaleString() : rankA}</td><td>${typeof rankB === 'number' ? rankB.toLocaleString() : rankB}</td></tr>
+            <tr><td><strong>College Code</strong></td><td><code>${c1.code}</code></td><td><code>${c2.code}</code></td></tr>
+            <tr><td><strong>Type</strong></td><td>${c1.typeLabel}</td><td>${c2.typeLabel}</td></tr>
+            <tr><td><strong>Location</strong></td><td>${c1.place}</td><td>${c2.place}</td></tr>
+            <tr><td><strong>Distance (from Rajendranagar)</strong></td><td>${c1.distKm || '—'} km</td><td>${c2.distKm || '—'} km</td></tr>
+            <tr><td><strong>Fee (Cat-A)</strong></td><td>${c1.type === 'govt' ? '₹10,000/yr' : '₹60,000/yr'}</td><td>${c2.type === 'govt' ? '₹10,000/yr' : '₹60,000/yr'}</td></tr>
           </tbody>
         </table>
-        <p>💡 <em>Comparative prediction based on official closing cutoffs.</em></p>
       `;
     }
   }
 
-  // 4. Intent: Seat Expansion Stats
-  if (qLower.includes('seat') || qLower.includes('expansion') || qLower.includes('stats') || qLower.includes('increase')) {
+  // 4. FEE STRUCTURE QUERY
+  if (/\b(fee|fees|tuition|cost|charges|hostel fee|expensive)\b/i.test(qLower) && !scoreMatch) {
     return `
-      <h3>📊 2026 Telangana MBBS Seat Expansion Stats</h3>
-      <p><strong>Government Medical Colleges Seat Increases (+110 seats)</strong>:</p>
-      <ul>
-        <li>GMC Mahabubnagar: +25 seats (175 ➔ 200)</li>
-        <li>GMC Nizamabad: +30 seats (120 ➔ 150)</li>
-        <li>GMC Siddipet: +25 seats (175 ➔ 200)</li>
-        <li>RIMS Adilabad: +30 seats (120 ➔ 150)</li>
-      </ul>
-      <p><strong>Private Medical Colleges Seat Increases (+350 seats)</strong>:</p>
-      <ul>
-        <li>Bhaskar Medical College: +50 seats (150 ➔ 200)</li>
-        <li>Maheshwara Medical College: +100 seats (150 ➔ 250)</li>
-        <li>Malla Reddy IMS: +50 seats (200 ➔ 250)</li>
-        <li>Mamata Academy Bachupally: +50 seats (150 ➔ 200)</li>
-        <li>MNR Sangareddy: +100 seats (150 ➔ 250)</li>
-      </ul>
-      <p><strong>New Colleges</strong>: Raja Rajeshwari Institute of Medical Sciences (Girls) - 150 Seats</p>
+      <h3>💰 Telangana MBBS Fee Structure (AY 2026-27)</h3>
+      <table>
+        <thead>
+          <tr><th>College Type</th><th>Quota</th><th>Tuition Fee / Year</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Government Medical Colleges (GMC)</strong></td><td>Convenor Quota (85% State)</td><td><strong>₹10,000 – ₹29,000</strong></td></tr>
+          <tr><td><strong>ESIC Medical College (Sanathnagar)</strong></td><td>State Quota / IP Quota</td><td><strong>₹1,00,000</strong> (₹24,000 for IP)</td></tr>
+          <tr><td><strong>Private Non-Minority Medical Colleges</strong></td><td>Category-A (Convenor Quota 50%)</td><td><strong>₹60,000</strong></td></tr>
+          <tr><td><strong>Private Non-Minority Medical Colleges</strong></td><td>Category-B (Management Quota 35%)</td><td><strong>₹11,55,000 – ₹13,00,000</strong></td></tr>
+          <tr><td><strong>Private Non-Minority Medical Colleges</strong></td><td>Category-C (NRI Quota 15%)</td><td><strong>Up to 2x Cat-B Fee</strong></td></tr>
+        </tbody>
+      </table>
+      <p>💡 <em>Note: SC/ST/BC students eligible for Telangana e-PASS Post-Matric Scholarship receive full or partial tuition fee reimbursement for Category-A seats.</em></p>
     `;
   }
 
-  // 5. Intent: Dynamic Admission Prediction for the extracted score & category
-  const air = typeof estimateRank === 'function' ? estimateRank(score) : 289635;
-  const stateSno = typeof estimateStateRank === 'function' ? estimateStateRank(air) : 8902;
-
-  const gList = typeof govtColleges !== 'undefined' ? govtColleges : [];
-  const pList = typeof pvtColleges !== 'undefined' ? pvtColleges : [];
-
-  const all = [
-    ...gList.map(c => ({ ...c, typeText: 'GOVT' })),
-    ...pList.map(c => ({ ...c, typeText: 'PVT-A' }))
-  ];
-
-  let eligibleGmc = [];
-  let eligiblePvt = [];
-  let borderline = [];
-
-  all.forEach(c => {
-    const cutoff = c.knownRanks?.[catKey] || c.knownRanks?.SC || c.knownRanks?.OC;
-    if (!cutoff || cutoff === 9999999) return;
-    const diff = cutoff - air;
-    const item = { name: c.name, place: c.place, type: c.typeText, cutoffRank: cutoff, safetyMargin: diff };
-
-    if (diff >= 0) {
-      if (c.typeText === 'GOVT') eligibleGmc.push(item);
-      else eligiblePvt.push(item);
-    } else if (diff >= -30000) {
-      borderline.push(item);
-    }
-  });
-
-  eligibleGmc.sort((a, b) => a.cutoffRank - b.cutoffRank);
-  eligiblePvt.sort((a, b) => a.cutoffRank - b.cutoffRank);
-  borderline.sort((a, b) => b.cutoffRank - a.cutoffRank);
-
-  let html = `<h3>🤖 mSeat AI Admission Counselor</h3>`;
-  html += `<p>Query: <em>"${query}"</em></p>`;
-  html += `<p><strong>Evaluated Profile</strong>: Score <strong>${score} Marks</strong> | Est. AIR <strong>${air.toLocaleString()}</strong> | Est. State S.No <strong>#${stateSno.toLocaleString()}</strong> | Category <strong>${catKey}</strong></p>`;
-
-  if (eligibleGmc.length > 0) {
-    html += `<h4>🏛️ Eligible Government Medical Colleges (${eligibleGmc.length}):</h4><ul>`;
-    eligibleGmc.slice(0, 5).forEach(c => {
-      html += `<li><strong>${c.name}</strong> (${c.place}) - Cutoff AIR ${c.cutoffRank.toLocaleString()} (+${c.safetyMargin.toLocaleString()} ranks safe)</li>`;
-    });
-    html += `</ul>`;
-  } else {
-    html += `<p>ℹ️ <em>No Government Medical Colleges clear the cutoff at ${score} marks for ${catKey} category.</em></p>`;
+  // 5. DOCUMENTS REQUIRED & CERTIFICATE VERIFICATION
+  if (/\b(document|documents|certificate|certificates|verification|caste certificate|income certificate|domicile)\b/i.test(qLower)) {
+    return `
+      <h3>📜 Required Documents for KNRUHS Certificate Verification</h3>
+      <ol>
+        <li><strong>NEET UG 2026 Score Card / Rank Card</strong></li>
+        <li><strong>NEET UG 2026 Admit Card / Hall Ticket</strong></li>
+        <li><strong>SSC / 10th Class Marks Memo</strong> (Proof of Date of Birth)</li>
+        <li><strong>Intermediate / 10+2 Marks Memo</strong> (Biology, Physics, Chemistry)</li>
+        <li><strong>Study Certificates</strong> from Class 6th to Intermediate (to prove Local Status)</li>
+        <li><strong>Permanent Caste Certificate</strong> (for SC / ST / BC candidates issued by MeeSeva / Tahsildar)</li>
+        <li><strong>EWS Certificate</strong> (for EWS candidates for AY 2026-27)</li>
+        <li><strong>Transfer Certificate (TC)</strong> from the last attended institution</li>
+        <li><strong>Aadhaar Card</strong> of Candidate & Parents</li>
+        <li><strong>Latest Passport Size Photos</strong> (4 to 6 copies)</li>
+        <li><strong>Minority / PwD / CAP / NCC / Sports Certificate</strong> (if applicable)</li>
+      </ol>
+    `;
   }
 
-  if (eligiblePvt.length > 0) {
-    html += `<h4>🏥 Eligible Private A-Category Colleges (${eligiblePvt.length} Total):</h4><ul>`;
-    eligiblePvt.slice(0, 6).forEach(c => {
-      html += `<li><strong>${c.name}</strong> (${c.place}) - Cutoff AIR ${c.cutoffRank.toLocaleString()} (+${c.safetyMargin.toLocaleString()} ranks safe)</li>`;
-    });
-    html += `</ul>`;
+  // 6. COUNSELLING PROCESS, WEBOOPTIONS, SLIDING & ROUNDS
+  if (/\b(round|rounds|counselling|counseling|web option|web options|sliding|mopup|mop-up|stray|free exit)\b/i.test(qLower) && !scoreMatch) {
+    return `
+      <h3>🔄 KNRUHS MBBS Counselling Process & Sliding Rules</h3>
+      <ul>
+        <li><strong>Round 1 (Phase 1)</strong>: All eligible merit list candidates fill Web Options. Seats allotted strictly based on state merit rank and category reservation.</li>
+        <li><strong>Free Exit Period</strong>: Candidates allotted in Round 1 can either join or exit without penalty before the official free exit deadline.</li>
+        <li><strong>Round 2 (Phase 2) / Sliding</strong>: Candidates who joined in Round 1 can exercise higher web options to slide to a better Government or top Private college.</li>
+        <li><strong>Mop-Up Round</strong>: Conducted for remaining vacant seats after Round 2 (including seats converted from AIQ unfilled quota).</li>
+        <li><strong>Stray Vacancy Round</strong>: Final round for any leftover institutional vacancies strictly per merit list.</li>
+      </ul>
+      <p>💡 <strong>Best Strategy:</strong> Fill <em>all 36 Government colleges first</em> in order of location preference, followed by <em>all Private Category-A colleges</em>.</p>
+    `;
   }
 
-  if (borderline.length > 0) {
-    html += `<h4>⚡ Borderline / Upgradation Possibilities:</h4><ul>`;
-    borderline.slice(0, 3).forEach(c => {
-      html += `<li><strong>${c.name}</strong> (${c.type}) - Cutoff AIR ${c.cutoffRank.toLocaleString()} (Short by ${Math.abs(c.safetyMargin).toLocaleString()} ranks)</li>`;
-    });
-    html += `</ul>`;
+  // 7. RESERVATION & LOCAL QUOTA
+  if (/\b(reservation|quota|local|non-local|non local|85%|15%|sub-classification|classification)\b/i.test(qLower) && !scoreMatch) {
+    return `
+      <h3>📊 Telangana MBBS Reservation & Quota Structure</h3>
+      <ul>
+        <li><strong>85% State Quota</strong>: Reserved exclusively for Local candidates (Telangana domicile with 4+ consecutive years of study).</li>
+        <li><strong>15% Unreserved Quota</strong>: Open to both Local and Non-Local candidates based purely on merit.</li>
+        <li><strong>Caste Reservations</strong>:
+          <ul>
+            <li><strong>SC (15%)</strong>: Sub-classified into SC-1 (1%), SC-2 (9%), SC-3 (5%).</li>
+            <li><strong>ST</strong>: 10%</li>
+            <li><strong>BC (29%)</strong>: BC-A (7%), BC-B (10%), BC-C (1%), BC-D (7%), BC-E (4%).</li>
+            <li><strong>EWS</strong>: 10% in Government colleges with sanctioned EWS seats.</li>
+            <li><strong>Women Horizontal Reservation</strong>: 33⅓% seats in all categories reserved for female candidates.</li>
+          </ul>
+        </li>
+      </ul>
+    `;
   }
 
-  html += `<p>⚡ <em>Dynamic prediction calculated using mSeat 2026 Merit Engine.</em></p>`;
-  return html;
+  // 8. TOTAL SEATS & 2026 SEAT MATRIX
+  if (/\b(seat matrix|total seats|how many seats|seats count|expansion)\b/i.test(qLower) && !scoreMatch) {
+    return `
+      <h3>🏥 Official AY 2026-27 Telangana MBBS Seat Matrix</h3>
+      <ul>
+        <li><strong>Total Convener MBBS Seats:</strong> 6,020 Seats across 63 Medical Colleges</li>
+        <li><strong>Government Medical Colleges (36 Colleges):</strong> 3,499 Seats</li>
+        <li><strong>Private Non-Minority Medical Colleges (23 Colleges):</strong> 2,154 Seats</li>
+        <li><strong>Minority Medical Colleges (4 Colleges):</strong> 367 Seats</li>
+        <li><strong>SC-2 Category Quota:</strong> 506 MBBS Seats (318 Govt + 188 Pvt)</li>
+      </ul>
+    `;
+  }
+
+  // 9. ADMISSION CHANCES / PROBABILITY / SCORE EVALUATION
+  let evalScore = scoreMatch ? parseInt(scoreMatch[1]) : (payload?.neetScore ? parseInt(payload.neetScore) : null);
+  let evalCat = extractedCat || payload?.category || 'SC_2';
+
+  if (evalScore && (scoreMatch || rankMatch || /\b(chance|chances|probability|can i get|allotment|eligible|eligible for|get seat|qualify|cutoff)\b/i.test(qLower))) {
+    const estAir = typeof estimateRank === 'function' ? estimateRank(evalScore) : (scoreMatch ? 289635 : payload?.neetRank || 289635);
+    const estSno = typeof estimateStateRank === 'function' ? estimateStateRank(estAir) : 8367;
+
+    return `
+      <h3>🎯 Admission Chances Evaluation</h3>
+      <p><strong>Evaluated Score:</strong> ${evalScore} / 720 · <strong>Category:</strong> ${evalCat} · <strong>Est. AIR:</strong> ~${estAir.toLocaleString()} · <strong>Est. State S.No:</strong> #${estSno.toLocaleString()}</p>
+      <p><strong>Predicted Outcome:</strong></p>
+      <ul>
+        <li>🏛️ <strong>Government Medical Colleges:</strong> ${evalScore >= 450 ? 'Strong chances in newly established & district GMCs' : 'Chances open in Round 3 / Mop-up with AIQ exits'}</li>
+        <li>🏥 <strong>Private Cat-A Medical Colleges:</strong> <strong>High Probability / Guaranteed</strong> in top Hyderabad & suburban colleges (Arundathi, Maheshwara, Patnam Mahender, CMR Medchal, Mamata Bachupally).</li>
+      </ul>
+      <p>💡 <em>Tip: Use the <strong>"🚀 1-Click Auto Predict"</strong> button on Step 1 to run the complete 59-college simulated allotment for this exact score!</em></p>
+    `;
+  }
+
+  // 10. DEFAULT HELPFUL ADVICE
+  return `
+    <h3>💬 mSeat AI Admission Counselor</h3>
+    <p>You asked: <em>"${q}"</em></p>
+    <p>I can help you analyze admission chances, explain KNRUHS counselling rules, compare colleges, or check fees. Try asking:</p>
+    <ul>
+      <li><em>"What are the fees for private A category seats?"</em></li>
+      <li><em>"What documents do I need for certificate verification?"</em></li>
+      <li><em>"Chances for [your score] in [your category]?"</em></li>
+      <li><em>"Tell me about Osmania / Gandhi Medical College"</em></li>
+    </ul>
+  `;
 }
 
 function parseMarkdownToHtml(markdown) {
