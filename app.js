@@ -6038,7 +6038,21 @@ function init() {
     renderCollegeList();
   });
 
-  // Score & Rank inputs sync
+  // User Manual Override Trackers
+  let userHasManuallyChangedCategory = false;
+  let userHasManuallyChangedGender = false;
+
+  const catSelectEl = document.getElementById('categorySelect');
+  if (catSelectEl) {
+    catSelectEl.addEventListener('change', () => { userHasManuallyChangedCategory = true; });
+  }
+
+  const genderSelectEl = document.getElementById('genderSelect');
+  if (genderSelectEl) {
+    genderSelectEl.addEventListener('change', () => { userHasManuallyChangedGender = true; });
+  }
+
+  // Score & Rank inputs sync with Real Merit List Auto-population
   const airInput = document.getElementById('neetAIR');
   const snoInput = document.getElementById('stateSno');
   const scoreInput = document.getElementById('neetScore');
@@ -6048,11 +6062,22 @@ function init() {
     airInput.addEventListener('input', function () {
       const air = parseInt(this.value);
       if (!isNaN(air) && air > 0) {
-        const estScore = estimateScoreFromAIR(air);
         const estSno = estimateStateRank(air);
+        const candData = snoToCatRanks2026[estSno] || snoToCatRanks2026[snoInput?.value ? parseInt(snoInput.value) : null];
+        const estScore = candData ? candData.score : estimateScoreFromAIR(air);
+        
         if (scoreInput) scoreInput.value = estScore;
         if (scoreSlider) scoreSlider.value = estScore;
-        if (snoInput && !snoInput.value) snoInput.placeholder = `Est: ${estSno}`;
+        if (snoInput && !snoInput.value) snoInput.placeholder = `Est: #${estSno}`;
+
+        // Auto-load candidate category & gender from Merit list
+        if (candData) {
+          let mappedCat = candData.cat;
+          if (candData.ews && mappedCat === 'OC') mappedCat = 'EWS';
+          if (catSelectEl && !userHasManuallyChangedCategory) catSelectEl.value = mappedCat;
+          if (genderSelectEl && !userHasManuallyChangedGender) genderSelectEl.value = candData.gender || 'female';
+        }
+
         updateScorePreview(estScore, air, estSno);
       }
     });
@@ -6062,12 +6087,35 @@ function init() {
     snoInput.addEventListener('input', function () {
       const sno = parseInt(this.value);
       if (!isNaN(sno) && sno > 0) {
-        const estAir = estimateAIRFromSno(sno);
-        const estScore = estimateScoreFromAIR(estAir);
-        if (airInput && !airInput.value) airInput.placeholder = `Est: ${estAir.toLocaleString()}`;
-        if (scoreInput) scoreInput.value = estScore;
-        if (scoreSlider) scoreSlider.value = estScore;
-        updateScorePreview(estScore, estAir, sno);
+        const candData = snoToCatRanks2026[sno];
+        const exactAir = candData ? candData.air : estimateAIRFromSno(sno);
+        const exactScore = candData ? candData.score : estimateScoreFromAIR(exactAir);
+
+        if (airInput) {
+          airInput.value = exactAir;
+          airInput.style.borderColor = '#10b981';
+        }
+        if (scoreInput) {
+          scoreInput.value = exactScore;
+          scoreInput.style.borderColor = '#10b981';
+        }
+        if (scoreSlider) scoreSlider.value = exactScore;
+
+        // Auto-load candidate's official Category & Gender from Merit list!
+        if (candData) {
+          let mappedCat = candData.cat;
+          if (candData.ews && mappedCat === 'OC') mappedCat = 'EWS';
+          if (catSelectEl && !userHasManuallyChangedCategory) {
+            catSelectEl.value = mappedCat;
+            catSelectEl.style.borderColor = '#10b981';
+          }
+          if (genderSelectEl && !userHasManuallyChangedGender) {
+            genderSelectEl.value = candData.gender || 'female';
+            genderSelectEl.style.borderColor = '#10b981';
+          }
+        }
+
+        updateScorePreview(exactScore, exactAir, sno);
       }
     });
   }
@@ -6948,7 +6996,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// 1-Click Quick Predict & Auto Counselling Logic (Bypass & Optional Name)
+// 1-Click Quick Predict & Auto Counselling Logic (Merit List Auto-Load + User Override)
 function quickPredict() {
   const snoInput = document.getElementById('stateSno');
   const airInput = document.getElementById('neetAIR');
@@ -6961,18 +7009,40 @@ function quickPredict() {
   let air = parseInt(airInput?.value);
   let score = parseInt(scoreInput?.value);
 
-  // Auto-fill rank / score if S.No or AIR provided, without overwriting user-selected Category/Gender/Name
+  // 1. Auto-fetch official Category, Gender, AIR, Score from Final Merit List if S.No is provided
   if (!isNaN(sno) && snoToCatRanks2026[sno]) {
     const data = snoToCatRanks2026[sno];
-    if (airInput && !airInput.value) airInput.value = data.air;
-    if (scoreInput && !scoreInput.value) scoreInput.value = data.score;
-    air = air || data.air;
-    score = score || data.score;
+    air = data.air;
+    score = data.score;
+    if (airInput) airInput.value = air;
+    if (scoreInput) scoreInput.value = score;
+
+    let mappedCat = data.cat;
+    if (data.ews && mappedCat === 'OC') mappedCat = 'EWS';
+
+    // If user hasn't manually selected a different category, use the candidate's actual merit category!
+    if (catSelect && (!catSelect.value || catSelect.value === '')) {
+      catSelect.value = mappedCat;
+    }
+    if (genderSelect && (!genderSelect.value || genderSelect.value === '')) {
+      genderSelect.value = data.gender || 'female';
+    }
   } else if (!isNaN(air) && isNaN(sno)) {
     sno = estimateStateRank(air);
     if (snoInput) snoInput.value = sno;
-    score = !isNaN(score) ? score : estimateScoreFromAIR(air);
-    if (scoreInput) scoreInput.value = score;
+    if (snoToCatRanks2026[sno]) {
+      const data = snoToCatRanks2026[sno];
+      score = data.score;
+      if (scoreInput) scoreInput.value = score;
+      let mappedCat = data.cat;
+      if (data.ews && mappedCat === 'OC') mappedCat = 'EWS';
+      if (catSelect && (!catSelect.value || catSelect.value === '')) {
+        catSelect.value = mappedCat;
+      }
+      if (genderSelect && (!genderSelect.value || genderSelect.value === '')) {
+        genderSelect.value = data.gender || 'female';
+      }
+    }
   } else if (!isNaN(score) && isNaN(air)) {
     air = estimateRank(score);
     sno = estimateStateRank(air);
@@ -6985,20 +7055,39 @@ function quickPredict() {
     return;
   }
 
-  // Always use the user-selected category and gender!
-  const category = catSelect?.value || 'SC_2';
-  const gender = genderSelect?.value || 'female';
+  // Final category and gender resolution (Merit list or user selected)
+  let resolvedCat = catSelect?.value;
+  let resolvedGender = genderSelect?.value;
+
+  if (!resolvedCat || resolvedCat === '') {
+    if (!isNaN(sno) && snoToCatRanks2026[sno]) {
+      let mappedCat = snoToCatRanks2026[sno].cat;
+      if (snoToCatRanks2026[sno].ews && mappedCat === 'OC') mappedCat = 'EWS';
+      resolvedCat = mappedCat;
+    } else {
+      resolvedCat = 'OC';
+    }
+  }
+
+  if (!resolvedGender || resolvedGender === '') {
+    if (!isNaN(sno) && snoToCatRanks2026[sno]) {
+      resolvedGender = snoToCatRanks2026[sno].gender || 'female';
+    } else {
+      resolvedGender = 'female';
+    }
+  }
+
   const name = nameInput?.value?.trim() || '';
 
   studentProfile = {
     name,
-    score: score || 393,
-    category,
-    gender,
-    localStatus: 'local',
+    score: score || 386,
+    category: resolvedCat,
+    gender: resolvedGender,
+    localStatus: document.getElementById('localSelect')?.value || 'local',
     pwd: document.getElementById('pwdCheckbox')?.checked || false,
-    customAIR: air || 289635,
-    customStateRank: sno || 8367
+    customAIR: air || 309255,
+    customStateRank: sno || 9200
   };
   estimatedAIR = studentProfile.customAIR;
 
