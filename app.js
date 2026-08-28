@@ -6514,8 +6514,42 @@ function toggleNameField() {
     } else {
       nameInput.classList.add('name-input-hidden');
       nameInput.value = '';
-      if (toggleText) toggleText.textContent = '+ Add Student Name';
+      if (toggleText) toggleText.textContent = '+ Add Candidate Name (optional)';
     }
+  }
+}
+
+// --- Toggle Advanced Options Panel ---
+function toggleAdvancedOptions() {
+  const panel = document.getElementById('advancedOptionsPanel');
+  const btn = document.getElementById('advancedToggleBtn');
+  if (!panel) return;
+  const isHidden = panel.style.display === 'none' || panel.classList.contains('hidden');
+  if (isHidden) {
+    panel.style.display = 'block';
+    panel.classList.remove('hidden');
+    if (btn) btn.innerHTML = '<span>⚙️ Hide Advanced Options</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>';
+  } else {
+    panel.style.display = 'none';
+    panel.classList.add('hidden');
+    if (btn) btn.innerHTML = '<span>⚙️ Custom Category, Gender & Quota Options (Optional)</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>';
+  }
+}
+
+// --- Toggle Advanced Options Panel ---
+function toggleAdvancedOptions() {
+  const panel = document.getElementById('advancedOptionsPanel');
+  const btn = document.getElementById('advancedToggleBtn');
+  if (!panel) return;
+  const isHidden = panel.style.display === 'none' || panel.classList.contains('hidden');
+  if (isHidden) {
+    panel.style.display = 'block';
+    panel.classList.remove('hidden');
+    if (btn) btn.innerHTML = '<span>⚙️ Hide Advanced Options</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>';
+  } else {
+    panel.style.display = 'none';
+    panel.classList.add('hidden');
+    if (btn) btn.innerHTML = '<span>⚙️ Custom Category, Gender & Quota Options (Optional)</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>';
   }
 }
 

@@ -34,11 +34,8 @@
         </div>
       </div>
       <div class="header-actions" style="display: flex; gap: 8px; flex-wrap: wrap;">
-        <button class="btn-outline" onclick="showMasterTableModal()" style="border-color: #fbbf24; color: #fbbf24;">
-          ⭐ Master College Explorer (59 Colleges)
-        </button>
-        <button class="btn-outline" onclick="showQuotaInfo()">
-          Quota & FAQ Info
+        <button class="btn-outline" onclick="showQuotaInfo()" style="border-color: var(--accent-teal); color: var(--accent-teal);">
+          🩺 Quota & FAQ Guide
         </button>
       </div>
     </div>
@@ -81,98 +78,126 @@
           <div class="step-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#grad1)" stroke-width="1.5">
               <defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4aa"/><stop offset="100%" stop-color="#0ea5e9"/></linearGradient></defs>
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
             </svg>
           </div>
-          <h2>Student Profile</h2>
-          <p>Enter your NEET Re-Exam 2026 details to estimate your rank and explore eligible colleges</p>
+          <div class="doctor-badge">⚕️ Clinical Decision Engine · Telangana MBBS AY 2026-27</div>
+          <h2>Instant MBBS Seat Prediction</h2>
+          <p>Enter your NEET All India Rank (AIR) or Telangana State S.No to simulate your seat allocation</p>
         </div>
 
-        <form id="profileForm" class="profile-form glass-card animate-on-scroll">
+        <form id="profileForm" class="profile-form glass-card animate-on-scroll doctor-card">
+          <!-- 1-Click Fast Inputs Grid -->
           <div class="form-grid">
             <div class="form-group full-width name-optional">
               <label class="optional-toggle" onclick="toggleNameField()">
-                <span class="toggle-text">+ Add Student Name</span>
+                <span class="toggle-text">+ Add Candidate Name (optional)</span>
                 <span class="optional-tag">optional</span>
               </label>
-              <input type="text" id="studentName" placeholder="Enter name (optional)" class="name-input-hidden">
+              <input type="text" id="studentName" placeholder="Enter candidate name (optional)" class="name-input-hidden">
             </div>
 
             <div class="form-group">
-              <label for="neetAIR">NEET All India Rank (AIR) <span class="label-badge">Recommended</span></label>
-              <input type="number" id="neetAIR" placeholder="e.g. 134093">
+              <label for="neetAIR">
+                <span class="label-title">NEET All India Rank (AIR)</span>
+                <span class="label-badge">Recommended</span>
+              </label>
+              <div class="input-with-icon">
+                <span class="input-icon">🏆</span>
+                <input type="number" id="neetAIR" placeholder="e.g. 289635">
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="stateSno">Telangana State Serial No (S.No) <span class="label-badge">Accurate</span></label>
-              <input type="number" id="stateSno" placeholder="e.g. 2363">
+              <label for="stateSno">
+                <span class="label-title">Telangana State Serial No (S.No)</span>
+                <span class="label-badge label-badge-green">100% Accurate</span>
+              </label>
+              <div class="input-with-icon">
+                <span class="input-icon">📍</span>
+                <input type="number" id="stateSno" placeholder="e.g. 8367">
+              </div>
             </div>
 
             <div class="form-group full-width">
-              <label for="neetScore">NEET Score (out of 720) <span class="label-hint">(or use score if AIR/S.No unavailable)</span></label>
-              <input type="number" id="neetScore" min="1" max="720" placeholder="e.g. 469">
-              <input type="range" id="scoreSlider" min="100" max="720" value="469" class="score-slider">
-              <div id="scorePreview" class="score-preview"></div>
-            </div>
-
-
-
-            <div class="form-group">
-              <label for="categorySelect">Category / Caste</label>
-              <select id="categorySelect" required>
-                <option value="" disabled selected>Select Category</option>
-                <option value="OC">OC — Open Category (General)</option>
-                <option value="EWS">EWS — Economically Weaker Section</option>
-                <option value="BC_A">BC-A — Backward Class Group A (7%)</option>
-                <option value="BC_B">BC-B — Backward Class Group B (10%)</option>
-                <option value="BC_C">BC-C — Backward Class Group C (1%)</option>
-                <option value="BC_D">BC-D — Backward Class Group D (7%)</option>
-                <option value="BC_E">BC-E — Backward Class Group E (4%)</option>
-                <option value="SC_2" selected>SC-2 — Scheduled Caste Group 2 (Primary SC Sub-group)</option>
-                <option value="SC_1">SC-1 — Scheduled Caste Group 1</option>
-                <option value="SC_3">SC-3 — Scheduled Caste Group 3</option>
-                <option value="SC">SC — Scheduled Caste (General SC)</option>
-                <option value="ST">ST — Scheduled Tribe (10%)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="genderSelect">Gender</label>
-              <select id="genderSelect" required>
-                <option value="" disabled selected>Select Gender</option>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="localSelect">Local / Non-Local Status</label>
-              <select id="localSelect" required>
-                <option value="" disabled selected>Select Status</option>
-                <option value="local">Local (Telangana Domicile)</option>
-                <option value="nonlocal">Non-Local</option>
-              </select>
-            </div>
-
-            <div class="form-group checkbox-group">
-              <label class="checkbox-label">
-                <input type="checkbox" id="pwdCheckbox">
-                <span class="checkbox-custom"></span>
-                <span>PwD (Person with Disability — 40%+ disability)</span>
+              <label for="neetScore">
+                <span class="label-title">NEET Score (out of 720)</span>
+                <span class="label-hint">(or use score if AIR/S.No unavailable)</span>
               </label>
+              <input type="number" id="neetScore" min="1" max="720" placeholder="e.g. 393">
+              <input type="range" id="scoreSlider" min="100" max="720" value="393" class="score-slider">
+              <div id="scorePreview" class="score-preview"></div>
             </div>
           </div>
 
-          <div class="form-actions">
-            <div style="display: flex; gap: 16px; width: 100%;">
-  <button type="button" class="btn-primary btn-lg btn-glow" onclick="quickPredict()" style="flex: 2; background: linear-gradient(135deg, #10b981 0%, #059669 100%); font-size: 1.1rem; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);">
-    🚀 1-Click Auto Predict
-  </button>
-  <button type="submit" class="btn-outline btn-lg" style="flex: 1; border-color: #0ea5e9; color: #0ea5e9; font-size: 1rem;">
-    Advanced Steps
-  </button>
-</div>
+          <!-- Prominent 1-Click Action Button -->
+          <div class="primary-action-box" style="margin-top: 20px;">
+            <button type="button" class="btn-primary btn-xl btn-doctor-glow" onclick="quickPredict()" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.15rem; font-weight: 700; padding: 16px 24px; border-radius: 14px; background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); box-shadow: 0 6px 24px rgba(16, 185, 129, 0.45); border: none; cursor: pointer; color: #fff; transition: all 0.2s ease;">
+              <span>🩺 🚀 Run 1-Click Instant Seat Prediction</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <!-- Collapsible Advanced Options Toggle -->
+          <div class="advanced-accordion" style="margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px;">
+            <button type="button" id="advancedToggleBtn" class="advanced-toggle-btn" onclick="toggleAdvancedOptions()" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: var(--text-secondary); padding: 10px 16px; font-size: 0.9rem; display: flex; align-items: center; justify-content: space-between; width: 100%; cursor: pointer; transition: all 0.2s;">
+              <span>⚙️ Custom Category, Gender & Quota Options (Optional)</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+
+            <!-- Advanced Options Form Elements (Hidden by default) -->
+            <div id="advancedOptionsPanel" class="advanced-panel" style="display: none; margin-top: 18px;">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="categorySelect">Category / Caste</label>
+                  <select id="categorySelect" required>
+                    <option value="SC_2" selected>SC-2 — Scheduled Caste Group 2 (Primary SC)</option>
+                    <option value="OC">OC — Open Category (General)</option>
+                    <option value="EWS">EWS — Economically Weaker Section</option>
+                    <option value="BC_A">BC-A — Backward Class Group A (7%)</option>
+                    <option value="BC_B">BC-B — Backward Class Group B (10%)</option>
+                    <option value="BC_C">BC-C — Backward Class Group C (1%)</option>
+                    <option value="BC_D">BC-D — Backward Class Group D (7%)</option>
+                    <option value="BC_E">BC-E — Backward Class Group E (4%)</option>
+                    <option value="SC_1">SC-1 — Scheduled Caste Group 1</option>
+                    <option value="SC_3">SC-3 — Scheduled Caste Group 3</option>
+                    <option value="SC">SC — Scheduled Caste (General SC)</option>
+                    <option value="ST">ST — Scheduled Tribe (10%)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="genderSelect">Gender</label>
+                  <select id="genderSelect" required>
+                    <option value="female" selected>Female</option>
+                    <option value="male">Male</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="localSelect">Local / Non-Local Status</label>
+                  <select id="localSelect" required>
+                    <option value="local" selected>Local (Telangana Domicile)</option>
+                    <option value="nonlocal">Non-Local</option>
+                  </select>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="pwdCheckbox">
+                    <span class="checkbox-custom"></span>
+                    <span>PwD (Person with Disability — 40%+ disability)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div style="margin-top: 14px; text-align: right;">
+                <button type="submit" class="btn-outline" style="border-color: #0ea5e9; color: #0ea5e9; font-size: 0.9rem; padding: 8px 18px;">
+                  📋 Advanced Step-by-Step Analysis ➔
+                </button>
+              </div>
+            </div>
           </div>
         </form>
 
