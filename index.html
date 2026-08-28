@@ -7,8 +7,8 @@
   <title>Telangana MBBS Mock Counselling 2026 | MSeat</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260828_final">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260829_genz">
 </head>
 <body>
 
@@ -72,85 +72,85 @@
   <main class="main-content">
     <div class="container">
 
-      <!-- ====== STEP 1: Student Profile ====== -->
+            <!-- ====== STEP 1: Student Profile ====== -->
       <div id="step1" class="step-content active" style="display:block;">
-        <div class="step-header animate-on-scroll">
-          <div class="step-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#grad1)" stroke-width="1.5">
-              <defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4aa"/><stop offset="100%" stop-color="#0ea5e9"/></linearGradient></defs>
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
+        <div class="hero-section animate-on-scroll">
+          <div class="genz-pill">
+            <span class="pill-dot"></span>
+            <span>⚡ AY 2026-27 Final Merit List · 6,020 MBBS Seats Live</span>
           </div>
-          <div class="doctor-badge">⚕️ Clinical Decision Engine · Telangana MBBS AY 2026-27</div>
-          <h2>Instant MBBS Seat Prediction</h2>
-          <p>Enter your NEET All India Rank (AIR) or Telangana State S.No to simulate your seat allocation</p>
+          <h2 class="hero-title">Predict Your MBBS Seat in <span class="gradient-text">1-Click</span></h2>
+          <p class="hero-subtitle">Real-time mock counselling simulation across 36 Government & 23 Private Medical Colleges in Telangana</p>
         </div>
 
-        <form id="profileForm" class="profile-form glass-card animate-on-scroll doctor-card">
+        <form id="profileForm" class="profile-form glass-card animate-on-scroll genz-card">
           <!-- 1-Click Fast Inputs Grid -->
-          <div class="form-grid">
-            <div class="form-group full-width name-optional">
-              <label class="optional-toggle" onclick="toggleNameField()">
-                <span class="toggle-text">+ Add Candidate Name (optional)</span>
-                <span class="optional-tag">optional</span>
-              </label>
-              <input type="text" id="studentName" placeholder="Enter candidate name (optional)" class="name-input-hidden">
-            </div>
-
-            <div class="form-group">
-              <label for="neetAIR">
-                <span class="label-title">NEET All India Rank (AIR)</span>
-                <span class="label-badge">Recommended</span>
-              </label>
-              <div class="input-with-icon">
-                <span class="input-icon">🏆</span>
-                <input type="number" id="neetAIR" placeholder="e.g. 289635">
+          <div class="fast-inputs-grid">
+            <div class="input-card">
+              <div class="input-card-header">
+                <div class="input-card-icon">🏆</div>
+                <div class="input-card-meta">
+                  <label for="neetAIR" class="input-card-title">NEET All India Rank (AIR)</label>
+                  <span class="input-card-badge badge-blue">Recommended</span>
+                </div>
               </div>
+              <input type="number" id="neetAIR" placeholder="e.g. 289635" class="genz-input">
             </div>
 
-            <div class="form-group">
-              <label for="stateSno">
-                <span class="label-title">Telangana State Serial No (S.No)</span>
-                <span class="label-badge label-badge-green">100% Accurate</span>
-              </label>
-              <div class="input-with-icon">
-                <span class="input-icon">📍</span>
-                <input type="number" id="stateSno" placeholder="e.g. 8367">
+            <div class="input-card">
+              <div class="input-card-header">
+                <div class="input-card-icon">📍</div>
+                <div class="input-card-meta">
+                  <label for="stateSno" class="input-card-title">Telangana State Serial No (S.No)</label>
+                  <span class="input-card-badge badge-green">100% Accurate</span>
+                </div>
               </div>
-            </div>
-
-            <div class="form-group full-width">
-              <label for="neetScore">
-                <span class="label-title">NEET Score (out of 720)</span>
-                <span class="label-hint">(or use score if AIR/S.No unavailable)</span>
-              </label>
-              <input type="number" id="neetScore" min="1" max="720" placeholder="e.g. 393">
-              <input type="range" id="scoreSlider" min="100" max="720" value="393" class="score-slider">
-              <div id="scorePreview" class="score-preview"></div>
+              <input type="number" id="stateSno" placeholder="e.g. 8367" class="genz-input">
             </div>
           </div>
 
-          <!-- Prominent 1-Click Action Button -->
-          <div class="primary-action-box" style="margin-top: 20px;">
-            <button type="button" class="btn-primary btn-xl btn-doctor-glow" onclick="quickPredict()" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.15rem; font-weight: 700; padding: 16px 24px; border-radius: 14px; background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); box-shadow: 0 6px 24px rgba(16, 185, 129, 0.45); border: none; cursor: pointer; color: #fff; transition: all 0.2s ease;">
-              <span>🩺 🚀 Run 1-Click Instant Seat Prediction</span>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          <!-- Score Slider Bar -->
+          <div class="score-card" style="margin-top: 18px;">
+            <div class="score-card-header">
+              <label for="neetScore" class="score-title">NEET Score (out of 720)</label>
+              <span class="score-hint">or slide score if AIR/S.No unavailable</span>
+            </div>
+            <div class="score-slider-wrapper">
+              <input type="number" id="neetScore" min="1" max="720" placeholder="e.g. 393" class="score-number-input">
+              <input type="range" id="scoreSlider" min="100" max="720" value="393" class="score-slider">
+            </div>
+            <div id="scorePreview" class="score-preview"></div>
+          </div>
+
+          <!-- Name field (optional) -->
+          <div class="name-toggle-row" style="margin-top: 14px;">
+            <label class="optional-toggle" onclick="toggleNameField()">
+              <span class="toggle-text">+ Add Candidate Name (optional)</span>
+            </label>
+            <input type="text" id="studentName" placeholder="Enter candidate name (optional)" class="name-input-hidden genz-name-input">
+          </div>
+
+          <!-- Giant 1-Click Action Button -->
+          <div class="hero-action-box" style="margin-top: 24px;">
+            <button type="button" class="btn-genz-glow" onclick="quickPredict()">
+              <span class="btn-text">⚡ Run 1-Click Seat Prediction</span>
+              <span class="btn-arrow">➔</span>
             </button>
           </div>
 
           <!-- Collapsible Advanced Options Toggle -->
-          <div class="advanced-accordion" style="margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px;">
-            <button type="button" id="advancedToggleBtn" class="advanced-toggle-btn" onclick="toggleAdvancedOptions()" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: var(--text-secondary); padding: 10px 16px; font-size: 0.9rem; display: flex; align-items: center; justify-content: space-between; width: 100%; cursor: pointer; transition: all 0.2s;">
-              <span>⚙️ Custom Category, Gender & Quota Options (Optional)</span>
+          <div class="advanced-accordion" style="margin-top: 26px;">
+            <button type="button" id="advancedToggleBtn" class="advanced-toggle-pill" onclick="toggleAdvancedOptions()">
+              <span class="pill-left">⚙️ Custom Category, Gender & Quota Options</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
 
             <!-- Advanced Options Form Elements (Hidden by default) -->
-            <div id="advancedOptionsPanel" class="advanced-panel" style="display: none; margin-top: 18px;">
-              <div class="form-grid">
+            <div id="advancedOptionsPanel" class="advanced-panel" style="display: none;">
+              <div class="advanced-grid">
                 <div class="form-group">
                   <label for="categorySelect">Category / Caste</label>
-                  <select id="categorySelect">
+                  <select id="categorySelect" class="genz-select">
                     <option value="" disabled selected>Select Category (Auto-loaded from S.No/AIR)</option>
                     <option value="OC">OC — Open Category (General)</option>
                     <option value="EWS">EWS — Economically Weaker Section</option>
@@ -169,7 +169,7 @@
 
                 <div class="form-group">
                   <label for="genderSelect">Gender</label>
-                  <select id="genderSelect">
+                  <select id="genderSelect" class="genz-select">
                     <option value="" disabled selected>Select Gender (Auto-loaded from S.No/AIR)</option>
                     <option value="female">Female</option>
                     <option value="male">Male</option>
@@ -179,7 +179,7 @@
 
                 <div class="form-group">
                   <label for="localSelect">Local / Non-Local Status</label>
-                  <select id="localSelect" required>
+                  <select id="localSelect" class="genz-select">
                     <option value="local" selected>Local (Telangana Domicile)</option>
                     <option value="nonlocal">Non-Local</option>
                   </select>
@@ -194,8 +194,8 @@
                 </div>
               </div>
 
-              <div style="margin-top: 14px; text-align: right;">
-                <button type="submit" class="btn-outline" style="border-color: #0ea5e9; color: #0ea5e9; font-size: 0.9rem; padding: 8px 18px;">
+              <div style="margin-top: 16px; text-align: right;">
+                <button type="submit" class="btn-outline btn-sm" style="border-color: #0ea5e9; color: #0ea5e9;">
                   📋 Advanced Step-by-Step Analysis ➔
                 </button>
               </div>
@@ -737,6 +737,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=20260828_final"></script>
+  <script src="app.js?v=20260829_genz"></script>
 </body>
 </html>
