@@ -6913,7 +6913,8 @@ if (typeof window !== 'undefined') {
 }
 
 // ==========================================================================
-// SHARING & CLIPBOARD COPY UTILITIES
+// ==========================================================================
+// SHARING & CLIPBOARD COPY UTILITIES (PERFECTED)
 // ==========================================================================
 
 function showToast(message, isError = false) {
@@ -6965,69 +6966,106 @@ window.copyToClipboard = function(text) {
 };
 
 window.shareWhatsApp = function() {
-  const sno = document.getElementById('stateSno')?.value || '';
-  const air = document.getElementById('airRank')?.value || '';
-  const cat = document.getElementById('categorySelect')?.value || 'OC';
+  const sno = document.getElementById('stateSno')?.value || studentProfile?.customStateRank || '';
+  const air = document.getElementById('airRank')?.value || studentProfile?.customAIR || '';
+  const cat = document.getElementById('categorySelect')?.value || studentProfile?.category || 'OC';
   
-  let text = '🩺 *mSeat 2026 — Telangana MBBS Seat Prediction Report*\n';
-  if (sno) text += '📍 *TS State S.No:* #' + sno + '\n';
-  if (air) text += '🎯 *NEET AIR:* #' + Number(air).toLocaleString() + '\n';
-  text += '🏷️ *Category:* ' + cat + '\n\n';
+  let collegeName = '';
+  let collegePlace = '';
+  let prefNo = '';
+  let margin = '';
+  let catRank = '';
+  let fee = '';
 
-  const allocatedEl = document.getElementById('allocatedCollegeName');
-  if (allocatedEl && allocatedEl.textContent && allocatedEl.textContent.trim() !== '-' && allocatedEl.textContent.trim() !== '') {
-    text += '🏥 *Allotted College:* ' + allocatedEl.textContent.trim() + '\n';
-    const marginEl = document.getElementById('safetyMarginBadge');
-    if (marginEl && marginEl.textContent) {
-      text += '🛡️ *Safety Margin:* ' + marginEl.textContent.trim() + '\n';
-    }
+  if (typeof lastAllocatedResult !== 'undefined' && lastAllocatedResult && lastAllocatedResult.allocated) {
+    collegeName = lastAllocatedResult.college.name;
+    collegePlace = lastAllocatedResult.college.place;
+    prefNo = '#' + lastAllocatedResult.preferenceNo;
+    const estCatRank = estimateCategoryRank(studentProfile.customAIR, studentProfile.category);
+    margin = '+' + (lastAllocatedResult.closingRank - estCatRank) + ' ranks';
+    catRank = '#' + estCatRank.toLocaleString('en-IN');
+    fee = formatFeeExact(lastAllocatedResult.college.type === 'govt' ? lastAllocatedResult.college.fee : lastAllocatedResult.college.feeA);
+  } else {
+    collegeName = document.getElementById('allocCollegeName')?.textContent?.trim() || '';
+    collegePlace = document.getElementById('allocCollegePlace')?.textContent?.trim() || '';
+    prefNo = document.getElementById('allocPrefNo')?.textContent?.trim() || '';
+    margin = document.getElementById('allocMargin')?.textContent?.trim() || '';
+    fee = document.getElementById('allocCollegeFee')?.textContent?.trim() || '';
   }
 
-  text += '\n⚡ Run your 1-Click Telangana MBBS mock seat allocation here:\n👉 https://kprsnt2.github.io/mSeat/';
-  
+  let text = '🩺 *mSeat 2026 — Telangana MBBS Seat Allotment Report*\n';
+  text += '══════════════════════════════════\n';
+  if (sno) text += '📍 *TS State S.No:* #' + sno + '\n';
+  if (air) text += '🎯 *NEET AIR:* #' + Number(air).toLocaleString('en-IN') + '\n';
+  text += '🏷️ *Category:* ' + cat + '\n';
+  if (catRank) text += '📊 *Category Rank:* ' + catRank + '\n';
+  text += '----------------------------------\n';
+
+  if (collegeName && collegeName !== '-' && collegeName !== '') {
+    text += '🏥 *Allotted College:*\n👉 *' + collegeName + '*\n';
+    if (collegePlace) text += '📍 *Location:* ' + collegePlace + '\n';
+    if (prefNo) text += '⭐ *Preference:* ' + prefNo + '\n';
+    if (fee) text += '💰 *Tuition Fee:* ' + fee + '\n';
+    if (margin) text += '🛡️ *Safety Margin:* ' + margin + ' (Safe)\n';
+  } else {
+    text += '⚠️ *Status:* Eligible for Round 2 / Mop-Up Private Rounds\n';
+  }
+
+  text += '══════════════════════════════════\n';
+  text += '⚡ Check your 1-Click TS MBBS mock seat allotment here:\n';
+  text += '👉 https://kprsnt2.github.io/mSeat/';
+
   const waUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(text);
   window.open(waUrl, '_blank');
 };
 
 window.copyOptionsSummary = function() {
-  const sno = document.getElementById('stateSno')?.value || '';
-  const cat = document.getElementById('categorySelect')?.value || 'OC';
-  const allocatedEl = document.getElementById('allocatedCollegeName');
-  const college = allocatedEl?.textContent || 'MBBS College';
+  const sno = document.getElementById('stateSno')?.value || studentProfile?.customStateRank || '';
+  const air = document.getElementById('airRank')?.value || studentProfile?.customAIR || '';
+  const cat = document.getElementById('categorySelect')?.value || studentProfile?.category || 'OC';
+  
+  let collegeName = document.getElementById('allocCollegeName')?.textContent?.trim() || '';
+  if (!collegeName && typeof lastAllocatedResult !== 'undefined' && lastAllocatedResult?.allocated) {
+    collegeName = lastAllocatedResult.college.name;
+  }
+  if (!collegeName || collegeName === '-') collegeName = 'Government Medical College';
 
-  let summary = 'mSeat 2026 Web Options Priority Summary\n';
-  summary += '------------------------------------------\n';
-  summary += 'State S.No: #' + (sno || 'N/A') + ' | Category: ' + cat + '\n';
-  summary += 'Allotted College: ' + college + '\n\n';
-  summary += 'Top 10 Web Option Preferences:\n';
+  let summary = 'mSeat 2026 — Web Options Priority Summary\n';
+  summary += '==================================================\n';
+  summary += 'TS State S.No: #' + (sno || 'N/A') + ' | NEET AIR: #' + (air ? Number(air).toLocaleString('en-IN') : 'N/A') + ' | Category: ' + cat + '\n';
+  summary += '🎯 Allotted Seat: ' + collegeName + '\n';
+  summary += '==================================================\n\n';
+  summary += 'Top Recommended Web Option Priorities:\n';
 
   if (typeof masterCollegesData !== 'undefined') {
-    masterCollegesData.slice(0, 10).forEach((c, idx) => {
-      summary += (idx + 1) + '. ' + c.name + ' (' + c.place + ') - ' + (c.type || 'Govt') + '\n';
+    masterCollegesData.slice(0, 15).forEach((c, idx) => {
+      summary += (idx + 1) + '. ' + c.name + ' (' + c.place + ') — ' + c.type + '\n';
     });
   }
-  summary += '\nFull simulator: https://kprsnt2.github.io/mSeat/';
+  summary += '\nRun full simulator: https://kprsnt2.github.io/mSeat/';
 
   window.copyToClipboard(summary);
 };
 
 window.copyMasterTableList = function() {
   if (typeof masterCollegesData === 'undefined') return;
-  let text = 'Telangana Medical Colleges 2026 (59 Colleges Order)\n';
+  let text = 'Telangana Medical Colleges 2026 (59 Colleges Hierarchy)\n';
   text += '===================================================\n';
   masterCollegesData.forEach(c => {
-    text += c.rank + '. ' + c.name + ' [' + c.code + '] - ' + c.place + ' (' + c.type + ', ' + c.distKm + ' km)\n';
+    text += c.rank + '. ' + c.name + ' [' + c.code + '] - ' + c.place + ' (' + c.type + ', ' + c.distKm + ' km, ' + (c.rating || '4.2 ★') + ')\n';
   });
   window.copyToClipboard(text);
 };
 
 window.shareResults = function() {
   if (navigator.share) {
-    const allocatedEl = document.getElementById('allocatedCollegeName');
-    const college = allocatedEl?.textContent || 'MBBS Seat';
+    let collegeName = document.getElementById('allocCollegeName')?.textContent?.trim() || '';
+    if (!collegeName && typeof lastAllocatedResult !== 'undefined' && lastAllocatedResult?.allocated) {
+      collegeName = lastAllocatedResult.college.name;
+    }
     navigator.share({
       title: 'mSeat MBBS Allotment Report',
-      text: 'My predicted Telangana MBBS College: ' + college + ' via mSeat Simulator!',
+      text: 'My predicted Telangana MBBS College: ' + (collegeName || 'MBBS Seat') + ' via mSeat Simulator!',
       url: 'https://kprsnt2.github.io/mSeat/'
     }).catch(() => window.shareWhatsApp());
   } else {
