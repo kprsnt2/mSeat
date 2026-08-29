@@ -5899,51 +5899,9 @@ function runAllocation(air, category, preferenceList) {
 }
 
 function handleProfileSubmit(e) {
-  if (e && e.preventDefault) e.preventDefault();
-
-  const nameInput = document.getElementById('studentName');
-  const name = nameInput?.value?.trim() || '';
-  const airInputVal = parseInt(document.getElementById('neetAIR')?.value);
-  const snoInputVal = parseInt(document.getElementById('stateSno')?.value);
-  const scoreInputVal = parseInt(document.getElementById('neetScore')?.value);
-  const category = document.getElementById('categorySelect')?.value || 'SC_2';
-  const gender = document.getElementById('genderSelect')?.value || 'female';
-  const localStatus = document.getElementById('localSelect')?.value || 'local';
-  const pwd = document.getElementById('pwdCheckbox')?.checked || false;
-
-  let air = null;
-  let score = null;
-  let stateRank = null;
-
-  if (!isNaN(airInputVal) && airInputVal > 0) {
-    air = airInputVal;
-    score = !isNaN(scoreInputVal) ? scoreInputVal : estimateScoreFromAIR(air);
-    stateRank = !isNaN(snoInputVal) ? snoInputVal : estimateStateRank(air);
-  } else if (!isNaN(snoInputVal) && snoInputVal > 0) {
-    stateRank = snoInputVal;
-    air = estimateAIRFromSno(stateRank);
-    score = !isNaN(scoreInputVal) ? scoreInputVal : estimateScoreFromAIR(air);
-  } else if (!isNaN(scoreInputVal) && scoreInputVal > 0) {
-    score = scoreInputVal;
-    air = estimateRank(score);
-    stateRank = estimateStateRank(air);
-  } else {
-    air = 289635;
-    score = 393;
-    stateRank = 8367;
-  }
-
-  const cutoff = qualifyingCutoffs[category] || 113;
-  if (score < cutoff) {
-    showToast(`Score ${score} is below qualifying cutoff (${cutoff}) for ${reservationData[category]?.label || category}`, 'error');
-    return;
-  }
-
-  studentProfile = { name, score, category, gender, localStatus, pwd, customAIR: air, customStateRank: stateRank };
-  estimatedAIR = air;
-
-  renderRankResults();
-  goToStep(2);
+  if (e) e.preventDefault();
+  quickPredict();
+  return false;
 }
 
 function renderRankResults() {
@@ -6953,3 +6911,150 @@ if (typeof window !== 'undefined') {
   window.sendQuickPrompt = sendQuickPrompt;
   window.handleChatSubmit = handleChatSubmit;
 }
+
+// ==========================================================================
+// SHARING & CLIPBOARD COPY UTILITIES
+// ==========================================================================
+
+function showToast(message, isError = false) {
+  let toast = document.getElementById('mseat-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'mseat-toast';
+    toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 99999; background: #0f172a; color: #10b981; border: 1px solid rgba(16,185,129,0.4); padding: 12px 24px; border-radius: 9999px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); backdrop-filter: blur(16px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); opacity: 0; pointer-events: none;';
+    document.body.appendChild(toast);
+  }
+  toast.style.color = isError ? '#ef4444' : '#10b981';
+  toast.style.borderColor = isError ? 'rgba(239,68,68,0.4)' : 'rgba(16,185,129,0.4)';
+  toast.innerHTML = (isError ? '⚠️ ' : '✅ ') + message;
+  toast.style.opacity = '1';
+  toast.style.transform = 'translateX(-50%) translateY(0)';
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(-50%) translateY(10px)';
+  }, 2800);
+}
+
+function copyTextFallback(text) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  textArea.style.position = 'fixed';
+  textArea.style.left = '-999999px';
+  textArea.style.top = '-999999px';
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    showToast('Copied to clipboard!');
+  } catch (err) {
+    showToast('Failed to copy', true);
+  }
+  document.body.removeChild(textArea);
+}
+
+window.copyToClipboard = function(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(() => showToast('Copied to clipboard!'))
+      .catch(() => copyTextFallback(text));
+  } else {
+    copyTextFallback(text);
+  }
+};
+
+window.shareWhatsApp = function() {
+  const sno = document.getElementById('stateSno')?.value || '';
+  const air = document.getElementById('airRank')?.value || '';
+  const cat = document.getElementById('categorySelect')?.value || 'OC';
+  
+  let text = '🩺 *mSeat 2026 — Telangana MBBS Seat Prediction Report*\n';
+  if (sno) text += '📍 *TS State S.No:* #' + sno + '\n';
+  if (air) text += '🎯 *NEET AIR:* #' + Number(air).toLocaleString() + '\n';
+  text += '🏷️ *Category:* ' + cat + '\n\n';
+
+  const allocatedEl = document.getElementById('allocatedCollegeName');
+  if (allocatedEl && allocatedEl.textContent && allocatedEl.textContent.trim() !== '-' && allocatedEl.textContent.trim() !== '') {
+    text += '🏥 *Allotted College:* ' + allocatedEl.textContent.trim() + '\n';
+    const marginEl = document.getElementById('safetyMarginBadge');
+    if (marginEl && marginEl.textContent) {
+      text += '🛡️ *Safety Margin:* ' + marginEl.textContent.trim() + '\n';
+    }
+  }
+
+  text += '\n⚡ Run your 1-Click Telangana MBBS mock seat allocation here:\n👉 https://kprsnt2.github.io/mSeat/';
+  
+  const waUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(text);
+  window.open(waUrl, '_blank');
+};
+
+window.copyOptionsSummary = function() {
+  const sno = document.getElementById('stateSno')?.value || '';
+  const cat = document.getElementById('categorySelect')?.value || 'OC';
+  const allocatedEl = document.getElementById('allocatedCollegeName');
+  const college = allocatedEl?.textContent || 'MBBS College';
+
+  let summary = 'mSeat 2026 Web Options Priority Summary\n';
+  summary += '------------------------------------------\n';
+  summary += 'State S.No: #' + (sno || 'N/A') + ' | Category: ' + cat + '\n';
+  summary += 'Allotted College: ' + college + '\n\n';
+  summary += 'Top 10 Web Option Preferences:\n';
+
+  if (typeof masterCollegesData !== 'undefined') {
+    masterCollegesData.slice(0, 10).forEach((c, idx) => {
+      summary += (idx + 1) + '. ' + c.name + ' (' + c.place + ') - ' + (c.type || 'Govt') + '\n';
+    });
+  }
+  summary += '\nFull simulator: https://kprsnt2.github.io/mSeat/';
+
+  window.copyToClipboard(summary);
+};
+
+window.copyMasterTableList = function() {
+  if (typeof masterCollegesData === 'undefined') return;
+  let text = 'Telangana Medical Colleges 2026 (59 Colleges Order)\n';
+  text += '===================================================\n';
+  masterCollegesData.forEach(c => {
+    text += c.rank + '. ' + c.name + ' [' + c.code + '] - ' + c.place + ' (' + c.type + ', ' + c.distKm + ' km)\n';
+  });
+  window.copyToClipboard(text);
+};
+
+window.shareResults = function() {
+  if (navigator.share) {
+    const allocatedEl = document.getElementById('allocatedCollegeName');
+    const college = allocatedEl?.textContent || 'MBBS Seat';
+    navigator.share({
+      title: 'mSeat MBBS Allotment Report',
+      text: 'My predicted Telangana MBBS College: ' + college + ' via mSeat Simulator!',
+      url: 'https://kprsnt2.github.io/mSeat/'
+    }).catch(() => window.shareWhatsApp());
+  } else {
+    window.shareWhatsApp();
+  }
+};
+
+// Ensure pressing Enter in any input triggers 1-Click Quick Predict
+document.addEventListener('DOMContentLoaded', () => {
+  ['stateSno', 'airRank', 'neetScore', 'studentName'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          quickPredict();
+        }
+      });
+    }
+  });
+
+  const form = document.getElementById('profileForm');
+  if (form) {
+    form.onsubmit = function(e) {
+      e.preventDefault();
+      quickPredict();
+      return false;
+    };
+  }
+});
