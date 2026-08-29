@@ -6761,8 +6761,8 @@ function init() {
         if (candData) {
           let mappedCat = candData.cat;
           if (candData.ews && mappedCat === 'OC') mappedCat = 'EWS';
-          if (catSelectEl && !userHasManuallyChangedCategory) catSelectEl.value = mappedCat;
-          if (genderSelectEl && !userHasManuallyChangedGender) genderSelectEl.value = candData.gender || 'female';
+          if (catSelectEl) catSelectEl.value = mappedCat;
+          if (genderSelectEl) genderSelectEl.value = candData.gender || 'female';
         }
       }
     });
@@ -6772,6 +6772,8 @@ function init() {
     snoInput.addEventListener('input', function () {
       const sno = parseInt(this.value);
       if (!isNaN(sno) && sno > 0) {
+        userHasManuallyChangedCategory = false;
+        userHasManuallyChangedGender = false;
         const candData = snoToCatRanks2026[sno];
         const exactAir = candData ? candData.air : estimateAIRFromSno(sno);
 
@@ -6784,10 +6786,10 @@ function init() {
         if (candData) {
           let mappedCat = candData.cat;
           if (candData.ews && mappedCat === 'OC') mappedCat = 'EWS';
-          if (catSelectEl && !userHasManuallyChangedCategory) {
+          if (catSelectEl) {
             catSelectEl.value = mappedCat;
           }
-          if (genderSelectEl && !userHasManuallyChangedGender) {
+          if (genderSelectEl) {
             genderSelectEl.value = candData.gender || 'female';
           }
         }
@@ -6856,10 +6858,10 @@ function quickPredict() {
     let mappedCat = data.cat;
     if (data.ews && mappedCat === 'OC') mappedCat = 'EWS';
 
-    if (catSelect && (!catSelect.value || catSelect.value === '')) {
+    if (catSelect) {
       catSelect.value = mappedCat;
     }
-    if (genderSelect && (!genderSelect.value || genderSelect.value === '')) {
+    if (genderSelect) {
       genderSelect.value = data.gender || 'female';
     }
   } else if (!isNaN(air) && isNaN(sno)) {
@@ -6870,12 +6872,8 @@ function quickPredict() {
       score = data.score;
       let mappedCat = data.cat;
       if (data.ews && mappedCat === 'OC') mappedCat = 'EWS';
-      if (catSelect && (!catSelect.value || catSelect.value === '')) {
-        catSelect.value = mappedCat;
-      }
-      if (genderSelect && (!genderSelect.value || genderSelect.value === '')) {
-        genderSelect.value = data.gender || 'female';
-      }
+      if (catSelect) catSelect.value = mappedCat;
+      if (genderSelect) genderSelect.value = data.gender || 'female';
     } else {
       score = estimateScoreFromAIR(air);
     }
