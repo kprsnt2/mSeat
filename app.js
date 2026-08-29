@@ -5930,6 +5930,11 @@ function renderRankResults() {
   document.getElementById('stateRankValue').textContent = stateRank.toLocaleString('en-IN');
   document.getElementById('catRankValue').textContent = catRank.toLocaleString('en-IN');
   document.getElementById('percentileValue').textContent = percentile + '%';
+  const catNoteEl = document.getElementById('catRankNote') || document.querySelector('.rank-cat .rank-card-note');
+  if (catNoteEl) {
+    const catLabel = reservationData[category]?.label || (category ? category.replace('_', '-') : 'Category');
+    catNoteEl.textContent = 'Telangana ' + catLabel + ' Rank';
+  }
 
   // Count eligible colleges
   let govtEligible = 0, pvtEligible = 0;
