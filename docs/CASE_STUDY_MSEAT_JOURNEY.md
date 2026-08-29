@@ -173,30 +173,25 @@ The engine pre-orders all Telangana medical colleges logically: **All 36 Governm
 
 ---
 
-## 6. Next-Level Architecture Roadmap: Vercel, LLM RAG & MCP Server
+## 6. The Vercel & AI Evolution: MCP, Serverless & Data Sync
 
-Currently, mSeat operates as a blazing-fast static client-side web application hosted on GitHub Pages. Here is our architectural roadmap for the next evolution:
+What started as a static client-side web application has now evolved into a **Serverless AI platform**. We recently migrated the core simulation logic to a backend architecture to support powerful AI agents.
 
-### 1. Serverless Deployment on Vercel with Full AI Integration
-Moving to **Vercel Edge Functions** unlocks powerful server-side capabilities while preserving sub-100ms response times:
-- **LLM-Powered Predictive Counseling (Gemini 2.0 / OpenAI GPT-4o)**:
-  - Connect real-time counselling data to state-of-the-art LLMs using **Retrieval-Augmented Generation (RAG)**.
-  - Feed the AI complete government orders (GOs), seat matrix amendments, AIQ round-wise seat surrender trends, and historical Round 1 -> Round 2 sliding probabilities.
-  - Enable conversational advisory: *"I was allotted Arundathi in Round 1. What are my statistical odds of upgrading to Mamata Bachupally in Round 2 if 45 AIQ candidates surrender their seats?"*
+### 1. Model Context Protocol (MCP) Server: Making mSeat "Agent-Ready"
+We built and open-sourced an official **mSeat MCP Server** deployed on Vercel. 
+- **The Protocol**: MCP standardizes how AI models (like Claude, Gemini, or custom agent swarms) connect to external tools.
+- **The Achievement**: By implementing a `StreamableHTTPServerTransport`, we created a stateless, serverless MCP endpoint (`/mcp`). 
+- **Agentic Tools**: AI assistants can now natively call tools like `predict_college_allotment`, `search_merit_list`, and `compare_colleges` to provide deeply contextual, mathematically accurate counseling advice directly in chat interfaces.
 
-### 2. Model Context Protocol (MCP) Server for Developer & Agentic Tooling
-We plan to build and open-source an official **mSeat MCP Server**:
-- **What is MCP?** The Model Context Protocol standardizes how AI models (in Claude Desktop, Cursor, Antigravity, or custom agent swarms) connect to external tools and data sources.
-- **mSeat MCP Tools**:
-  - `get_college_matrix(college_code)`: Returns seat distribution, PG courses, and fees.
-  - `simulate_allocation(rank, category, gender, domicile)`: Runs the discrete counselling simulation.
-  - `get_sliding_probability(current_college, target_college, category_rank)`: Computes transition probability between counselling rounds.
-  - `verify_document_eligibility(candidate_profile)`: Checks required certificates.
+### 2. The Multi-Source Data Synchronization Challenge
+Moving from a static app to a dual client/server architecture introduced a hidden danger: **Data Divergence**.
+- **The Bug**: Our MCP server (using JSON datasets) and our web app (using hardcoded JS arrays) began returning conflicting college predictions for the same ranks. Furthermore, an older Python MCP prototype was using a completely different ranking scale (State Category Rank vs. All India Rank).
+- **The Fix**: We undertook a comprehensive data audit, establishing our core JSON files (`final_accurate_govt.json` & `final_accurate_pvt.json`) as the **Single Source of Truth**. We wrote build scripts to dynamically synchronize the client-side arrays with the JSON backend, ensuring perfect parity across 66 colleges and multiple quotas.
 
-### 3. Visual & Interactive UI Improvements
-- **Interactive Geospatial Map**: A Mapbox / Google Maps interface visualizing all 59 medical colleges with radial distance circles from Rajendranagar/Hyderabad, hospital bed capacities, and driving times.
-- **1-Click PDF Strategy Dossier**: Export a personalized 8-page counseling report containing the student's exact merit analysis, printable web options priority order, and sliding strategy roadmap.
-- **Real-Time Notification Webhooks**: SMS / WhatsApp alerts when KNRUHS publishes official Round 1, Round 2, or Stray Vacancy vacancy seat matrices.
+### 3. The "Off-By-One" Merit List Shift
+In the final hours before counselling, the state medical university released an updated Final Merit List.
+- **The Anomaly**: The total candidate pool dropped from 18,602 to 18,482. Candidates found their State Ranks shifted by exactly 1 position (e.g., S.No 8367 became 8366).
+- **Rapid Resolution**: We immediately ran our custom `pdfjs-dist` parsers on the new 356-page PDF, extracted the 18,482 verified candidates, deduplicated them, and injected the updated binary-searchable array into the production app. The entire mock counselling engine self-corrected instantly.
 
 ---
 
