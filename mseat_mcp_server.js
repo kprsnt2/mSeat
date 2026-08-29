@@ -15,16 +15,35 @@ const path = require('path');
 const readline = require('readline');
 
 function loadJsonData(filename) {
-  const p1 = path.join(__dirname, filename);
-  if (fs.existsSync(p1)) return JSON.parse(fs.readFileSync(p1, 'utf8'));
-  const p2 = path.join(process.cwd(), filename);
-  if (fs.existsSync(p2)) return JSON.parse(fs.readFileSync(p2, 'utf8'));
+  // Try multiple paths — Vercel serverless may have different __dirname / cwd
+  const searchPaths = [
+    path.join(__dirname, filename),
+    path.join(process.cwd(), filename),
+    path.join(__dirname, '..', filename),
+    path.resolve(filename),
+  ];
+
+  for (const p of searchPaths) {
+    try {
+      if (fs.existsSync(p)) {
+        const data = JSON.parse(fs.readFileSync(p, 'utf8'));
+        console.log(`[mSeat MCP] Loaded ${filename} from ${p} (${Array.isArray(data) ? data.length : 'obj'} entries)`);
+        return data;
+      }
+    } catch (e) {
+      console.warn(`[mSeat MCP] Error loading ${filename} from ${p}:`, e.message);
+    }
+  }
+
+  console.warn(`[mSeat MCP] WARNING: Could not find ${filename} in any of: ${searchPaths.join(', ')}`);
   return [];
 }
 
 const govtColleges = loadJsonData('final_accurate_govt.json');
 const pvtColleges = loadJsonData('final_accurate_pvt.json');
 const scoreRankData = loadJsonData('score_rank_real_points.json');
+
+console.log(`[mSeat MCP] Data loaded: ${govtColleges.length} govt, ${pvtColleges.length} pvt, ${scoreRankData.length} score-rank points`);
 
 const allColleges = [
   ...govtColleges.map(c => ({ ...c, typeText: 'GOVT' })),
@@ -110,6 +129,14 @@ const TOOLS = [
   {
     name: 'get_seat_expansion_stats',
     description: 'Returns 2026 seat expansion stats and new college additions in Telangana MBBS admissions.',
+    inputSchema: {
+      type: 'object',
+      properties: {}
+    }
+  },
+  {
+    name: 'debug_data_status',
+    description: 'Debug tool: Returns how many colleges and data points are loaded. Use this to diagnose empty results.',
     inputSchema: {
       type: 'object',
       properties: {}
@@ -261,6 +288,19 @@ function handleToolCall(name, args) {
           { college: "MNR Medical College Sangareddy", increase: "+100 seats (150 -> 250)" }
         ],
         new_colleges: ["Raja Rajeshwari Institute of Medical Sciences (Girls) - 150 Seats"]
+      };
+    }
+
+    case 'debug_data_status': {
+      return {
+        dirname: __dirname,
+        cwd: process.cwd(),
+        govt_colleges_loaded: govtColleges.length,
+        pvt_colleges_loaded: pvtColleges.length,
+        all_colleges_loaded: allColleges.length,
+        score_rank_data_loaded: scoreRankData.length,
+        sample_govt: govtColleges.length > 0 ? { name: govtColleges[0].name, hasKnownRanks: !!govtColleges[0].knownRanks, SC_2: govtColleges[0].knownRanks?.SC_2 } : null,
+        sample_pvt: pvtColleges.length > 0 ? { name: pvtColleges[0].name, hasKnownRanks: !!pvtColleges[0].knownRanks, SC_2: pvtColleges[0].knownRanks?.SC_2 } : null,
       };
     }
 
