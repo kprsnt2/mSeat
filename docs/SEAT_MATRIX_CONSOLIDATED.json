@@ -1,0 +1,4288 @@
+{
+  "summary": {
+    "govt": {
+      "OC_G": 1005,
+      "OC_F": 514,
+      "SC1_G": 23,
+      "SC1_F": 11,
+      "SC2_G": 211,
+      "SC2_F": 107,
+      "SC3_G": 116,
+      "SC3_F": 56,
+      "ST_G": 233,
+      "ST_F": 117,
+      "BCA_G": 161,
+      "BCA_F": 81,
+      "BCB_G": 238,
+      "BCB_F": 113,
+      "BCC_G": 20,
+      "BCC_F": 11,
+      "BCD_G": 164,
+      "BCD_F": 80,
+      "BCE_G": 88,
+      "BCE_F": 48,
+      "EWS_G": 68,
+      "EWS_F": 34,
+      "total": 3499,
+      "collegeCount": 36
+    },
+    "pvt": {
+      "OC_G": 644,
+      "OC_F": 343,
+      "SC1_G": 14,
+      "SC1_F": 9,
+      "SC2_G": 123,
+      "SC2_F": 65,
+      "SC3_G": 69,
+      "SC3_F": 41,
+      "ST_G": 138,
+      "ST_F": 78,
+      "BCA_G": 98,
+      "BCA_F": 54,
+      "BCB_G": 133,
+      "BCB_F": 79,
+      "BCC_G": 17,
+      "BCC_F": 8,
+      "BCD_G": 96,
+      "BCD_F": 55,
+      "BCE_G": 61,
+      "BCE_F": 29,
+      "total": 2154,
+      "collegeCount": 23,
+      "EWS_G": 0,
+      "EWS_F": 0
+    },
+    "minority": {
+      "MIN_G": 207,
+      "MIN_F": 160,
+      "total": 367,
+      "collegeCount": 4
+    },
+    "grandTotal": {
+      "totalSeats": 6020
+    }
+  },
+  "parsedColleges": {
+    "AIMD": {
+      "sno": 1,
+      "code": "AIMD",
+      "name": "Arundathi Institute of Medical Sciences",
+      "category": "Private",
+      "seats": {
+        "OC_G": 23,
+        "OC_F": 10,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 3,
+        "SC2_F": 2,
+        "SC3_G": 2,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 2,
+        "BCA_F": 2,
+        "BCB_G": 3,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 1,
+        "BCD_G": 3,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 70
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 0,
+          "OC_F": 1,
+          "SC1_G": 1,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 1,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "APLO": {
+      "sno": 2,
+      "code": "APLO",
+      "name": "Apollo Institute of Medical Sciences & Research",
+      "category": "Private",
+      "seats": {
+        "OC_G": 22,
+        "OC_F": 9,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 4,
+        "SC2_F": 2,
+        "SC3_G": 2,
+        "SC3_F": 2,
+        "ST_G": 4,
+        "ST_F": 3,
+        "BCA_G": 3,
+        "BCA_F": 2,
+        "BCB_G": 5,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 2,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 70
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 1,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "AYAN": {
+      "sno": 3,
+      "code": "AYAN",
+      "name": "Ayaan Institute of Medical Sciences, Teaching Hospital & Research Centre",
+      "category": "Private - Minority",
+      "seats": {
+        "OC_G": 0,
+        "OC_F": 0,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 0,
+        "SC2_F": 0,
+        "SC3_G": 0,
+        "SC3_F": 0,
+        "ST_G": 0,
+        "ST_F": 0,
+        "BCA_G": 0,
+        "BCA_F": 0,
+        "BCB_G": 0,
+        "BCB_F": 0,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 0,
+        "BCD_F": 0,
+        "BCE_G": 0,
+        "BCE_F": 0,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 57,
+        "MIN_F": 28,
+        "totalConvenor": 85
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 0,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 0
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "BASK": {
+      "sno": 4,
+      "code": "BASK",
+      "name": "Bhaskar Medical College",
+      "category": "Private",
+      "seats": {
+        "OC_G": 29,
+        "OC_F": 14,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 6,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 2,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 4,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 5,
+        "BCD_F": 2,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 93
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "CARK": {
+      "sno": 5,
+      "code": "CARK",
+      "name": "Chalmeda Anand Rao Institute of Medical Sciences",
+      "category": "Private",
+      "seats": {
+        "OC_G": 29,
+        "OC_F": 14,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 6,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 2,
+        "ST_G": 6,
+        "ST_F": 3,
+        "BCA_G": 5,
+        "BCA_F": 2,
+        "BCB_G": 7,
+        "BCB_F": 2,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 5,
+        "BCD_F": 1,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 93
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 1,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 1,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "CMRM": {
+      "sno": 6,
+      "code": "CMRM",
+      "name": "CMR Institute of Medical Sciences",
+      "category": "Private",
+      "seats": {
+        "OC_G": 36,
+        "OC_F": 17,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 8,
+        "SC2_F": 3,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 9,
+        "ST_F": 3,
+        "BCA_G": 6,
+        "BCA_F": 2,
+        "BCB_G": 8,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 3,
+        "BCE_F": 2,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 117
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 1,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 1,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "DCMS": {
+      "sno": 7,
+      "code": "DCMS",
+      "name": "Deccan College of Medical Sciences",
+      "category": "Private - Minority",
+      "seats": {
+        "OC_G": 0,
+        "OC_F": 0,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 0,
+        "SC2_F": 0,
+        "SC3_G": 0,
+        "SC3_F": 0,
+        "ST_G": 0,
+        "ST_F": 0,
+        "BCA_G": 0,
+        "BCA_F": 0,
+        "BCB_G": 0,
+        "BCB_F": 0,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 0,
+        "BCD_F": 0,
+        "BCE_G": 0,
+        "BCE_F": 0,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 56,
+        "MIN_F": 29,
+        "totalConvenor": 85
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 0,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 0
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "DPMR": {
+      "sno": 8,
+      "code": "DPMR",
+      "name": "Dr. Patnam Mahender Reddy Institute of Medical Sciences",
+      "category": "Private",
+      "seats": {
+        "OC_G": 35,
+        "OC_F": 18,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 8,
+        "SC2_F": 4,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 8,
+        "ST_F": 3,
+        "BCA_G": 5,
+        "BCA_F": 3,
+        "BCB_G": 8,
+        "BCB_F": 4,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 5,
+        "BCD_F": 3,
+        "BCE_G": 3,
+        "BCE_F": 2,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 117
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 3,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 1,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "ESIM": {
+      "sno": 9,
+      "code": "ESIM",
+      "name": "ESIC Medical College",
+      "category": "Government",
+      "seats": {
+        "OC_G": 18,
+        "OC_F": 9,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 4,
+        "SC2_F": 2,
+        "SC3_G": 2,
+        "SC3_F": 2,
+        "ST_G": 5,
+        "ST_F": 2,
+        "BCA_G": 3,
+        "BCA_F": 1,
+        "BCB_G": 5,
+        "BCB_F": 2,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 4,
+        "BCD_F": 1,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 5,
+        "EWS_F": 2,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 71
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 1,
+          "BCE_F": 0,
+          "total": 3
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "FCIM": {
+      "sno": 10,
+      "code": "FCIM",
+      "name": "Father Colombo Institute of Medical Sciences",
+      "category": "Private",
+      "seats": {
+        "OC_G": 22,
+        "OC_F": 12,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 2,
+        "SC2_F": 2,
+        "SC3_G": 2,
+        "SC3_F": 1,
+        "ST_G": 4,
+        "ST_F": 3,
+        "BCA_G": 3,
+        "BCA_F": 1,
+        "BCB_G": 5,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 3,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 70
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 1,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 1,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 1,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GAND": {
+      "sno": 11,
+      "code": "GAND",
+      "name": "Gandhi Medical College",
+      "category": "Government",
+      "seats": {
+        "OC_G": 48,
+        "OC_F": 25,
+        "SC1_G": 2,
+        "SC1_F": 1,
+        "SC2_G": 13,
+        "SC2_F": 6,
+        "SC3_G": 6,
+        "SC3_F": 4,
+        "ST_G": 14,
+        "ST_F": 7,
+        "BCA_G": 9,
+        "BCA_F": 5,
+        "BCB_G": 14,
+        "BCB_F": 7,
+        "BCC_G": 1,
+        "BCC_F": 1,
+        "BCD_G": 8,
+        "BCD_F": 5,
+        "BCE_G": 5,
+        "BCE_F": 3,
+        "EWS_G": 17,
+        "EWS_F": 8,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 209
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 3,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 9
+        },
+        "CAP": {
+          "total": 2
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GASF": {
+      "sno": 12,
+      "code": "GASF",
+      "name": "Govt. Medical College, Kumuram Bheem Asifabad",
+      "category": "Government",
+      "seats": {
+        "OC_G": 24,
+        "OC_F": 12,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 2,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 4,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 4,
+        "BCD_F": 1,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 79
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 1,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GGWL": {
+      "sno": 13,
+      "code": "GGWL",
+      "name": "Govt. Medical College, Jogulamba Gadwal",
+      "category": "Government",
+      "seats": {
+        "OC_G": 13,
+        "OC_F": 7,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 1,
+        "SC2_F": 1,
+        "SC3_G": 1,
+        "SC3_F": 1,
+        "ST_G": 3,
+        "ST_F": 1,
+        "BCA_G": 2,
+        "BCA_F": 0,
+        "BCB_G": 3,
+        "BCB_F": 1,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 2,
+        "BCD_F": 1,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 40
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 2
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GJBP": {
+      "sno": 14,
+      "code": "GJBP",
+      "name": "Govt. Medical College, Jayashankar Bhupalpally",
+      "category": "Government",
+      "seats": {
+        "OC_G": 24,
+        "OC_F": 11,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 2,
+        "SC3_G": 3,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 4,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 2,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 4,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 79
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 1,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GJGN": {
+      "sno": 15,
+      "code": "GJGN",
+      "name": "Govt. Medical College, Jangaon",
+      "category": "Government",
+      "seats": {
+        "OC_G": 24,
+        "OC_F": 12,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 4,
+        "BCA_F": 2,
+        "BCB_G": 5,
+        "BCB_F": 3,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 4,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 80
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GJTL": {
+      "sno": 16,
+      "code": "GJTL",
+      "name": "Govt. Medical College, Jagitial",
+      "category": "Government",
+      "seats": {
+        "OC_G": 36,
+        "OC_F": 19,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 7,
+        "SC2_F": 4,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 8,
+        "ST_F": 4,
+        "BCA_G": 6,
+        "BCA_F": 3,
+        "BCB_G": 8,
+        "BCB_F": 4,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 2,
+        "BCE_F": 2,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 119
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 1,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 1,
+          "BCE_F": 0,
+          "total": 7
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GKDL": {
+      "sno": 17,
+      "code": "GKDL",
+      "name": "Govt. Medical College, Kodangal",
+      "category": "Government",
+      "seats": {
+        "OC_G": 13,
+        "OC_F": 7,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 3,
+        "SC2_F": 1,
+        "SC3_G": 1,
+        "SC3_F": 1,
+        "ST_G": 2,
+        "ST_F": 1,
+        "BCA_G": 2,
+        "BCA_F": 1,
+        "BCB_G": 3,
+        "BCB_F": 1,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 2,
+        "BCD_F": 1,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 41
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 2
+        },
+        "CAP": {
+          "total": 0
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GKHM": {
+      "sno": 18,
+      "code": "GKHM",
+      "name": "Govt. Medical College, Khammam",
+      "category": "Government",
+      "seats": {
+        "OC_G": 23,
+        "OC_F": 12,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 4,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 3,
+        "BCC_G": 0,
+        "BCC_F": 1,
+        "BCD_G": 4,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 0,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 80
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 1,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GKMR": {
+      "sno": 19,
+      "code": "GKMR",
+      "name": "Govt. Medical College, Kamareddy",
+      "category": "Government",
+      "seats": {
+        "OC_G": 24,
+        "OC_F": 12,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 1,
+        "ST_G": 6,
+        "ST_F": 3,
+        "BCA_G": 3,
+        "BCA_F": 2,
+        "BCB_G": 5,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 4,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 80
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GKRM": {
+      "sno": 20,
+      "code": "GKRM",
+      "name": "Govt. Medical College, Karimnagar",
+      "category": "Government",
+      "seats": {
+        "OC_G": 24,
+        "OC_F": 12,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 4,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 2,
+        "BCA_G": 3,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 3,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 3,
+        "BCD_F": 2,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 80
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GMBK": {
+      "sno": 21,
+      "code": "GMBK",
+      "name": "Govt. Medical College, Bhadradri Kothagudem",
+      "category": "Government",
+      "seats": {
+        "OC_G": 37,
+        "OC_F": 18,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 7,
+        "SC2_F": 4,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 9,
+        "ST_F": 4,
+        "BCA_G": 6,
+        "BCA_F": 2,
+        "BCB_G": 9,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 3,
+        "BCE_F": 2,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 121
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 1,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GMCL": {
+      "sno": 22,
+      "code": "GMCL",
+      "name": "Govt. Medical College, Mancherial",
+      "category": "Government",
+      "seats": {
+        "OC_G": 24,
+        "OC_F": 11,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 4,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 2,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 4,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 80
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GMCM": {
+      "sno": 23,
+      "code": "GMCM",
+      "name": "Govt. Medical College, Mahabubnagar",
+      "category": "Government",
+      "seats": {
+        "OC_G": 41,
+        "OC_F": 21,
+        "SC1_G": 1,
+        "SC1_F": 1,
+        "SC2_G": 9,
+        "SC2_F": 5,
+        "SC3_G": 6,
+        "SC3_F": 2,
+        "ST_G": 11,
+        "ST_F": 5,
+        "BCA_G": 7,
+        "BCA_F": 4,
+        "BCB_G": 10,
+        "BCB_F": 6,
+        "BCC_G": 1,
+        "BCC_F": 1,
+        "BCD_G": 8,
+        "BCD_F": 4,
+        "BCE_G": 4,
+        "BCE_F": 2,
+        "EWS_G": 8,
+        "EWS_F": 5,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 162
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 1,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 1,
+          "BCE_F": 0,
+          "total": 7
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GMDK": {
+      "sno": 24,
+      "code": "GMDK",
+      "name": "Govt. Medical College, Medak",
+      "category": "Government",
+      "seats": {
+        "OC_G": 13,
+        "OC_F": 7,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 3,
+        "SC2_F": 1,
+        "SC3_G": 1,
+        "SC3_F": 1,
+        "ST_G": 2,
+        "ST_F": 1,
+        "BCA_G": 2,
+        "BCA_F": 1,
+        "BCB_G": 3,
+        "BCB_F": 0,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 2,
+        "BCD_F": 1,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 40
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 2
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GMHB": {
+      "sno": 25,
+      "code": "GMHB",
+      "name": "Govt. Medical College, Mahabubabad",
+      "category": "Government",
+      "seats": {
+        "OC_G": 37,
+        "OC_F": 20,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 7,
+        "SC2_F": 4,
+        "SC3_G": 4,
+        "SC3_F": 1,
+        "ST_G": 9,
+        "ST_F": 4,
+        "BCA_G": 4,
+        "BCA_F": 3,
+        "BCB_G": 9,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 2,
+        "BCE_G": 3,
+        "BCE_F": 2,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 120
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 1,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 1,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 7
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GMHR": {
+      "sno": 26,
+      "code": "GMHR",
+      "name": "Govt. Medical College, Maheshwaram",
+      "category": "Government",
+      "seats": {
+        "OC_G": 13,
+        "OC_F": 7,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 2,
+        "SC2_F": 1,
+        "SC3_G": 1,
+        "SC3_F": 1,
+        "ST_G": 3,
+        "ST_F": 1,
+        "BCA_G": 2,
+        "BCA_F": 0,
+        "BCB_G": 3,
+        "BCB_F": 1,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 2,
+        "BCD_F": 1,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 40
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 1,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 2
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GMNL": {
+      "sno": 27,
+      "code": "GMNL",
+      "name": "Govt. Medical College, Nalgonda",
+      "category": "Government",
+      "seats": {
+        "OC_G": 37,
+        "OC_F": 19,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 6,
+        "SC2_F": 4,
+        "SC3_G": 3,
+        "SC3_F": 2,
+        "ST_G": 9,
+        "ST_F": 4,
+        "BCA_G": 5,
+        "BCA_F": 3,
+        "BCB_G": 8,
+        "BCB_F": 5,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 120
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 1,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 1,
+          "total": 7
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GMSR": {
+      "sno": 28,
+      "code": "GMSR",
+      "name": "Govt. Medical College, Suryapet",
+      "category": "Government",
+      "seats": {
+        "OC_G": 37,
+        "OC_F": 19,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 8,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 2,
+        "ST_G": 9,
+        "ST_F": 4,
+        "BCA_G": 6,
+        "BCA_F": 3,
+        "BCB_G": 8,
+        "BCB_F": 4,
+        "BCC_G": 0,
+        "BCC_F": 1,
+        "BCD_G": 6,
+        "BCD_F": 2,
+        "BCE_G": 3,
+        "BCE_F": 2,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 121
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 1,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 1,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GMUL": {
+      "sno": 29,
+      "code": "GMUL",
+      "name": "Govt. Medical College, Mulugu",
+      "category": "Government",
+      "seats": {
+        "OC_G": 13,
+        "OC_F": 7,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 3,
+        "SC2_F": 1,
+        "SC3_G": 2,
+        "SC3_F": 1,
+        "ST_G": 2,
+        "ST_F": 1,
+        "BCA_G": 2,
+        "BCA_F": 1,
+        "BCB_G": 3,
+        "BCB_F": 1,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 1,
+        "BCD_F": 1,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 41
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 2
+        },
+        "CAP": {
+          "total": 0
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GNGK": {
+      "sno": 30,
+      "code": "GNGK",
+      "name": "Govt. Medical College, Nagarkurnool",
+      "category": "Government",
+      "seats": {
+        "OC_G": 37,
+        "OC_F": 19,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 8,
+        "SC2_F": 3,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 9,
+        "ST_F": 4,
+        "BCA_G": 6,
+        "BCA_F": 3,
+        "BCB_G": 8,
+        "BCB_F": 4,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 2,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 121
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 1,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 1,
+          "BCE_G": 0,
+          "BCE_F": 1,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GNRM": {
+      "sno": 31,
+      "code": "GNRM",
+      "name": "Govt. Medical College, Nirmal",
+      "category": "Government",
+      "seats": {
+        "OC_G": 24,
+        "OC_F": 12,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 4,
+        "BCA_F": 2,
+        "BCB_G": 5,
+        "BCB_F": 3,
+        "BCC_G": 0,
+        "BCC_F": 1,
+        "BCD_G": 3,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 79
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 0,
+          "OC_F": 1,
+          "SC1_G": 1,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GNRN": {
+      "sno": 32,
+      "code": "GNRN",
+      "name": "Govt. Medical College, Narayanpet",
+      "category": "Government",
+      "seats": {
+        "OC_G": 13,
+        "OC_F": 7,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 3,
+        "SC2_F": 0,
+        "SC3_G": 1,
+        "SC3_F": 1,
+        "ST_G": 2,
+        "ST_F": 1,
+        "BCA_G": 1,
+        "BCA_F": 1,
+        "BCB_G": 3,
+        "BCB_F": 1,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 2,
+        "BCD_F": 1,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 40
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 2
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GNRS": {
+      "sno": 33,
+      "code": "GNRS",
+      "name": "Govt. Medical College, Narsampet",
+      "category": "Government",
+      "seats": {
+        "OC_G": 13,
+        "OC_F": 7,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 3,
+        "SC2_F": 1,
+        "SC3_G": 1,
+        "SC3_F": 1,
+        "ST_G": 3,
+        "ST_F": 1,
+        "BCA_G": 2,
+        "BCA_F": 1,
+        "BCB_G": 3,
+        "BCB_F": 1,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 2,
+        "BCD_F": 0,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 41
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 1,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 2
+        },
+        "CAP": {
+          "total": 0
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GQTB": {
+      "sno": 34,
+      "code": "GQTB",
+      "name": "Govt. Medical College, Quthbullapur",
+      "category": "Government",
+      "seats": {
+        "OC_G": 13,
+        "OC_F": 7,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 2,
+        "SC2_F": 1,
+        "SC3_G": 1,
+        "SC3_F": 0,
+        "ST_G": 3,
+        "ST_F": 1,
+        "BCA_G": 2,
+        "BCA_F": 1,
+        "BCB_G": 3,
+        "BCB_F": 1,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 2,
+        "BCD_F": 1,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 40
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 2
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GSGR": {
+      "sno": 35,
+      "code": "GSGR",
+      "name": "Govt. Medical College, Sangareddy",
+      "category": "Government",
+      "seats": {
+        "OC_G": 37,
+        "OC_F": 19,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 8,
+        "SC2_F": 3,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 9,
+        "ST_F": 4,
+        "BCA_G": 6,
+        "BCA_F": 2,
+        "BCB_G": 9,
+        "BCB_F": 4,
+        "BCC_G": 0,
+        "BCC_F": 1,
+        "BCD_G": 5,
+        "BCD_F": 3,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 121
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 1,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 1,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 1,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GSRC": {
+      "sno": 36,
+      "code": "GSRC",
+      "name": "Govt. Medical College, Rajanna Sircilla",
+      "category": "Government",
+      "seats": {
+        "OC_G": 24,
+        "OC_F": 12,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 4,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 2,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 3,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 80
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GVKB": {
+      "sno": 37,
+      "code": "GVKB",
+      "name": "Govt. Medical College, Vikarabad",
+      "category": "Government",
+      "seats": {
+        "OC_G": 23,
+        "OC_F": 12,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 4,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 4,
+        "BCD_F": 2,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 80
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 1,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GVNZ": {
+      "sno": 38,
+      "code": "GVNZ",
+      "name": "Govt. Medical College, Nizamabad",
+      "category": "Government",
+      "seats": {
+        "OC_G": 32,
+        "OC_F": 15,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 7,
+        "SC2_F": 4,
+        "SC3_G": 5,
+        "SC3_F": 2,
+        "ST_G": 7,
+        "ST_F": 5,
+        "BCA_G": 6,
+        "BCA_F": 3,
+        "BCB_G": 8,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 4,
+        "BCE_F": 1,
+        "EWS_G": 7,
+        "EWS_F": 3,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 123
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GWNP": {
+      "sno": 39,
+      "code": "GWNP",
+      "name": "Govt. Medical College, Wanaparthy",
+      "category": "Government",
+      "seats": {
+        "OC_G": 36,
+        "OC_F": 19,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 7,
+        "SC2_F": 4,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 9,
+        "ST_F": 3,
+        "BCA_G": 6,
+        "BCA_F": 3,
+        "BCB_G": 8,
+        "BCB_F": 4,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 3,
+        "BCE_F": 2,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 121
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 1,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "GYDT": {
+      "sno": 40,
+      "code": "GYDT",
+      "name": "Govt. Medical College, Yadadri",
+      "category": "Government",
+      "seats": {
+        "OC_G": 13,
+        "OC_F": 7,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 3,
+        "SC2_F": 1,
+        "SC3_G": 1,
+        "SC3_F": 1,
+        "ST_G": 3,
+        "ST_F": 1,
+        "BCA_G": 2,
+        "BCA_F": 1,
+        "BCB_G": 2,
+        "BCB_F": 1,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 2,
+        "BCD_F": 1,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 41
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 2
+        },
+        "CAP": {
+          "total": 0
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "KKTI": {
+      "sno": 41,
+      "code": "KKTI",
+      "name": "Kakatiya Medical College",
+      "category": "Government",
+      "seats": {
+        "OC_G": 48,
+        "OC_F": 24,
+        "SC1_G": 1,
+        "SC1_F": 2,
+        "SC2_G": 12,
+        "SC2_F": 6,
+        "SC3_G": 6,
+        "SC3_F": 4,
+        "ST_G": 15,
+        "ST_F": 7,
+        "BCA_G": 9,
+        "BCA_F": 4,
+        "BCB_G": 13,
+        "BCB_F": 7,
+        "BCC_G": 1,
+        "BCC_F": 2,
+        "BCD_G": 9,
+        "BCD_F": 5,
+        "BCE_G": 5,
+        "BCE_F": 3,
+        "EWS_G": 17,
+        "EWS_F": 8,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 208
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 3,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 1,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 9
+        },
+        "CAP": {
+          "total": 2
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "KMHD": {
+      "sno": 42,
+      "code": "KMHD",
+      "name": "Kamineni Academy of Medical Sciences & Research Centre, LB Nagar, Hyderabad",
+      "category": "Private",
+      "seats": {
+        "OC_G": 22,
+        "OC_F": 11,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 4,
+        "SC2_F": 1,
+        "SC3_G": 2,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 2,
+        "BCA_G": 3,
+        "BCA_F": 2,
+        "BCB_G": 5,
+        "BCB_F": 3,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 3,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 70
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 1,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 1,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 1,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "KMNI": {
+      "sno": 43,
+      "code": "KMNI",
+      "name": "Kamineni Institute of Medical Sciences, Narketpally, Nalgonda",
+      "category": "Private",
+      "seats": {
+        "OC_G": 29,
+        "OC_F": 13,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 4,
+        "SC3_F": 1,
+        "ST_G": 7,
+        "ST_F": 3,
+        "BCA_G": 5,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 5,
+        "BCD_F": 2,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 94
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 1,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "MAHE": {
+      "sno": 44,
+      "code": "MAHE",
+      "name": "Maheshwara Medical College & Hospital",
+      "category": "Private",
+      "seats": {
+        "OC_G": 36,
+        "OC_F": 18,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 7,
+        "SC2_F": 4,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 7,
+        "ST_F": 4,
+        "BCA_G": 6,
+        "BCA_F": 3,
+        "BCB_G": 7,
+        "BCB_F": 4,
+        "BCC_G": 0,
+        "BCC_F": 1,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 3,
+        "BCE_F": 2,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 118
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "MAMS": {
+      "sno": 45,
+      "code": "MAMS",
+      "name": "Mamata Academy of Medical Sciences, Bachupally, Hyderabad",
+      "category": "Private",
+      "seats": {
+        "OC_G": 30,
+        "OC_F": 13,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 6,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 2,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 5,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 3,
+        "BCC_G": 0,
+        "BCC_F": 1,
+        "BCD_G": 4,
+        "BCD_F": 3,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 94
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 1,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "MEDI": {
+      "sno": 46,
+      "code": "MEDI",
+      "name": "Mediciti Institute of Medical Sciences",
+      "category": "Private",
+      "seats": {
+        "OC_G": 23,
+        "OC_F": 11,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 3,
+        "SC2_F": 1,
+        "SC3_G": 2,
+        "SC3_F": 1,
+        "ST_G": 5,
+        "ST_F": 3,
+        "BCA_G": 2,
+        "BCA_F": 2,
+        "BCB_G": 5,
+        "BCB_F": 3,
+        "BCC_G": 0,
+        "BCC_F": 1,
+        "BCD_G": 3,
+        "BCD_F": 2,
+        "BCE_G": 1,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 70
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 1,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 1,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "MHVR": {
+      "sno": 47,
+      "code": "MHVR",
+      "name": "Mahavir Institute of Medical Sciences",
+      "category": "Private",
+      "seats": {
+        "OC_G": 28,
+        "OC_F": 14,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 3,
+        "SC3_F": 2,
+        "ST_G": 7,
+        "ST_F": 3,
+        "BCA_G": 5,
+        "BCA_F": 1,
+        "BCB_G": 7,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 1,
+        "BCD_G": 4,
+        "BCD_F": 2,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 94
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 1,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "MMTA": {
+      "sno": 48,
+      "code": "MMTA",
+      "name": "Mamata Medical College, Khammam",
+      "category": "Private",
+      "seats": {
+        "OC_G": 28,
+        "OC_F": 14,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 6,
+        "SC2_F": 3,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 6,
+        "ST_F": 3,
+        "BCA_G": 4,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 5,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 93
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 1,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "MNRS": {
+      "sno": 49,
+      "code": "MNRS",
+      "name": "MNR Medical College & Hospital",
+      "category": "Private",
+      "seats": {
+        "OC_G": 36,
+        "OC_F": 18,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 7,
+        "SC2_F": 3,
+        "SC3_G": 5,
+        "SC3_F": 2,
+        "ST_G": 8,
+        "ST_F": 3,
+        "BCA_G": 6,
+        "BCA_F": 3,
+        "BCB_G": 7,
+        "BCB_F": 4,
+        "BCC_G": 1,
+        "BCC_F": 1,
+        "BCD_G": 5,
+        "BCD_F": 3,
+        "BCE_G": 3,
+        "BCE_F": 2,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 118
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 1,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 1,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "NOVA": {
+      "sno": 50,
+      "code": "NOVA",
+      "name": "NOVA Institute of Medical Sciences & Research Centre",
+      "category": "Private",
+      "seats": {
+        "OC_G": 36,
+        "OC_F": 18,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 8,
+        "SC2_F": 3,
+        "SC3_G": 4,
+        "SC3_F": 1,
+        "ST_G": 7,
+        "ST_F": 5,
+        "BCA_G": 6,
+        "BCA_F": 3,
+        "BCB_G": 6,
+        "BCB_F": 5,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 117
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 1,
+          "SC3_G": 0,
+          "SC3_F": 1,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "OMCH": {
+      "sno": 51,
+      "code": "OMCH",
+      "name": "Osmania Medical College",
+      "category": "Government",
+      "seats": {
+        "OC_G": 61,
+        "OC_F": 30,
+        "SC1_G": 1,
+        "SC1_F": 1,
+        "SC2_G": 12,
+        "SC2_F": 6,
+        "SC3_G": 6,
+        "SC3_F": 4,
+        "ST_G": 12,
+        "ST_F": 7,
+        "BCA_G": 9,
+        "BCA_F": 5,
+        "BCB_G": 14,
+        "BCB_F": 6,
+        "BCC_G": 1,
+        "BCC_F": 1,
+        "BCD_G": 9,
+        "BCD_F": 5,
+        "BCE_G": 6,
+        "BCE_F": 3,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 199
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 3,
+          "OC_F": 2,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 1,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 11
+        },
+        "CAP": {
+          "total": 2
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "PRIW": {
+      "sno": 52,
+      "code": "PRIW",
+      "name": "Prathima Relief Institute of Medical Sciences, Hanamkonda",
+      "category": "Private",
+      "seats": {
+        "OC_G": 22,
+        "OC_F": 10,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 4,
+        "SC2_F": 2,
+        "SC3_G": 2,
+        "SC3_F": 2,
+        "ST_G": 4,
+        "ST_F": 2,
+        "BCA_G": 3,
+        "BCA_F": 2,
+        "BCB_G": 5,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 2,
+        "BCD_F": 2,
+        "BCE_G": 2,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 70
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 0,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 1,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 1,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "PRTM": {
+      "sno": 53,
+      "code": "PRTM",
+      "name": "Prathima Institute of Medical Sciences, Karimnagar",
+      "category": "Private",
+      "seats": {
+        "OC_G": 36,
+        "OC_F": 18,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 7,
+        "SC2_F": 4,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 8,
+        "ST_F": 4,
+        "BCA_G": 5,
+        "BCA_F": 3,
+        "BCB_G": 8,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 4,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 118
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "RADL": {
+      "sno": 54,
+      "code": "RADL",
+      "name": "Rajiv Gandhi Institute of Medical Sciences, Adilabad",
+      "category": "Government",
+      "seats": {
+        "OC_G": 31,
+        "OC_F": 16,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 7,
+        "SC2_F": 4,
+        "SC3_G": 5,
+        "SC3_F": 2,
+        "ST_G": 8,
+        "ST_F": 4,
+        "BCA_G": 6,
+        "BCA_F": 3,
+        "BCB_G": 7,
+        "BCB_F": 5,
+        "BCC_G": 0,
+        "BCC_F": 1,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 4,
+        "BCE_F": 1,
+        "EWS_G": 6,
+        "EWS_F": 4,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 124
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 1,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "RVMC": {
+      "sno": 55,
+      "code": "RVMC",
+      "name": "RVM Institute of Medical Sciences & Research Centre",
+      "category": "Private",
+      "seats": {
+        "OC_G": 35,
+        "OC_F": 17,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 8,
+        "SC2_F": 3,
+        "SC3_G": 5,
+        "SC3_F": 2,
+        "ST_G": 8,
+        "ST_F": 3,
+        "BCA_G": 6,
+        "BCA_F": 3,
+        "BCB_G": 6,
+        "BCB_F": 5,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 3,
+        "BCE_G": 4,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 117
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 1,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 1,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "SGMC": {
+      "sno": 56,
+      "code": "SGMC",
+      "name": "Govt. Medical College, Siddipet",
+      "category": "Government",
+      "seats": {
+        "OC_G": 43,
+        "OC_F": 23,
+        "SC1_G": 1,
+        "SC1_F": 1,
+        "SC2_G": 10,
+        "SC2_F": 4,
+        "SC3_G": 6,
+        "SC3_F": 1,
+        "ST_G": 10,
+        "ST_F": 6,
+        "BCA_G": 7,
+        "BCA_F": 4,
+        "BCB_G": 9,
+        "BCB_F": 7,
+        "BCC_G": 2,
+        "BCC_F": 1,
+        "BCD_G": 7,
+        "BCD_F": 4,
+        "BCE_G": 4,
+        "BCE_F": 2,
+        "EWS_G": 8,
+        "EWS_F": 4,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 164
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 1,
+          "SC3_G": 0,
+          "SC3_F": 1,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 1,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 8
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "SHDN": {
+      "sno": 57,
+      "code": "SHDN",
+      "name": "Shadan Institute of Medical Sciences",
+      "category": "Private - Minority",
+      "seats": {
+        "OC_G": 0,
+        "OC_F": 0,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 0,
+        "SC2_F": 0,
+        "SC3_G": 0,
+        "SC3_F": 0,
+        "ST_G": 0,
+        "ST_F": 0,
+        "BCA_G": 0,
+        "BCA_F": 0,
+        "BCB_G": 0,
+        "BCB_F": 0,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 0,
+        "BCD_F": 0,
+        "BCE_G": 0,
+        "BCE_F": 0,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 94,
+        "MIN_F": 46,
+        "totalConvenor": 140
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 0,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 8
+        },
+        "CAP": {
+          "total": 0
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "SIMS": {
+      "sno": 58,
+      "code": "SIMS",
+      "name": "Govt. Medical College, Ramagundam/Singareni Institute of Medical Sciences",
+      "category": "Government",
+      "seats": {
+        "OC_G": 34,
+        "OC_F": 18,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 6,
+        "SC2_F": 4,
+        "SC3_G": 4,
+        "SC3_F": 2,
+        "ST_G": 6,
+        "ST_F": 5,
+        "BCA_G": 5,
+        "BCA_F": 3,
+        "BCB_G": 8,
+        "BCB_F": 4,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 6,
+        "BCD_F": 2,
+        "BCE_G": 4,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 114
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 1,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 1,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 6
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 7
+        }
+      }
+    },
+    "SURB": {
+      "sno": 59,
+      "code": "SURB",
+      "name": "Surabhi Institute of Medical Sciences",
+      "category": "Private",
+      "seats": {
+        "OC_G": 28,
+        "OC_F": 14,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 5,
+        "SC2_F": 3,
+        "SC3_G": 2,
+        "SC3_F": 2,
+        "ST_G": 6,
+        "ST_F": 4,
+        "BCA_G": 4,
+        "BCA_F": 3,
+        "BCB_G": 5,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 1,
+        "BCD_G": 5,
+        "BCD_F": 2,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 93
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 1,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 1
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "SVSM": {
+      "sno": 60,
+      "code": "SVSM",
+      "name": "SVS Medical College",
+      "category": "Private",
+      "seats": {
+        "OC_G": 29,
+        "OC_F": 14,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 6,
+        "SC2_F": 3,
+        "SC3_G": 2,
+        "SC3_F": 2,
+        "ST_G": 7,
+        "ST_F": 3,
+        "BCA_G": 5,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 4,
+        "BCD_F": 2,
+        "BCE_G": 3,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 94
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 2,
+          "OC_F": 1,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 1,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "TRRM": {
+      "sno": 61,
+      "code": "TRRM",
+      "name": "TRR Institute of Medical Sciences",
+      "category": "Private",
+      "seats": {
+        "OC_G": 30,
+        "OC_F": 15,
+        "SC1_G": 1,
+        "SC1_F": 0,
+        "SC2_G": 5,
+        "SC2_F": 2,
+        "SC3_G": 3,
+        "SC3_F": 1,
+        "ST_G": 7,
+        "ST_F": 4,
+        "BCA_G": 5,
+        "BCA_F": 2,
+        "BCB_G": 6,
+        "BCB_F": 3,
+        "BCC_G": 1,
+        "BCC_F": 0,
+        "BCD_G": 3,
+        "BCD_F": 1,
+        "BCE_G": 4,
+        "BCE_F": 1,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 94
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 1,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 1,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 1,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 1,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 1,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 5
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "VRKW": {
+      "sno": 62,
+      "code": "VRKW",
+      "name": "Dr. V.R.K. Women's Medical College",
+      "category": "Private - Minority",
+      "seats": {
+        "OC_G": 0,
+        "OC_F": 0,
+        "SC1_G": 0,
+        "SC1_F": 0,
+        "SC2_G": 0,
+        "SC2_F": 0,
+        "SC3_G": 0,
+        "SC3_F": 0,
+        "ST_G": 0,
+        "ST_F": 0,
+        "BCA_G": 0,
+        "BCA_F": 0,
+        "BCB_G": 0,
+        "BCB_F": 0,
+        "BCC_G": 0,
+        "BCC_F": 0,
+        "BCD_G": 0,
+        "BCD_F": 0,
+        "BCE_G": 0,
+        "BCE_F": 0,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 57,
+        "totalConvenor": 57
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 0,
+          "OC_F": 0,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 0,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 0,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 3
+        },
+        "CAP": {
+          "total": 0
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    },
+    "RAJE": {
+      "sno": 63,
+      "code": "RAJE",
+      "name": "RAJA RAJESHWARI MEDICAL C OL LEGE FOR WOMEN",
+      "category": "Private - Women",
+      "seats": {
+        "OC_G": 0,
+        "OC_F": 31,
+        "SC1_G": 0,
+        "SC1_F": 1,
+        "SC2_G": 0,
+        "SC2_F": 5,
+        "SC3_G": 0,
+        "SC3_F": 4,
+        "ST_G": 0,
+        "ST_F": 8,
+        "BCA_G": 0,
+        "BCA_F": 5,
+        "BCB_G": 0,
+        "BCB_F": 7,
+        "BCC_G": 0,
+        "BCC_F": 1,
+        "BCD_G": 0,
+        "BCD_F": 5,
+        "BCE_G": 0,
+        "BCE_F": 3,
+        "EWS_G": 0,
+        "EWS_F": 0,
+        "MIN_G": 0,
+        "MIN_F": 0,
+        "totalConvenor": 70
+      },
+      "specialReservations": {
+        "PWD": {
+          "OC_G": 0,
+          "OC_F": 2,
+          "SC1_G": 0,
+          "SC1_F": 0,
+          "SC2_G": 0,
+          "SC2_F": 1,
+          "SC3_G": 0,
+          "SC3_F": 0,
+          "ST_G": 0,
+          "ST_F": 0,
+          "BCA_G": 0,
+          "BCA_F": 0,
+          "BCB_G": 0,
+          "BCB_F": 1,
+          "BCC_G": 0,
+          "BCC_F": 0,
+          "BCD_G": 0,
+          "BCD_F": 0,
+          "BCE_G": 0,
+          "BCE_F": 0,
+          "total": 4
+        },
+        "CAP": {
+          "total": 1
+        },
+        "PMC": {
+          "total": 0
+        },
+        "SCCL": {
+          "total": 0
+        }
+      }
+    }
+  }
+}

@@ -14,11 +14,17 @@ const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
 
-// Load mSeat datasets
-const projectDir = __dirname;
-const govtColleges = JSON.parse(fs.readFileSync(path.join(projectDir, 'final_accurate_govt.json'), 'utf8'));
-const pvtColleges = JSON.parse(fs.readFileSync(path.join(projectDir, 'final_accurate_pvt.json'), 'utf8'));
-const scoreRankData = JSON.parse(fs.readFileSync(path.join(projectDir, 'score_rank_real_points.json'), 'utf8'));
+function loadJsonData(filename) {
+  const p1 = path.join(__dirname, filename);
+  if (fs.existsSync(p1)) return JSON.parse(fs.readFileSync(p1, 'utf8'));
+  const p2 = path.join(process.cwd(), filename);
+  if (fs.existsSync(p2)) return JSON.parse(fs.readFileSync(p2, 'utf8'));
+  return [];
+}
+
+const govtColleges = loadJsonData('final_accurate_govt.json');
+const pvtColleges = loadJsonData('final_accurate_pvt.json');
+const scoreRankData = loadJsonData('score_rank_real_points.json');
 
 const allColleges = [
   ...govtColleges.map(c => ({ ...c, typeText: 'GOVT' })),
@@ -259,80 +265,82 @@ function handleToolCall(name, args) {
   }
 }
 
-// JSON-RPC Stdio Interface for MCP
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  terminal: false
-});
+if (require.main === module) {
+  if (process.argv.includes('--test')) {
+    console.log("=== TESTING MCP SERVER TOOLS DIRECTLY ===");
+    console.log("Prediction Tool Output:");
+    console.log(JSON.stringify(handleToolCall('predict_college_allotment', { neet_score: 393, category: 'SC_2' }), null, 2));
+    console.log("\nSeat Expansion Stats:");
+    console.log(JSON.stringify(handleToolCall('get_seat_expansion_stats', {}), null, 2));
+    process.exit(0);
+  }
 
-rl.on('line', (line) => {
-  if (!line.trim()) return;
+  // JSON-RPC Stdio Interface for MCP
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
+  });
 
-  try {
-    const request = JSON.parse(line);
-    const { id, method, params } = request;
+  rl.on('line', (line) => {
+    if (!line.trim()) return;
 
-    if (method === 'initialize') {
-      const response = {
-        jsonrpc: '2.0',
-        id,
-        result: {
-          protocolVersion: '2024-11-05',
-          capabilities: { tools: {} },
-          serverInfo: { name: 'mseat-mcp-server', version: '1.0.0' }
-        }
-      };
-      process.stdout.write(JSON.stringify(response) + '\n');
-    } else if (method === 'tools/list') {
-      const response = {
-        jsonrpc: '2.0',
-        id,
-        result: { tools: TOOLS }
-      };
-      process.stdout.write(JSON.stringify(response) + '\n');
-    } else if (method === 'tools/call') {
-      const { name, arguments: args } = params;
-      try {
-        const result = handleToolCall(name, args || {});
+    try {
+      const request = JSON.parse(line);
+      const { id, method, params } = request;
+
+      if (method === 'initialize') {
         const response = {
           jsonrpc: '2.0',
           id,
           result: {
-            content: [{ type: 'text', text: JSON.stringify(result, null, 2) }]
+            protocolVersion: '2024-11-05',
+            capabilities: { tools: {} },
+            serverInfo: { name: 'mseat-mcp-server', version: '1.0.0' }
           }
         };
         process.stdout.write(JSON.stringify(response) + '\n');
-      } catch (err) {
+      } else if (method === 'tools/list') {
         const response = {
           jsonrpc: '2.0',
           id,
-          error: { code: -32603, message: err.message }
+          result: { tools: TOOLS }
+        };
+        process.stdout.write(JSON.stringify(response) + '\n');
+      } else if (method === 'tools/call') {
+        const { name, arguments: args } = params;
+        try {
+          const result = handleToolCall(name, args || {});
+          const response = {
+            jsonrpc: '2.0',
+            id,
+            result: {
+              content: [{ type: 'text', text: JSON.stringify(result, null, 2) }]
+            }
+          };
+          process.stdout.write(JSON.stringify(response) + '\n');
+        } catch (err) {
+          const response = {
+            jsonrpc: '2.0',
+            id,
+            error: { code: -32603, message: err.message }
+          };
+          process.stdout.write(JSON.stringify(response) + '\n');
+        }
+      } else if (method === 'notifications/initialized') {
+        // no-op
+      } else {
+        const response = {
+          jsonrpc: '2.0',
+          id,
+          error: { code: -32601, message: 'Method not found' }
         };
         process.stdout.write(JSON.stringify(response) + '\n');
       }
-    } else if (method === 'notifications/initialized') {
-      // no-op
-    } else {
-      const response = {
-        jsonrpc: '2.0',
-        id,
-        error: { code: -32601, message: 'Method not found' }
-      };
-      process.stdout.write(JSON.stringify(response) + '\n');
+    } catch (err) {
+      // Ignore invalid JSON
     }
-  } catch (err) {
-    // Ignore invalid JSON
-  }
-});
-
-// Command-line Direct Test Mode
-if (process.argv.includes('--test')) {
-  console.log("=== TESTING MCP SERVER TOOLS DIRECTLY ===");
-  console.log("Prediction Tool Output:");
-  console.log(JSON.stringify(handleToolCall('predict_college_allotment', { neet_score: 393, category: 'SC_2' }), null, 2));
-  console.log("\nSeat Expansion Stats:");
-  console.log(JSON.stringify(handleToolCall('get_seat_expansion_stats', {}), null, 2));
+  });
 }
 
 module.exports = { handleToolCall, TOOLS };

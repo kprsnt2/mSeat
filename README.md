@@ -21,20 +21,28 @@ When you visit the live site at `https://kprsnt2.github.io/mSeat/`, the AI Chatb
   * *"2026 seat expansion stats"*
 * **Backend**: It uses a built-in NLP algorithm to extract your score, category, and intent, instantly generating predictions based on the 2026 cutoff engine without needing an OpenAI API key or backend server.
 
-### 2. Full LLM Mode (Local Server with OpenAI)
-For rich, conversational AI responses powered by `gpt-5.4-mini`, you can run the backend server locally. The server automatically routes queries through OpenAI and executes MCP tool calls.
+### 2. Vercel Cloud Deployment (with OpenAI API)
+Deploy effortlessly to Vercel with serverless API support:
+1. Import the repository on [Vercel](https://vercel.com).
+2. Under **Project Settings > Environment Variables**, add:
+   * `OPENAI_API_KEY`: `your-openai-api-key`
+   * *(Optional)* `OPENAI_MODEL`: `gpt-4o-mini` (or `gpt-4o`)
+3. Click **Deploy**. Your live mSeat deployment will automatically use the OpenAI backend for counseling!
+
+### 3. Full LLM Mode (Local Server with OpenAI)
+For local development powered by OpenAI (`gpt-4o-mini` default), run the backend server locally:
 
 **Setup**:
 1. Clone the repository: `git clone https://github.com/kprsnt2/mSeat.git`
 2. Open the directory: `cd mSeat`
-3. Install dependencies: `npm install express body-parser` (if not installed)
+3. Install dependencies: `npm install`
 4. Set your OpenAI API key in your terminal:
    * **Windows (PowerShell)**: `$env:OPENAI_API_KEY="sk-your-key-here"`
    * **Mac/Linux**: `export OPENAI_API_KEY="sk-your-key-here"`
-5. Start the server: `node server.js`
-6. Open your browser to `http://localhost:3000`. The Chat UI will automatically detect the local backend and route your queries through the OpenAI model!
+5. Start the server: `npm start` (or `node server.js`)
+6. Open your browser to `http://localhost:3000`.
 
-### 3. MCP Server Mode (For Claude Desktop / Cursor / Custom Clients)
+### 4. MCP Server Mode (For Claude Desktop / Cursor / Custom Clients)
 mSeat exposes a standard **Model Context Protocol (MCP)** server that you can plug into any MCP-compatible AI assistant! 
 
 **Two Ways to Connect**:
@@ -64,7 +72,7 @@ Restart Claude Desktop, and you can now ask Claude to *"Check the Telangana SC2 
 ## 🛠️ Built With
 * **Frontend**: HTML5, Vanilla JavaScript, CSS3 (Glassmorphism & Dark Theme)
 * **Backend**: Node.js, Express
-* **AI Engine**: OpenAI API (`gpt-5.4-mini`) & Custom MCP fallback Engine
+* **AI Engine**: OpenAI API (`gpt-4o-mini`) & Custom MCP fallback Engine
 * **Data**: Official KNRUHS Round 3 Cutoffs & Final State Merit Lists
 
 ## ⚠️ Disclaimer

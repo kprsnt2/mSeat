@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 const PORT = process.env.PORT || 3000;
-const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5.4-mini';
+const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
 
 // Tool schemas for OpenAI Function Calling
 const OPENAI_TOOLS = [
@@ -338,7 +338,11 @@ function formatFallbackResponse(userMsg, payload) {
   return text;
 }
 
-app.listen(PORT, () => {
-  console.log(`🚀 mSeat Backend & AI Chatbot Server running on http://localhost:${PORT}`);
-  console.log(`🤖 LLM Model Engine configured: ${OPENAI_MODEL}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀 mSeat Backend & AI Chatbot Server running on http://localhost:${PORT}`);
+    console.log(`🤖 LLM Model Engine configured: ${OPENAI_MODEL}`);
+  });
+}
+
+module.exports = app;

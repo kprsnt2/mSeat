@@ -6350,9 +6350,7 @@ async function handleChatSubmit() {
   };
 
   try {
-    const apiEndpoint = window.location.origin.startsWith('http://localhost:3000') || window.location.origin.startsWith('http://127.0.0.1:3000')
-      ? '/api/chat'
-      : 'http://localhost:3000/api/chat';
+    const apiEndpoint = '/api/chat';
 
     const res = await fetch(apiEndpoint, {
       method: 'POST',
