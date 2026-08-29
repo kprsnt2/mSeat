@@ -1,4 +1,14 @@
 """
+⚠️  DEPRECATED — DO NOT USE THIS FILE FOR PRODUCTION.
+
+This Python MCP server uses HARDCODED State Category Rank values (sc2Closing: 18, etc.)
+which are INCOMPATIBLE with the AIR-based cutoffs used by the main JS MCP server and web app.
+
+Use mseat_mcp_server.js (in project root) instead, which loads data from:
+  - final_accurate_govt.json (36 Government colleges, AIR cutoffs)
+  - final_accurate_pvt.json (30 Private colleges, AIR cutoffs)
+
+Original description:
 Model Context Protocol (MCP) Server for mSeat (Telangana MBBS Mock Counselling & Prediction).
 Compatible with Claude Desktop, Cursor, Antigravity, and JSON-RPC 2.0 / SSE clients.
 """
