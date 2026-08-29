@@ -205,7 +205,11 @@ function handleToolCall(name, args) {
       const query = args.query.toLowerCase();
       const year = args.year || '2026';
       const meritFile = (year === '2025' || year === '2024') ? 'last_year_merit_list_final_tg_extracted.txt' : 'merit_list_tg_extracted.txt';
-      const text = fs.readFileSync(path.join(projectDir, 'docs', meritFile), 'utf8');
+      const filePath = path.join(__dirname, 'docs', meritFile);
+      if (!fs.existsSync(filePath)) {
+        return { year: year, count: 0, results: [], error: 'Merit list file not found' };
+      }
+      const text = fs.readFileSync(filePath, 'utf8');
 
       const lines = text.split('\n');
       const matches = [];

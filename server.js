@@ -185,45 +185,79 @@ Rules:
 });
 
 // Official MCP Server Integration over SSE
-const mcpServer = new Server({
-  name: "mseat",
-  version: "1.0.0"
-}, {
-  capabilities: {
-    tools: {}
-  }
-});
+const activeMcpSessions = new Map();
 
-mcpServer.setRequestHandler(ListToolsRequestSchema, async () => {
-  return { tools: TOOLS };
-});
+function createMcpServer() {
+  const server = new Server({
+    name: "mseat",
+    version: "1.0.0"
+  }, {
+    capabilities: {
+      tools: {}
+    }
+  });
 
-mcpServer.setRequestHandler(CallToolRequestSchema, async (request) => {
-  try {
-    const result = handleToolCall(request.params.name, request.params.arguments || {});
-    return {
-      content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
-    };
-  } catch (error) {
-    return {
-      isError: true,
-      content: [{ type: "text", text: error.message }]
-    };
-  }
-});
+  server.setRequestHandler(ListToolsRequestSchema, async () => {
+    return { tools: TOOLS };
+  });
 
-let transport = null;
+  server.setRequestHandler(CallToolRequestSchema, async (request) => {
+    try {
+      const result = handleToolCall(request.params.name, request.params.arguments || {});
+      return {
+        content: [{ type: "text", text: JSON.stringify(result, null, 2) }]
+      };
+    } catch (error) {
+      return {
+        isError: true,
+        content: [{ type: "text", text: error.message }]
+      };
+    }
+  });
+
+  return server;
+}
 
 app.get('/api/mcp/sse', async (req, res) => {
-  transport = new SSEServerTransport("/api/mcp/messages", res);
-  await mcpServer.connect(transport);
+  try {
+    const server = createMcpServer();
+    const transport = new SSEServerTransport("/api/mcp/messages", res);
+    const sessionId = transport._sessionId;
+
+    activeMcpSessions.set(sessionId, { server, transport });
+
+    req.on('close', () => {
+      activeMcpSessions.delete(sessionId);
+    });
+
+    await server.connect(transport);
+  } catch (err) {
+    console.error("MCP SSE Connection Error:", err);
+    if (!res.headersSent) {
+      res.status(500).json({ error: "MCP SSE initialization failed", details: err.message });
+    }
+  }
 });
 
 app.post('/api/mcp/messages', async (req, res) => {
-  if (transport) {
-    await transport.handlePostMessage(req, res);
-  } else {
-    res.status(400).send("No active SSE connection");
+  try {
+    const sessionId = req.query.sessionId;
+    let session = sessionId ? activeMcpSessions.get(sessionId) : null;
+
+    if (!session && activeMcpSessions.size > 0) {
+      session = activeMcpSessions.values().next().value;
+    }
+
+    if (session && session.transport) {
+      await session.transport.handlePostMessage(req, res);
+    } else {
+      res.status(400).send("No active SSE connection found");
+    }
+  } catch (err) {
+    console.error("MCP Message Handling Error:", err);
+    if (!res.headersSent) {
+      res.status(500).json({ error: "Failed to process MCP message", details: err.message });
+    }
   }
 });
 
