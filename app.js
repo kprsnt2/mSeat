@@ -7009,9 +7009,10 @@ window.shareWhatsApp = function() {
     text += '⚠️ *Status:* Eligible for Round 2 / Mop-Up Private Rounds\n';
   }
 
+  const appUrl = (typeof window !== 'undefined' && window.location && window.location.origin) ? window.location.origin : 'https://mseat.kprsnt.in';
   text += '══════════════════════════════════\n';
   text += '⚡ Check your 1-Click TS MBBS mock seat allotment here:\n';
-  text += '👉 https://kprsnt2.github.io/mSeat/';
+  text += '👉 ' + appUrl;
 
   const waUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(text);
   window.open(waUrl, '_blank');
@@ -7021,6 +7022,7 @@ window.copyOptionsSummary = function() {
   const sno = document.getElementById('stateSno')?.value || studentProfile?.customStateRank || '';
   const air = document.getElementById('airRank')?.value || studentProfile?.customAIR || '';
   const cat = document.getElementById('categorySelect')?.value || studentProfile?.category || 'OC';
+  const appUrl = (typeof window !== 'undefined' && window.location && window.location.origin) ? window.location.origin : 'https://mseat.kprsnt.in';
   
   let collegeName = document.getElementById('allocCollegeName')?.textContent?.trim() || '';
   if (!collegeName && typeof lastAllocatedResult !== 'undefined' && lastAllocatedResult?.allocated) {
@@ -7040,7 +7042,7 @@ window.copyOptionsSummary = function() {
       summary += (idx + 1) + '. ' + c.name + ' (' + c.place + ') — ' + c.type + '\n';
     });
   }
-  summary += '\nRun full simulator: https://kprsnt2.github.io/mSeat/';
+  summary += '\nRun full simulator: ' + appUrl;
 
   window.copyToClipboard(summary);
 };
@@ -7056,6 +7058,7 @@ window.copyMasterTableList = function() {
 };
 
 window.shareResults = function() {
+  const appUrl = (typeof window !== 'undefined' && window.location && window.location.origin) ? window.location.origin : 'https://mseat.kprsnt.in';
   if (navigator.share) {
     let collegeName = document.getElementById('allocCollegeName')?.textContent?.trim() || '';
     if (!collegeName && typeof lastAllocatedResult !== 'undefined' && lastAllocatedResult?.allocated) {
@@ -7064,7 +7067,7 @@ window.shareResults = function() {
     navigator.share({
       title: 'mSeat MBBS Allotment Report',
       text: 'My predicted Telangana MBBS College: ' + (collegeName || 'MBBS Seat') + ' via mSeat Simulator!',
-      url: 'https://kprsnt2.github.io/mSeat/'
+      url: appUrl
     }).catch(() => window.shareWhatsApp());
   } else {
     window.shareWhatsApp();

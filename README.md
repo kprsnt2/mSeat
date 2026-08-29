@@ -2,7 +2,7 @@
 
 **mSeat** is an advanced mock counselling predictor for Telangana NEET MBBS admissions (KNRUHS). It simulates seat allocations across all 36 Government and 30 Private Medical Colleges using historical cutoffs (2024-2025 Round 3), State Merit Lists, and newly added seats for 2026.
 
-🌐 **Live Website**: [https://kprsnt2.github.io/mSeat/](https://kprsnt2.github.io/mSeat/)
+🌐 **Live Website**: [https://mseat.kprsnt.in](https://mseat.kprsnt.in) *(or [https://mbbsseat.vercel.app](https://mbbsseat.vercel.app))*
 
 ---
 
@@ -12,14 +12,14 @@ mSeat features an integrated **AI Admission Counselor** that processes natural l
 
 Depending on how you run mSeat, the AI interacts with you in three different ways:
 
-### 1. Static Web Mode (GitHub Pages)
-When you visit the live site at `https://kprsnt2.github.io/mSeat/`, the AI Chatbot runs using a **Local MCP Engine** directly in your browser. 
+### 1. Web Mode (Vercel & Custom Domain)
+When you visit the live site at [https://mseat.kprsnt.in](https://mseat.kprsnt.in), the AI Chatbot seamlessly connects to the backend OpenAI API / MCP prediction engine.
 * **How to use**: Just click the floating 🤖 button in the bottom right corner and ask questions like:
   * *"what about 353 marks"*
   * *"450 marks OC category female"*
   * *"Mamata Bachupally vs CMR Medchal"*
   * *"2026 seat expansion stats"*
-* **Backend**: It uses a built-in NLP algorithm to extract your score, category, and intent, instantly generating predictions based on the 2026 cutoff engine without needing an OpenAI API key or backend server.
+* **Backend**: Routes through OpenAI with function calling and full cutoff prediction tools. If no API key is provided, it falls back to the high-accuracy local rule engine.
 
 ### 2. Vercel Cloud Deployment (with OpenAI API)
 Deploy effortlessly to Vercel with serverless API support:

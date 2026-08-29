@@ -221,5 +221,5 @@ We plan to build and open-source an official **mSeat MCP Server**:
 ---
 
 *mSeat is built with pure Vanilla JavaScript (ES6+), HTML5, and CSS3 Glassmorphism.*  
-*Live Application: [kprsnt2.github.io/mSeat/](https://kprsnt2.github.io/mSeat/)*  
+*Live Application: [mseat.kprsnt.in](https://mseat.kprsnt.in)*  
 *GitHub Repository: [github.com/kprsnt2/mSeat](https://github.com/kprsnt2/mSeat)*
