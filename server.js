@@ -3,7 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const { handleToolCall, TOOLS } = require('./mseat_mcp_server');
 const { Server } = require("@modelcontextprotocol/sdk/server/index.js");
-const { SSEServerTransport } = require("@modelcontextprotocol/sdk/server/sse.js");
+const { StreamableHTTPServerTransport } = require("@modelcontextprotocol/sdk/server/streamableHttp.js");
 const { CallToolRequestSchema, ListToolsRequestSchema } = require("@modelcontextprotocol/sdk/types.js");
 
 const app = express();
@@ -184,9 +184,7 @@ Rules:
   }
 });
 
-// Official MCP Server Integration over SSE
-const activeMcpSessions = new Map();
-
+// Official MCP Server Integration — Streamable HTTP (stateless, works on Vercel serverless)
 function createMcpServer() {
   const server = new Server({
     name: "mseat",
@@ -218,47 +216,37 @@ function createMcpServer() {
   return server;
 }
 
-app.get('/api/mcp/sse', async (req, res) => {
+// Single /mcp endpoint handles GET, POST, DELETE — fully stateless
+app.all('/mcp', async (req, res) => {
   try {
     const server = createMcpServer();
-    const transport = new SSEServerTransport("/api/mcp/messages", res);
-    const sessionId = transport._sessionId;
-
-    activeMcpSessions.set(sessionId, { server, transport });
-
-    req.on('close', () => {
-      activeMcpSessions.delete(sessionId);
+    const transport = new StreamableHTTPServerTransport({
+      sessionIdGenerator: undefined,  // stateless — no session tracking needed
     });
 
     await server.connect(transport);
+    await transport.handleRequest(req, res, req.body);
+
+    // Clean up after response
+    res.on('close', () => {
+      transport.close();
+      server.close();
+    });
   } catch (err) {
-    console.error("MCP SSE Connection Error:", err);
+    console.error("MCP Request Error:", err);
     if (!res.headersSent) {
-      res.status(500).json({ error: "MCP SSE initialization failed", details: err.message });
+      res.status(500).json({ error: "MCP request failed", details: err.message });
     }
   }
 });
 
-app.post('/api/mcp/messages', async (req, res) => {
-  try {
-    const sessionId = req.query.sessionId;
-    let session = sessionId ? activeMcpSessions.get(sessionId) : null;
-
-    if (!session && activeMcpSessions.size > 0) {
-      session = activeMcpSessions.values().next().value;
-    }
-
-    if (session && session.transport) {
-      await session.transport.handlePostMessage(req, res);
-    } else {
-      res.status(400).send("No active SSE connection found");
-    }
-  } catch (err) {
-    console.error("MCP Message Handling Error:", err);
-    if (!res.headersSent) {
-      res.status(500).json({ error: "Failed to process MCP message", details: err.message });
-    }
-  }
+// Keep legacy SSE endpoints alive as redirects (backward compat)
+app.get('/api/mcp/sse', (req, res) => {
+  res.status(200).json({
+    message: "mSeat MCP server has moved to Streamable HTTP transport",
+    endpoint: "/mcp",
+    method: "POST"
+  });
 });
 
 function formatFallbackResponse(userMsg, payload) {
