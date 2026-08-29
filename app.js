@@ -6334,33 +6334,44 @@ async function handleChatSubmit() {
     category: (studentProfile && studentProfile.category) || (categoryEl ? categoryEl.value : 'SC_2'),
     neetScore: (studentProfile && studentProfile.score) || (scoreEl ? scoreEl.value : '393'),
     neetRank: (studentProfile && studentProfile.customAIR) || (rankEl ? rankEl.value : '289635'),
-    stateSno: (studentProfile && studentProfile.customStateRank) || (snoEl ? snoEl.value : '8367'),
+    stateSno: (studentProfile && studentProfile.customStateRank) || (snoEl ? snoEl.value : '8366'),
     gender: (studentProfile && studentProfile.gender) || (genderEl ? genderEl.value : 'female')
   };
 
+  const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+  const timeoutId = controller ? setTimeout(() => controller.abort(), 12000) : null;
+
   try {
     const apiEndpoint = '/api/chat';
+    console.log('[mSeat AI] Sending chat query to:', apiEndpoint, payload);
 
     const res = await fetch(apiEndpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
+      signal: controller ? controller.signal : undefined
     });
+    if (timeoutId) clearTimeout(timeoutId);
 
     if (res.ok) {
       const data = await res.json();
-      updateChatMessage(botMsgId, parseMarkdownToHtml(data.message));
+      console.log('[mSeat AI] Received response:', data);
+      const formattedHtml = parseMarkdownToHtml(data.message || 'Prediction complete.');
+      updateChatMessage(botMsgId, formattedHtml);
       chatHistory.push({ role: 'user', content: query });
       chatHistory.push({ role: 'assistant', content: data.message });
     } else {
+      console.warn('[mSeat AI] API returned status:', res.status);
       const fallbackText = getLocalPredictionFallback(query, payload);
-      updateChatMessage(botMsgId, fallbackText);
+      updateChatMessage(botMsgId, parseMarkdownToHtml(fallbackText));
       chatHistory.push({ role: 'user', content: query });
       chatHistory.push({ role: 'assistant', content: fallbackText });
     }
   } catch (err) {
+    if (timeoutId) clearTimeout(timeoutId);
+    console.warn('[mSeat AI] Request timeout or error, using local prediction engine:', err.message);
     const fallbackText = getLocalPredictionFallback(query, payload);
-    updateChatMessage(botMsgId, fallbackText);
+    updateChatMessage(botMsgId, parseMarkdownToHtml(fallbackText));
     chatHistory.push({ role: 'user', content: query });
     chatHistory.push({ role: 'assistant', content: fallbackText });
   }
@@ -6644,16 +6655,66 @@ function processDynamicQuery(query, payload) {
 
 function parseMarkdownToHtml(markdown) {
   if (!markdown) return '';
-  let html = markdown
-    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
-    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
-    .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+  let text = markdown;
+
+  // Badges
+  text = text.replace(/\[Safe\]/gi, '<span style="background:rgba(16,185,129,0.2);color:#10b981;padding:2px 8px;border-radius:4px;font-weight:700;font-size:0.75rem;border:1px solid rgba(16,185,129,0.4);letter-spacing:0.5px;">SAFE</span>');
+  text = text.replace(/\[Borderline\]/gi, '<span style="background:rgba(245,158,11,0.2);color:#f59e0b;padding:2px 8px;border-radius:4px;font-weight:700;font-size:0.75rem;border:1px solid rgba(245,158,11,0.4);letter-spacing:0.5px;">BORDERLINE</span>');
+  text = text.replace(/\[Unlikely\]/gi, '<span style="background:rgba(239,68,68,0.2);color:#ef4444;padding:2px 8px;border-radius:4px;font-weight:700;font-size:0.75rem;border:1px solid rgba(239,68,68,0.4);letter-spacing:0.5px;">UNLIKELY</span>');
+
+  // Convert markdown tables
+  const lines = text.split('\n');
+  let inTable = false;
+  let tableHtml = '';
+  let resultLines = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith('|') && line.endsWith('|')) {
+      if (line.includes('---')) {
+        continue; // delimiter row
+      }
+      const cols = line.split('|').slice(1, -1).map(c => c.trim());
+      if (!inTable) {
+        inTable = true;
+        tableHtml = '<table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:0.85rem;background:rgba(255,255,255,0.02);border-radius:8px;overflow:hidden;"><thead><tr style="border-bottom:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);">';
+        cols.forEach(c => tableHtml += `<th style="padding:6px 10px;text-align:left;color:#38bdf8;font-weight:600;">${c}</th>`);
+        tableHtml += '</tr></thead><tbody>';
+      } else {
+        tableHtml += '<tr style="border-bottom:1px solid rgba(255,255,255,0.05);">';
+        cols.forEach(c => tableHtml += `<td style="padding:6px 10px;color:#e2e8f0;">${c}</td>`);
+        tableHtml += '</tr>';
+      }
+    } else {
+      if (inTable) {
+        inTable = false;
+        tableHtml += '</tbody></table>';
+        resultLines.push(tableHtml);
+        tableHtml = '';
+      }
+      resultLines.push(lines[i]);
+    }
+  }
+  if (inTable) {
+    tableHtml += '</tbody></table>';
+    resultLines.push(tableHtml);
+  }
+
+  text = resultLines.join('\n');
+
+  text = text
+    .replace(/^### (.*$)/gim, '<h3 style="color:#38bdf8;margin:12px 0 6px 0;font-size:1.05rem;">$1</h3>')
+    .replace(/^#### (.*$)/gim, '<h4 style="color:#a78bfa;margin:10px 0 4px 0;font-size:0.95rem;">$1</h4>')
+    .replace(/^## (.*$)/gim, '<h2 style="color:#00d4aa;margin:14px 0 8px 0;font-size:1.15rem;">$1</h2>')
+    .replace(/^\> (.*$)/gim, '<blockquote style="border-left:3px solid #38bdf8;padding-left:10px;margin:8px 0;color:#94a3b8;font-style:italic;">$1</blockquote>')
+    .replace(/\*\*(.*?)\*\*/gim, '<strong style="color:#ffffff;">$1</strong>')
     .replace(/\*(.*?)\*/gim, '<em>$1</em>')
-    .replace(/`(.*?)`/gim, '<code>$1</code>')
-    .replace(/\n\n/gim, '<br><br>');
-  return html;
+    .replace(/`(.*?)`/gim, '<code style="background:rgba(255,255,255,0.1);padding:1px 4px;border-radius:4px;color:#f1f5f9;">$1</code>')
+    .replace(/^\s*-\s+(.*$)/gim, '<li style="margin-left:16px;margin-bottom:4px;color:#cbd5e1;">$1</li>')
+    .replace(/\n\n/gim, '<br><br>')
+    .replace(/\n/gim, '<br>');
+
+  return text;
 }
 
 // ==========================================================================
