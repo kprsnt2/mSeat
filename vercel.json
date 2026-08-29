@@ -1,5 +1,10 @@
 {
   "version": 2,
+  "functions": {
+    "api/**/*.js": {
+      "includeFiles": "../{final_accurate_govt.json,final_accurate_pvt.json,score_rank_real_points.json,mseat_mcp_server.js}"
+    }
+  },
   "rewrites": [
     {
       "source": "/mcp",
