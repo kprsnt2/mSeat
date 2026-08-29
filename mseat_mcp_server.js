@@ -14,34 +14,17 @@ const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
 
-function loadJsonData(filename) {
-  // Try multiple paths — Vercel serverless may have different __dirname / cwd
-  const searchPaths = [
-    path.join(__dirname, filename),
-    path.join(process.cwd(), filename),
-    path.join(__dirname, '..', filename),
-    path.resolve(filename),
-  ];
+// Use require() so Vercel's bundler includes these files in the serverless function.
+// fs.readFileSync() is invisible to the bundler and the files won't be deployed.
+const govtColleges = require('./final_accurate_govt.json');
+const pvtColleges = require('./final_accurate_pvt.json');
 
-  for (const p of searchPaths) {
-    try {
-      if (fs.existsSync(p)) {
-        const data = JSON.parse(fs.readFileSync(p, 'utf8'));
-        console.log(`[mSeat MCP] Loaded ${filename} from ${p} (${Array.isArray(data) ? data.length : 'obj'} entries)`);
-        return data;
-      }
-    } catch (e) {
-      console.warn(`[mSeat MCP] Error loading ${filename} from ${p}:`, e.message);
-    }
-  }
-
-  console.warn(`[mSeat MCP] WARNING: Could not find ${filename} in any of: ${searchPaths.join(', ')}`);
-  return [];
+let scoreRankData = [];
+try {
+  scoreRankData = require('./score_rank_real_points.json');
+} catch (e) {
+  console.warn('[mSeat MCP] score_rank_real_points.json not found, score estimation disabled');
 }
-
-const govtColleges = loadJsonData('final_accurate_govt.json');
-const pvtColleges = loadJsonData('final_accurate_pvt.json');
-const scoreRankData = loadJsonData('score_rank_real_points.json');
 
 console.log(`[mSeat MCP] Data loaded: ${govtColleges.length} govt, ${pvtColleges.length} pvt, ${scoreRankData.length} score-rank points`);
 
