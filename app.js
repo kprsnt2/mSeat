@@ -6864,13 +6864,13 @@ function quickPredict() {
 
   studentProfile = {
     name,
-    score: score || 393,
+    score: score || 446,
     category: resolvedCat,
     gender: resolvedGender,
     localStatus: document.getElementById('localSelect')?.value || 'local',
     pwd: document.getElementById('pwdCheckbox')?.checked || false,
-    customAIR: air || 289635,
-    customStateRank: sno || 8367
+    customAIR: air || 175420,
+    customStateRank: sno || 3561
   };
   estimatedAIR = studentProfile.customAIR;
 
