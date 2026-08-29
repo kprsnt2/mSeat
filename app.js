@@ -6848,15 +6848,15 @@ function quickPredict() {
       if (snoToCatRanks2026[sno].ews && mappedCat === 'OC') mappedCat = 'EWS';
       resolvedCat = mappedCat;
     } else {
-      resolvedCat = 'OC';
+      resolvedCat = 'BC_D';
     }
   }
 
   if (!resolvedGender || resolvedGender === '') {
     if (!isNaN(sno) && snoToCatRanks2026[sno]) {
-      resolvedGender = snoToCatRanks2026[sno].gender || 'female';
+      resolvedGender = snoToCatRanks2026[sno].gender || 'male';
     } else {
-      resolvedGender = 'female';
+      resolvedGender = 'male';
     }
   }
 
@@ -6869,8 +6869,8 @@ function quickPredict() {
     gender: resolvedGender,
     localStatus: document.getElementById('localSelect')?.value || 'local',
     pwd: document.getElementById('pwdCheckbox')?.checked || false,
-    customAIR: air || 175420,
-    customStateRank: sno || 3561
+    customAIR: air || 174330,
+    customStateRank: sno || 3547
   };
   estimatedAIR = studentProfile.customAIR;
 
