@@ -6287,29 +6287,13 @@ function toggleAdvancedOptions() {
 const chatHistory = [];
 
 function initAIChatbot() {
-  const fab = document.getElementById('ai-chat-fab');
-  const drawer = document.getElementById('ai-chat-drawer');
-  const closeBtn = document.getElementById('ai-chat-close');
   const sendBtn = document.getElementById('ai-chat-send');
   const inputEl = document.getElementById('ai-chat-input');
 
-  if (!fab || !drawer) return;
-
-  fab.addEventListener('click', () => {
-    drawer.classList.toggle('hidden');
-    if (!drawer.classList.contains('hidden') && inputEl) {
-      inputEl.focus();
-    }
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      drawer.classList.add('hidden');
-    });
-  }
-
-  if (sendBtn && inputEl) {
+  if (sendBtn) {
     sendBtn.addEventListener('click', handleChatSubmit);
+  }
+  if (inputEl) {
     inputEl.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
@@ -6888,11 +6872,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initAIChatbot();
 });
 
-function toggleAIChat() {
+function toggleAIChat(forceState) {
   const drawer = document.getElementById('ai-chat-drawer');
   const inputEl = document.getElementById('ai-chat-input');
   if (!drawer) return;
-  drawer.classList.toggle('hidden');
+  if (typeof forceState === 'boolean') {
+    if (forceState) drawer.classList.remove('hidden');
+    else drawer.classList.add('hidden');
+  } else {
+    drawer.classList.toggle('hidden');
+  }
   if (!drawer.classList.contains('hidden') && inputEl) {
     setTimeout(() => inputEl.focus(), 100);
   }
