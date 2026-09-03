@@ -535,7 +535,6 @@
 
   <!-- Load Comparison Data Bundle and App Logic -->
   <script src="docs/v1_vs_v2_comparison_metrics.js"></script>
-  <script src="docs/v2_allotment_data.js"></script>
   <script src="app.js?v=20260829_v2"></script>
 
   <script>
@@ -544,21 +543,25 @@
     var activeChartMode = 'cutoffs';
 
     function initDashboard() {
-      if (typeof comparisonMetricsData === 'undefined') {
+      if (typeof comparisonMetricsData !== 'undefined') {
+        window.comparisonMetricsData = comparisonMetricsData;
+        renderCategoryTable();
+        renderCollegeTable();
+        renderUpgradesTable();
+        renderChart();
+      } else {
         fetch('docs/v1_vs_v2_comparison_metrics.json')
-          .then(r => r.json())
-          .then(data => {
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
             window.comparisonMetricsData = data;
             renderCategoryTable();
             renderCollegeTable();
             renderUpgradesTable();
             renderChart();
+          })
+          .catch(function(err) {
+            console.error('Error loading comparison metrics:', err);
           });
-      } else {
-        renderCategoryTable();
-        renderCollegeTable();
-        renderUpgradesTable();
-        renderChart();
       }
     }
 
@@ -856,7 +859,14 @@
       document.body.removeChild(link);
     }
 
-    document.addEventListener('DOMContentLoaded', initDashboard);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initDashboard);
+    } else {
+      initDashboard();
+    }
+    if (typeof comparisonMetricsData !== 'undefined') {
+      initDashboard();
+    }
   </script>
 </body>
 </html>
