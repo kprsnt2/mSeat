@@ -7274,3 +7274,559 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 });
+
+
+// ============================================================
+// FINAL MERIT LIST & MOCK COUNSELLING ALLOTMENTS EXPLORER ENGINE
+// ============================================================
+
+window.finalMeritAllotmentData = null;
+window.filteredMeritData = [];
+window.meritState = {
+  query: '',
+  category: 'all',
+  status: 'all',
+  gender: 'all',
+  page: 1,
+  pageSize: 50,
+  sortField: 'sno',
+  sortAsc: true,
+  isLoading: true
+};
+
+var searchDebounceTimer = null;
+
+function loadMeritAllotmentData() {
+  // 1. If v2AllotmentData is already loaded via script tag (instant offline / file:// support)
+  if (typeof v2AllotmentData !== 'undefined' && Array.isArray(v2AllotmentData) && v2AllotmentData.length > 0) {
+    window.finalMeritAllotmentData = v2AllotmentData;
+    window.meritState.isLoading = false;
+    applyMeritFilters();
+    return;
+  }
+
+  // 2. Instantly create preliminary dataset from in-memory rawMeritData (0ms latency fallback)
+  if (!window.finalMeritAllotmentData && typeof rawMeritData !== 'undefined' && Array.isArray(rawMeritData)) {
+    window.finalMeritAllotmentData = rawMeritData.map(function(c) {
+      var sno = c[0], air = c[1], score = c[2], rawCat = c[3], gender = c[4], ews = c[5];
+      var normCat = rawCat;
+      if (rawCat.length === 3 && (rawCat.startsWith('BC') || rawCat.startsWith('SC'))) {
+        normCat = rawCat.substring(0, 2) + '_' + rawCat.substring(2);
+      }
+      return {
+        sno: sno,
+        rollNo: '—',
+        neetRank: air,
+        score: score,
+        name: 'Candidate #' + sno,
+        gender: gender,
+        category: normCat,
+        ews: ews === 1 ? 'YES' : 'NO',
+        minority: 'NO',
+        status: sno <= 6020 ? 'ALLOTTED' : 'UNALLOTTED',
+        allottedCollege: sno <= 6020 ? 'Simulated Seat' : 'NO MBBS SEAT AVAILABLE',
+        allottedCollegeCode: '',
+        allotmentQuota: normCat + (sno <= 3499 ? '_GEN (GOVT)' : '_GEN (PVT)')
+      };
+    });
+    applyMeritFilters();
+  }
+
+  // 2. Fetch full AY 2026-27 Mock Allotment JSON asynchronously
+  var jsonUrl = 'docs/AY-2026-27-FINAL-MOCK-ALLOTMENT.json';
+  fetch(jsonUrl)
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status + ' loading ' + jsonUrl);
+      return res.json();
+    })
+    .then(function(data) {
+      if (Array.isArray(data) && data.length > 0) {
+        window.finalMeritAllotmentData = data;
+        window.meritState.isLoading = false;
+        applyMeritFilters();
+      }
+    })
+    .catch(function(err) {
+      console.warn('Could not fetch full allotment JSON (using memory dataset):', err);
+      window.meritState.isLoading = false;
+      applyMeritFilters();
+    });
+}
+
+function applyMeritFilters() {
+  if (!window.finalMeritAllotmentData) return;
+
+  var rawQuery = (window.meritState.query || '').trim().toLowerCase();
+  var selectedCat = window.meritState.category;
+  var selectedStatus = window.meritState.status;
+  var selectedGender = window.meritState.gender;
+
+  var results = window.finalMeritAllotmentData.filter(function(cand) {
+    // Category Filter
+    if (selectedCat !== 'all') {
+      if (selectedCat === 'EWS') {
+        if (cand.ews !== 'YES' && cand.category !== 'EWS') return false;
+      } else {
+        var candCat = (cand.category || '').toUpperCase().replace('-', '_');
+        var targetCat = selectedCat.toUpperCase().replace('-', '_');
+        if (candCat !== targetCat) {
+          // Check un-underscored or aliased match
+          var unUnderscoreCand = candCat.replace('_', '');
+          var unUnderscoreTarget = targetCat.replace('_', '');
+          if (unUnderscoreCand !== unUnderscoreTarget) return false;
+        }
+      }
+    }
+
+    // Status Filter
+    if (selectedStatus !== 'all') {
+      if (selectedStatus === 'ALLOTTED') {
+        if (cand.status !== 'ALLOTTED') return false;
+      } else if (selectedStatus === 'MRC') {
+        if (!cand.isMRC) return false;
+      } else if (selectedStatus === 'OC') {
+        if (cand.status !== 'ALLOTTED' || !cand.allotmentQuota.includes('OC_')) return false;
+      } else if (selectedStatus === 'GOVT') {
+        if (cand.status !== 'ALLOTTED') return false;
+        var q = cand.allotmentQuota || '';
+        var col = cand.allottedCollege || '';
+        var isGovt = q.includes('(GOVT)') || col.includes('Govt') || col.includes('Government') || col.includes('Osmania') || col.includes('Gandhi') || col.includes('ESIC') || col.includes('Kakatiya');
+        if (!isGovt) return false;
+      } else if (selectedStatus === 'PVT') {
+        if (cand.status !== 'ALLOTTED') return false;
+        var q2 = cand.allotmentQuota || '';
+        if (!q2.includes('(PVT)') && !q2.includes('(PVT_MIN)')) return false;
+      } else if (selectedStatus === 'MIN') {
+        if (cand.status !== 'ALLOTTED' || !cand.allotmentQuota.includes('MIN_')) return false;
+      } else if (selectedStatus === 'EXITED TO AIQ') {
+        if (cand.status !== 'EXITED TO AIQ') return false;
+      } else if (selectedStatus === 'UNALLOTTED') {
+        if (cand.status !== 'UNALLOTTED') return false;
+      }
+    }
+
+    // Gender Filter
+    if (selectedGender !== 'all') {
+      if (cand.gender !== selectedGender) return false;
+    }
+
+    // Text Query (AIR, State S.No, Name, Roll No)
+    if (rawQuery.length > 0) {
+      var cleanQ = rawQuery.replace(/^#/, '').trim();
+      var snoStr = String(cand.sno);
+      var airStr = String(cand.neetRank);
+      var rollStr = (cand.rollNo || '').toLowerCase();
+      var nameStr = (cand.name || '').toLowerCase();
+      var collegeStr = (cand.allottedCollege || '').toLowerCase();
+
+      var isNumeric = /^\d+$/.test(cleanQ);
+      if (isNumeric) {
+        if (snoStr === cleanQ || airStr === cleanQ) return true;
+        if (snoStr.includes(cleanQ) || airStr.includes(cleanQ) || rollStr.includes(cleanQ)) return true;
+        return false;
+      } else {
+        // Substring check in name, roll, or college
+        if (nameStr.includes(cleanQ) || rollStr.includes(cleanQ) || collegeStr.includes(cleanQ)) return true;
+        return false;
+      }
+    }
+
+    return true;
+  });
+
+  // Sort results: prioritize exact S.No or AIR match at the very top if searching
+  var field = window.meritState.sortField;
+  var asc = window.meritState.sortAsc;
+  var numQ = parseInt(rawQuery.replace(/^#/, ''), 10);
+  var hasNumQ = !isNaN(numQ);
+
+  results.sort(function(a, b) {
+    if (hasNumQ) {
+      var aExact = (a.sno === numQ || a.neetRank === numQ);
+      var bExact = (b.sno === numQ || b.neetRank === numQ);
+      if (aExact && !bExact) return -1;
+      if (!aExact && bExact) return 1;
+    }
+
+    var valA = a[field];
+    var valB = b[field];
+    if (typeof valA === 'string') {
+      valA = valA.toLowerCase();
+      valB = (valB || '').toLowerCase();
+    }
+    if (valA < valB) return asc ? -1 : 1;
+    if (valA > valB) return asc ? 1 : -1;
+    return a.sno - b.sno;
+  });
+
+  window.filteredMeritData = results;
+  renderMeritTable();
+}
+
+function renderMeritTable() {
+  var tableBody = document.getElementById('meritTableBody');
+  var matchCountEl = document.getElementById('meritMatchCount');
+  var pageInfoEl = document.getElementById('meritPageInfo');
+  var pageBadgeEl = document.getElementById('meritCurrentPageBadge');
+  var prevBtn = document.getElementById('meritPrevBtn');
+  var nextBtn = document.getElementById('meritNextBtn');
+  var firstBtn = document.getElementById('meritFirstBtn');
+  var lastBtn = document.getElementById('meritLastBtn');
+
+  if (!tableBody) return;
+
+  var total = window.filteredMeritData.length;
+  var pageSize = window.meritState.pageSize;
+  var totalPages = Math.ceil(total / pageSize) || 1;
+
+  if (window.meritState.page > totalPages) {
+    window.meritState.page = totalPages;
+  }
+  if (window.meritState.page < 1) {
+    window.meritState.page = 1;
+  }
+
+  var curPage = window.meritState.page;
+  var startIdx = (curPage - 1) * pageSize;
+  var endIdx = Math.min(total, startIdx + pageSize);
+
+  // Update counters
+  if (matchCountEl) {
+    if (total === 0) {
+      matchCountEl.textContent = '❌ No candidates matched your search criteria';
+      matchCountEl.style.color = '#fbbf24';
+    } else {
+      matchCountEl.innerHTML = 'Showing <strong>' + (startIdx + 1).toLocaleString() + '–' + endIdx.toLocaleString() + '</strong> of <strong>' + total.toLocaleString() + '</strong> candidates';
+      matchCountEl.style.color = 'var(--accent-teal)';
+    }
+  }
+
+  if (pageInfoEl) {
+    pageInfoEl.textContent = 'Page ' + curPage + ' of ' + totalPages;
+  }
+  if (pageBadgeEl) {
+    pageBadgeEl.textContent = curPage;
+  }
+
+  if (prevBtn) prevBtn.disabled = (curPage <= 1);
+  if (firstBtn) firstBtn.disabled = (curPage <= 1);
+  if (nextBtn) nextBtn.disabled = (curPage >= totalPages);
+  if (lastBtn) lastBtn.disabled = (curPage >= totalPages);
+
+  // Render table rows
+  var rowsHtml = '';
+  for (var i = startIdx; i < endIdx; i++) {
+    var c = window.filteredMeritData[i];
+
+    var statusBadgeClass = 'status-badge-unallotted';
+    var statusIcon = '⏳';
+    var statusLabel = c.status;
+    if (c.status === 'ALLOTTED') {
+      if (c.isMRC) {
+        statusBadgeClass = 'status-badge-mrc';
+        statusIcon = '🌟';
+        statusLabel = 'ALLOTTED (MRC)';
+      } else {
+        statusBadgeClass = 'status-badge-allotted';
+        statusIcon = '✅';
+      }
+    } else if (c.status === 'EXITED TO AIQ') {
+      statusBadgeClass = 'status-badge-aiq';
+      statusIcon = '✈️';
+    }
+
+    var genderPill = c.gender === 'F' 
+      ? '<span class="gender-pill gender-pill-f" title="Female">F</span>'
+      : '<span class="gender-pill gender-pill-m" title="Male">M</span>';
+
+    var catDisplay = c.category;
+    if (c.ews === 'YES') {
+      catDisplay += ' <span style="font-size:0.65rem; padding:1px 4px; border-radius:3px; background:rgba(167,139,250,0.2); color:#c084fc;">EWS</span>';
+    }
+    if (c.minority === 'MSM') {
+      catDisplay += ' <span style="font-size:0.65rem; padding:1px 4px; border-radius:3px; background:rgba(14,165,233,0.2); color:#38bdf8;">MIN</span>';
+    }
+
+    var collegeDisplay = c.allottedCollege;
+    if (c.status === 'ALLOTTED') {
+      collegeDisplay = '<strong>' + collegeDisplay + '</strong>';
+      if (c.isMRC && c.mrcSlidFrom) {
+        collegeDisplay += '<div style="font-size:0.72rem; color:#fbbf24; font-weight:600; margin-top:2px;">↗ Slid from ' + c.mrcSlidFrom + '</div>';
+      }
+    } else if (c.status === 'EXITED TO AIQ') {
+      collegeDisplay = '<span style="color:#38bdf8;">All India Quota Seat (MCC)</span>';
+    } else {
+      collegeDisplay = '<span style="color:rgba(255,255,255,0.45);">Waitlisted (Try BDS/AYUSH)</span>';
+    }
+
+    var quotaDisplay = c.allotmentQuota || '—';
+    if (quotaDisplay.includes('(GOVT)')) {
+      quotaDisplay = '<span style="color:var(--accent-teal); font-weight:600;">' + quotaDisplay + '</span>';
+    } else if (quotaDisplay.includes('(PVT)')) {
+      quotaDisplay = '<span style="color:#c084fc; font-weight:600;">' + quotaDisplay + '</span>';
+    }
+
+    rowsHtml += '<tr>' +
+      '<td style="font-weight:700; color:var(--accent-teal);">#' + c.sno + '</td>' +
+      '<td style="font-family:monospace; font-weight:600;">' + c.neetRank.toLocaleString() + '</td>' +
+      '<td style="font-weight:700; color:#ffffff;">' + c.score + '</td>' +
+      '<td style="max-width:240px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="' + c.name + '">' + c.name + '</td>' +
+      '<td style="text-align:center;">' + genderPill + '</td>' +
+      '<td><span class="cat-pill">' + catDisplay + '</span></td>' +
+      '<td><span class="status-badge ' + statusBadgeClass + '">' + statusIcon + ' ' + statusLabel + '</span></td>' +
+      '<td style="max-width:260px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="' + c.allottedCollege + '">' + collegeDisplay + '</td>' +
+      '<td>' + quotaDisplay + '</td>' +
+      '<td style="text-align:center;"><button type="button" class="btn-predict-mini" onclick="selectCandidateForPredict(' + c.sno + ')">⚡ Predict</button></td>' +
+    '</tr>';
+  }
+
+  tableBody.innerHTML = rowsHtml;
+}
+
+function onMeritSearchChange(val) {
+  var clearBtn = document.getElementById('clearMeritSearchBtn');
+  if (clearBtn) {
+    clearBtn.style.display = val && val.length > 0 ? 'block' : 'none';
+  }
+
+  clearTimeout(searchDebounceTimer);
+  searchDebounceTimer = setTimeout(function() {
+    window.meritState.query = val;
+    window.meritState.page = 1;
+    applyMeritFilters();
+  }, 120);
+}
+
+function clearMeritSearch() {
+  var input = document.getElementById('meritSearchInput');
+  if (input) input.value = '';
+  var clearBtn = document.getElementById('clearMeritSearchBtn');
+  if (clearBtn) clearBtn.style.display = 'none';
+  window.meritState.query = '';
+  window.meritState.page = 1;
+  applyMeritFilters();
+}
+
+function onMeritFilterChange() {
+  var catEl = document.getElementById('meritCatFilter');
+  var statusEl = document.getElementById('meritStatusFilter');
+  var genderEl = document.getElementById('meritGenderFilter');
+
+  if (catEl) window.meritState.category = catEl.value;
+  if (statusEl) window.meritState.status = statusEl.value;
+  if (genderEl) window.meritState.gender = genderEl.value;
+
+  window.meritState.page = 1;
+  applyMeritFilters();
+}
+
+function onMeritPageSizeChange(val) {
+  var size = parseInt(val, 10);
+  if (!isNaN(size) && size > 0) {
+    window.meritState.pageSize = size;
+    window.meritState.page = 1;
+    renderMeritTable();
+  }
+}
+
+function changeMeritPage(delta) {
+  var total = window.filteredMeritData.length;
+  var totalPages = Math.ceil(total / window.meritState.pageSize) || 1;
+  var newPage = window.meritState.page + delta;
+  if (newPage >= 1 && newPage <= totalPages) {
+    window.meritState.page = newPage;
+    renderMeritTable();
+  }
+}
+
+function goMeritPage(target) {
+  var total = window.filteredMeritData.length;
+  var totalPages = Math.ceil(total / window.meritState.pageSize) || 1;
+  if (target === 'last') {
+    window.meritState.page = totalPages;
+  } else {
+    window.meritState.page = 1;
+  }
+  renderMeritTable();
+}
+
+function sortMeritTable(field) {
+  if (window.meritState.sortField === field) {
+    window.meritState.sortAsc = !window.meritState.sortAsc;
+  } else {
+    window.meritState.sortField = field;
+    window.meritState.sortAsc = true;
+  }
+  applyMeritFilters();
+}
+
+function resetMeritFilters() {
+  var input = document.getElementById('meritSearchInput');
+  if (input) input.value = '';
+  var clearBtn = document.getElementById('clearMeritSearchBtn');
+  if (clearBtn) clearBtn.style.display = 'none';
+  var catEl = document.getElementById('meritCatFilter');
+  if (catEl) catEl.value = 'all';
+  var statusEl = document.getElementById('meritStatusFilter');
+  if (statusEl) statusEl.value = 'all';
+  var genderEl = document.getElementById('meritGenderFilter');
+  if (genderEl) genderEl.value = 'all';
+
+  window.meritState.query = '';
+  window.meritState.category = 'all';
+  window.meritState.status = 'all';
+  window.meritState.gender = 'all';
+  window.meritState.sortField = 'sno';
+  window.meritState.sortAsc = true;
+  window.meritState.page = 1;
+
+  applyMeritFilters();
+}
+
+function selectCandidateForPredict(sno) {
+  if (!document.getElementById('stateSno') || window.location.pathname.includes('merit.html')) {
+    window.location.href = 'index.html?sno=' + sno;
+    return;
+  }
+  if (!window.finalMeritAllotmentData) return;
+  // Populate profile form inputs
+  var snoInput = document.getElementById('stateSno');
+  var airInput = document.getElementById('neetAIR');
+  var nameInput = document.getElementById('studentName');
+  var catSelect = document.getElementById('categorySelect');
+  var genderSelect = document.getElementById('genderSelect');
+
+  if (snoInput) snoInput.value = candidate.sno;
+  if (airInput) airInput.value = candidate.neetRank;
+  if (nameInput) {
+    nameInput.value = candidate.name;
+    nameInput.classList.remove('name-input-hidden');
+  }
+
+  var mappedCat = candidate.category;
+  if (candidate.ews === 'YES' && mappedCat === 'OC') mappedCat = 'EWS';
+  if (catSelect) catSelect.value = mappedCat;
+  if (genderSelect) genderSelect.value = candidate.gender === 'F' ? 'female' : 'male';
+
+  // Close modal if open
+  closeMeritModal();
+
+  // Switch to step 1 if not active
+  if (typeof goToStep === 'function') {
+    goToStep(1);
+  }
+
+  // Smooth scroll to top of profile form
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Execute quick predict
+  setTimeout(function() {
+    quickPredict();
+  }, 100);
+}
+
+function downloadAllotmentCsv() {
+  var link = document.createElement('a');
+  link.href = 'docs/AY-2026-27-FINAL-MOCK-ALLOTMENT.csv';
+  link.download = 'AY-2026-27-Telangana-Final-Merit-Mock-Allotment.csv';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function openMeritModal() {
+  var modal = document.getElementById('meritModal');
+  var modalContent = document.getElementById('modalMeritExplorerContent');
+  var inlineSection = document.getElementById('meritExplorerSection');
+
+  if (!modal) return;
+
+  // If modalContent is empty, move or sync content
+  if (modalContent && inlineSection && modalContent.children.length === 0) {
+    modalContent.appendChild(inlineSection);
+  }
+
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  renderMeritTable();
+}
+
+function closeMeritModal() {
+  var modal = document.getElementById('meritModal');
+  var modalContent = document.getElementById('modalMeritExplorerContent');
+  var profileForm = document.getElementById('profileForm');
+  var inlineSection = document.getElementById('meritExplorerSection');
+
+  if (!modal) return;
+  modal.classList.remove('show');
+  document.body.style.overflow = '';
+
+  // Put inlineSection back if it was moved into modal
+  if (modalContent && inlineSection && profileForm && inlineSection.parentNode === modalContent) {
+    profileForm.parentNode.insertBefore(inlineSection, profileForm.nextSibling);
+  }
+}
+
+// Initialize Merit Explorer on DOM load
+document.addEventListener('DOMContentLoaded', function() {
+  loadMeritAllotmentData();
+
+  // Wire 2-way sync: typing in stateSno or neetAIR auto-highlights in table
+  var stateSnoInput = document.getElementById('stateSno');
+  var neetAirInput = document.getElementById('neetAIR');
+
+  if (stateSnoInput) {
+    stateSnoInput.addEventListener('input', function() {
+      var val = this.value.trim();
+      if (val.length >= 1) {
+        var searchEl = document.getElementById('meritSearchInput');
+        if (searchEl && !searchEl.value) {
+          onMeritSearchChange(val);
+        }
+      }
+    });
+  }
+
+  if (neetAirInput) {
+    neetAirInput.addEventListener('input', function() {
+      var val = this.value.trim();
+      if (val.length >= 3) {
+        var searchEl = document.getElementById('meritSearchInput');
+        if (searchEl && !searchEl.value) {
+          onMeritSearchChange(val);
+        }
+      }
+    });
+  }
+  // Check URL parameters (e.g. index.html?sno=8366 or ?air=289635)
+  if (typeof window !== 'undefined' && window.location && window.location.search) {
+    var params = new URLSearchParams(window.location.search);
+    var pSno = params.get('sno');
+    var pAir = params.get('air');
+    if (pSno) {
+      var sInput = document.getElementById('stateSno');
+      if (sInput) {
+        sInput.value = pSno;
+        setTimeout(function() {
+          quickPredict();
+        }, 200);
+      }
+    } else if (pAir) {
+      var aInput = document.getElementById('neetAIR');
+      if (aInput) {
+        aInput.value = pAir;
+        setTimeout(function() {
+          quickPredict();
+        }, 200);
+      }
+    }
+  }
+});
+function switchMainTab(tab) {
+  if (tab === 'merit') {
+    window.location.href = 'merit.html';
+  } else {
+    window.location.href = 'index.html';
+  }
+}
+

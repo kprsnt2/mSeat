@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Telangana MBBS AY 2026-27 v1 vs v2 Mock Counselling Analytics Dashboard - Direct Merit vs Official KNRUHS 3-Phase MRC Rule 10(2) Comparison.">
+  <title>v1 vs v2 Comparison Dashboard | MSeat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260829_v2">
+  <style>
+    .dashboard-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .kpi-card {
+      padding: 18px 20px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--kpi-accent, var(--accent-teal));
+    }
+    .kpi-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .kpi-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      font-family: var(--font-display);
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .kpi-sub {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .delta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .delta-pos {
+      background: rgba(52, 211, 153, 0.15);
+      color: #34d399;
+    }
+    .delta-neg {
+      background: rgba(248, 113, 113, 0.15);
+      color: #f87171;
+    }
+    .delta-neutral {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .inst-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .inst-card {
+      padding: 20px;
+      border-radius: 14px;
+    }
+    .inst-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .inst-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+    .dash-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    .dash-table th {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #090e1a;
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: rgba(255, 255, 255, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .dash-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .dash-table tbody tr:hover {
+      background: rgba(0, 212, 170, 0.04);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+      <div class="brand" onclick="window.location.href='index.html'" style="cursor: pointer;" title="Go to Home Page">
+        <div class="brand-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#brandGrad)" stroke-width="2">
+            <defs><linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4aa"/><stop offset="100%" stop-color="#0ea5e9"/></linearGradient></defs>
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-name">MSeat</h1>
+          <span class="brand-subtitle">Telangana MBBS Mock Counselling 2026</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="main-nav-tabs">
+        <a href="index.html" class="nav-tab" style="text-decoration: none;">
+          <span>⚡</span> 1-Click Seat Predictor
+        </a>
+        <a href="merit.html" class="nav-tab" style="text-decoration: none;">
+          <span>📜</span> Final Merit List (18,482)
+        </a>
+        <a href="dashboard.html" class="nav-tab active" style="text-decoration: none;">
+          <span>📊</span> v1 vs v2 Dashboard
+        </a>
+      </nav>
+
+      <div class="header-actions" style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="btn-outline" onclick="downloadAllotmentCsv()" style="border-color: var(--accent-teal); color: var(--accent-teal); display: inline-flex; align-items: center; gap: 6px;">
+          <span>📥</span> Download Allotment CSV
+        </button>
+        <button class="btn-outline" onclick="showQuotaInfo()" style="border-color: var(--accent-teal); color: var(--accent-teal);">
+          🩺 Quota & FAQ Guide
+        </button>
+      </div>
+  </header>
+
+  <!-- Main Dashboard Container -->
+  <main class="dashboard-container">
+
+    <!-- Page Header & Banner -->
+    <div class="glass-card genz-card" style="padding: 24px 28px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div class="genz-pill" style="margin-bottom: 10px;">
+            <span class="pill-dot"></span>
+            <span>⚡ AY 2026-27 Official KNRUHS Allotment Audit Engine</span>
+          </div>
+          <h2 style="font-family: var(--font-display); font-size: 1.65rem; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span>📊</span> v1 vs v2 MBBS Allotment Analytics Dashboard
+            <span class="label-badge badge-blue">Official KNRUHS MRC Rules</span>
+          </h2>
+          <p style="font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 960px;">
+            Deep-dive comparison between <strong>v1 (Direct Cutoff Allotment)</strong> and <strong>v2 (Official KNRUHS 3-Phase MRC Rule 10(2) Engine)</strong> across all 18,482 candidates and 6,020 convenor MBBS seats. Use this audit to cross-verify category shifts, sliding patterns, and cutoffs once official KNRUHS results are released.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="docs/AY-2026-27-V2-MOCK-ALLOTMENT.csv" download="v2_official_mrc_allotment.csv" class="btn-outline btn-sm" style="border-color: #38bdf8; color: #38bdf8; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 8px 14px;">
+            <span>📥</span> Download v2 CSV
+          </a>
+          <a href="docs/AY-2026-27-V1-MOCK-ALLOTMENT.csv" download="v1_direct_cutoff_allotment.csv" class="btn-outline btn-sm" style="border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 8px 14px;">
+            <span>📥</span> Download v1 CSV
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- High-Level KPI Summary Cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card" style="--kpi-accent: #34d399;">
+        <span class="kpi-label">Total MBBS Seats Allotted</span>
+        <div class="kpi-value" style="color: #34d399;">6,020</div>
+        <span class="kpi-sub">100% capacity filled in both v1 & v2</span>
+      </div>
+
+      <div class="kpi-card" style="--kpi-accent: #fbbf24;">
+        <span class="kpi-label">🌟 MRC Slid / Upgraded (Rule 10(2))</span>
+        <div class="kpi-value" style="color: #fbbf24;">1,913</div>
+        <span class="kpi-sub">0 in v1 ➔ <strong>1,913 in v2</strong> (+1,913 Upgraded)</span>
+      </div>
+
+      <div class="kpi-card" style="--kpi-accent: #38bdf8;">
+        <span class="kpi-label">🚀 Better College in v2</span>
+        <div class="kpi-value" style="color: #38bdf8;">2,767</div>
+        <span class="kpi-sub">Candidates upgraded to a higher choice college</span>
+      </div>
+
+      <div class="kpi-card" style="--kpi-accent: #a78bfa;">
+        <span class="kpi-label">🔄 Vacated Seats Converted</span>
+        <div class="kpi-value" style="color: #a78bfa;">1,913</div>
+        <span class="kpi-sub">Released to lower-ranked category peers</span>
+      </div>
+
+      <div class="kpi-card" style="--kpi-accent: #60a5fa;">
+        <span class="kpi-label">All India Quota (AIQ) Exits</span>
+        <div class="kpi-value" style="color: #60a5fa;">287</div>
+        <span class="kpi-sub">Secured central seats in MCC Round 1/2</span>
+      </div>
+
+      <div class="kpi-card" style="--kpi-accent: #94a3b8;">
+        <span class="kpi-label">Waitlisted / Unallotted</span>
+        <div class="kpi-value" style="color: #cbd5e1;">12,175</div>
+        <span class="kpi-sub">Can compete in BDS/AYUSH & Cat-B rounds</span>
+      </div>
+    </div>
+
+    <!-- Institution Differentiation Cards (Govt vs Pvt vs Minority) -->
+    <div class="inst-grid">
+      <!-- Govt Colleges Card -->
+      <div class="glass-card inst-card" style="border-left: 4px solid var(--accent-teal);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+          <div>
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--accent-teal); text-transform: uppercase;">🏛️ Government Medical Colleges</span>
+            <h3 style="font-size: 1.4rem; font-weight: 800; font-family: var(--font-display); margin-top: 2px;">3,499 Seats</h3>
+          </div>
+          <span class="label-badge badge-green" style="font-size: 0.72rem;">36 Colleges</span>
+        </div>
+        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.5;">
+          Gandhi (209), Osmania (199), ESIC (76), Kakatiya (208), plus 32 District GMCs. Category candidates secured <strong>2,804 Govt seats</strong> in v2 via OC merit and MRC sliding.
+        </p>
+        <div class="inst-bar-bg"><div class="inst-bar-fill" style="width: 58.1%; background: var(--accent-teal);"></div></div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: rgba(255,255,255,0.6); margin-top: 6px;">
+          <span>58.1% of all State MBBS seats</span>
+          <span style="color: var(--accent-teal); font-weight: 700;">100% Filled</span>
+        </div>
+      </div>
+
+      <!-- Private Cat-A Card -->
+      <div class="glass-card inst-card" style="border-left: 4px solid #c084fc;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+          <div>
+            <span style="font-size: 0.78rem; font-weight: 700; color: #c084fc; text-transform: uppercase;">🏥 Private Category-A (Convenor)</span>
+            <h3 style="font-size: 1.4rem; font-weight: 800; font-family: var(--font-display); margin-top: 2px;">2,154 Seats</h3>
+          </div>
+          <span class="label-badge" style="background: rgba(167, 139, 250, 0.2); color: #c084fc; font-size: 0.72rem;">23 Colleges</span>
+        </div>
+        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.5;">
+          Apollo, Kamineni, Mamata Bachupally, Bhaskar, SVS, Prathima, etc. Standard Convenor tuition fee: ₹60,000/year. 50% state convenor quota strictly distributed.
+        </p>
+        <div class="inst-bar-bg"><div class="inst-bar-fill" style="width: 35.8%; background: #c084fc;"></div></div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: rgba(255,255,255,0.6); margin-top: 6px;">
+          <span>35.8% of all State MBBS seats</span>
+          <span style="color: #c084fc; font-weight: 700;">100% Filled</span>
+        </div>
+      </div>
+
+      <!-- Muslim Minority Card -->
+      <div class="glass-card inst-card" style="border-left: 4px solid #38bdf8;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+          <div>
+            <span style="font-size: 0.78rem; font-weight: 700; color: #38bdf8; text-transform: uppercase;">🕌 Muslim Minority Medical Colleges</span>
+            <h3 style="font-size: 1.4rem; font-weight: 800; font-family: var(--font-display); margin-top: 2px;">367 Seats</h3>
+          </div>
+          <span class="label-badge badge-blue" style="font-size: 0.72rem;">4 Colleges</span>
+        </div>
+        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.5;">
+          Deccan (85), Shadan (140), Ayaan (85), Dr. VRK Women's (57). Allotted <strong>strictly to Muslim candidates</strong> (BC-E and MSM applicants) as per KNRUHS mandate.
+        </p>
+        <div class="inst-bar-bg"><div class="inst-bar-fill" style="width: 6.1%; background: #38bdf8;"></div></div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: rgba(255,255,255,0.6); margin-top: 6px;">
+          <span>6.1% of all State MBBS seats</span>
+          <span style="color: #38bdf8; font-weight: 700;">100% Muslim Only</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category-Wise Comparison Audit Table (v1 vs v2) -->
+    <div class="glass-card genz-card" style="padding: 24px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+            <span>🏷️</span> Category-Wise Allotment & Cutoff Audit (v1 vs v2)
+          </h3>
+          <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7);">
+            Observe how MRC sliding and Rule 10(2) seat conversion impacted category seat totals and expanded cutoff ranks.
+          </p>
+        </div>
+        <button type="button" class="btn-outline btn-sm" onclick="downloadComparisonJson()" style="border-color: var(--accent-teal); color: var(--accent-teal);">
+          📥 Download Metrics JSON
+        </button>
+      </div>
+
+      <div style="overflow-x: auto; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08);">
+        <table class="dash-table" id="categoryAuditTable">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th style="text-align: right;">Applicants</th>
+              <th style="text-align: right;">v1 Allotted</th>
+              <th style="text-align: right;">v2 Allotted</th>
+              <th style="text-align: center;">Seat Δ</th>
+              <th style="text-align: right;">v1 Govt</th>
+              <th style="text-align: right;">v2 Govt</th>
+              <th style="text-align: center;">Govt Δ</th>
+              <th style="text-align: right; color: #fbbf24;">🌟 v2 MRC Slid</th>
+              <th style="text-align: right;">v1 Cutoff AIR</th>
+              <th style="text-align: right;">v2 Cutoff AIR</th>
+              <th style="text-align: center;">AIR Shift (Δ)</th>
+              <th style="text-align: center;">v2 Marks</th>
+              <th>Last Candidate Admitted (v2)</th>
+            </tr>
+          </thead>
+          <tbody id="categoryTableBody">
+            <!-- Populated from comparisonMetricsData -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- College-by-College Comparison Table (63 Colleges) -->
+    <div class="glass-card genz-card" style="padding: 24px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 18px;">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+            <span>🏛️</span> College-by-College Intake, Cutoffs & MRC Inflow (63 Colleges)
+          </h3>
+          <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7);">
+            Search any medical college in Telangana to compare its v1 vs v2 closing rank and total MRC students who slid in.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+          <div class="filter-group">
+            <button class="filter-btn active" onclick="filterCollegeTable('all', this)">All (63)</button>
+            <button class="filter-btn" onclick="filterCollegeTable('Government', this)">Govt (36)</button>
+            <button class="filter-btn" onclick="filterCollegeTable('Private', this)">Private (23)</button>
+            <button class="filter-btn" onclick="filterCollegeTable('Minority', this)">Minority (4)</button>
+          </div>
+          <div class="search-box" style="min-width: 220px;">
+            <input type="text" id="collegeSearchInput" placeholder="Search college name..." oninput="renderCollegeTable()" style="padding: 6px 12px; font-size: 0.82rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: #fff; outline: none;">
+          </div>
+        </div>
+      </div>
+
+      <div style="overflow-x: auto; max-height: 520px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08);">
+        <table class="dash-table" id="collegeAuditTable">
+          <thead>
+            <tr>
+              <th style="width: 70px;">Code</th>
+              <th>College Name</th>
+              <th>Type</th>
+              <th style="text-align: right;">Convenor Seats</th>
+              <th style="text-align: right;">v1 Closing AIR</th>
+              <th style="text-align: right;">v2 Closing AIR</th>
+              <th style="text-align: center;">Rank Delta</th>
+              <th style="text-align: right; color: #fbbf24;">🌟 MRC Slid Into College</th>
+            </tr>
+          </thead>
+          <tbody id="collegeTableBody">
+            <!-- Populated from comparisonMetricsData -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Sample MRC Upgrade Stories / Case Studies -->
+    <div class="glass-card genz-card" style="padding: 24px;">
+      <div style="margin-bottom: 16px;">
+        <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+          <span>🌟</span> Sample MRC Sliding Case Studies (Upgrades from v1 ➔ v2)
+        </h3>
+        <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7);">
+          Examples of real candidates who were allotted lower-ranked or peripheral colleges in v1, but successfully upgraded to top medical institutes under official KNRUHS MRC sliding.
+        </p>
+      </div>
+
+      <div style="overflow-x: auto; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08);">
+        <table class="dash-table" id="upgradesTable">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>NEET AIR</th>
+              <th>Score</th>
+              <th>Candidate Name</th>
+              <th>Category</th>
+              <th>Original College (v1 Direct)</th>
+              <th style="color: #38bdf8;">Upgraded College (v2 MRC)</th>
+              <th style="color: #fbbf24;">Quota</th>
+              <th style="text-align: center;">Choices Gained</th>
+            </tr>
+          </thead>
+          <tbody id="upgradesTableBody">
+            <!-- Populated from comparisonMetricsData -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Quota Info Modal -->
+  <div id="quotaModal" class="modal-overlay" onclick="if(event.target===this)closeQuotaInfo()">
+    <div class="modal glass-card">
+      <div class="modal-header">
+        <h2>Telangana MBBS Reservation & Quota Details</h2>
+        <button class="modal-close" onclick="closeQuotaInfo()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>📋 Official KNRUHS 3-Phase Allotment Rules</h3>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.85);">
+            1. <strong>Phase 1: Open Category Allotment</strong> - All seats under Open Category (Unreserved) are allotted strictly by General State Merit without consuming reserved category quotas.<br>
+            2. <strong>Phase 2: MRC Sliding (Rule 10(2))</strong> - Reserved candidates who occupy Open Category seats and can get a higher-rated college using their category quota are re-allotted under MRC. Their vacated seat is converted to their reserved category.<br>
+            3. <strong>Phase 3: Category Allotment</strong> - Remaining candidates are allotted category-wise into reserved seats and converted seats.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Comparison Data Bundle and App Logic -->
+  <script src="docs/v1_vs_v2_comparison_metrics.js"></script>
+  <script src="docs/v2_allotment_data.js"></script>
+  <script src="app.js?v=20260829_v2"></script>
+
+  <script>
+    // Dashboard Rendering Logic
+    var activeCollegeFilter = 'all';
+
+    function initDashboard() {
+      if (typeof comparisonMetricsData === 'undefined') {
+        fetch('docs/v1_vs_v2_comparison_metrics.json')
+          .then(r => r.json())
+          .then(data => {
+            window.comparisonMetricsData = data;
+            renderCategoryTable();
+            renderCollegeTable();
+            renderUpgradesTable();
+          });
+      } else {
+        renderCategoryTable();
+        renderCollegeTable();
+        renderUpgradesTable();
+      }
+    }
+
+    function renderCategoryTable() {
+      var tbody = document.getElementById('categoryTableBody');
+      if (!tbody || !window.comparisonMetricsData) return;
+      var cats = window.comparisonMetricsData.categories || [];
+
+      var html = '';
+      cats.forEach(function(c) {
+        var seatDelta = c.allotmentDelta;
+        var seatBadge = seatDelta > 0 
+          ? '<span class="delta-badge delta-pos">+' + seatDelta + '</span>'
+          : (seatDelta < 0 ? '<span class="delta-badge delta-neg">' + seatDelta + '</span>' : '<span class="delta-badge delta-neutral">0</span>');
+
+        var govtDelta = c.govtDelta;
+        var govtBadge = govtDelta > 0 
+          ? '<span class="delta-badge delta-pos">+' + govtDelta + '</span>'
+          : (govtDelta < 0 ? '<span class="delta-badge delta-neg">' + govtDelta + '</span>' : '<span class="delta-badge delta-neutral">0</span>');
+
+        var airShift = c.airShift;
+        var airBadge = airShift > 0
+          ? '<span class="delta-badge delta-pos" title="Cutoff expanded by +' + airShift.toLocaleString() + ' ranks">+' + airShift.toLocaleString() + '</span>'
+          : (airShift < 0 ? '<span class="delta-badge delta-neg">' + airShift.toLocaleString() + '</span>' : '<span class="delta-badge delta-neutral">0</span>');
+
+        var lastInfo = c.v2LastCandidate 
+          ? '<strong>#' + c.v2LastCandidate.sno + ' ' + c.v2LastCandidate.name + '</strong> (' + c.v2LastCandidate.college + ')'
+          : '—';
+
+        html += '<tr>' +
+          '<td><strong>' + c.label + '</strong></td>' +
+          '<td style="text-align:right;">' + c.totalApplicants.toLocaleString() + '</td>' +
+          '<td style="text-align:right;">' + c.v1Allotted.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-weight:700; color:var(--accent-teal);">' + c.v2Allotted.toLocaleString() + '</td>' +
+          '<td style="text-align:center;">' + seatBadge + '</td>' +
+          '<td style="text-align:right;">' + c.v1Govt.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-weight:700; color:#38bdf8;">' + c.v2Govt.toLocaleString() + '</td>' +
+          '<td style="text-align:center;">' + govtBadge + '</td>' +
+          '<td style="text-align:right; font-weight:700; color:#fbbf24;">' + c.v2Mrc.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-family:monospace;">' + c.v1ClosingAIR.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-family:monospace; font-weight:700; color:#ffffff;">' + c.v2ClosingAIR.toLocaleString() + '</td>' +
+          '<td style="text-align:center;">' + airBadge + '</td>' +
+          '<td style="text-align:center; font-weight:700;">' + c.v2ClosingScore + '</td>' +
+          '<td style="font-size:0.75rem; max-width:280px; overflow:hidden; text-overflow:ellipsis;" title="' + (c.v2LastCandidate ? c.v2LastCandidate.college : '') + '">' + lastInfo + '</td>' +
+        '</tr>';
+      });
+      tbody.innerHTML = html;
+    }
+
+    function filterCollegeTable(type, btn) {
+      activeCollegeFilter = type;
+      if (btn && btn.parentNode) {
+        btn.parentNode.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      renderCollegeTable();
+    }
+
+    function renderCollegeTable() {
+      var tbody = document.getElementById('collegeTableBody');
+      var searchInput = document.getElementById('collegeSearchInput');
+      if (!tbody || !window.comparisonMetricsData) return;
+      var colleges = window.comparisonMetricsData.colleges || [];
+      var q = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+      var filtered = colleges.filter(function(col) {
+        if (activeCollegeFilter !== 'all') {
+          if (activeCollegeFilter === 'Minority') {
+            if (!col.category.includes('Minority')) return false;
+          } else if (activeCollegeFilter === 'Government') {
+            if (col.category !== 'Government') return false;
+          } else if (activeCollegeFilter === 'Private') {
+            if (col.category !== 'Private') return false;
+          }
+        }
+        if (q.length > 0) {
+          if (!col.name.toLowerCase().includes(q) && !col.code.toLowerCase().includes(q)) return false;
+        }
+        return true;
+      });
+
+      var html = '';
+      filtered.forEach(function(c) {
+        var shift = c.v2ClosingRank - c.v1ClosingRank;
+        var shiftBadge = shift > 0 
+          ? '<span class="delta-badge delta-pos">+' + shift.toLocaleString() + '</span>'
+          : (shift < 0 ? '<span class="delta-badge delta-neg">' + shift.toLocaleString() + '</span>' : '<span class="delta-badge delta-neutral">0</span>');
+
+        var typeBadge = c.category === 'Government' 
+          ? '<span class="label-badge badge-green">Govt</span>'
+          : (c.category.includes('Minority') ? '<span class="label-badge badge-blue">Minority</span>' : '<span class="label-badge" style="background:rgba(167,139,250,0.18); color:#c084fc;">Private</span>');
+
+        html += '<tr>' +
+          '<td style="font-family:monospace; font-weight:700; color:var(--accent-teal);">' + c.code + '</td>' +
+          '<td><strong>' + c.name + '</strong></td>' +
+          '<td>' + typeBadge + '</td>' +
+          '<td style="text-align:right; font-weight:700;">' + c.convenorSeats + '</td>' +
+          '<td style="text-align:right; font-family:monospace;">' + c.v1ClosingRank.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-family:monospace; font-weight:700; color:#ffffff;">' + c.v2ClosingRank.toLocaleString() + '</td>' +
+          '<td style="text-align:center;">' + shiftBadge + '</td>' +
+          '<td style="text-align:right; font-weight:700; color:#fbbf24;">' + (c.v2MrcInflow > 0 ? '+' + c.v2MrcInflow : '0') + '</td>' +
+        '</tr>';
+      });
+      tbody.innerHTML = html;
+    }
+
+    function renderUpgradesTable() {
+      var tbody = document.getElementById('upgradesTableBody');
+      if (!tbody || !window.comparisonMetricsData) return;
+      var upgrades = window.comparisonMetricsData.sampleUpgrades || [];
+
+      var html = '';
+      upgrades.forEach(function(u) {
+        html += '<tr>' +
+          '<td style="font-weight:700; color:var(--accent-teal);">#' + u.sno + '</td>' +
+          '<td style="font-family:monospace; font-weight:600;">' + u.air.toLocaleString() + '</td>' +
+          '<td style="font-weight:700;">' + u.score + '</td>' +
+          '<td><strong>' + u.name + '</strong></td>' +
+          '<td><span class="cat-pill">' + u.category + '</span></td>' +
+          '<td style="color:rgba(255,255,255,0.6);">' + u.v1College + '</td>' +
+          '<td style="color:#38bdf8; font-weight:700;">' + u.v2College + '</td>' +
+          '<td style="font-size:0.75rem; color:#fbbf24;">' + u.v2Quota + '</td>' +
+          '<td style="text-align:center;"><span class="delta-badge delta-pos">+' + u.priorityGain + ' Colleges</span></td>' +
+        '</tr>';
+      });
+      tbody.innerHTML = html;
+    }
+
+    function downloadComparisonJson() {
+      var link = document.createElement('a');
+      link.href = 'docs/v1_vs_v2_comparison_metrics.json';
+      link.download = 'v1_vs_v2_comparison_metrics.json';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    document.addEventListener('DOMContentLoaded', initDashboard);
+  </script>
+</body>
+</html>

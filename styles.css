@@ -1895,3 +1895,289 @@ body {
   background: linear-gradient(90deg, #00f2fe, #10b981) !important;
   box-shadow: 0 0 14px rgba(0, 242, 254, 0.7) !important;
 }
+
+/* ============================================================ */
+/* FINAL MERIT LIST & MOCK ALLOTMENTS EXPLORER STYLES */
+/* ============================================================ */
+
+.merit-stats-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stat-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-width: 120px;
+  flex: 1;
+}
+
+.stat-chip .chip-label {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+
+.stat-chip .chip-val {
+  font-size: 1.05rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+}
+
+.chip-total .chip-val { color: #ffffff; }
+.chip-allotted { border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.05); }
+.chip-allotted .chip-val { color: #34d399; }
+.chip-aiq { border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.05); }
+.chip-aiq .chip-val { color: #38bdf8; }
+.chip-unallotted { border-color: rgba(251, 191, 36, 0.3); background: rgba(251, 191, 36, 0.05); }
+.chip-unallotted .chip-val { color: #fbbf24; }
+
+.genz-filter-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.genz-filter-input:focus {
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 12px rgba(0, 212, 170, 0.25);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.genz-filter-select {
+  width: 100%;
+  background: #0b1120;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.genz-filter-select:focus {
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 12px rgba(0, 212, 170, 0.25);
+}
+
+.merit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.merit-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #090e1a;
+}
+
+.merit-table th {
+  padding: 10px 12px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
+
+.merit-table th:hover {
+  color: var(--accent-teal);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.merit-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.merit-table tbody tr:hover {
+  background: rgba(0, 212, 170, 0.05);
+}
+
+.merit-table tr.highlighted-row {
+  background: rgba(0, 212, 170, 0.12) !important;
+  border-left: 3px solid var(--accent-teal);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.status-badge-allotted {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.status-badge-mrc {
+  background: rgba(245, 158, 11, 0.16);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);
+}
+
+.status-badge-aiq {
+  background: rgba(14, 165, 233, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(14, 165, 233, 0.35);
+}
+
+.status-badge-unallotted {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.cat-pill {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(167, 139, 250, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.gender-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.gender-pill-f {
+  background: rgba(244, 114, 182, 0.15);
+  color: #f472b6;
+  border: 1px solid rgba(244, 114, 182, 0.3);
+}
+
+.gender-pill-m {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.btn-predict-mini {
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 6px;
+  border: 1px solid var(--accent-teal);
+  background: rgba(0, 212, 170, 0.1);
+  color: var(--accent-teal);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-predict-mini:hover {
+  background: var(--accent-teal);
+  color: #050811;
+  box-shadow: 0 0 10px rgba(0, 212, 170, 0.4);
+}
+
+@media (max-width: 768px) {
+  .merit-filter-toolbar > div:first-child {
+    grid-template-columns: 1fr !important;
+  }
+  .merit-filter-toolbar > div:first-child > div:first-child {
+    grid-column: span 1 !important;
+  }
+}
+
+/* --- Primary Navigation Tabs --- */
+.main-nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap !important;
+}
+
+.nav-tab:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-tab.active {
+  background: linear-gradient(135deg, rgba(0, 212, 170, 0.18), rgba(14, 165, 233, 0.18));
+  color: #ffffff;
+  border: 1px solid rgba(0, 212, 170, 0.35);
+  box-shadow: 0 0 12px rgba(0, 212, 170, 0.25);
+}
+
+.nav-tab-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(14, 165, 233, 0.25);
+  color: #38bdf8;
+}
+
+@media (max-width: 900px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .main-nav-tabs {
+    width: 100%;
+    justify-content: center;
+  }
+}

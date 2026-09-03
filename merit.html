@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Telangana MBBS Final Merit List 2026 & v2 Official KNRUHS Mock Allotments - Search all 18,482 candidates by All India Rank (AIR) or State Serial Number.">
+  <title>Final State Merit List & Mock Allotments 2026 | MSeat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260829_v2">
+  <style>
+    .merit-page-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+    .merit-page-header {
+      margin-bottom: 24px;
+    }
+    .merit-page-table-wrapper {
+      max-height: 70vh !important;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+      <div class="brand" onclick="window.location.href='index.html'" style="cursor: pointer;" title="Go to Home Page">
+        <div class="brand-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#brandGrad)" stroke-width="2">
+            <defs><linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4aa"/><stop offset="100%" stop-color="#0ea5e9"/></linearGradient></defs>
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-name">MSeat</h1>
+          <span class="brand-subtitle">Telangana MBBS Mock Counselling 2026</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="main-nav-tabs">
+        <a href="index.html" class="nav-tab" style="text-decoration: none;">
+          <span>⚡</span> 1-Click Seat Predictor
+        </a>
+        <a href="merit.html" class="nav-tab active" style="text-decoration: none;">
+          <span>📜</span> Final Merit List (18,482)
+        </a>
+        <a href="dashboard.html" class="nav-tab" style="text-decoration: none;">
+          <span>📊</span> v1 vs v2 Dashboard
+        </a>
+      </nav>
+
+      <div class="header-actions" style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="btn-outline" onclick="downloadAllotmentCsv()" style="border-color: var(--accent-teal); color: var(--accent-teal); display: inline-flex; align-items: center; gap: 6px;">
+          <span>📥</span> Download Allotment CSV
+        </button>
+        <button class="btn-outline" onclick="showQuotaInfo()" style="border-color: var(--accent-teal); color: var(--accent-teal);">
+          🩺 Quota & FAQ Guide
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Merit Page View -->
+  <main class="merit-page-container">
+    <div id="meritExplorerSection" class="glass-card genz-card" style="padding: 28px;">
+      
+      <!-- Top Title Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 22px;">
+        <div>
+          <div class="genz-pill" style="margin-bottom: 10px;">
+            <span class="pill-dot"></span>
+            <span>⚡ AY 2026-27 Official KNRUHS 3-Phase MRC Allotment Engine · 6,020 MBBS Seats Live</span>
+          </div>
+          <h2 style="font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <span>📜</span> Final State Merit List & Mock Counselling Allotments
+            <span class="label-badge badge-blue" style="font-size: 0.8rem; padding: 4px 10px;">18,482 Candidates</span>
+          </h2>
+          <p style="font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 920px;">
+            Discrete simulation of the official KNRUHS 3-Phase allocation process: <strong>Open Category (General Merit)</strong> ➔ <strong>Meritorious Reserved Candidate (MRC) Sliding</strong> ➔ <strong>Rule 10(2) Vacancy Conversion</strong> ➔ <strong>Category & Minority Allotments</strong> across all 36 Government, 23 Private Cat-A, and 4 Minority medical colleges in Telangana.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="index.html" class="btn-outline btn-sm" style="border-color: #38bdf8; color: #38bdf8; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; padding: 8px 14px; font-weight: 600;">
+            <span>←</span> Back to 1-Click Predictor
+          </a>
+          <button type="button" class="btn-outline btn-sm" onclick="downloadAllotmentCsv()" style="border-color: var(--accent-teal); color: var(--accent-teal); display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;">
+            <span>📥</span> Download Full CSV
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Statistics Chips -->
+      <div class="merit-stats-chips" style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
+        <div class="stat-chip chip-total">
+          <span class="chip-label">Total Candidates</span>
+          <span class="chip-val">18,482</span>
+        </div>
+        <div class="stat-chip chip-allotted">
+          <span class="chip-label">MBBS Allotted</span>
+          <span class="chip-val">6,020 Seats (100%)</span>
+        </div>
+        <div class="stat-chip chip-mrc" style="border-color: rgba(245, 158, 11, 0.35); background: rgba(245, 158, 11, 0.06);">
+          <span class="chip-label" style="color: #f59e0b;">🌟 MRC Slid</span>
+          <span class="chip-val" style="color: #fbbf24;">1,913 Upgraded</span>
+        </div>
+        <div class="stat-chip chip-aiq">
+          <span class="chip-label">Exited to AIQ</span>
+          <span class="chip-val">287</span>
+        </div>
+        <div class="stat-chip chip-unallotted">
+          <span class="chip-label">Unallotted / Waitlisted</span>
+          <span class="chip-val">12,175</span>
+        </div>
+      </div>
+
+      <!-- Search & Filter Toolbar -->
+      <div class="merit-filter-toolbar glass-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 18px; border-radius: 12px; margin-bottom: 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 14px;">
+          <!-- Text search -->
+          <div style="grid-column: span 2; min-width: 280px;">
+            <label for="meritSearchInput" style="font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.85); display: block; margin-bottom: 6px;">
+              🔍 Instant Search (AIR, State S.No, Name, Roll No)
+            </label>
+            <div style="position: relative;">
+              <input type="text" id="meritSearchInput" placeholder="e.g. 289635, 8367, DEVUNOOR, 4201405236..." class="genz-filter-input" oninput="onMeritSearchChange(this.value)" autofocus>
+              <button id="clearMeritSearchBtn" onclick="clearMeritSearch()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; display: none; font-size: 1.1rem;">✕</button>
+            </div>
+          </div>
+
+          <!-- Category filter -->
+          <div>
+            <label for="meritCatFilter" style="font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.85); display: block; margin-bottom: 6px;">
+              Category Filter
+            </label>
+            <select id="meritCatFilter" class="genz-filter-select" onchange="onMeritFilterChange()">
+              <option value="all">All Categories</option>
+              <option value="OC">OC (Open Category)</option>
+              <option value="EWS">EWS</option>
+              <option value="BC_A">BC-A</option>
+              <option value="BC_B">BC-B</option>
+              <option value="BC_C">BC-C</option>
+              <option value="BC_D">BC-D</option>
+              <option value="BC_E">BC-E</option>
+              <option value="SC_1">SC-1</option>
+              <option value="SC_2">SC-2</option>
+              <option value="SC_3">SC-3</option>
+              <option value="ST">ST</option>
+            </select>
+          </div>
+
+          <!-- Status filter -->
+          <div>
+            <label for="meritStatusFilter" style="font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.85); display: block; margin-bottom: 6px;">
+              Allotment Status
+            </label>
+            <select id="meritStatusFilter" class="genz-filter-select" onchange="onMeritFilterChange()">
+              <option value="all">All Statuses</option>
+              <option value="ALLOTTED">Allotted MBBS (6,020)</option>
+              <option value="MRC">🌟 Meritorious Reserved (MRC Slid - 1,913)</option>
+              <option value="OC">🏛️ Open Category (OC Merit)</option>
+              <option value="GOVT">Govt College Allotted (3,499)</option>
+              <option value="PVT">Private College Allotted (2,154)</option>
+              <option value="MIN">🕌 Muslim Minority College Allotted (367)</option>
+              <option value="EXITED TO AIQ">Exited to AIQ (287)</option>
+              <option value="UNALLOTTED">Unallotted / Waitlist (12,175)</option>
+            </select>
+          </div>
+
+          <!-- Gender filter -->
+          <div>
+            <label for="meritGenderFilter" style="font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.85); display: block; margin-bottom: 6px;">
+              Gender
+            </label>
+            <select id="meritGenderFilter" class="genz-filter-select" onchange="onMeritFilterChange()">
+              <option value="all">All Genders</option>
+              <option value="F">Female Candidates</option>
+              <option value="M">Male Candidates</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Active filters count & Reset -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem;">
+          <div id="meritMatchCount" style="color: var(--accent-teal); font-weight: 600;">
+            Loading candidates...
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <label for="meritPageSizeSelect" style="color: rgba(255,255,255,0.6); font-size: 0.8rem;">Rows per page:</label>
+            <select id="meritPageSizeSelect" class="genz-filter-select" style="padding: 5px 10px; font-size: 0.8rem; width: auto;" onchange="onMeritPageSizeChange(this.value)">
+              <option value="25">25</option>
+              <option value="50" selected>50</option>
+              <option value="100">100</option>
+              <option value="250">250</option>
+            </select>
+            <button type="button" class="btn-outline btn-sm" onclick="resetMeritFilters()" style="padding: 5px 12px; font-size: 0.78rem;">
+              Reset Filters
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Merit Table Wrapper -->
+      <div class="merit-table-container merit-page-table-wrapper" style="overflow-x: auto; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08);">
+        <table class="merit-table" id="meritTable">
+          <thead>
+            <tr>
+              <th style="width: 75px; cursor: pointer;" onclick="sortMeritTable('sno')">S.No ⬍</th>
+              <th style="width: 100px; cursor: pointer;" onclick="sortMeritTable('neetRank')">NEET AIR ⬍</th>
+              <th style="width: 70px; cursor: pointer;" onclick="sortMeritTable('score')">Score ⬍</th>
+              <th style="cursor: pointer;" onclick="sortMeritTable('name')">Candidate Name ⬍</th>
+              <th style="width: 50px; text-align: center;">Gen</th>
+              <th style="width: 90px;">Category</th>
+              <th style="width: 130px;">Mock Status</th>
+              <th>Allotted College</th>
+              <th style="width: 140px;">Allotment Quota</th>
+              <th style="width: 90px; text-align: center;">Predict</th>
+            </tr>
+          </thead>
+          <tbody id="meritTableBody">
+            <!-- Dynamically Populated -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination Controls -->
+      <div class="merit-pagination" id="meritPagination" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 18px;">
+        <div id="meritPageInfo" style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">
+          Page 1 of 370
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button type="button" class="btn-outline btn-sm" onclick="goMeritPage(1)" id="meritFirstBtn">« First</button>
+          <button type="button" class="btn-outline btn-sm" onclick="changeMeritPage(-1)" id="meritPrevBtn">‹ Prev</button>
+          <span id="meritCurrentPageBadge" style="padding: 5px 12px; font-weight: 700; font-size: 0.85rem; background: rgba(0,212,170,0.14); color: var(--accent-teal); border-radius: 6px;">1</span>
+          <button type="button" class="btn-outline btn-sm" onclick="changeMeritPage(1)" id="meritNextBtn">Next ›</button>
+          <button type="button" class="btn-outline btn-sm" onclick="goMeritPage('last')" id="meritLastBtn">Last »</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Quota Info Modal -->
+  <div id="quotaModal" class="modal-overlay" onclick="if(event.target===this)closeQuotaInfo()">
+    <div class="modal glass-card">
+      <div class="modal-header">
+        <h2>Telangana MBBS Reservation & Quota Details</h2>
+        <button class="modal-close" onclick="closeQuotaInfo()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>📋 Official KNRUHS 3-Phase Allotment Rules</h3>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.85);">
+            1. <strong>Phase 1: Open Category Allotment</strong> - All seats under Open Category (Unreserved) are allotted strictly by General State Merit without consuming reserved category quotas.<br>
+            2. <strong>Phase 2: MRC Sliding (Rule 10(2))</strong> - Reserved candidates who occupy Open Category seats and can get a higher-rated college using their category quota are re-allotted under MRC. Their vacated seat is converted to their reserved category.<br>
+            3. <strong>Phase 3: Category Allotment</strong> - Remaining candidates are allotted category-wise into reserved seats and converted seats.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="docs/v2_allotment_data.js"></script>
+  <script src="app.js?v=20260829_v2"></script>
+</body>
+</html>

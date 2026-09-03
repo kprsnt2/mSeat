@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // 1. Load Data
-const candidates = JSON.parse(fs.readFileSync('docs/TG_PROVISIONAL_MERIT_parsed.json', 'utf8'));
+const candidates = JSON.parse(fs.readFileSync('docs/AY-2026-27-FINAL-MERIT-LIST_parsed.json', 'utf8'));
 const aiqFinal = JSON.parse(fs.readFileSync('docs/all_india_provisional_result_final.json', 'utf8'));
 const govtCollegesRaw = JSON.parse(fs.readFileSync('final_accurate_govt.json', 'utf8'));
 const pvtCollegesRaw = JSON.parse(fs.readFileSync('final_accurate_pvt.json', 'utf8'));
@@ -181,7 +181,7 @@ for (let c of candidates) {
   if (c.rollNo === '4204101514') kidResult = row;
 }
 
-const csvPath = path.join(__dirname, 'docs', 'Fixed_Global_Mock_Allotment.csv');
+const csvPath = path.join(__dirname, '..', 'docs', 'Fixed_Global_Mock_Allotment.csv');
 fs.writeFileSync(csvPath, csvData.join('\n'), 'utf8');
 console.log(`\nFixed Mock allotment CSV generated for ${candidates.length} candidates at: ${csvPath}`);
 console.log(`Total State MBBS Allotments made: ${allotments}`);

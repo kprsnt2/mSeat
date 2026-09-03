@@ -20,7 +20,7 @@
 
   <!-- Header -->
   <header class="header">
-    <div class="container header-inner">
+    <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
       <div class="brand" onclick="resetApp()" style="cursor: pointer;" title="Go to Home Page">
         <div class="brand-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#brandGrad)" stroke-width="2">
@@ -33,7 +33,23 @@
           <span class="brand-subtitle">Telangana MBBS Mock Counselling 2026</span>
         </div>
       </div>
+      <!-- Navigation Tabs -->
+      <nav class="main-nav-tabs">
+        <a href="index.html" class="nav-tab active" style="text-decoration: none;">
+          <span>⚡</span> 1-Click Seat Predictor
+        </a>
+        <a href="merit.html" class="nav-tab" style="text-decoration: none;">
+          <span>📜</span> Final Merit List (18,482)
+        </a>
+        <a href="dashboard.html" class="nav-tab" style="text-decoration: none;">
+          <span>📊</span> v1 vs v2 Dashboard
+        </a>
+      </nav>
+
       <div class="header-actions" style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="btn-outline" onclick="downloadAllotmentCsv()" style="border-color: var(--accent-teal); color: var(--accent-teal); display: inline-flex; align-items: center; gap: 6px;">
+          <span>📥</span> Download Allotment CSV
+        </button>
         <button class="btn-outline" onclick="showQuotaInfo()" style="border-color: var(--accent-teal); color: var(--accent-teal);">
           🩺 Quota & FAQ Guide
         </button>
@@ -191,6 +207,7 @@
             </div>
           </div>
         </form>
+
 
         <!-- Quick Reservation Info -->
         <div class="reservation-overview glass-card animate-on-scroll">
@@ -725,6 +742,8 @@
   </div>
   -->
 
+
+  <script src="docs/v2_allotment_data.js"></script>
   <script src="app.js?v=20260829_live6"></script>
 </body>
 </html>
