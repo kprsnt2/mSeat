@@ -54,10 +54,10 @@
           <span>⚡</span> 1-Click Seat Predictor
         </a>
         <a href="merit.html" class="nav-tab active" style="text-decoration: none;">
-          <span>📜</span> Final Merit List (18,482)
+          <span>📜</span> Mock Allotment
         </a>
         <a href="dashboard.html" class="nav-tab" style="text-decoration: none;">
-          <span>📊</span> v1 vs v2 Dashboard
+          <span>📊</span> Dashboard
         </a>
       </nav>
 
@@ -84,11 +84,11 @@
             <span>⚡ AY 2026-27 Official KNRUHS 3-Phase MRC Allotment Engine · 6,020 MBBS Seats Live</span>
           </div>
           <h2 style="font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-            <span>📜</span> Final State Merit List & Mock Counselling Allotments
+            <span>📜</span> Official Final Mock Allotments (v2 MRC Engine)
             <span class="label-badge badge-blue" style="font-size: 0.8rem; padding: 4px 10px;">18,482 Candidates</span>
           </h2>
           <p style="font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 920px;">
-            Discrete simulation of the official KNRUHS 3-Phase allocation process: <strong>Open Category (General Merit)</strong> ➔ <strong>Meritorious Reserved Candidate (MRC) Sliding</strong> ➔ <strong>Rule 10(2) Vacancy Conversion</strong> ➔ <strong>Category & Minority Allotments</strong> across all 36 Government, 23 Private Cat-A, and 4 Minority medical colleges in Telangana.
+            Includes all 18,482 candidates and designates held All India Quota (AIQ) seats. Complete simulation using official KNRUHS 3-Phase allocation rules (Open Category General Merit ➔ Meritorious Reserved Candidate (MRC) Sliding ➔ Rule 10(2) Vacancy Conversion ➔ Category & Minority Allotments) across all 36 Government, 23 Private Cat-A, and 4 Minority colleges.
           </p>
         </div>
 
@@ -114,15 +114,15 @@
         </div>
         <div class="stat-chip chip-mrc" style="border-color: rgba(245, 158, 11, 0.35); background: rgba(245, 158, 11, 0.06);">
           <span class="chip-label" style="color: #f59e0b;">🌟 MRC Slid</span>
-          <span class="chip-val" style="color: #fbbf24;">1,913 Upgraded</span>
+          <span class="chip-val" style="color: #fbbf24;">1,876 Upgraded</span>
         </div>
-        <div class="stat-chip chip-aiq">
-          <span class="chip-label">Exited to AIQ</span>
-          <span class="chip-val">287</span>
+        <div class="stat-chip chip-aiq" style="border-color: rgba(56, 189, 248, 0.35); background: rgba(56, 189, 248, 0.06);">
+          <span class="chip-label" style="color: #38bdf8;">✈️ AIQ Seat Holders</span>
+          <span class="chip-val" style="color: #38bdf8;">287 (170 State Allotted)</span>
         </div>
         <div class="stat-chip chip-unallotted">
           <span class="chip-label">Unallotted / Waitlisted</span>
-          <span class="chip-val">12,175</span>
+          <span class="chip-val">12,462</span>
         </div>
       </div>
 
@@ -169,14 +169,13 @@
             <select id="meritStatusFilter" class="genz-filter-select" onchange="onMeritFilterChange()">
               <option value="all">All Statuses</option>
               <option value="ALLOTTED">Allotted MBBS (6,020)</option>
-              <option value="MRC">🌟 Meritorious Reserved (MRC Slid - 1,913)</option>
+              <option value="MRC">🌟 Meritorious Reserved (MRC Slid - 1,876)</option>
+              <option value="AIQ_HOLDERS">✈️ AIQ Seat Holders (287 Total · 170 State Allotted)</option>
               <option value="OC">🏛️ Open Category (OC Merit)</option>
               <option value="GOVT">Govt College Allotted (3,499)</option>
               <option value="PVT">Private College Allotted (2,154)</option>
               <option value="MIN">🕌 Muslim Minority College Allotted (367)</option>
-              <option value="EXITED TO AIQ">Exited to AIQ (287)</option>
-              <option value="UNALLOTTED">Unallotted / Waitlist (12,175)</option>
-            </select>
+              <option value="UNALLOTTED">Unallotted / Waitlist (12,462)</option>
           </div>
 
           <!-- Gender filter -->
@@ -224,10 +223,10 @@
               <th style="width: 50px; text-align: center;">Gen</th>
               <th style="width: 90px;">Category</th>
               <th style="width: 130px;">Mock Status</th>
-              <th>Allotted College</th>
+              <th>State Allotted College</th>
               <th style="width: 140px;">Allotment Quota</th>
+              <th style="width: 200px;">AIQ Seat Held (MCC)</th>
               <th style="width: 90px; text-align: center;">Predict</th>
-            </tr>
           </thead>
           <tbody id="meritTableBody">
             <!-- Dynamically Populated -->

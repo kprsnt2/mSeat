@@ -2,10 +2,13 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * AY 2026-27 Telangana MBBS Mock Counselling Simulation - v2 (Official KNRUHS MRC Engine)
+ * AY 2026-27 Telangana MBBS Final Mock Counselling Simulation (v2 Official KNRUHS MRC Engine)
+ * 
+ * Includes All India Quota (AIQ) candidates in state seat competition (as many prefer local top GMCs),
+ * while explicitly recording their held AIQ seat details in a dedicated column.
  * 
  * Algorithm:
- * Phase 1: Open Category (OC / UR) Allotment strictly on General Merit.
+ * Phase 1: Open Category (OC / UR) Allotment strictly on General State Merit.
  * Phase 2: Meritorious Reserved Candidate (MRC) Re-allotment / Sliding.
  *          If a reserved candidate in an OC seat can secure a better college in their category,
  *          they slide to that better college under MRC quota.
@@ -14,7 +17,7 @@ const path = require('path');
  *          and Muslim minority seats (for Muslim candidates only).
  */
 function runV2MrcCounselling() {
-  console.log('=== Starting AY 2026-27 v2 Official KNRUHS MRC Mock Counselling Simulation ===');
+  console.log('=== Starting AY 2026-27 Final Mock Counselling Simulation (Including AIQ Candidates) ===');
 
   // 1. Load Data
   const candidatesPath = path.join(__dirname, '..', 'docs', 'AY-2026-27-FINAL-MERIT-LIST_parsed.json');
@@ -27,12 +30,31 @@ function runV2MrcCounselling() {
   const smc = JSON.parse(fs.readFileSync(seatMatrixPath, 'utf8'));
   const finalGovtPvt = JSON.parse(fs.readFileSync(prefPath, 'utf8'));
 
-  const aiqByRank = new Set(aiqFinal.map(r => r.rank));
+  // Build AIQ lookup map by rank
+  const aiqByRank = new Map();
+  aiqFinal.forEach(r => {
+    let inst = (r.allottedInstitute || '').trim();
+    const firstComma = inst.indexOf(',');
+    let shortInst = inst;
+    if (firstComma > 0 && firstComma < 40) {
+      shortInst = inst.substring(0, firstComma).trim();
+    } else if (inst.length > 45) {
+      shortInst = inst.substring(0, 45).trim() + '...';
+    }
+
+    aiqByRank.set(r.rank, {
+      shortInstitute: shortInst,
+      fullInstitute: inst,
+      quota: r.allottedQuota || 'AIQ',
+      course: r.course || 'MBBS',
+      category: r.allottedCategory || ''
+    });
+  });
+
   console.log(`Loaded ${candidates.length} candidates from final merit list.`);
   console.log(`Loaded ${aiqFinal.length} AIQ allotted records (${aiqFinal.filter(r => candidates.some(c => c.neetRank === r.rank)).length} matched in TG).`);
 
-  // 2. Build Ordered Colleges List (Top Rated Order)
-  // Gandhi is #1, Osmania #2, ESIC #3, Kakatiya #4...
+  // 2. Build Ordered Colleges List (Top Rated Order: Gandhi #1, Osmania #2, ESIC #3, Kakatiya #4...)
   const colleges = [];
 
   const govtOrdered = [...finalGovtPvt.govtList];
@@ -120,26 +142,11 @@ function runV2MrcCounselling() {
   const candidateAllotments = new Map();
 
   // -------------------------------------------------------------
-  // PHASE 1: Open Category Allotment (General Merit)
+  // PHASE 1: Open Category Allotment for ALL Candidates (including AIQ)
   // -------------------------------------------------------------
   let phase1OcCount = 0;
-  let aiqCount = 0;
 
   for (let c of candidates) {
-    if (aiqByRank.has(c.neetRank)) {
-      candidateAllotments.set(c.sno, {
-        status: 'EXITED TO AIQ',
-        course: 'MBBS (AIQ)',
-        college: { name: 'ALL INDIA QUOTA SEAT', code: '', priority: 0, type: 'AIQ' },
-        quota: 'ALL INDIA',
-        isOC: false,
-        isMRC: false,
-        mrcSlidFrom: null
-      });
-      aiqCount++;
-      continue;
-    }
-
     const isFemale = c.gender === 'F';
 
     for (let col of colleges) {
@@ -173,9 +180,11 @@ function runV2MrcCounselling() {
         break;
       }
     }
+
+    if (phase1OcCount >= totalOcSeats) break;
   }
 
-  console.log(`\nPhase 1 Complete: Allotted ${phase1OcCount} OC seats.`);
+  console.log(`Phase 1 Complete: Allotted ${phase1OcCount} OC seats.`);
 
   // -------------------------------------------------------------
   // PHASE 2: MRC (Meritorious Reserved Candidate) Re-allotment / Sliding
@@ -192,42 +201,33 @@ function runV2MrcCounselling() {
     const isFemale = c.gender === 'F';
     const isEws = c.ews === 'YES';
 
-    // Pure OC candidates without EWS cannot slide under MRC
     if (candCat === 'OC' && !isEws) continue;
 
     const currentPri = alloc.college.priority;
 
-    // Look for a strictly better college in candidate's reserved category quota
     let betterCol = null;
     let betterQuota = '';
     let betterGender = '';
 
     for (let col of colleges) {
-      if (col.priority >= currentPri) break; // Only strictly better colleges
+      if (col.priority >= currentPri) break;
 
-      // 1. Reserved Category General
       if (col.seats[`${candCat}_G`] > 0) {
         betterCol = col;
         betterQuota = `${candCat}_GEN (MRC)`;
         betterGender = 'G';
         break;
-      }
-      // 2. Reserved Category Female
-      else if (isFemale && col.seats[`${candCat}_F`] > 0) {
+      } else if (isFemale && col.seats[`${candCat}_F`] > 0) {
         betterCol = col;
         betterQuota = `${candCat}_FEM (MRC)`;
         betterGender = 'F';
         break;
-      }
-      // 3. EWS General
-      else if (isEws && col.seats.EWS_G > 0) {
+      } else if (isEws && col.seats.EWS_G > 0) {
         betterCol = col;
         betterQuota = `EWS_GEN (MRC)`;
         betterGender = 'G';
         break;
-      }
-      // 4. EWS Female
-      else if (isEws && isFemale && col.seats.EWS_F > 0) {
+      } else if (isEws && isFemale && col.seats.EWS_F > 0) {
         betterCol = col;
         betterQuota = `EWS_FEM (MRC)`;
         betterGender = 'F';
@@ -239,7 +239,6 @@ function runV2MrcCounselling() {
       mrcSlidCount++;
       const oldCol = alloc.college;
 
-      // 1. Consume seat in better college
       if (betterQuota.startsWith('EWS')) {
         if (betterGender === 'G') betterCol.seats.EWS_G--;
         else betterCol.seats.EWS_F--;
@@ -248,8 +247,7 @@ function runV2MrcCounselling() {
         else betterCol.seats[`${candCat}_F`]--;
       }
 
-      // 2. Vacated seat in oldCol is converted to candidate's reserved category! (Rule 10(2))
-      const oldGender = alloc.genderQuota; // 'GEN' or 'FEM'
+      const oldGender = alloc.genderQuota;
       const targetKey = isEws && candCat === 'OC' 
         ? (oldGender === 'GEN' ? 'EWS_G' : 'EWS_F')
         : (oldGender === 'GEN' ? `${candCat}_G` : `${candCat}_F`);
@@ -257,7 +255,6 @@ function runV2MrcCounselling() {
       oldCol.seats[targetKey] = (oldCol.seats[targetKey] || 0) + 1;
       convertedSeatsCount[targetKey] = (convertedSeatsCount[targetKey] || 0) + 1;
 
-      // 3. Update candidate's allotment
       candidateAllotments.set(c.sno, {
         status: 'ALLOTTED',
         course: 'MBBS',
@@ -272,7 +269,6 @@ function runV2MrcCounselling() {
   }
 
   console.log(`Phase 2 Complete: ${mrcSlidCount} Meritorious Reserved Candidates (MRC) slid to better colleges.`);
-  console.log(`Vacated seats converted back to categories:`, convertedSeatsCount);
 
   // -------------------------------------------------------------
   // PHASE 3: Category-wise Allotment for Remaining Candidates
@@ -292,7 +288,6 @@ function runV2MrcCounselling() {
     let gotSeat = false;
 
     for (let col of colleges) {
-      // 1. Reserved Category General (including converted seats)
       if (col.seats[`${candCat}_G`] > 0) {
         col.seats[`${candCat}_G`]--;
         gotSeat = true;
@@ -306,9 +301,7 @@ function runV2MrcCounselling() {
           mrcSlidFrom: null
         });
         break;
-      }
-      // 2. Reserved Category Female
-      else if (isFemale && col.seats[`${candCat}_F`] > 0) {
+      } else if (isFemale && col.seats[`${candCat}_F`] > 0) {
         col.seats[`${candCat}_F`]--;
         gotSeat = true;
         candidateAllotments.set(c.sno, {
@@ -321,9 +314,7 @@ function runV2MrcCounselling() {
           mrcSlidFrom: null
         });
         break;
-      }
-      // 3. EWS General
-      else if (isEws && col.seats.EWS_G > 0) {
+      } else if (isEws && col.seats.EWS_G > 0) {
         col.seats.EWS_G--;
         gotSeat = true;
         candidateAllotments.set(c.sno, {
@@ -336,9 +327,7 @@ function runV2MrcCounselling() {
           mrcSlidFrom: null
         });
         break;
-      }
-      // 4. EWS Female
-      else if (isEws && isFemale && col.seats.EWS_F > 0) {
+      } else if (isEws && isFemale && col.seats.EWS_F > 0) {
         col.seats.EWS_F--;
         gotSeat = true;
         candidateAllotments.set(c.sno, {
@@ -351,9 +340,7 @@ function runV2MrcCounselling() {
           mrcSlidFrom: null
         });
         break;
-      }
-      // 5. Muslim Minority (Assigned to Muslim candidates only in minority colleges)
-      else if (isMinority && col.isMinority) {
+      } else if (isMinority && col.isMinority) {
         if (col.seats.MIN_G > 0) {
           col.seats.MIN_G--;
           gotSeat = true;
@@ -403,13 +390,29 @@ function runV2MrcCounselling() {
   console.log(`Phase 3 Complete: Allotted ${phase3Allotted} category & minority seats.`);
   console.log(`Total Waitlisted / Unallotted: ${unallottedCount}`);
 
-  // 4. Assemble Final Results Array
+  // 4. Assemble Final Results Array with AIQ columns
   const finalResults = [];
   let totalAllotted = 0;
+  let aiqHoldersAllottedInState = 0;
 
   for (let c of candidates) {
     const alloc = candidateAllotments.get(c.sno);
     if (alloc.status === 'ALLOTTED') totalAllotted++;
+
+    const aiq = aiqByRank.get(c.neetRank);
+    const hasAiqSeat = !!aiq;
+    let aiqSeatHeld = '—';
+    let aiqInstitute = '';
+    let aiqQuota = '';
+    let aiqCourse = '';
+
+    if (aiq) {
+      if (alloc.status === 'ALLOTTED') aiqHoldersAllottedInState++;
+      aiqInstitute = aiq.shortInstitute;
+      aiqQuota = aiq.quota;
+      aiqCourse = aiq.course;
+      aiqSeatHeld = `${aiq.shortInstitute} (${aiq.quota})`;
+    }
 
     finalResults.push({
       sno: c.sno,
@@ -428,32 +431,36 @@ function runV2MrcCounselling() {
       allottedPrefNo: alloc.college.priority,
       allotmentQuota: alloc.quota,
       isMRC: !!alloc.isMRC,
-      mrcSlidFrom: alloc.mrcSlidFrom || null
+      mrcSlidFrom: alloc.mrcSlidFrom || null,
+      hasAiqSeat: hasAiqSeat ? 'YES' : 'NO',
+      aiqSeatHeld: aiqSeatHeld,
+      aiqInstitute: aiqInstitute,
+      aiqQuota: aiqQuota,
+      aiqCourse: aiqCourse
     });
   }
 
-  console.log(`\n=== Final Verification ===`);
+  console.log(`\n=== Final Verification (All Candidates Included) ===`);
   console.log(`Total Candidates Evaluated: ${finalResults.length}`);
-  console.log(`Total MBBS Seats Allotted: ${totalAllotted} / ${totalConvenorSeats} (100%)`);
-  console.log(`Total AIQ Exited: ${aiqCount}`);
-  console.log(`Total Unallotted: ${unallottedCount}`);
-
-  let remainingSeatsTotal = 0;
-  colleges.forEach(c => {
-    for (let k of Object.keys(c.seats)) {
-      if (k !== 'totalConvenor') remainingSeatsTotal += c.seats[k];
-    }
-  });
-  console.log(`Remaining Unfilled Seats Across All Colleges: ${remainingSeatsTotal}`);
+  console.log(`Total State MBBS Seats Allotted: ${totalAllotted} / ${totalConvenorSeats} (100%)`);
+  console.log(`Total AIQ Seat Holders in Merit List: ${aiqByRank.size}`);
+  console.log(`AIQ Seat Holders who also won State MBBS Seats: ${aiqHoldersAllottedInState}`);
+  console.log(`Total Unallotted / Waitlisted: ${unallottedCount}`);
 
   // 5. Generate CSV Data
-  const csvHeaders = ['S.No', 'NEET Rank', 'Score', 'Roll No', 'Name', 'Gender', 'Category', 'EWS', 'Minority', 'Status', 'Allotted Course', 'Allotted College', 'Allotment Quota', 'MRC Slid', 'MRC Slid From'];
+  const csvHeaders = [
+    'S.No', 'NEET Rank', 'Score', 'Roll No', 'Name', 'Gender', 'Category', 'EWS', 'Minority',
+    'Status', 'Allotted Course', 'Allotted College', 'Allotment Quota', 'MRC Slid', 'MRC Slid From',
+    'Has AIQ Seat', 'AIQ Seat Held'
+  ];
   const csvRows = [csvHeaders.join(',')];
 
   finalResults.forEach(r => {
     const cleanName = `"${r.name.replace(/"/g, '""')}"`;
     const cleanCollege = `"${r.allottedCollege.replace(/"/g, '""')}"`;
     const cleanSlidFrom = r.mrcSlidFrom ? `"${r.mrcSlidFrom.replace(/"/g, '""')}"` : '""';
+    const cleanAiqHeld = r.aiqSeatHeld !== '—' ? `"${r.aiqSeatHeld.replace(/"/g, '""')}"` : '""';
+
     csvRows.push([
       r.sno,
       r.neetRank,
@@ -469,7 +476,9 @@ function runV2MrcCounselling() {
       cleanCollege,
       `"${r.allotmentQuota}"`,
       r.isMRC ? 'YES' : 'NO',
-      cleanSlidFrom
+      cleanSlidFrom,
+      r.hasAiqSeat,
+      cleanAiqHeld
     ].join(','));
   });
 
@@ -478,25 +487,23 @@ function runV2MrcCounselling() {
   // 6. Write Output Files
   const outJsonPath = path.join(__dirname, '..', 'docs', 'AY-2026-27-V2-MOCK-ALLOTMENT.json');
   const outCsvPath = path.join(__dirname, '..', 'docs', 'AY-2026-27-V2-MOCK-ALLOTMENT.csv');
-
-  fs.writeFileSync(outJsonPath, JSON.stringify(finalResults, null, 2), 'utf8');
-  console.log(`Saved V2 JSON (${(fs.statSync(outJsonPath).size / (1024*1024)).toFixed(2)} MB) to: ${outJsonPath}`);
-
-  fs.writeFileSync(outCsvPath, csvContent, 'utf8');
-  console.log(`Saved V2 CSV (${(fs.statSync(outCsvPath).size / (1024*1024)).toFixed(2)} MB) to: ${outCsvPath}`);
-
-  // Also update standard files with v2 as official source of truth
   const finalJsonPath = path.join(__dirname, '..', 'docs', 'AY-2026-27-FINAL-MOCK-ALLOTMENT.json');
   const finalCsvPath = path.join(__dirname, '..', 'docs', 'AY-2026-27-FINAL-MOCK-ALLOTMENT.csv');
   const fixedCsvPath = path.join(__dirname, '..', 'docs', 'Fixed_Global_Mock_Allotment.csv');
   const globalCsvPath = path.join(__dirname, '..', 'docs', 'Global_Mock_Counselling_Allotment.csv');
 
+  fs.writeFileSync(outJsonPath, JSON.stringify(finalResults, null, 2), 'utf8');
+  fs.writeFileSync(outCsvPath, csvContent, 'utf8');
   fs.writeFileSync(finalJsonPath, JSON.stringify(finalResults, null, 2), 'utf8');
   fs.writeFileSync(finalCsvPath, csvContent, 'utf8');
   fs.writeFileSync(fixedCsvPath, csvContent, 'utf8');
   fs.writeFileSync(globalCsvPath, csvContent, 'utf8');
 
-  console.log(`Updated core docs with v2 Official KNRUHS Allotment!`);
+  // Also update docs/v2_allotment_data.js for offline file:// support
+  const jsContent = 'var v2AllotmentData = ' + JSON.stringify(finalResults) + ';\nif (typeof window !== "undefined") { window.v2AllotmentData = v2AllotmentData; }\nif (typeof global !== "undefined") { global.v2AllotmentData = v2AllotmentData; }\nif (typeof module !== "undefined" && module.exports) { module.exports = v2AllotmentData; }\n';
+  fs.writeFileSync(path.join(__dirname, '..', 'docs', 'v2_allotment_data.js'), jsContent, 'utf8');
+
+  console.log(`Updated all docs and v2_allotment_data.js successfully!`);
   return finalResults;
 }
 

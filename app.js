@@ -7398,8 +7398,8 @@ function applyMeritFilters() {
         if (!q2.includes('(PVT)') && !q2.includes('(PVT_MIN)')) return false;
       } else if (selectedStatus === 'MIN') {
         if (cand.status !== 'ALLOTTED' || !cand.allotmentQuota.includes('MIN_')) return false;
-      } else if (selectedStatus === 'EXITED TO AIQ') {
-        if (cand.status !== 'EXITED TO AIQ') return false;
+      } else if (selectedStatus === 'AIQ_HOLDERS') {
+        if (cand.hasAiqSeat !== 'YES') return false;
       } else if (selectedStatus === 'UNALLOTTED') {
         if (cand.status !== 'UNALLOTTED') return false;
       }
@@ -7565,6 +7565,10 @@ function renderMeritTable() {
     } else if (quotaDisplay.includes('(PVT)')) {
       quotaDisplay = '<span style="color:#c084fc; font-weight:600;">' + quotaDisplay + '</span>';
     }
+    var aiqDisplay = '<span style="color:rgba(255,255,255,0.3); font-size:0.75rem;">—</span>';
+    if (c.hasAiqSeat === 'YES' || (c.aiqSeatHeld && c.aiqSeatHeld !== '—')) {
+      aiqDisplay = '<span style="font-size:0.75rem; color:#38bdf8; font-weight:600;" title="' + (c.aiqSeatHeld || '') + '">✈️ ' + (c.aiqSeatHeld || 'AIQ Seat Held') + '</span>';
+    }
 
     rowsHtml += '<tr>' +
       '<td style="font-weight:700; color:var(--accent-teal);">#' + c.sno + '</td>' +
@@ -7576,6 +7580,7 @@ function renderMeritTable() {
       '<td><span class="status-badge ' + statusBadgeClass + '">' + statusIcon + ' ' + statusLabel + '</span></td>' +
       '<td style="max-width:260px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="' + c.allottedCollege + '">' + collegeDisplay + '</td>' +
       '<td>' + quotaDisplay + '</td>' +
+      '<td style="max-width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + aiqDisplay + '</td>' +
       '<td style="text-align:center;"><button type="button" class="btn-predict-mini" onclick="selectCandidateForPredict(' + c.sno + ')">⚡ Predict</button></td>' +
     '</tr>';
   }

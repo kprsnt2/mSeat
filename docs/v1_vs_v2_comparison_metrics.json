@@ -2,14 +2,15 @@
   "summary": {
     "totalCandidates": 18482,
     "aiqExits": 287,
+    "aiqHoldersAllottedInState": 170,
     "totalAllottedV1": 6020,
     "totalAllottedV2": 6020,
     "totalUnallottedV1": 12175,
-    "totalUnallottedV2": 12175,
+    "totalUnallottedV2": 12462,
     "mrcSlidV1": 0,
-    "mrcSlidV2": 1913,
-    "candidatesUpgradedInV2": 2767,
-    "candidatesSameInBoth": 1122,
+    "mrcSlidV2": 1876,
+    "candidatesUpgradedInV2": 2083,
+    "candidatesSameInBoth": 671,
     "govtSeatsTotal": 3499,
     "pvtSeatsTotal": 2154,
     "minSeatsTotal": 367
@@ -37,24 +38,24 @@
       "label": "OC (Open Category)",
       "totalApplicants": 3484,
       "v1Allotted": 1406,
-      "v2Allotted": 1041,
-      "allotmentDelta": -365,
+      "v2Allotted": 1075,
+      "allotmentDelta": -331,
       "v1Govt": 897,
-      "v2Govt": 695,
-      "govtDelta": -202,
+      "v2Govt": 729,
+      "govtDelta": -168,
       "v1Pvt": 437,
-      "v2Pvt": 239,
+      "v2Pvt": 246,
       "v1Min": 72,
-      "v2Min": 107,
-      "v2Mrc": 264,
+      "v2Min": 100,
+      "v2Mrc": 268,
       "v1ClosingAIR": 257663,
-      "v2ClosingAIR": 237782,
-      "airShift": -19881,
+      "v2ClosingAIR": 232748,
+      "airShift": -24915,
       "v1ClosingScore": 406,
-      "v2ClosingScore": 415,
+      "v2ClosingScore": 417,
       "v2LastCandidate": {
-        "sno": 6160,
-        "name": "RAHMA KHAN",
+        "sno": 5931,
+        "name": "SAFIA SAYEED",
         "college": "Dr. V.R.K. Women's Medical College",
         "quota": "MIN_FEM (PVT_MIN)"
       }
@@ -64,24 +65,24 @@
       "label": "EWS (Economically Weaker)",
       "totalApplicants": 1167,
       "v1Allotted": 512,
-      "v2Allotted": 416,
-      "allotmentDelta": -96,
+      "v2Allotted": 414,
+      "allotmentDelta": -98,
       "v1Govt": 297,
-      "v2Govt": 287,
-      "govtDelta": -10,
+      "v2Govt": 274,
+      "govtDelta": -23,
       "v1Pvt": 182,
-      "v2Pvt": 87,
+      "v2Pvt": 98,
       "v1Min": 33,
       "v2Min": 42,
-      "v2Mrc": 264,
+      "v2Mrc": 268,
       "v1ClosingAIR": 257449,
-      "v2ClosingAIR": 236994,
-      "airShift": -20455,
+      "v2ClosingAIR": 232748,
+      "airShift": -24701,
       "v1ClosingScore": 406,
-      "v2ClosingScore": 415,
+      "v2ClosingScore": 417,
       "v2LastCandidate": {
-        "sno": 6125,
-        "name": "SABA TEHNIATH",
+        "sno": 5931,
+        "name": "SAFIA SAYEED",
         "college": "Dr. V.R.K. Women's Medical College",
         "quota": "MIN_FEM (PVT_MIN)"
       }
@@ -91,24 +92,24 @@
       "label": "BC-A (7%)",
       "totalApplicants": 1264,
       "v1Allotted": 396,
-      "v2Allotted": 470,
-      "allotmentDelta": 74,
+      "v2Allotted": 469,
+      "allotmentDelta": 73,
       "v1Govt": 244,
       "v2Govt": 280,
       "govtDelta": 36,
       "v1Pvt": 152,
-      "v2Pvt": 190,
+      "v2Pvt": 189,
       "v1Min": 0,
       "v2Min": 0,
-      "v2Mrc": 74,
+      "v2Mrc": 73,
       "v1ClosingAIR": 309285,
-      "v2ClosingAIR": 335882,
-      "airShift": 26597,
+      "v2ClosingAIR": 333856,
+      "airShift": 24571,
       "v1ClosingScore": 386,
-      "v2ClosingScore": 376,
+      "v2ClosingScore": 377,
       "v2LastCandidate": {
-        "sno": 10146,
-        "name": "ORSU MANASA",
+        "sno": 10079,
+        "name": "MUNIGONDA ROSHINI",
         "college": "Mamata Medical College, Khammam",
         "quota": "BCA_FEM (PVT)"
       }
@@ -118,24 +119,24 @@
       "label": "BC-B (10%)",
       "totalApplicants": 2750,
       "v1Allotted": 924,
-      "v2Allotted": 1049,
-      "allotmentDelta": 125,
+      "v2Allotted": 1041,
+      "allotmentDelta": 117,
       "v1Govt": 547,
-      "v2Govt": 645,
-      "govtDelta": 98,
+      "v2Govt": 631,
+      "govtDelta": 84,
       "v1Pvt": 360,
-      "v2Pvt": 404,
+      "v2Pvt": 410,
       "v1Min": 17,
       "v2Min": 0,
-      "v2Mrc": 475,
+      "v2Mrc": 462,
       "v1ClosingAIR": 257313,
-      "v2ClosingAIR": 230904,
-      "airShift": -26409,
+      "v2ClosingAIR": 226356,
+      "airShift": -30957,
       "v1ClosingScore": 406,
-      "v2ClosingScore": 418,
+      "v2ClosingScore": 420,
       "v2LastCandidate": {
-        "sno": 5860,
-        "name": "PABBATHI GEETHIKA BHARATHI",
+        "sno": 5684,
+        "name": "KUNTALA VIDHATHRI",
         "college": "Mamata Medical College, Khammam",
         "quota": "BCB_FEM (PVT)"
       }
@@ -145,16 +146,16 @@
       "label": "BC-C (1%)",
       "totalApplicants": 261,
       "v1Allotted": 56,
-      "v2Allotted": 72,
-      "allotmentDelta": 16,
+      "v2Allotted": 73,
+      "allotmentDelta": 17,
       "v1Govt": 31,
       "v2Govt": 38,
       "govtDelta": 7,
       "v1Pvt": 25,
-      "v2Pvt": 34,
+      "v2Pvt": 35,
       "v1Min": 0,
       "v2Min": 0,
-      "v2Mrc": 16,
+      "v2Mrc": 17,
       "v1ClosingAIR": 270646,
       "v2ClosingAIR": 316273,
       "airShift": 45627,
@@ -172,24 +173,24 @@
       "label": "BC-D (7%)",
       "totalApplicants": 2394,
       "v1Allotted": 862,
-      "v2Allotted": 850,
-      "allotmentDelta": -12,
+      "v2Allotted": 827,
+      "allotmentDelta": -35,
       "v1Govt": 513,
-      "v2Govt": 520,
-      "govtDelta": 7,
+      "v2Govt": 499,
+      "govtDelta": -14,
       "v1Pvt": 349,
-      "v2Pvt": 330,
+      "v2Pvt": 328,
       "v1Min": 0,
       "v2Min": 0,
-      "v2Mrc": 450,
+      "v2Mrc": 429,
       "v1ClosingAIR": 213534,
-      "v2ClosingAIR": 212967,
-      "airShift": -567,
+      "v2ClosingAIR": 209136,
+      "airShift": -4398,
       "v1ClosingScore": 426,
-      "v2ClosingScore": 426,
+      "v2ClosingScore": 428,
       "v2LastCandidate": {
-        "sno": 5008,
-        "name": "THUMMALAPELLY VINSHI PRIYA",
+        "sno": 4863,
+        "name": "ANDUGULE SUDHARANI",
         "college": "Mamata Medical College, Khammam",
         "quota": "BCD_FEM (PVT)"
       }
@@ -199,24 +200,24 @@
       "label": "BC-E (4% Muslim)",
       "totalApplicants": 2618,
       "v1Allotted": 965,
-      "v2Allotted": 833,
-      "allotmentDelta": -132,
+      "v2Allotted": 811,
+      "allotmentDelta": -154,
       "v1Govt": 393,
-      "v2Govt": 320,
-      "govtDelta": -73,
+      "v2Govt": 304,
+      "govtDelta": -89,
       "v1Pvt": 294,
-      "v2Pvt": 253,
+      "v2Pvt": 240,
       "v1Min": 278,
-      "v2Min": 260,
-      "v2Mrc": 340,
+      "v2Min": 267,
+      "v2Mrc": 314,
       "v1ClosingAIR": 257778,
-      "v2ClosingAIR": 237646,
-      "airShift": -20132,
+      "v2ClosingAIR": 232714,
+      "airShift": -25064,
       "v1ClosingScore": 406,
-      "v2ClosingScore": 415,
+      "v2ClosingScore": 417,
       "v2LastCandidate": {
-        "sno": 6152,
-        "name": "MADIHA SAMEEN",
+        "sno": 5930,
+        "name": "FAIZA FIRDOUS SHAIK",
         "college": "Dr. V.R.K. Women's Medical College",
         "quota": "MIN_FEM (PVT_MIN)"
       }
@@ -253,24 +254,24 @@
       "label": "SC-2 (9%)",
       "totalApplicants": 2063,
       "v1Allotted": 506,
-      "v2Allotted": 582,
-      "allotmentDelta": 76,
+      "v2Allotted": 579,
+      "allotmentDelta": 73,
       "v1Govt": 318,
-      "v2Govt": 347,
-      "govtDelta": 29,
+      "v2Govt": 350,
+      "govtDelta": 32,
       "v1Pvt": 188,
-      "v2Pvt": 235,
+      "v2Pvt": 229,
       "v1Min": 0,
       "v2Min": 0,
-      "v2Mrc": 76,
+      "v2Mrc": 73,
       "v1ClosingAIR": 292358,
-      "v2ClosingAIR": 310379,
-      "airShift": 18021,
+      "v2ClosingAIR": 308417,
+      "airShift": 16059,
       "v1ClosingScore": 392,
-      "v2ClosingScore": 385,
+      "v2ClosingScore": 386,
       "v2LastCandidate": {
-        "sno": 9231,
-        "name": "KALUVALA HARINI",
+        "sno": 9159,
+        "name": "EERLA KOUSHIKA",
         "college": "Mamata Medical College, Khammam",
         "quota": "SC2_FEM (PVT)"
       }
@@ -280,24 +281,24 @@
       "label": "SC-3 (5%)",
       "totalApplicants": 1500,
       "v1Allotted": 282,
-      "v2Allotted": 367,
-      "allotmentDelta": 85,
+      "v2Allotted": 374,
+      "allotmentDelta": 92,
       "v1Govt": 172,
-      "v2Govt": 215,
-      "govtDelta": 43,
+      "v2Govt": 219,
+      "govtDelta": 47,
       "v1Pvt": 110,
-      "v2Pvt": 152,
+      "v2Pvt": 155,
       "v1Min": 0,
       "v2Min": 0,
-      "v2Mrc": 85,
+      "v2Mrc": 92,
       "v1ClosingAIR": 239296,
-      "v2ClosingAIR": 265010,
-      "airShift": 25714,
+      "v2ClosingAIR": 262393,
+      "airShift": 23097,
       "v1ClosingScore": 414,
-      "v2ClosingScore": 403,
+      "v2ClosingScore": 404,
       "v2LastCandidate": {
-        "sno": 7389,
-        "name": "BYAGARI VAISHNAVI",
+        "sno": 7243,
+        "name": "SIDDANTHAPU GAYATHRI",
         "college": "Mamata Medical College, Khammam",
         "quota": "SC3_FEM (PVT)"
       }
@@ -307,24 +308,24 @@
       "label": "ST (10%)",
       "totalApplicants": 2030,
       "v1Allotted": 566,
-      "v2Allotted": 698,
-      "allotmentDelta": 132,
+      "v2Allotted": 713,
+      "allotmentDelta": 147,
       "v1Govt": 350,
-      "v2Govt": 404,
-      "govtDelta": 54,
+      "v2Govt": 414,
+      "govtDelta": 64,
       "v1Pvt": 216,
-      "v2Pvt": 294,
+      "v2Pvt": 299,
       "v1Min": 0,
       "v2Min": 0,
-      "v2Mrc": 132,
+      "v2Mrc": 147,
       "v1ClosingAIR": 239393,
-      "v2ClosingAIR": 258848,
-      "airShift": 19455,
+      "v2ClosingAIR": 255976,
+      "airShift": 16583,
       "v1ClosingScore": 414,
-      "v2ClosingScore": 406,
+      "v2ClosingScore": 407,
       "v2LastCandidate": {
-        "sno": 7107,
-        "name": "BANOTH JAHNAVI",
+        "sno": 6981,
+        "name": "MUDAVATH VARSHA",
         "college": "Mamata Medical College, Khammam",
         "quota": "ST_FEM (PVT)"
       }
@@ -351,7 +352,7 @@
       "v2Allotted": 70,
       "v1ClosingRank": 491953,
       "v2ClosingRank": 493462,
-      "v2MrcInflow": 7
+      "v2MrcInflow": 6
     },
     {
       "code": "AYAN",
@@ -361,7 +362,7 @@
       "v1Allotted": 85,
       "v2Allotted": 85,
       "v1ClosingRank": 250512,
-      "v2ClosingRank": 228217,
+      "v2ClosingRank": 223975,
       "v2MrcInflow": 0
     },
     {
@@ -373,7 +374,7 @@
       "v2Allotted": 93,
       "v1ClosingRank": 505964,
       "v2ClosingRank": 512358,
-      "v2MrcInflow": 11
+      "v2MrcInflow": 3
     },
     {
       "code": "CARK",
@@ -405,7 +406,7 @@
       "v1Allotted": 85,
       "v2Allotted": 85,
       "v1ClosingRank": 222416,
-      "v2ClosingRank": 200243,
+      "v2ClosingRank": 193428,
       "v2MrcInflow": 0
     },
     {
@@ -417,7 +418,7 @@
       "v2Allotted": 117,
       "v1ClosingRank": 512358,
       "v2ClosingRank": 520050,
-      "v2MrcInflow": 2
+      "v2MrcInflow": 0
     },
     {
       "code": "ESIM",
@@ -428,7 +429,7 @@
       "v2Allotted": 71,
       "v1ClosingRank": 214686,
       "v2ClosingRank": 214686,
-      "v2MrcInflow": 62
+      "v2MrcInflow": 57
     },
     {
       "code": "FCIM",
@@ -472,7 +473,7 @@
       "v2Allotted": 40,
       "v1ClosingRank": 444431,
       "v2ClosingRank": 444431,
-      "v2MrcInflow": 23
+      "v2MrcInflow": 17
     },
     {
       "code": "GJBP",
@@ -483,7 +484,7 @@
       "v2Allotted": 79,
       "v1ClosingRank": 463757,
       "v2ClosingRank": 479156,
-      "v2MrcInflow": 24
+      "v2MrcInflow": 22
     },
     {
       "code": "GJGN",
@@ -504,8 +505,8 @@
       "v1Allotted": 119,
       "v2Allotted": 119,
       "v1ClosingRank": 401809,
-      "v2ClosingRank": 444422,
-      "v2MrcInflow": 66
+      "v2ClosingRank": 401809,
+      "v2MrcInflow": 49
     },
     {
       "code": "GKDL",
@@ -515,8 +516,8 @@
       "v1Allotted": 41,
       "v2Allotted": 41,
       "v1ClosingRank": 188070,
-      "v2ClosingRank": 192955,
-      "v2MrcInflow": 21
+      "v2ClosingRank": 190948,
+      "v2MrcInflow": 18
     },
     {
       "code": "GKHM",
@@ -526,8 +527,8 @@
       "v1Allotted": 80,
       "v2Allotted": 80,
       "v1ClosingRank": 444422,
-      "v2ClosingRank": 463757,
-      "v2MrcInflow": 25
+      "v2ClosingRank": 444422,
+      "v2MrcInflow": 26
     },
     {
       "code": "GKMR",
@@ -537,8 +538,8 @@
       "v1Allotted": 80,
       "v2Allotted": 80,
       "v1ClosingRank": 190948,
-      "v2ClosingRank": 195721,
-      "v2MrcInflow": 43
+      "v2ClosingRank": 193194,
+      "v2MrcInflow": 39
     },
     {
       "code": "GKRM",
@@ -549,7 +550,7 @@
       "v2Allotted": 80,
       "v1ClosingRank": 367127,
       "v2ClosingRank": 367127,
-      "v2MrcInflow": 39
+      "v2MrcInflow": 45
     },
     {
       "code": "GMBK",
@@ -560,7 +561,7 @@
       "v2Allotted": 121,
       "v1ClosingRank": 485970,
       "v2ClosingRank": 486540,
-      "v2MrcInflow": 20
+      "v2MrcInflow": 19
     },
     {
       "code": "GMCL",
@@ -571,7 +572,7 @@
       "v2Allotted": 80,
       "v1ClosingRank": 484065,
       "v2ClosingRank": 485970,
-      "v2MrcInflow": 14
+      "v2MrcInflow": 13
     },
     {
       "code": "GMCM",
@@ -582,7 +583,7 @@
       "v2Allotted": 162,
       "v1ClosingRank": 341067,
       "v2ClosingRank": 341067,
-      "v2MrcInflow": 103
+      "v2MrcInflow": 105
     },
     {
       "code": "GMDK",
@@ -592,8 +593,8 @@
       "v1Allotted": 40,
       "v2Allotted": 40,
       "v1ClosingRank": 179527,
-      "v2ClosingRank": 183179,
-      "v2MrcInflow": 26
+      "v2ClosingRank": 179588,
+      "v2MrcInflow": 29
     },
     {
       "code": "GMHB",
@@ -604,7 +605,7 @@
       "v2Allotted": 120,
       "v1ClosingRank": 457759,
       "v2ClosingRank": 457759,
-      "v2MrcInflow": 63
+      "v2MrcInflow": 65
     },
     {
       "code": "GMHR",
@@ -614,8 +615,8 @@
       "v1Allotted": 40,
       "v2Allotted": 40,
       "v1ClosingRank": 145566,
-      "v2ClosingRank": 145566,
-      "v2MrcInflow": 28
+      "v2ClosingRank": 138799,
+      "v2MrcInflow": 31
     },
     {
       "code": "GMNL",
@@ -626,7 +627,7 @@
       "v2Allotted": 120,
       "v1ClosingRank": 406244,
       "v2ClosingRank": 406244,
-      "v2MrcInflow": 63
+      "v2MrcInflow": 60
     },
     {
       "code": "GMSR",
@@ -637,7 +638,7 @@
       "v2Allotted": 121,
       "v1ClosingRank": 352203,
       "v2ClosingRank": 352203,
-      "v2MrcInflow": 66
+      "v2MrcInflow": 61
     },
     {
       "code": "GMUL",
@@ -648,7 +649,7 @@
       "v2Allotted": 41,
       "v1ClosingRank": 228498,
       "v2ClosingRank": 236643,
-      "v2MrcInflow": 12
+      "v2MrcInflow": 15
     },
     {
       "code": "GNGK",
@@ -659,7 +660,7 @@
       "v2Allotted": 121,
       "v1ClosingRank": 334902,
       "v2ClosingRank": 334902,
-      "v2MrcInflow": 58
+      "v2MrcInflow": 59
     },
     {
       "code": "GNRM",
@@ -670,7 +671,7 @@
       "v2Allotted": 79,
       "v1ClosingRank": 230103,
       "v2ClosingRank": 241664,
-      "v2MrcInflow": 27
+      "v2MrcInflow": 28
     },
     {
       "code": "GNRN",
@@ -681,7 +682,7 @@
       "v2Allotted": 40,
       "v1ClosingRank": 311684,
       "v2ClosingRank": 311684,
-      "v2MrcInflow": 22
+      "v2MrcInflow": 19
     },
     {
       "code": "GNRS",
@@ -691,8 +692,8 @@
       "v1Allotted": 41,
       "v2Allotted": 41,
       "v1ClosingRank": 214054,
-      "v2ClosingRank": 223082,
-      "v2MrcInflow": 19
+      "v2ClosingRank": 221608,
+      "v2MrcInflow": 24
     },
     {
       "code": "GQTB",
@@ -702,8 +703,8 @@
       "v1Allotted": 40,
       "v2Allotted": 40,
       "v1ClosingRank": 147199,
-      "v2ClosingRank": 147199,
-      "v2MrcInflow": 31
+      "v2ClosingRank": 142265,
+      "v2MrcInflow": 33
     },
     {
       "code": "GSGR",
@@ -714,7 +715,7 @@
       "v2Allotted": 121,
       "v1ClosingRank": 253041,
       "v2ClosingRank": 253041,
-      "v2MrcInflow": 88
+      "v2MrcInflow": 100
     },
     {
       "code": "GSRC",
@@ -725,7 +726,7 @@
       "v2Allotted": 80,
       "v1ClosingRank": 417538,
       "v2ClosingRank": 417538,
-      "v2MrcInflow": 44
+      "v2MrcInflow": 40
     },
     {
       "code": "GVKB",
@@ -736,7 +737,7 @@
       "v2Allotted": 80,
       "v1ClosingRank": 257911,
       "v2ClosingRank": 257911,
-      "v2MrcInflow": 60
+      "v2MrcInflow": 54
     },
     {
       "code": "GVNZ",
@@ -747,7 +748,7 @@
       "v2Allotted": 123,
       "v1ClosingRank": 455225,
       "v2ClosingRank": 455225,
-      "v2MrcInflow": 62
+      "v2MrcInflow": 67
     },
     {
       "code": "GWNP",
@@ -758,7 +759,7 @@
       "v2Allotted": 121,
       "v1ClosingRank": 314031,
       "v2ClosingRank": 314031,
-      "v2MrcInflow": 62
+      "v2MrcInflow": 66
     },
     {
       "code": "GYDT",
@@ -768,8 +769,8 @@
       "v1Allotted": 41,
       "v2Allotted": 41,
       "v1ClosingRank": 159421,
-      "v2ClosingRank": 161301,
-      "v2MrcInflow": 29
+      "v2ClosingRank": 159421,
+      "v2MrcInflow": 24
     },
     {
       "code": "KKTI",
@@ -780,7 +781,7 @@
       "v2Allotted": 208,
       "v1ClosingRank": 321137,
       "v2ClosingRank": 321137,
-      "v2MrcInflow": 183
+      "v2MrcInflow": 174
     },
     {
       "code": "KMHD",
@@ -791,7 +792,7 @@
       "v2Allotted": 70,
       "v1ClosingRank": 493462,
       "v2ClosingRank": 505964,
-      "v2MrcInflow": 7
+      "v2MrcInflow": 5
     },
     {
       "code": "KMNI",
@@ -890,7 +891,7 @@
       "v2Allotted": 199,
       "v1ClosingRank": 311656,
       "v2ClosingRank": 311656,
-      "v2MrcInflow": 156
+      "v2MrcInflow": 152
     },
     {
       "code": "PRIW",
@@ -923,7 +924,7 @@
       "v2Allotted": 124,
       "v1ClosingRank": 486540,
       "v2ClosingRank": 489297,
-      "v2MrcInflow": 11
+      "v2MrcInflow": 24
     },
     {
       "code": "RVMC",
@@ -945,7 +946,7 @@
       "v2Allotted": 164,
       "v1ClosingRank": 323659,
       "v2ClosingRank": 323659,
-      "v2MrcInflow": 115
+      "v2MrcInflow": 103
     },
     {
       "code": "SHDN",
@@ -955,7 +956,7 @@
       "v1Allotted": 140,
       "v2Allotted": 140,
       "v1ClosingRank": 239794,
-      "v2ClosingRank": 219906,
+      "v2ClosingRank": 216341,
       "v2MrcInflow": 0
     },
     {
@@ -967,7 +968,7 @@
       "v2Allotted": 114,
       "v1ClosingRank": 479156,
       "v2ClosingRank": 484065,
-      "v2MrcInflow": 31
+      "v2MrcInflow": 34
     },
     {
       "code": "SURB",
@@ -1010,7 +1011,7 @@
       "v1Allotted": 57,
       "v2Allotted": 57,
       "v1ClosingRank": 257778,
-      "v2ClosingRank": 237782,
+      "v2ClosingRank": 232748,
       "v2MrcInflow": 0
     },
     {
@@ -1027,327 +1028,327 @@
   ],
   "sampleUpgrades": [
     {
-      "sno": 339,
-      "air": 30001,
-      "score": 560,
-      "name": "GOPIDI RISHIK REDDY",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "OC_GEN (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 352,
-      "air": 31744,
-      "score": 557,
-      "name": "SYED MALAZUDDIN",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "OC_GEN (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 361,
-      "air": 32631,
-      "score": 556,
-      "name": "BOJJA AAKASH CHOWDARY",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "OC_GEN (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 399,
-      "air": 36505,
-      "score": 551,
-      "name": "VOJJALA HARSHITH",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "OC_GEN (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 409,
-      "air": 37734,
-      "score": 549,
-      "name": "KAUSAR FATIMA",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "OC_FEM (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 411,
-      "air": 37901,
-      "score": 549,
-      "name": "KOLUGURI ASHRITHA",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "OC_FEM (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 414,
-      "air": 38119,
-      "score": 549,
-      "name": "KOTHA SAHASRA",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "OC_FEM (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 422,
-      "air": 39755,
-      "score": 547,
-      "name": "A SHREEKAR REDDY",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "EWS_GEN (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 440,
-      "air": 41883,
-      "score": 544,
-      "name": "BABULURI CHANDRA SAI NIKITHA",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "EWS_GEN (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_FEM (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 462,
-      "air": 43746,
-      "score": 542,
-      "name": "M AKHIL",
-      "category": "OC",
-      "v1College": "Kakatiya Medical College",
-      "v1Quota": "OC_GEN (GOVT)",
-      "v2College": "ESIC Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 479,
-      "air": 45208,
-      "score": 540,
-      "name": "BILLA MANI CHANDANA",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "EWS_FEM (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_FEM (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 502,
-      "air": 47376,
-      "score": 538,
-      "name": "KOTHA JASHWANTH",
+      "sno": 680,
+      "air": 61221,
+      "score": 524,
+      "name": "PALLE NISHANT GOUD",
       "category": "BCB",
-      "v1College": "ESIC Medical College",
+      "v1College": "Govt. Medical College, Quthbullapur",
       "v1Quota": "BCB_GEN (GOVT)",
-      "v2College": "Osmania Medical College",
+      "v2College": "Govt. Medical College, Maheshwaram",
       "v2Quota": "BCB_GEN (MRC)",
       "isMRC": true,
       "priorityGain": 1
     },
     {
-      "sno": 509,
-      "air": 47608,
-      "score": 538,
-      "name": "IBRAHIM MOHAMMED ZAHEER",
-      "category": "OC",
-      "v1College": "Kakatiya Medical College",
-      "v1Quota": "OC_GEN (GOVT)",
-      "v2College": "ESIC Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 513,
-      "air": 48080,
-      "score": 537,
-      "name": "KASAVATH AKSHARA",
-      "category": "BCD",
-      "v1College": "Kakatiya Medical College",
-      "v1Quota": "OC_GEN (GOVT)",
-      "v2College": "ESIC Medical College",
-      "v2Quota": "BCD_FEM (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 521,
-      "air": 48855,
-      "score": 537,
-      "name": "PEDDI DEEKSHITA",
-      "category": "OC",
-      "v1College": "ESIC Medical College",
-      "v1Quota": "EWS_FEM (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_FEM (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 532,
-      "air": 49332,
-      "score": 536,
-      "name": "BADAM HAMSIKA",
-      "category": "OC",
-      "v1College": "Kakatiya Medical College",
-      "v1Quota": "OC_FEM (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_FEM (MRC)",
-      "isMRC": true,
-      "priorityGain": 2
-    },
-    {
-      "sno": 536,
-      "air": 49762,
-      "score": 536,
-      "name": "HAJERA FATIMA",
-      "category": "BCE",
-      "v1College": "Kakatiya Medical College",
-      "v1Quota": "OC_FEM (GOVT)",
-      "v2College": "ESIC Medical College",
-      "v2Quota": "BCE_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 539,
-      "air": 50087,
-      "score": 535,
-      "name": "SYED FAHAD QUADRI",
-      "category": "OC",
-      "v1College": "Kakatiya Medical College",
-      "v1Quota": "EWS_GEN (GOVT)",
-      "v2College": "ESIC Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 545,
-      "air": 50242,
-      "score": 535,
-      "name": "KOKKALLA VISHAL",
-      "category": "OC",
-      "v1College": "Kakatiya Medical College",
-      "v1Quota": "EWS_GEN (GOVT)",
-      "v2College": "ESIC Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 550,
-      "air": 50979,
-      "score": 534,
-      "name": "KUKUNURU SATHVIKA",
-      "category": "OC",
-      "v1College": "Kakatiya Medical College",
-      "v1Quota": "OC_FEM (GOVT)",
-      "v2College": "Osmania Medical College",
-      "v2Quota": "EWS_FEM (MRC)",
-      "isMRC": true,
-      "priorityGain": 2
-    },
-    {
-      "sno": 551,
-      "air": 51153,
-      "score": 534,
-      "name": "CHINTHA CHETTU TARUN REDDY",
-      "category": "OC",
-      "v1College": "Kakatiya Medical College",
-      "v1Quota": "EWS_GEN (GOVT)",
-      "v2College": "ESIC Medical College",
-      "v2Quota": "EWS_GEN (MRC)",
-      "isMRC": true,
-      "priorityGain": 1
-    },
-    {
-      "sno": 552,
-      "air": 51261,
-      "score": 534,
-      "name": "PESARAPATI MAHESWARI",
+      "sno": 687,
+      "air": 62009,
+      "score": 523,
+      "name": "BATTULA ADHITYA",
       "category": "BCB",
-      "v1College": "ESIC Medical College",
+      "v1College": "Govt. Medical College, Quthbullapur",
       "v1Quota": "BCB_GEN (GOVT)",
-      "v2College": "Osmania Medical College",
+      "v2College": "Govt. Medical College, Maheshwaram",
+      "v2Quota": "BCB_GEN (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 717,
+      "air": 63782,
+      "score": 522,
+      "name": "NALLAMASA AKSHAY DEEPAK",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Quthbullapur",
+      "v2Quota": "BCB_GEN (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 727,
+      "air": 64551,
+      "score": 521,
+      "name": "SIDDULA NANASA",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Maheshwaram",
+      "v1Quota": "BCB_FEM (GOVT)",
+      "v2College": "Kakatiya Medical College",
       "v2Quota": "BCB_FEM (MRC)",
       "isMRC": true,
       "priorityGain": 1
     },
     {
-      "sno": 557,
-      "air": 51940,
-      "score": 533,
-      "name": "SYEDA HAFSA HAFEEZUDDIN",
+      "sno": 734,
+      "air": 64864,
+      "score": 521,
+      "name": "VENGALA AKSHARA",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Quthbullapur",
+      "v1Quota": "BCB_FEM (GOVT)",
+      "v2College": "Kakatiya Medical College",
+      "v2Quota": "BCB_FEM (MRC)",
+      "isMRC": true,
+      "priorityGain": 2
+    },
+    {
+      "sno": 739,
+      "air": 65516,
+      "score": 520,
+      "name": "VEERA SREEJA",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Kakatiya Medical College",
+      "v2Quota": "BCB_FEM (MRC)",
+      "isMRC": true,
+      "priorityGain": 3
+    },
+    {
+      "sno": 740,
+      "air": 65530,
+      "score": 520,
+      "name": "BODDUPALLI SAHITHI",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Kakatiya Medical College",
+      "v2Quota": "BCB_FEM (MRC)",
+      "isMRC": true,
+      "priorityGain": 3
+    },
+    {
+      "sno": 747,
+      "air": 65862,
+      "score": 520,
+      "name": "KASHVI NALAMATI",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Kakatiya Medical College",
+      "v2Quota": "BCB_FEM (MRC)",
+      "isMRC": true,
+      "priorityGain": 3
+    },
+    {
+      "sno": 749,
+      "air": 65938,
+      "score": 520,
+      "name": "ILLA VISHNU VARDHAN",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Quthbullapur",
+      "v2Quota": "BCB_GEN (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 754,
+      "air": 66399,
+      "score": 520,
+      "name": "VALUPADASU SATHYA PRATHEEKA",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Maheshwaram",
+      "v2Quota": "BCB_FEM (MRC)",
+      "isMRC": true,
+      "priorityGain": 2
+    },
+    {
+      "sno": 764,
+      "air": 67146,
+      "score": 519,
+      "name": "UTTURWAR SAITEJ",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "BCB_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Quthbullapur",
+      "v2Quota": "BCB_GEN (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 765,
+      "air": 67696,
+      "score": 518,
+      "name": "THOTAKURI GOMATHI",
       "category": "OC",
-      "v1College": "Kakatiya Medical College",
+      "v1College": "Govt. Medical College, Sangareddy",
       "v1Quota": "OC_FEM (GOVT)",
-      "v2College": "ESIC Medical College",
+      "v2College": "Govt. Medical College, Quthbullapur",
       "v2Quota": "EWS_FEM (MRC)",
       "isMRC": true,
       "priorityGain": 1
     },
     {
-      "sno": 562,
-      "air": 52115,
-      "score": 533,
-      "name": "PABBA LAXMI PRASEEDA",
-      "category": "OC",
-      "v1College": "Kakatiya Medical College",
+      "sno": 767,
+      "air": 67907,
+      "score": 518,
+      "name": "POOJA KUMARI",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
       "v1Quota": "OC_FEM (GOVT)",
-      "v2College": "ESIC Medical College",
+      "v2College": "Govt. Medical College, Maheshwaram",
+      "v2Quota": "BCB_FEM (MRC)",
+      "isMRC": true,
+      "priorityGain": 2
+    },
+    {
+      "sno": 770,
+      "air": 68240,
+      "score": 518,
+      "name": "MOHAMMED KHASIM ALI KHAN",
+      "category": "OC",
+      "v1College": "Govt. Medical College, Vikarabad",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Sangareddy",
+      "v2Quota": "EWS_GEN (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 773,
+      "air": 68785,
+      "score": 517,
+      "name": "KALAKONDA MANYATHA",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "OC_FEM (GOVT)",
+      "v2College": "Govt. Medical College, Quthbullapur",
+      "v2Quota": "BCB_GEN (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 774,
+      "air": 68791,
+      "score": 517,
+      "name": "HARDIK MURARKA",
+      "category": "OC",
+      "v1College": "Govt. Medical College, Vikarabad",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Sangareddy",
+      "v2Quota": "EWS_GEN (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 779,
+      "air": 68939,
+      "score": 517,
+      "name": "KONNE AKSHITHA",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "OC_FEM (GOVT)",
+      "v2College": "Govt. Medical College, Quthbullapur",
+      "v2Quota": "BCB_GEN (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 784,
+      "air": 69601,
+      "score": 517,
+      "name": "PALLE PRAHARSHITHA",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "OC_FEM (GOVT)",
+      "v2College": "Govt. Medical College, Quthbullapur",
+      "v2Quota": "BCB_GEN (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 799,
+      "air": 70116,
+      "score": 516,
+      "name": "THARIGOPPULA JAWALITHA",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "BCB_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Quthbullapur",
+      "v2Quota": "BCB_FEM (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 800,
+      "air": 70143,
+      "score": 516,
+      "name": "SAHASRA ALLE",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Sangareddy",
+      "v1Quota": "BCB_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Quthbullapur",
+      "v2Quota": "BCB_FEM (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 813,
+      "air": 71136,
+      "score": 515,
+      "name": "NUKALA KAVYA",
+      "category": "OC",
+      "v1College": "Govt. Medical College, Vikarabad",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Sangareddy",
       "v2Quota": "EWS_FEM (MRC)",
       "isMRC": true,
       "priorityGain": 1
     },
     {
-      "sno": 565,
-      "air": 52467,
-      "score": 533,
-      "name": "GANDE HARIKA",
+      "sno": 822,
+      "air": 71427,
+      "score": 515,
+      "name": "GALIPALLY TEJA SUKRUTHI",
       "category": "OC",
-      "v1College": "Kakatiya Medical College",
-      "v1Quota": "OC_FEM (GOVT)",
-      "v2College": "ESIC Medical College",
+      "v1College": "Govt. Medical College, Vikarabad",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Sangareddy",
       "v2Quota": "EWS_FEM (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 824,
+      "air": 71503,
+      "score": 515,
+      "name": "MATTA YASHWANTH KUMAR GOUD",
+      "category": "BCB",
+      "v1College": "Govt. Medical College, Vikarabad",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Sangareddy",
+      "v2Quota": "BCB_GEN (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 825,
+      "air": 71515,
+      "score": 515,
+      "name": "DONURU AKSHAYA",
+      "category": "OC",
+      "v1College": "Govt. Medical College, Vikarabad",
+      "v1Quota": "OC_FEM (GOVT)",
+      "v2College": "Govt. Medical College, Sangareddy",
+      "v2Quota": "EWS_FEM (MRC)",
+      "isMRC": true,
+      "priorityGain": 1
+    },
+    {
+      "sno": 826,
+      "air": 71913,
+      "score": 515,
+      "name": "MALYALA HARSHITH",
+      "category": "OC",
+      "v1College": "Govt. Medical College, Yadadri",
+      "v1Quota": "OC_GEN (GOVT)",
+      "v2College": "Govt. Medical College, Vikarabad",
+      "v2Quota": "EWS_GEN (MRC)",
       "isMRC": true,
       "priorityGain": 1
     }
