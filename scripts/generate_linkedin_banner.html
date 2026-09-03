@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1584px;
+      height: 396px;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #060913;
+      color: #ffffff;
+      position: relative;
+    }
+
+    /* Grid Background */
+    .grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 36px 36px;
+      opacity: 0.8;
+    }
+
+    /* Radial Glow Accents */
+    .glow-cyan {
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      top: -200px;
+      right: 150px;
+      background: radial-gradient(circle, rgba(0, 212, 170, 0.18) 0%, transparent 65%);
+      filter: blur(50px);
+    }
+    .glow-purple {
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      bottom: -200px;
+      right: -50px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, transparent 65%);
+      filter: blur(60px);
+    }
+    .glow-blue {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      top: -100px;
+      left: 100px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 65%);
+      filter: blur(50px);
+    }
+
+    /* Layout Container */
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 60px 0 380px; /* 380px left padding keeps clear of the circular profile avatar! */
+      justify-content: space-between;
+    }
+
+    .content-left {
+      max-width: 780px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Name & Title */
+    .brand-title {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand-title .verified-badge {
+      font-size: 22px;
+      color: #00d4aa;
+      background: rgba(0, 212, 170, 0.12);
+      padding: 2px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 212, 170, 0.35);
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .brand-subtitle {
+      font-size: 20px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00d4aa, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.3px;
+    }
+
+    /* Pill Badges */
+    .badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .pill-badge {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(10px);
+    }
+    .pill-badge.highlight {
+      background: rgba(0, 212, 170, 0.1);
+      border-color: rgba(0, 212, 170, 0.35);
+      color: #00d4aa;
+    }
+    .pill-badge.ai {
+      background: rgba(168, 85, 247, 0.1);
+      border-color: rgba(168, 85, 247, 0.35);
+      color: #c084fc;
+    }
+
+    /* Metrics Strip */
+    .proof-strip {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 6px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .proof-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .proof-item strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Right Badge Card */
+    .glass-box-right {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 320px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .box-header {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #38bdf8;
+      font-weight: 700;
+    }
+    .box-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .box-stat .stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: #00d4aa;
+      line-height: 1;
+    }
+    .box-stat .stat-lbl {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .box-footer {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.65);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .box-footer span {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-pattern"></div>
+  <div class="glow-cyan"></div>
+  <div class="glow-purple"></div>
+  <div class="glow-blue"></div>
+
+  <div class="container">
+    <div class="content-left">
+      <div class="brand-title">
+        Prashanth Kumar Kadasi
+        <span class="verified-badge">Portfolio • kprsnt.in</span>
+      </div>
+
+      <div class="brand-subtitle">
+        Senior Data Analyst & AI Systems Engineer
+      </div>
+
+      <div class="badges-row">
+        <span class="pill-badge highlight">⚡ Discrete Optimization & Simulators</span>
+        <span class="pill-badge ai">🤖 Model Context Protocol (MCP) & AI Swarms</span>
+        <span class="pill-badge">🔬 LLM Fine-Tuning (20B, AMD MI300X)</span>
+        <span class="pill-badge">📊 BigQuery • GCP • Looker Studio</span>
+      </div>
+
+      <div class="proof-strip">
+        <span class="proof-item">🎯 <strong>mSeat</strong>: Validated KNRUHS 2026 Phase 1 Simulator (±2 choices)</span>
+        <span>•</span>
+        <span class="proof-item">🚀 <strong>18 Sector</strong> Dashboards Deployed</span>
+        <span>•</span>
+        <span class="proof-item">💻 <strong>github.com/kprsnt2</strong></span>
+      </div>
+    </div>
+
+    <div class="glass-box-right">
+      <div class="box-header">Featured Engineering Impact</div>
+      <div class="box-stat">
+        <span class="stat-num">18,000+</span>
+        <span class="stat-lbl">Candidates Simulated in 30ms (mSeat)</span>
+      </div>
+      <div class="box-stat">
+        <span class="stat-num">76.5%</span>
+        <span class="stat-lbl">LLM Steerability Rate (BrandXY GPT-20B)</span>
+      </div>
+      <div class="box-footer">
+        Open Source & Research: <span>kprsnt.in</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
