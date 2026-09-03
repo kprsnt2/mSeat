@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final MRC Allotment Engine Dashboard | MSeat</title>
+  <meta name="description" content="Telangana MBBS AY 2026-27 v1 vs v2 vs Final Mock Counselling Analytics Dashboard - 3-Way Comparison across Direct, MRC, and AIQ-Integrated Engines.">
+  <title>Final Mock Allotment & Comparison Dashboard | MSeat</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
     }
     .kpi-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 14px;
       margin-bottom: 24px;
     }
@@ -41,7 +42,7 @@
       background: var(--kpi-accent, var(--accent-teal));
     }
     .kpi-label {
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -129,6 +130,38 @@
     .dash-table tbody tr:hover {
       background: rgba(0, 212, 170, 0.04);
     }
+    /* Chart Section Styles */
+    .chart-container-box {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 12px;
+      padding: 18px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 14px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 14px;
+    }
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
   </style>
 </head>
 <body>
@@ -176,6 +209,7 @@
           🩺 Quota & FAQ Guide
         </button>
       </div>
+    </div>
   </header>
 
   <!-- Main Dashboard Container -->
@@ -191,10 +225,10 @@
           </div>
           <h2 style="font-family: var(--font-display); font-size: 1.65rem; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
             <span>📊</span> Final MRC Allotment Engine Dashboard
-            <span class="label-badge badge-blue">Official KNRUHS 3-Phase MRC Rules</span>
+            <span class="label-badge badge-blue">v1 vs v2 vs Final Comparison</span>
           </h2>
           <p style="font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 960px;">
-            Complete audit and comparison of the official KNRUHS 3-Phase MRC Allotment Engine across all 18,482 candidates (including All India Quota seat holders) and 6,020 convenor MBBS seats. Use this dashboard to cross-verify category shifts, sliding patterns, and cutoffs against today's official KNRUHS results.
+            Complete 3-way comparative audit across <strong>v1 (Direct Cutoff Allotment)</strong>, <strong>v2 (3-Phase MRC Allotment without AIQ)</strong>, and <strong>Final (Official KNRUHS 3-Phase MRC Engine with AIQ Integration)</strong> across all 18,482 candidates and 6,020 convenor MBBS seats. Use this dashboard to cross-verify category shifts, sliding patterns, and cutoffs against today's official KNRUHS results.
           </p>
         </div>
 
@@ -212,24 +246,24 @@
       </div>
     </div>
 
-    <!-- High-Level KPI Summary Cards -->
+    <!-- High-Level KPI Summary Cards (v1 vs v2 vs Final) -->
     <div class="kpi-grid">
       <div class="kpi-card" style="--kpi-accent: #34d399;">
         <span class="kpi-label">Total MBBS Seats Allotted</span>
         <div class="kpi-value" style="color: #34d399;">6,020</div>
-        <span class="kpi-sub">100% capacity filled in both v1 & v2</span>
+        <span class="kpi-sub">100% capacity filled in v1, v2 & Final</span>
       </div>
 
       <div class="kpi-card" style="--kpi-accent: #fbbf24;">
         <span class="kpi-label">🌟 MRC Slid / Upgraded (Rule 10(2))</span>
         <div class="kpi-value" style="color: #fbbf24;">1,876</div>
-        <span class="kpi-sub">0 in v1 ➔ <strong>1,876 in v2</strong> (+1,876 Upgraded)</span>
+        <span class="kpi-sub">0 in v1 | 1,913 in v2 | <strong>1,876 in Final</strong></span>
       </div>
 
       <div class="kpi-card" style="--kpi-accent: #38bdf8;">
-        <span class="kpi-label">🚀 Better College in v2</span>
-        <div class="kpi-value" style="color: #38bdf8;">2,767</div>
-        <span class="kpi-sub">Candidates upgraded to a higher choice college</span>
+        <span class="kpi-label">🚀 Candidates Upgraded College</span>
+        <div class="kpi-value" style="color: #38bdf8;">2,641</div>
+        <span class="kpi-sub">Secured higher-preference college under MRC</span>
       </div>
 
       <div class="kpi-card" style="--kpi-accent: #a78bfa;">
@@ -239,15 +273,59 @@
       </div>
 
       <div class="kpi-card" style="--kpi-accent: #60a5fa;">
-        <span class="kpi-label">✈️ AIQ Seat Holders in State</span>
-        <div class="kpi-value" style="color: #60a5fa;">287</div>
-        <span class="kpi-sub">170 also won State Seats (117 beyond cutoff)</span>
+        <span class="kpi-label">✈️ AIQ Holders Winning State Seats</span>
+        <div class="kpi-value" style="color: #60a5fa;">170</div>
+        <span class="kpi-sub">0 in v1/v2 (exited) ➔ <strong>170 in Final</strong></span>
       </div>
 
       <div class="kpi-card" style="--kpi-accent: #94a3b8;">
         <span class="kpi-label">Waitlisted / Unallotted</span>
         <div class="kpi-value" style="color: #cbd5e1;">12,462</div>
-        <span class="kpi-sub">Can compete in BDS/AYUSH & Cat-B rounds</span>
+        <span class="kpi-sub">12,175 in v1/v2 ➔ 12,462 in Final</span>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- VISUAL COMPARISON CHART SECTION (v1 vs v2 vs Final) -->
+    <!-- ============================================================ -->
+    <div class="glass-card genz-card" style="padding: 24px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 16px;">
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 4px; display: flex; align-items: center; gap: 10px;">
+            <span>📈</span> 3-Way Visual Comparison Chart (v1 vs v2 vs Final)
+          </h3>
+          <p style="font-size: 0.84rem; color: rgba(255,255,255,0.7);">
+            Compare cutoffs, seat shares, and allocation dynamics across all three simulation stages.
+          </p>
+        </div>
+
+        <!-- Chart Mode Toggle Buttons -->
+        <div class="filter-group" style="background: rgba(255,255,255,0.04); padding: 4px; border-radius: 10px;">
+          <button class="filter-btn active" id="chartBtnCutoffs" onclick="switchChartMode('cutoffs')">📊 Category Cutoff AIR</button>
+          <button class="filter-btn" id="chartBtnSeats" onclick="switchChartMode('seats')">🏷️ Category Seats Won</button>
+          <button class="filter-btn" id="chartBtnDynamics" onclick="switchChartMode('dynamics')">🎯 Allocation Dynamics</button>
+        </div>
+      </div>
+
+      <!-- Color Legend -->
+      <div class="chart-legend">
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #f87171;"></span>
+          <span>v1 (Direct Cutoff / No MRC)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #38bdf8;"></span>
+          <span>v2 (3-Phase MRC / AIQ Exited)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #34d399; box-shadow: 0 0 6px #34d399;"></span>
+          <span style="color: #34d399; font-weight: 700;">Final (Official KNRUHS MRC + AIQ Integrated)</span>
+        </div>
+      </div>
+
+      <!-- Chart Display Box -->
+      <div class="chart-container-box" id="chartSvgWrapper">
+        <!-- Responsive SVG Chart Rendered Here -->
       </div>
     </div>
 
@@ -263,7 +341,7 @@
           <span class="label-badge badge-green" style="font-size: 0.72rem;">36 Colleges</span>
         </div>
         <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); line-height: 1.5;">
-          Gandhi (209), Osmania (199), ESIC (76), Kakatiya (208), plus 32 District GMCs. Category candidates secured <strong>2,804 Govt seats</strong> in v2 via OC merit and MRC sliding.
+          Gandhi (209), Osmania (199), ESIC (76), Kakatiya (208), plus 32 District GMCs. Category candidates secured <strong>2,798 Govt seats</strong> in Final via OC merit and MRC sliding.
         </p>
         <div class="inst-bar-bg"><div class="inst-bar-fill" style="width: 58.1%; background: var(--accent-teal);"></div></div>
         <div style="display: flex; justify-content: space-between; font-size: 0.74rem; color: rgba(255,255,255,0.6); margin-top: 6px;">
@@ -311,15 +389,15 @@
       </div>
     </div>
 
-    <!-- Category-Wise Comparison Audit Table (v1 vs v2) -->
+    <!-- Category-Wise Comparison Audit Table (v1 vs v2 vs Final) -->
     <div class="glass-card genz-card" style="padding: 24px; margin-bottom: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
         <div>
           <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
-            <span>🏷️</span> Category-Wise Allotment & Cutoff Audit (v1 vs v2)
+            <span>🏷️</span> Category-Wise 3-Way Allotment & Cutoff Audit
           </h3>
           <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7);">
-            Observe how MRC sliding and Rule 10(2) seat conversion impacted category seat totals and expanded cutoff ranks.
+            Examine how seats, cutoffs, and AIQ integration shift from v1 (Direct) ➔ v2 (MRC) ➔ Final (Official KNRUHS).
           </p>
         </div>
         <button type="button" class="btn-outline btn-sm" onclick="downloadComparisonJson()" style="border-color: var(--accent-teal); color: var(--accent-teal);">
@@ -333,18 +411,17 @@
             <tr>
               <th>Category</th>
               <th style="text-align: right;">Applicants</th>
-              <th style="text-align: right;">v1 Allotted</th>
-              <th style="text-align: right;">v2 Allotted</th>
-              <th style="text-align: center;">Seat Δ</th>
-              <th style="text-align: right;">v1 Govt</th>
-              <th style="text-align: right;">v2 Govt</th>
-              <th style="text-align: center;">Govt Δ</th>
-              <th style="text-align: right; color: #fbbf24;">🌟 v2 MRC Slid</th>
+              <th style="text-align: right;">v1 Seats</th>
+              <th style="text-align: right;">v2 Seats</th>
+              <th style="text-align: right; color: #34d399; font-weight: 800;">Final Seats</th>
+              <th style="text-align: center;">Govt Split (v1 | v2 | Final)</th>
+              <th style="text-align: right; color: #fbbf24;">Final MRC Slid</th>
               <th style="text-align: right;">v1 Cutoff AIR</th>
               <th style="text-align: right;">v2 Cutoff AIR</th>
-              <th style="text-align: center;">AIR Shift (Δ)</th>
-              <th style="text-align: center;">v2 Marks</th>
-              <th>Last Candidate Admitted (v2)</th>
+              <th style="text-align: right; color: #34d399; font-weight: 800;">Final Cutoff AIR</th>
+              <th style="text-align: center;">Final Marks</th>
+              <th style="text-align: center; color: #38bdf8;">AIQ Winners</th>
+              <th>Last Admitted Candidate (Final)</th>
             </tr>
           </thead>
           <tbody id="categoryTableBody">
@@ -362,7 +439,7 @@
             <span>🏛️</span> College-by-College Intake, Cutoffs & MRC Inflow (63 Colleges)
           </h3>
           <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7);">
-            Search any medical college in Telangana to compare its v1 vs v2 closing rank and total MRC students who slid in.
+            Search any medical college in Telangana to compare its v1, v2, and Final closing ranks, MRC students slid in, and AIQ winners.
           </p>
         </div>
 
@@ -389,8 +466,9 @@
               <th style="text-align: right;">Convenor Seats</th>
               <th style="text-align: right;">v1 Closing AIR</th>
               <th style="text-align: right;">v2 Closing AIR</th>
-              <th style="text-align: center;">Rank Delta</th>
-              <th style="text-align: right; color: #fbbf24;">🌟 MRC Slid Into College</th>
+              <th style="text-align: right; color: #34d399; font-weight: 800;">Final Closing AIR</th>
+              <th style="text-align: right; color: #fbbf24;">🌟 Final MRC Inflow</th>
+              <th style="text-align: right; color: #38bdf8;">✈️ AIQ Winners</th>
             </tr>
           </thead>
           <tbody id="collegeTableBody">
@@ -404,10 +482,10 @@
     <div class="glass-card genz-card" style="padding: 24px;">
       <div style="margin-bottom: 16px;">
         <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
-          <span>🌟</span> Sample MRC Sliding Case Studies (Upgrades from v1 ➔ v2)
+          <span>🌟</span> Sample MRC Sliding Case Studies (Upgrades to Premier Colleges)
         </h3>
         <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7);">
-          Examples of real candidates who were allotted lower-ranked or peripheral colleges in v1, but successfully upgraded to top medical institutes under official KNRUHS MRC sliding.
+          Examples of real candidates who were allotted lower-ranked or peripheral colleges in v1, but successfully upgraded to premier medical institutes under official KNRUHS MRC sliding.
         </p>
       </div>
 
@@ -421,7 +499,7 @@
               <th>Candidate Name</th>
               <th>Category</th>
               <th>Original College (v1 Direct)</th>
-              <th style="color: #38bdf8;">Upgraded College (v2 MRC)</th>
+              <th style="color: #34d399; font-weight: 700;">Final Upgraded College</th>
               <th style="color: #fbbf24;">Quota</th>
               <th style="text-align: center;">Choices Gained</th>
             </tr>
@@ -461,8 +539,9 @@
   <script src="app.js?v=20260829_v2"></script>
 
   <script>
-    // Dashboard Rendering Logic
+    // Dashboard Rendering & Visual Charts Logic
     var activeCollegeFilter = 'all';
+    var activeChartMode = 'cutoffs';
 
     function initDashboard() {
       if (typeof comparisonMetricsData === 'undefined') {
@@ -473,12 +552,192 @@
             renderCategoryTable();
             renderCollegeTable();
             renderUpgradesTable();
+            renderChart();
           });
       } else {
         renderCategoryTable();
         renderCollegeTable();
         renderUpgradesTable();
+        renderChart();
       }
+    }
+
+    function switchChartMode(mode) {
+      activeChartMode = mode;
+      ['cutoffs', 'seats', 'dynamics'].forEach(function(m) {
+        var btn = document.getElementById('chartBtn' + m.charAt(0).toUpperCase() + m.slice(1));
+        if (btn) {
+          if (m === mode) btn.classList.add('active');
+          else btn.classList.remove('active');
+        }
+      });
+      renderChart();
+    }
+
+    function renderChart() {
+      var wrapper = document.getElementById('chartSvgWrapper');
+      if (!wrapper || !window.comparisonMetricsData) return;
+
+      if (activeChartMode === 'cutoffs') {
+        wrapper.innerHTML = generateCategoryCutoffsChart(window.comparisonMetricsData.categories);
+      } else if (activeChartMode === 'seats') {
+        wrapper.innerHTML = generateCategorySeatsChart(window.comparisonMetricsData.categories);
+      } else if (activeChartMode === 'dynamics') {
+        wrapper.innerHTML = generateDynamicsChart(window.comparisonMetricsData.summary);
+      }
+    }
+
+    function generateCategoryCutoffsChart(cats) {
+      var width = 1100, height = 370;
+      var padLeft = 70, padRight = 30, padTop = 30, padBottom = 55;
+      var chartW = width - padLeft - padRight;
+      var chartH = height - padTop - padBottom;
+
+      var maxAIR = 0;
+      cats.forEach(function(c) {
+        maxAIR = Math.max(maxAIR, c.v1CutoffAIR, c.v2CutoffAIR, c.finalCutoffAIR);
+      });
+      maxAIR = Math.ceil(maxAIR / 100000) * 100000 || 650000;
+
+      var barGroupW = chartW / cats.length;
+      var barW = Math.min(22, (barGroupW - 14) / 3);
+
+      var svg = '<svg viewBox="0 0 ' + width + ' ' + height + '" style="width: 100%; height: auto; font-family: var(--font-display, sans-serif);">';
+
+      // Y-Grid lines
+      for (var i = 0; i <= 5; i++) {
+        var yVal = (maxAIR / 5) * i;
+        var yPos = padTop + chartH - (yVal / maxAIR) * chartH;
+        svg += '<line x1="' + padLeft + '" y1="' + yPos + '" x2="' + (width - padRight) + '" y2="' + yPos + '" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4"/>';
+        svg += '<text x="' + (padLeft - 10) + '" y="' + (yPos + 4) + '" fill="rgba(255,255,255,0.45)" font-size="11" text-anchor="end">' + (yVal/1000).toFixed(0) + 'k</text>';
+      }
+
+      // Grouped Bars
+      cats.forEach(function(c, idx) {
+        var groupX = padLeft + idx * barGroupW + (barGroupW - barW * 3 - 8) / 2;
+
+        var h1 = (c.v1CutoffAIR / maxAIR) * chartH;
+        var y1 = padTop + chartH - h1;
+
+        var h2 = (c.v2CutoffAIR / maxAIR) * chartH;
+        var y2 = padTop + chartH - h2;
+
+        var h3 = (c.finalCutoffAIR / maxAIR) * chartH;
+        var y3 = padTop + chartH - h3;
+
+        // Bar 1: v1 (Red/Coral)
+        svg += '<rect x="' + groupX + '" y="' + y1 + '" width="' + barW + '" height="' + h1 + '" rx="4" fill="#f87171" opacity="0.85"><title>' + c.label + ' - v1 Cutoff: ' + c.v1CutoffAIR.toLocaleString() + ' AIR</title></rect>';
+        // Bar 2: v2 (Sky Blue)
+        svg += '<rect x="' + (groupX + barW + 4) + '" y="' + y2 + '" width="' + barW + '" height="' + h2 + '" rx="4" fill="#38bdf8" opacity="0.85"><title>' + c.label + ' - v2 Cutoff: ' + c.v2CutoffAIR.toLocaleString() + ' AIR</title></rect>';
+        // Bar 3: Final (Emerald Green)
+        svg += '<rect x="' + (groupX + (barW + 4) * 2) + '" y="' + y3 + '" width="' + barW + '" height="' + h3 + '" rx="4" fill="#34d399"><title>' + c.label + ' - Final Cutoff: ' + c.finalCutoffAIR.toLocaleString() + ' AIR (' + c.finalCutoffScore + ' Marks)</title></rect>';
+
+        // Category Label
+        svg += '<text x="' + (groupX + barW * 1.5 + 4) + '" y="' + (padTop + chartH + 22) + '" fill="rgba(255,255,255,0.85)" font-size="12" font-weight="700" text-anchor="middle">' + c.cat + '</text>';
+      });
+
+      svg += '</svg>';
+      return svg;
+    }
+
+    function generateCategorySeatsChart(cats) {
+      var width = 1100, height = 370;
+      var padLeft = 70, padRight = 30, padTop = 30, padBottom = 55;
+      var chartW = width - padLeft - padRight;
+      var chartH = height - padTop - padBottom;
+
+      var maxSeats = 0;
+      cats.forEach(function(c) {
+        maxSeats = Math.max(maxSeats, c.v1Allotted, c.v2Allotted, c.finalAllotted);
+      });
+      maxSeats = Math.ceil(maxSeats / 200) * 200 || 1500;
+
+      var barGroupW = chartW / cats.length;
+      var barW = Math.min(22, (barGroupW - 14) / 3);
+
+      var svg = '<svg viewBox="0 0 ' + width + ' ' + height + '" style="width: 100%; height: auto; font-family: var(--font-display, sans-serif);">';
+
+      // Y-Grid lines
+      for (var i = 0; i <= 5; i++) {
+        var yVal = (maxSeats / 5) * i;
+        var yPos = padTop + chartH - (yVal / maxSeats) * chartH;
+        svg += '<line x1="' + padLeft + '" y1="' + yPos + '" x2="' + (width - padRight) + '" y2="' + yPos + '" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4"/>';
+        svg += '<text x="' + (padLeft - 10) + '" y="' + (yPos + 4) + '" fill="rgba(255,255,255,0.45)" font-size="11" text-anchor="end">' + yVal.toFixed(0) + '</text>';
+      }
+
+      // Grouped Bars
+      cats.forEach(function(c, idx) {
+        var groupX = padLeft + idx * barGroupW + (barGroupW - barW * 3 - 8) / 2;
+
+        var h1 = (c.v1Allotted / maxSeats) * chartH;
+        var y1 = padTop + chartH - h1;
+
+        var h2 = (c.v2Allotted / maxSeats) * chartH;
+        var y2 = padTop + chartH - h2;
+
+        var h3 = (c.finalAllotted / maxSeats) * chartH;
+        var y3 = padTop + chartH - h3;
+
+        svg += '<rect x="' + groupX + '" y="' + y1 + '" width="' + barW + '" height="' + h1 + '" rx="4" fill="#f87171" opacity="0.85"><title>' + c.label + ' - v1 Seats: ' + c.v1Allotted + '</title></rect>';
+        svg += '<rect x="' + (groupX + barW + 4) + '" y="' + y2 + '" width="' + barW + '" height="' + h2 + '" rx="4" fill="#38bdf8" opacity="0.85"><title>' + c.label + ' - v2 Seats: ' + c.v2Allotted + '</title></rect>';
+        svg += '<rect x="' + (groupX + (barW + 4) * 2) + '" y="' + y3 + '" width="' + barW + '" height="' + h3 + '" rx="4" fill="#34d399"><title>' + c.label + ' - Final Seats: ' + c.finalAllotted + '</title></rect>';
+
+        svg += '<text x="' + (groupX + barW * 1.5 + 4) + '" y="' + (padTop + chartH + 22) + '" fill="rgba(255,255,255,0.85)" font-size="12" font-weight="700" text-anchor="middle">' + c.cat + '</text>';
+      });
+
+      svg += '</svg>';
+      return svg;
+    }
+
+    function generateDynamicsChart(summary) {
+      var width = 1100, height = 370;
+      var padLeft = 80, padRight = 30, padTop = 30, padBottom = 55;
+      var chartW = width - padLeft - padRight;
+      var chartH = height - padTop - padBottom;
+
+      var metrics = [
+        { label: '🌟 MRC Slid', v1: summary.mrcSlidV1 || 0, v2: summary.mrcSlidV2 || 1913, final: summary.mrcSlidFinal || 1876 },
+        { label: '🚀 College Upgrades', v1: 0, v2: summary.upgradedV2 || 2767, final: summary.upgradedFinal || 2641 },
+        { label: '✈️ AIQ in State', v1: 0, v2: 0, final: summary.aiqInStateFinal || 170 },
+        { label: '🏛️ Total State Seats', v1: summary.totalAllotted || 6020, v2: summary.totalAllotted || 6020, final: summary.totalAllotted || 6020 },
+        { label: '⏳ Unallotted Pool', v1: summary.unallottedV1 || 12175, v2: summary.unallottedV2 || 12175, final: summary.unallottedFinal || 12462 }
+      ];
+
+      var maxVal = 13000;
+      var barGroupW = chartW / metrics.length;
+      var barW = Math.min(36, (barGroupW - 20) / 3);
+
+      var svg = '<svg viewBox="0 0 ' + width + ' ' + height + '" style="width: 100%; height: auto; font-family: var(--font-display, sans-serif);">';
+
+      // Y-Grid lines
+      for (var i = 0; i <= 5; i++) {
+        var yVal = (maxVal / 5) * i;
+        var yPos = padTop + chartH - (yVal / maxVal) * chartH;
+        svg += '<line x1="' + padLeft + '" y1="' + yPos + '" x2="' + (width - padRight) + '" y2="' + yPos + '" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4"/>';
+        svg += '<text x="' + (padLeft - 10) + '" y="' + (yPos + 4) + '" fill="rgba(255,255,255,0.45)" font-size="11" text-anchor="end">' + (yVal/1000).toFixed(0) + 'k</text>';
+      }
+
+      metrics.forEach(function(m, idx) {
+        var groupX = padLeft + idx * barGroupW + (barGroupW - barW * 3 - 10) / 2;
+
+        var h1 = (m.v1 / maxVal) * chartH;
+        var y1 = padTop + chartH - h1;
+
+        var h2 = (m.v2 / maxVal) * chartH;
+        var y2 = padTop + chartH - h2;
+
+        var h3 = (m.final / maxVal) * chartH;
+        var y3 = padTop + chartH - h3;
+
+        svg += '<rect x="' + groupX + '" y="' + y1 + '" width="' + barW + '" height="' + h1 + '" rx="4" fill="#f87171" opacity="0.85"><title>' + m.label + ' - v1: ' + m.v1.toLocaleString() + '</title></rect>';
+        svg += '<rect x="' + (groupX + barW + 5) + '" y="' + y2 + '" width="' + barW + '" height="' + h2 + '" rx="4" fill="#38bdf8" opacity="0.85"><title>' + m.label + ' - v2: ' + m.v2.toLocaleString() + '</title></rect>';
+        svg += '<rect x="' + (groupX + (barW + 5) * 2) + '" y="' + y3 + '" width="' + barW + '" height="' + h3 + '" rx="4" fill="#34d399"><title>' + m.label + ' - Final: ' + m.final.toLocaleString() + '</title></rect>';
+
+        svg += '<text x="' + (groupX + barW * 1.5 + 5) + '" y="' + (padTop + chartH + 24) + '" fill="rgba(255,255,255,0.85)" font-size="11" font-weight="700" text-anchor="middle">' + m.label + '</text>';
+      });
+
+      svg += '</svg>';
+      return svg;
     }
 
     function renderCategoryTable() {
@@ -488,40 +747,26 @@
 
       var html = '';
       cats.forEach(function(c) {
-        var seatDelta = c.allotmentDelta;
-        var seatBadge = seatDelta > 0 
-          ? '<span class="delta-badge delta-pos">+' + seatDelta + '</span>'
-          : (seatDelta < 0 ? '<span class="delta-badge delta-neg">' + seatDelta + '</span>' : '<span class="delta-badge delta-neutral">0</span>');
+        var govtSplit = c.v1Govt + ' | ' + c.v2Govt + ' | <strong style="color:#34d399;">' + c.finalGovt + '</strong>';
 
-        var govtDelta = c.govtDelta;
-        var govtBadge = govtDelta > 0 
-          ? '<span class="delta-badge delta-pos">+' + govtDelta + '</span>'
-          : (govtDelta < 0 ? '<span class="delta-badge delta-neg">' + govtDelta + '</span>' : '<span class="delta-badge delta-neutral">0</span>');
-
-        var airShift = c.airShift;
-        var airBadge = airShift > 0
-          ? '<span class="delta-badge delta-pos" title="Cutoff expanded by +' + airShift.toLocaleString() + ' ranks">+' + airShift.toLocaleString() + '</span>'
-          : (airShift < 0 ? '<span class="delta-badge delta-neg">' + airShift.toLocaleString() + '</span>' : '<span class="delta-badge delta-neutral">0</span>');
-
-        var lastInfo = c.v2LastCandidate 
-          ? '<strong>#' + c.v2LastCandidate.sno + ' ' + c.v2LastCandidate.name + '</strong> (' + c.v2LastCandidate.college + ')'
+        var lastInfo = c.finalLastCandidate 
+          ? '<strong>#' + c.finalLastCandidate.sno + ' ' + c.finalLastCandidate.name + '</strong> (' + c.finalLastCandidate.college + ')'
           : '—';
 
         html += '<tr>' +
           '<td><strong>' + c.label + '</strong></td>' +
-          '<td style="text-align:right;">' + c.totalApplicants.toLocaleString() + '</td>' +
+          '<td style="text-align:right;">' + c.applicants.toLocaleString() + '</td>' +
           '<td style="text-align:right;">' + c.v1Allotted.toLocaleString() + '</td>' +
-          '<td style="text-align:right; font-weight:700; color:var(--accent-teal);">' + c.v2Allotted.toLocaleString() + '</td>' +
-          '<td style="text-align:center;">' + seatBadge + '</td>' +
-          '<td style="text-align:right;">' + c.v1Govt.toLocaleString() + '</td>' +
-          '<td style="text-align:right; font-weight:700; color:#38bdf8;">' + c.v2Govt.toLocaleString() + '</td>' +
-          '<td style="text-align:center;">' + govtBadge + '</td>' +
-          '<td style="text-align:right; font-weight:700; color:#fbbf24;">' + c.v2Mrc.toLocaleString() + '</td>' +
-          '<td style="text-align:right; font-family:monospace;">' + c.v1ClosingAIR.toLocaleString() + '</td>' +
-          '<td style="text-align:right; font-family:monospace; font-weight:700; color:#ffffff;">' + c.v2ClosingAIR.toLocaleString() + '</td>' +
-          '<td style="text-align:center;">' + airBadge + '</td>' +
-          '<td style="text-align:center; font-weight:700;">' + c.v2ClosingScore + '</td>' +
-          '<td style="font-size:0.75rem; max-width:280px; overflow:hidden; text-overflow:ellipsis;" title="' + (c.v2LastCandidate ? c.v2LastCandidate.college : '') + '">' + lastInfo + '</td>' +
+          '<td style="text-align:right;">' + c.v2Allotted.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-weight:800; color:#34d399;">' + c.finalAllotted.toLocaleString() + '</td>' +
+          '<td style="text-align:center;">' + govtSplit + '</td>' +
+          '<td style="text-align:right; font-weight:700; color:#fbbf24;">' + c.finalMrc.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-family:monospace;">' + c.v1CutoffAIR.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-family:monospace;">' + c.v2CutoffAIR.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-family:monospace; font-weight:800; color:#34d399;">' + c.finalCutoffAIR.toLocaleString() + '</td>' +
+          '<td style="text-align:center; font-weight:700;">' + c.finalCutoffScore + '</td>' +
+          '<td style="text-align:center; font-weight:700; color:#38bdf8;">' + (c.aiqWinners > 0 ? c.aiqWinners : '0') + '</td>' +
+          '<td style="font-size:0.75rem; max-width:260px; overflow:hidden; text-overflow:ellipsis;" title="' + (c.finalLastCandidate ? c.finalLastCandidate.college : '') + '">' + lastInfo + '</td>' +
         '</tr>';
       });
       tbody.innerHTML = html;
@@ -561,11 +806,6 @@
 
       var html = '';
       filtered.forEach(function(c) {
-        var shift = c.v2ClosingRank - c.v1ClosingRank;
-        var shiftBadge = shift > 0 
-          ? '<span class="delta-badge delta-pos">+' + shift.toLocaleString() + '</span>'
-          : (shift < 0 ? '<span class="delta-badge delta-neg">' + shift.toLocaleString() + '</span>' : '<span class="delta-badge delta-neutral">0</span>');
-
         var typeBadge = c.category === 'Government' 
           ? '<span class="label-badge badge-green">Govt</span>'
           : (c.category.includes('Minority') ? '<span class="label-badge badge-blue">Minority</span>' : '<span class="label-badge" style="background:rgba(167,139,250,0.18); color:#c084fc;">Private</span>');
@@ -576,9 +816,10 @@
           '<td>' + typeBadge + '</td>' +
           '<td style="text-align:right; font-weight:700;">' + c.convenorSeats + '</td>' +
           '<td style="text-align:right; font-family:monospace;">' + c.v1ClosingRank.toLocaleString() + '</td>' +
-          '<td style="text-align:right; font-family:monospace; font-weight:700; color:#ffffff;">' + c.v2ClosingRank.toLocaleString() + '</td>' +
-          '<td style="text-align:center;">' + shiftBadge + '</td>' +
-          '<td style="text-align:right; font-weight:700; color:#fbbf24;">' + (c.v2MrcInflow > 0 ? '+' + c.v2MrcInflow : '0') + '</td>' +
+          '<td style="text-align:right; font-family:monospace;">' + c.v2ClosingRank.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-family:monospace; font-weight:800; color:#34d399;">' + c.finalClosingRank.toLocaleString() + '</td>' +
+          '<td style="text-align:right; font-weight:700; color:#fbbf24;">' + (c.finalMrcInflow > 0 ? '+' + c.finalMrcInflow : '0') + '</td>' +
+          '<td style="text-align:right; font-weight:700; color:#38bdf8;">' + (c.finalAiqWinners > 0 ? c.finalAiqWinners : '0') + '</td>' +
         '</tr>';
       });
       tbody.innerHTML = html;
@@ -598,7 +839,7 @@
           '<td><strong>' + u.name + '</strong></td>' +
           '<td><span class="cat-pill">' + u.category + '</span></td>' +
           '<td style="color:rgba(255,255,255,0.6);">' + u.v1College + '</td>' +
-          '<td style="color:#38bdf8; font-weight:700;">' + u.v2College + '</td>' +
+          '<td style="color:#34d399; font-weight:700;">' + u.v2College + '</td>' +
           '<td style="font-size:0.75rem; color:#fbbf24;">' + u.v2Quota + '</td>' +
           '<td style="text-align:center;"><span class="delta-badge delta-pos">+' + u.priorityGain + ' Colleges</span></td>' +
         '</tr>';
@@ -609,7 +850,7 @@
     function downloadComparisonJson() {
       var link = document.createElement('a');
       link.href = 'docs/v1_vs_v2_comparison_metrics.json';
-      link.download = 'v1_vs_v2_comparison_metrics.json';
+      link.download = 'v1_vs_v2_vs_final_comparison_metrics.json';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
