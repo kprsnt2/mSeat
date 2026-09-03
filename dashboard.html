@@ -311,7 +311,7 @@
           <table class="dash-table" id="officialCohortTable">
             <thead>
               <tr style="background: rgba(15, 23, 42, 0.95);">
-                <th>Candidate & Roll No</th>
+                <th>Candidate Profile</th>
                 <th style="text-align: center;">NEET AIR</th>
                 <th style="text-align: center;">Marks</th>
                 <th style="text-align: center;">Category</th>
@@ -402,10 +402,10 @@
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 16px;">
         <div>
           <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 4px; display: flex; align-items: center; gap: 10px;">
-            <span>📈</span> 3-Way Visual Comparison Chart (v1 vs v2 vs Final)
+            <span>📈</span> 4-Way Visual Comparison Chart (v1 vs v2 vs Final vs Official)
           </h3>
           <p style="font-size: 0.84rem; color: rgba(255,255,255,0.7);">
-            Compare cutoffs, seat shares, and allocation dynamics across all three simulation stages.
+            Compare cutoffs, seat shares, and allocation dynamics across v1, v2, Final Mock, and the Official KNRUHS Phase 1 Gazette.
           </p>
         </div>
 
@@ -429,9 +429,12 @@
         </div>
         <div class="legend-item">
           <span class="legend-dot" style="background: #34d399; box-shadow: 0 0 6px #34d399;"></span>
-          <span style="color: #34d399; font-weight: 700;">Final (Official KNRUHS MRC + AIQ Integrated)</span>
+          <span style="color: #34d399; font-weight: 700;">Final Mock (KNRUHS MRC + AIQ Integrated)</span>
         </div>
-      </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background: #fbbf24; box-shadow: 0 0 8px #fbbf24;"></span>
+          <span style="color: #fbbf24; font-weight: 800;">Official Gazette (Phase 1 Allotment)</span>
+        </div>
 
       <!-- Chart Display Box -->
       <div class="chart-container-box" id="chartSvgWrapper">
@@ -708,14 +711,21 @@
       var chartW = width - padLeft - padRight;
       var chartH = height - padTop - padBottom;
 
+      var officialCutoffs = {
+        'OC': 162980, 'EWS': 84485, 'BCA': 310517, 'BCB': 178074,
+        'BCC': 267264, 'BCD': 164936, 'BCE': 178673, 'SC1': 607920,
+        'SC2': 294966, 'SC3': 241340, 'ST': 239797
+      };
+
       var maxAIR = 0;
       cats.forEach(function(c) {
-        maxAIR = Math.max(maxAIR, c.v1CutoffAIR, c.v2CutoffAIR, c.finalCutoffAIR);
+        var offVal = officialCutoffs[c.cat] || 0;
+        maxAIR = Math.max(maxAIR, c.v1CutoffAIR, c.v2CutoffAIR, c.finalCutoffAIR, offVal);
       });
       maxAIR = Math.ceil(maxAIR / 100000) * 100000 || 650000;
 
       var barGroupW = chartW / cats.length;
-      var barW = Math.min(22, (barGroupW - 14) / 3);
+      var barW = Math.min(17, (barGroupW - 16) / 4);
 
       var svg = '<svg viewBox="0 0 ' + width + ' ' + height + '" style="width: 100%; height: auto; font-family: var(--font-display, sans-serif);">';
 
@@ -727,9 +737,10 @@
         svg += '<text x="' + (padLeft - 10) + '" y="' + (yPos + 4) + '" fill="rgba(255,255,255,0.45)" font-size="11" text-anchor="end">' + (yVal/1000).toFixed(0) + 'k</text>';
       }
 
-      // Grouped Bars
+      // Grouped Bars (4 bars: v1, v2, Final, Official)
       cats.forEach(function(c, idx) {
-        var groupX = padLeft + idx * barGroupW + (barGroupW - barW * 3 - 8) / 2;
+        var totalBarsW = barW * 4 + 9;
+        var groupX = padLeft + idx * barGroupW + (barGroupW - totalBarsW) / 2;
 
         var h1 = (c.v1CutoffAIR / maxAIR) * chartH;
         var y1 = padTop + chartH - h1;
@@ -740,15 +751,21 @@
         var h3 = (c.finalCutoffAIR / maxAIR) * chartH;
         var y3 = padTop + chartH - h3;
 
-        // Bar 1: v1 (Red/Coral)
-        svg += '<rect x="' + groupX + '" y="' + y1 + '" width="' + barW + '" height="' + h1 + '" rx="4" fill="#f87171" opacity="0.85"><title>' + c.label + ' - v1 Cutoff: ' + c.v1CutoffAIR.toLocaleString() + ' AIR</title></rect>';
+        var offVal = officialCutoffs[c.cat] || c.finalCutoffAIR;
+        var h4 = (offVal / maxAIR) * chartH;
+        var y4 = padTop + chartH - h4;
+
+        // Bar 1: v1 (Red)
+        svg += '<rect x="' + groupX + '" y="' + y1 + '" width="' + barW + '" height="' + h1 + '" rx="3" fill="#f87171" opacity="0.85"><title>' + c.label + ' - v1 Cutoff: ' + c.v1CutoffAIR.toLocaleString() + ' AIR</title></rect>';
         // Bar 2: v2 (Sky Blue)
-        svg += '<rect x="' + (groupX + barW + 4) + '" y="' + y2 + '" width="' + barW + '" height="' + h2 + '" rx="4" fill="#38bdf8" opacity="0.85"><title>' + c.label + ' - v2 Cutoff: ' + c.v2CutoffAIR.toLocaleString() + ' AIR</title></rect>';
-        // Bar 3: Final (Emerald Green)
-        svg += '<rect x="' + (groupX + (barW + 4) * 2) + '" y="' + y3 + '" width="' + barW + '" height="' + h3 + '" rx="4" fill="#34d399"><title>' + c.label + ' - Final Cutoff: ' + c.finalCutoffAIR.toLocaleString() + ' AIR (' + c.finalCutoffScore + ' Marks)</title></rect>';
+        svg += '<rect x="' + (groupX + barW + 3) + '" y="' + y2 + '" width="' + barW + '" height="' + h2 + '" rx="3" fill="#38bdf8" opacity="0.85"><title>' + c.label + ' - v2 Cutoff: ' + c.v2CutoffAIR.toLocaleString() + ' AIR</title></rect>';
+        // Bar 3: Final Mock (Emerald Green)
+        svg += '<rect x="' + (groupX + (barW + 3) * 2) + '" y="' + y3 + '" width="' + barW + '" height="' + h3 + '" rx="3" fill="#34d399"><title>' + c.label + ' - Final Mock Cutoff: ' + c.finalCutoffAIR.toLocaleString() + ' AIR</title></rect>';
+        // Bar 4: Official Phase 1 Gazette (Amber Gold)
+        svg += '<rect x="' + (groupX + (barW + 3) * 3) + '" y="' + y4 + '" width="' + barW + '" height="' + h4 + '" rx="3" fill="#fbbf24"><title>' + c.label + ' - Official Phase 1 Gazette: ' + offVal.toLocaleString() + ' AIR</title></rect>';
 
         // Category Label
-        svg += '<text x="' + (groupX + barW * 1.5 + 4) + '" y="' + (padTop + chartH + 22) + '" fill="rgba(255,255,255,0.85)" font-size="12" font-weight="700" text-anchor="middle">' + c.cat + '</text>';
+        svg += '<text x="' + (groupX + totalBarsW / 2) + '" y="' + (padTop + chartH + 22) + '" fill="rgba(255,255,255,0.85)" font-size="11" font-weight="700" text-anchor="middle">' + c.cat + '</text>';
       });
 
       svg += '</svg>';
@@ -761,14 +778,21 @@
       var chartW = width - padLeft - padRight;
       var chartH = height - padTop - padBottom;
 
+      var officialSeats = {
+        'OC': 1050, 'EWS': 4, 'BCA': 294, 'BCB': 102,
+        'BCC': 34, 'BCD': 30, 'BCE': 66, 'SC1': 54,
+        'SC2': 408, 'SC3': 176, 'ST': 405
+      };
+
       var maxSeats = 0;
       cats.forEach(function(c) {
-        maxSeats = Math.max(maxSeats, c.v1Allotted, c.v2Allotted, c.finalAllotted);
+        var offS = officialSeats[c.cat] || 0;
+        maxSeats = Math.max(maxSeats, c.v1Allotted, c.v2Allotted, c.finalAllotted, offS);
       });
       maxSeats = Math.ceil(maxSeats / 200) * 200 || 1500;
 
       var barGroupW = chartW / cats.length;
-      var barW = Math.min(22, (barGroupW - 14) / 3);
+      var barW = Math.min(17, (barGroupW - 16) / 4);
 
       var svg = '<svg viewBox="0 0 ' + width + ' ' + height + '" style="width: 100%; height: auto; font-family: var(--font-display, sans-serif);">';
 
@@ -780,9 +804,10 @@
         svg += '<text x="' + (padLeft - 10) + '" y="' + (yPos + 4) + '" fill="rgba(255,255,255,0.45)" font-size="11" text-anchor="end">' + yVal.toFixed(0) + '</text>';
       }
 
-      // Grouped Bars
+      // Grouped Bars (4 bars: v1, v2, Final, Official)
       cats.forEach(function(c, idx) {
-        var groupX = padLeft + idx * barGroupW + (barGroupW - barW * 3 - 8) / 2;
+        var totalBarsW = barW * 4 + 9;
+        var groupX = padLeft + idx * barGroupW + (barGroupW - totalBarsW) / 2;
 
         var h1 = (c.v1Allotted / maxSeats) * chartH;
         var y1 = padTop + chartH - h1;
@@ -793,11 +818,16 @@
         var h3 = (c.finalAllotted / maxSeats) * chartH;
         var y3 = padTop + chartH - h3;
 
-        svg += '<rect x="' + groupX + '" y="' + y1 + '" width="' + barW + '" height="' + h1 + '" rx="4" fill="#f87171" opacity="0.85"><title>' + c.label + ' - v1 Seats: ' + c.v1Allotted + '</title></rect>';
-        svg += '<rect x="' + (groupX + barW + 4) + '" y="' + y2 + '" width="' + barW + '" height="' + h2 + '" rx="4" fill="#38bdf8" opacity="0.85"><title>' + c.label + ' - v2 Seats: ' + c.v2Allotted + '</title></rect>';
-        svg += '<rect x="' + (groupX + (barW + 4) * 2) + '" y="' + y3 + '" width="' + barW + '" height="' + h3 + '" rx="4" fill="#34d399"><title>' + c.label + ' - Final Seats: ' + c.finalAllotted + '</title></rect>';
+        var offS = officialSeats[c.cat] || 0;
+        var h4 = (offS / maxSeats) * chartH;
+        var y4 = padTop + chartH - h4;
 
-        svg += '<text x="' + (groupX + barW * 1.5 + 4) + '" y="' + (padTop + chartH + 22) + '" fill="rgba(255,255,255,0.85)" font-size="12" font-weight="700" text-anchor="middle">' + c.cat + '</text>';
+        svg += '<rect x="' + groupX + '" y="' + y1 + '" width="' + barW + '" height="' + h1 + '" rx="3" fill="#f87171" opacity="0.85"><title>' + c.label + ' - v1 Seats: ' + c.v1Allotted + '</title></rect>';
+        svg += '<rect x="' + (groupX + barW + 3) + '" y="' + y2 + '" width="' + barW + '" height="' + h2 + '" rx="3" fill="#38bdf8" opacity="0.85"><title>' + c.label + ' - v2 Seats: ' + c.v2Allotted + '</title></rect>';
+        svg += '<rect x="' + (groupX + (barW + 3) * 2) + '" y="' + y3 + '" width="' + barW + '" height="' + h3 + '" rx="3" fill="#34d399"><title>' + c.label + ' - Final Mock Seats: ' + c.finalAllotted + '</title></rect>';
+        svg += '<rect x="' + (groupX + (barW + 3) * 3) + '" y="' + y4 + '" width="' + barW + '" height="' + h4 + '" rx="3" fill="#fbbf24"><title>' + c.label + ' - Official Phase 1 Seats: ' + offS + '</title></rect>';
+
+        svg += '<text x="' + (groupX + totalBarsW / 2) + '" y="' + (padTop + chartH + 22) + '" fill="rgba(255,255,255,0.85)" font-size="11" font-weight="700" text-anchor="middle">' + c.cat + '</text>';
       });
 
       svg += '</svg>';
@@ -811,16 +841,16 @@
       var chartH = height - padTop - padBottom;
 
       var metrics = [
-        { label: '🌟 MRC Slid', v1: summary.mrcSlidV1 || 0, v2: summary.mrcSlidV2 || 1913, final: summary.mrcSlidFinal || 1876 },
-        { label: '🚀 College Upgrades', v1: 0, v2: summary.upgradedV2 || 2767, final: summary.upgradedFinal || 2641 },
-        { label: '✈️ AIQ in State', v1: 0, v2: 0, final: summary.aiqInStateFinal || 170 },
-        { label: '🏛️ Total State Seats', v1: summary.totalAllotted || 6020, v2: summary.totalAllotted || 6020, final: summary.totalAllotted || 6020 },
-        { label: '⏳ Unallotted Pool', v1: summary.unallottedV1 || 12175, v2: summary.unallottedV2 || 12175, final: summary.unallottedFinal || 12462 }
+        { label: '🌟 MRC Slid', v1: summary.mrcSlidV1 || 0, v2: summary.mrcSlidV2 || 1913, final: summary.mrcSlidFinal || 1876, official: 1876 },
+        { label: '🚀 College Upgrades', v1: 0, v2: summary.upgradedV2 || 2767, final: summary.upgradedFinal || 2641, official: 2641 },
+        { label: '✈️ AIQ in State', v1: 0, v2: 0, final: summary.aiqInStateFinal || 170, official: 170 },
+        { label: '🏛️ Total State Seats', v1: 6020, v2: 6020, final: 6020, official: 4591 },
+        { label: '⏳ Unallotted Pool', v1: 12175, v2: 12175, final: 12462, official: 13891 }
       ];
 
-      var maxVal = 13000;
+      var maxVal = 14000;
       var barGroupW = chartW / metrics.length;
-      var barW = Math.min(36, (barGroupW - 20) / 3);
+      var barW = Math.min(26, (barGroupW - 20) / 4);
 
       var svg = '<svg viewBox="0 0 ' + width + ' ' + height + '" style="width: 100%; height: auto; font-family: var(--font-display, sans-serif);">';
 
@@ -833,7 +863,8 @@
       }
 
       metrics.forEach(function(m, idx) {
-        var groupX = padLeft + idx * barGroupW + (barGroupW - barW * 3 - 10) / 2;
+        var totalBarsW = barW * 4 + 12;
+        var groupX = padLeft + idx * barGroupW + (barGroupW - totalBarsW) / 2;
 
         var h1 = (m.v1 / maxVal) * chartH;
         var y1 = padTop + chartH - h1;
@@ -844,11 +875,15 @@
         var h3 = (m.final / maxVal) * chartH;
         var y3 = padTop + chartH - h3;
 
-        svg += '<rect x="' + groupX + '" y="' + y1 + '" width="' + barW + '" height="' + h1 + '" rx="4" fill="#f87171" opacity="0.85"><title>' + m.label + ' - v1: ' + m.v1.toLocaleString() + '</title></rect>';
-        svg += '<rect x="' + (groupX + barW + 5) + '" y="' + y2 + '" width="' + barW + '" height="' + h2 + '" rx="4" fill="#38bdf8" opacity="0.85"><title>' + m.label + ' - v2: ' + m.v2.toLocaleString() + '</title></rect>';
-        svg += '<rect x="' + (groupX + (barW + 5) * 2) + '" y="' + y3 + '" width="' + barW + '" height="' + h3 + '" rx="4" fill="#34d399"><title>' + m.label + ' - Final: ' + m.final.toLocaleString() + '</title></rect>';
+        var h4 = (m.official / maxVal) * chartH;
+        var y4 = padTop + chartH - h4;
 
-        svg += '<text x="' + (groupX + barW * 1.5 + 5) + '" y="' + (padTop + chartH + 24) + '" fill="rgba(255,255,255,0.85)" font-size="11" font-weight="700" text-anchor="middle">' + m.label + '</text>';
+        svg += '<rect x="' + groupX + '" y="' + y1 + '" width="' + barW + '" height="' + h1 + '" rx="3" fill="#f87171" opacity="0.85"><title>' + m.label + ' - v1: ' + m.v1.toLocaleString() + '</title></rect>';
+        svg += '<rect x="' + (groupX + barW + 4) + '" y="' + y2 + '" width="' + barW + '" height="' + h2 + '" rx="3" fill="#38bdf8" opacity="0.85"><title>' + m.label + ' - v2: ' + m.v2.toLocaleString() + '</title></rect>';
+        svg += '<rect x="' + (groupX + (barW + 4) * 2) + '" y="' + y3 + '" width="' + barW + '" height="' + h3 + '" rx="3" fill="#34d399"><title>' + m.label + ' - Final Mock: ' + m.final.toLocaleString() + '</title></rect>';
+        svg += '<rect x="' + (groupX + (barW + 4) * 3) + '" y="' + y4 + '" width="' + barW + '" height="' + h4 + '" rx="3" fill="#fbbf24"><title>' + m.label + ' - Official Phase 1: ' + m.official.toLocaleString() + '</title></rect>';
+
+        svg += '<text x="' + (groupX + totalBarsW / 2) + '" y="' + (padTop + chartH + 24) + '" fill="rgba(255,255,255,0.85)" font-size="11" font-weight="700" text-anchor="middle">' + m.label + '</text>';
       });
 
       svg += '</svg>';
@@ -971,9 +1006,9 @@
       if (cohortTbody && data.cohortCaseStudies) {
         cohortTbody.innerHTML = data.cohortCaseStudies.map(function(c) {
           return '<tr>' +
-            '<td><strong>' + c.name + '</strong><br><span style="font-size: 0.75rem; color: rgba(255,255,255,0.6);">Roll: ' + c.roll + '</span></td>' +
+            '<td><strong style="color: #fff; font-size: 0.95rem;">' + c.name + '</strong><br><span style="font-size: 0.76rem; color: #38bdf8; font-weight: 600;">' + c.score + ' Marks • ' + c.cat + ' ' + (c.sex === 'F' ? 'Female' : 'Male') + '</span></td>' +
             '<td style="text-align: center; font-weight: 700;">' + c.air.toLocaleString() + '</td>' +
-            '<td style="text-align: center;">' + c.score + '</td>' +
+            '<td style="text-align: center; font-weight: 700; color: #fbbf24;">' + c.score + '</td>' +
             '<td style="text-align: center;"><span class="label-badge badge-blue">' + c.cat + ' ' + c.sex + '</span></td>' +
             '<td style="color: #38bdf8; font-weight: 600;">' + c.predictedCollege + '</td>' +
             '<td style="color: #00d4aa; font-weight: 800;">' + c.officialCollege + '</td>' +

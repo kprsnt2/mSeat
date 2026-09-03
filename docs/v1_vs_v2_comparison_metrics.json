@@ -1535,8 +1535,7 @@
     },
     "cohortCaseStudies": [
       {
-        "name": "YACHARAM SAI POOJA",
-        "roll": "4204101514",
+        "name": "Candidate 1",
         "air": 289635,
         "score": 393,
         "cat": "SC2",
@@ -1551,8 +1550,7 @@
         "badgeClass": "badge-green"
       },
       {
-        "name": "KAVVAMPALLI MANASA",
-        "roll": "4202105120",
+        "name": "Candidate 2",
         "air": 232422,
         "score": 417,
         "cat": "SC2",
@@ -1567,8 +1565,7 @@
         "badgeClass": "badge-blue"
       },
       {
-        "name": "ALETI POOJA",
-        "roll": "4204101570",
+        "name": "Candidate 3",
         "air": 282055,
         "score": 396,
         "cat": "SC2",
@@ -1583,8 +1580,7 @@
         "badgeClass": "badge-purple"
       },
       {
-        "name": "BOLLEPAKA DHANUSHA",
-        "roll": "4208202445",
+        "name": "Candidate 4",
         "air": 399237,
         "score": 355,
         "cat": "SC2",
