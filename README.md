@@ -4,6 +4,8 @@
 
 🌐 **Live Website**: [https://mseat.kprsnt.in](https://mseat.kprsnt.in) *(or [https://mbbsseat.vercel.app](https://mbbsseat.vercel.app))*
 
+📖 **Engineering Story & Real-World Validation**: [Read the full Blog Post](./docs/BLOG_POST.md) — *How mSeat predicted the official KNRUHS Phase 1 allotment within a 2-college preference margin!*
+
 ---
 
 ## 🤖 AI & MCP Integration (How it Works)
