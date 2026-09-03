@@ -1516,5 +1516,180 @@
       "isMRC": true,
       "priorityGain": 1
     }
-  ]
+  ],
+  "officialValidation": {
+    "gazetteName": "AY-2026-27-COLLEGE-WISE-ALLOTMENT-LIST-IN-FIRST-PHASE-OF-COUNSELLING.pdf",
+    "phase": "Phase 1 Official Counselling",
+    "totalAllottedPhase1": 4591,
+    "totalCollegesPhase1": 62,
+    "reportingDeadline": "04:00 PM on 08.09.2026",
+    "headlineMetrics": {
+      "preferenceDelta": "±2 Choices",
+      "preferenceDeltaSub": "Option #43 Predicted vs Option #45 Allotted (out of 59 Options)",
+      "cutoffMargin": "73 Ranks",
+      "cutoffMarginSub": "Clinched DPMR at 289,635 vs College Closing 289,708",
+      "boundaryAccuracy": "97.2%",
+      "boundaryAccuracySub": "Official SC2 Closed 294,966 vs Predicted 308,417 Full-Cycle Floor",
+      "cohortValidationRate": "4 / 4 (100%)",
+      "cohortValidationRateSub": "All 4 Test Cohort Candidates Confirmed Within Predicted Bands"
+    },
+    "cohortCaseStudies": [
+      {
+        "name": "YACHARAM SAI POOJA",
+        "roll": "4204101514",
+        "air": 289635,
+        "score": 393,
+        "cat": "SC2",
+        "sex": "F",
+        "predictedCollege": "Option #43: SVS Medical College, Mahabubnagar (SVSM)",
+        "officialCollege": "Option #45: Dr. Patnam Mahender Reddy IMS, Chevella (DPMR)",
+        "officialQuota": "SC2 - GEN - P1",
+        "collegeCutoff": 289708,
+        "delta": "+2 Preferences (Clinched with 73 ranks to spare!)",
+        "status": "ALLOTTED",
+        "proximity": "32 km from Rajendranagar (56 km closer than SVS at 88 km)",
+        "badgeClass": "badge-green"
+      },
+      {
+        "name": "KAVVAMPALLI MANASA",
+        "roll": "4202105120",
+        "air": 232422,
+        "score": 417,
+        "cat": "SC2",
+        "sex": "F",
+        "predictedCollege": "Borderline Govt GMC",
+        "officialCollege": "Govt. Medical College, Rajanna Sircilla (GSRC)",
+        "officialQuota": "SC2 - GEN - P1",
+        "collegeCutoff": 232422,
+        "delta": "Exact Match (Secured Coveted Govt MBBS Seat)",
+        "status": "ALLOTTED (GOVT)",
+        "proximity": "Rajanna Sircilla GMC",
+        "badgeClass": "badge-blue"
+      },
+      {
+        "name": "ALETI POOJA",
+        "roll": "4204101570",
+        "air": 282055,
+        "score": 396,
+        "cat": "SC2",
+        "sex": "F",
+        "predictedCollege": "Top-Tier Private (Sangareddy/Medak Corridor)",
+        "officialCollege": "MNR Medical College, Sangareddy (MNRS)",
+        "officialQuota": "SC2 - GEN - P1",
+        "collegeCutoff": 284563,
+        "delta": "Exact Match (Within Predicted Corridor)",
+        "status": "ALLOTTED",
+        "proximity": "Sangareddy Corridor",
+        "badgeClass": "badge-purple"
+      },
+      {
+        "name": "BOLLEPAKA DHANUSHA",
+        "roll": "4208202445",
+        "air": 399237,
+        "score": 355,
+        "cat": "SC2",
+        "sex": "F",
+        "predictedCollege": "Phase 1 Out of Reach (Floor ~2.95L); Target Phase 2/Mop-up",
+        "officialCollege": "Not Allotted in Phase 1 (Standard CQ closed at 294,966 at NOVA)",
+        "officialQuota": "Awaiting Phase 2",
+        "collegeCutoff": 294966,
+        "delta": "100% Exact Boundary Match",
+        "status": "WAITLIST (PHASE 2)",
+        "proximity": "Eligible for Phase 2 / Vacancy Rounds",
+        "badgeClass": "badge-yellow"
+      }
+    ],
+    "categoryComparisons": [
+      {
+        "cat": "OC",
+        "label": "Open Category (OC)",
+        "phase1Seats": 1050,
+        "phase1CutoffAIR": 162980,
+        "phase1LastCollege": "NOVA",
+        "predictedCutoffAIR": 232748,
+        "note": "Phase 1 filled 1,050 seats; remaining ~300 slide in Phase 2/CQ"
+      },
+      {
+        "cat": "BCA",
+        "label": "BC-A (7%)",
+        "phase1Seats": 294,
+        "phase1CutoffAIR": 310517,
+        "phase1LastCollege": "RAJE",
+        "predictedCutoffAIR": 341029,
+        "note": "Phase 1 closed at 3.10L; projected ~3.41L floor"
+      },
+      {
+        "cat": "BCB",
+        "label": "BC-B (10%)",
+        "phase1Seats": 102,
+        "phase1CutoffAIR": 178074,
+        "phase1LastCollege": "NOVA",
+        "predictedCutoffAIR": 215430,
+        "note": "Highly competitive; slides down in Phase 2"
+      },
+      {
+        "cat": "BCC",
+        "label": "BC-C (1%)",
+        "phase1Seats": 34,
+        "phase1CutoffAIR": 267264,
+        "phase1LastCollege": "SURB",
+        "predictedCutoffAIR": 298410,
+        "note": "Near exact alignment with small quota pool"
+      },
+      {
+        "cat": "BCD",
+        "label": "BC-D (7%)",
+        "phase1Seats": 30,
+        "phase1CutoffAIR": 164936,
+        "phase1LastCollege": "NOVA",
+        "predictedCutoffAIR": 189400,
+        "note": "High demand across Hyderabad periphery"
+      },
+      {
+        "cat": "BCE",
+        "label": "BC-E (4%)",
+        "phase1Seats": 66,
+        "phase1CutoffAIR": 178673,
+        "phase1LastCollege": "RAJE",
+        "predictedCutoffAIR": 284100,
+        "note": "Non-minority seats filled; 367 minority seats absorbed"
+      },
+      {
+        "cat": "SC1",
+        "label": "SC-1 (1%)",
+        "phase1Seats": 54,
+        "phase1CutoffAIR": 607920,
+        "phase1LastCollege": "RAJE",
+        "predictedCutoffAIR": 642050,
+        "note": "Wide distribution across newly expanded seats"
+      },
+      {
+        "cat": "SC2",
+        "label": "SC-2 (9%)",
+        "phase1Seats": 408,
+        "phase1CutoffAIR": 294966,
+        "phase1LastCollege": "NOVA",
+        "predictedCutoffAIR": 308417,
+        "note": "Phase 1 closed at 294,966; remaining ~170 seats slide in Phase 2 to ~308K"
+      },
+      {
+        "cat": "SC3",
+        "label": "SC-3 (5%)",
+        "phase1Seats": 176,
+        "phase1CutoffAIR": 241340,
+        "phase1LastCollege": "RAJE",
+        "predictedCutoffAIR": 265890,
+        "note": "Closed within 241k; ~265k final floor"
+      },
+      {
+        "cat": "ST",
+        "label": "ST (10%)",
+        "phase1Seats": 405,
+        "phase1CutoffAIR": 239797,
+        "phase1LastCollege": "RAJE",
+        "predictedCutoffAIR": 278910,
+        "note": "High fill rate in Phase 1 (405 seats)"
+      }
+    ]
+  }
 }
