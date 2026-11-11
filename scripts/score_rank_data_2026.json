@@ -1,0 +1,2412 @@
+[
+  {
+    "score": 693,
+    "rank": 83,
+    "stateSno": 1
+  },
+  {
+    "score": 690,
+    "rank": 123,
+    "stateSno": 2
+  },
+  {
+    "score": 686,
+    "rank": 158,
+    "stateSno": 3
+  },
+  {
+    "score": 667,
+    "rank": 621,
+    "stateSno": 4
+  },
+  {
+    "score": 666,
+    "rank": 639,
+    "stateSno": 5
+  },
+  {
+    "score": 665,
+    "rank": 729,
+    "stateSno": 7
+  },
+  {
+    "score": 660,
+    "rank": 873,
+    "stateSno": 8
+  },
+  {
+    "score": 659,
+    "rank": 941,
+    "stateSno": 9
+  },
+  {
+    "score": 658,
+    "rank": 967,
+    "stateSno": 11
+  },
+  {
+    "score": 657,
+    "rank": 1008,
+    "stateSno": 12
+  },
+  {
+    "score": 656,
+    "rank": 1069,
+    "stateSno": 14
+  },
+  {
+    "score": 655,
+    "rank": 1154,
+    "stateSno": 16
+  },
+  {
+    "score": 653,
+    "rank": 1253,
+    "stateSno": 18
+  },
+  {
+    "score": 652,
+    "rank": 1324,
+    "stateSno": 20
+  },
+  {
+    "score": 651,
+    "rank": 1340,
+    "stateSno": 22
+  },
+  {
+    "score": 649,
+    "rank": 1502,
+    "stateSno": 24
+  },
+  {
+    "score": 648,
+    "rank": 1598,
+    "stateSno": 26
+  },
+  {
+    "score": 647,
+    "rank": 1669,
+    "stateSno": 27
+  },
+  {
+    "score": 646,
+    "rank": 1686,
+    "stateSno": 28
+  },
+  {
+    "score": 645,
+    "rank": 1861,
+    "stateSno": 29
+  },
+  {
+    "score": 643,
+    "rank": 1976,
+    "stateSno": 31
+  },
+  {
+    "score": 641,
+    "rank": 2122,
+    "stateSno": 33
+  },
+  {
+    "score": 640,
+    "rank": 2298,
+    "stateSno": 36
+  },
+  {
+    "score": 639,
+    "rank": 2403,
+    "stateSno": 39
+  },
+  {
+    "score": 637,
+    "rank": 2591,
+    "stateSno": 41
+  },
+  {
+    "score": 636,
+    "rank": 2770,
+    "stateSno": 44
+  },
+  {
+    "score": 635,
+    "rank": 2805,
+    "stateSno": 47
+  },
+  {
+    "score": 634,
+    "rank": 2976,
+    "stateSno": 49
+  },
+  {
+    "score": 633,
+    "rank": 3128,
+    "stateSno": 53
+  },
+  {
+    "score": 632,
+    "rank": 3279,
+    "stateSno": 57
+  },
+  {
+    "score": 631,
+    "rank": 3371,
+    "stateSno": 58
+  },
+  {
+    "score": 630,
+    "rank": 3512,
+    "stateSno": 61
+  },
+  {
+    "score": 629,
+    "rank": 3619,
+    "stateSno": 65
+  },
+  {
+    "score": 628,
+    "rank": 3784,
+    "stateSno": 69
+  },
+  {
+    "score": 627,
+    "rank": 3852,
+    "stateSno": 71
+  },
+  {
+    "score": 625,
+    "rank": 4191,
+    "stateSno": 74
+  },
+  {
+    "score": 624,
+    "rank": 4364,
+    "stateSno": 79
+  },
+  {
+    "score": 623,
+    "rank": 4537,
+    "stateSno": 82
+  },
+  {
+    "score": 622,
+    "rank": 4731,
+    "stateSno": 84
+  },
+  {
+    "score": 621,
+    "rank": 4898,
+    "stateSno": 87
+  },
+  {
+    "score": 620,
+    "rank": 5068,
+    "stateSno": 92
+  },
+  {
+    "score": 619,
+    "rank": 5254,
+    "stateSno": 97
+  },
+  {
+    "score": 618,
+    "rank": 5451,
+    "stateSno": 99
+  },
+  {
+    "score": 617,
+    "rank": 5722,
+    "stateSno": 101
+  },
+  {
+    "score": 616,
+    "rank": 5857,
+    "stateSno": 103
+  },
+  {
+    "score": 615,
+    "rank": 6110,
+    "stateSno": 105
+  },
+  {
+    "score": 614,
+    "rank": 6275,
+    "stateSno": 108
+  },
+  {
+    "score": 612,
+    "rank": 6781,
+    "stateSno": 110
+  },
+  {
+    "score": 611,
+    "rank": 7051,
+    "stateSno": 113
+  },
+  {
+    "score": 610,
+    "rank": 7367,
+    "stateSno": 118
+  },
+  {
+    "score": 609,
+    "rank": 7545,
+    "stateSno": 122
+  },
+  {
+    "score": 608,
+    "rank": 7640,
+    "stateSno": 123
+  },
+  {
+    "score": 607,
+    "rank": 7919,
+    "stateSno": 125
+  },
+  {
+    "score": 606,
+    "rank": 8276,
+    "stateSno": 129
+  },
+  {
+    "score": 605,
+    "rank": 8648,
+    "stateSno": 132
+  },
+  {
+    "score": 604,
+    "rank": 8771,
+    "stateSno": 134
+  },
+  {
+    "score": 603,
+    "rank": 9175,
+    "stateSno": 137
+  },
+  {
+    "score": 602,
+    "rank": 9326,
+    "stateSno": 139
+  },
+  {
+    "score": 601,
+    "rank": 9665,
+    "stateSno": 143
+  },
+  {
+    "score": 600,
+    "rank": 9965,
+    "stateSno": 147
+  },
+  {
+    "score": 599,
+    "rank": 10270,
+    "stateSno": 148
+  },
+  {
+    "score": 598,
+    "rank": 10707,
+    "stateSno": 152
+  },
+  {
+    "score": 597,
+    "rank": 10978,
+    "stateSno": 157
+  },
+  {
+    "score": 596,
+    "rank": 11385,
+    "stateSno": 160
+  },
+  {
+    "score": 595,
+    "rank": 11587,
+    "stateSno": 167
+  },
+  {
+    "score": 594,
+    "rank": 11966,
+    "stateSno": 175
+  },
+  {
+    "score": 593,
+    "rank": 12349,
+    "stateSno": 180
+  },
+  {
+    "score": 592,
+    "rank": 13006,
+    "stateSno": 185
+  },
+  {
+    "score": 590,
+    "rank": 13695,
+    "stateSno": 188
+  },
+  {
+    "score": 589,
+    "rank": 14044,
+    "stateSno": 191
+  },
+  {
+    "score": 588,
+    "rank": 14588,
+    "stateSno": 193
+  },
+  {
+    "score": 587,
+    "rank": 14758,
+    "stateSno": 195
+  },
+  {
+    "score": 586,
+    "rank": 15127,
+    "stateSno": 197
+  },
+  {
+    "score": 585,
+    "rank": 15645,
+    "stateSno": 201
+  },
+  {
+    "score": 584,
+    "rank": 16103,
+    "stateSno": 206
+  },
+  {
+    "score": 583,
+    "rank": 16399,
+    "stateSno": 211
+  },
+  {
+    "score": 582,
+    "rank": 16945,
+    "stateSno": 214
+  },
+  {
+    "score": 581,
+    "rank": 17464,
+    "stateSno": 219
+  },
+  {
+    "score": 580,
+    "rank": 17896,
+    "stateSno": 225
+  },
+  {
+    "score": 579,
+    "rank": 18482,
+    "stateSno": 230
+  },
+  {
+    "score": 578,
+    "rank": 18883,
+    "stateSno": 235
+  },
+  {
+    "score": 577,
+    "rank": 19537,
+    "stateSno": 239
+  },
+  {
+    "score": 576,
+    "rank": 19848,
+    "stateSno": 241
+  },
+  {
+    "score": 575,
+    "rank": 20682,
+    "stateSno": 246
+  },
+  {
+    "score": 574,
+    "rank": 21113,
+    "stateSno": 253
+  },
+  {
+    "score": 573,
+    "rank": 21639,
+    "stateSno": 258
+  },
+  {
+    "score": 572,
+    "rank": 22045,
+    "stateSno": 262
+  },
+  {
+    "score": 571,
+    "rank": 22708,
+    "stateSno": 266
+  },
+  {
+    "score": 570,
+    "rank": 23480,
+    "stateSno": 269
+  },
+  {
+    "score": 569,
+    "rank": 24172,
+    "stateSno": 272
+  },
+  {
+    "score": 568,
+    "rank": 24436,
+    "stateSno": 277
+  },
+  {
+    "score": 567,
+    "rank": 25053,
+    "stateSno": 282
+  },
+  {
+    "score": 566,
+    "rank": 25792,
+    "stateSno": 286
+  },
+  {
+    "score": 565,
+    "rank": 26490,
+    "stateSno": 294
+  },
+  {
+    "score": 564,
+    "rank": 26958,
+    "stateSno": 303
+  },
+  {
+    "score": 563,
+    "rank": 27726,
+    "stateSno": 312
+  },
+  {
+    "score": 562,
+    "rank": 28323,
+    "stateSno": 320
+  },
+  {
+    "score": 561,
+    "rank": 28964,
+    "stateSno": 328
+  },
+  {
+    "score": 560,
+    "rank": 29844,
+    "stateSno": 337
+  },
+  {
+    "score": 559,
+    "rank": 30435,
+    "stateSno": 345
+  },
+  {
+    "score": 558,
+    "rank": 31383,
+    "stateSno": 348
+  },
+  {
+    "score": 557,
+    "rank": 31744,
+    "stateSno": 352
+  },
+  {
+    "score": 556,
+    "rank": 32550,
+    "stateSno": 359
+  },
+  {
+    "score": 555,
+    "rank": 33309,
+    "stateSno": 368
+  },
+  {
+    "score": 554,
+    "rank": 34145,
+    "stateSno": 377
+  },
+  {
+    "score": 553,
+    "rank": 35016,
+    "stateSno": 383
+  },
+  {
+    "score": 552,
+    "rank": 35736,
+    "stateSno": 388
+  },
+  {
+    "score": 551,
+    "rank": 36379,
+    "stateSno": 397
+  },
+  {
+    "score": 550,
+    "rank": 37109,
+    "stateSno": 406
+  },
+  {
+    "score": 549,
+    "rank": 38008,
+    "stateSno": 412
+  },
+  {
+    "score": 548,
+    "rank": 38753,
+    "stateSno": 419
+  },
+  {
+    "score": 547,
+    "rank": 39755,
+    "stateSno": 422
+  },
+  {
+    "score": 546,
+    "rank": 40685,
+    "stateSno": 426
+  },
+  {
+    "score": 545,
+    "rank": 41089,
+    "stateSno": 433
+  },
+  {
+    "score": 544,
+    "rank": 41928,
+    "stateSno": 441
+  },
+  {
+    "score": 543,
+    "rank": 43149,
+    "stateSno": 450
+  },
+  {
+    "score": 542,
+    "rank": 43746,
+    "stateSno": 462
+  },
+  {
+    "score": 541,
+    "rank": 44675,
+    "stateSno": 474
+  },
+  {
+    "score": 540,
+    "rank": 45419,
+    "stateSno": 485
+  },
+  {
+    "score": 539,
+    "rank": 46767,
+    "stateSno": 494
+  },
+  {
+    "score": 538,
+    "rank": 47392,
+    "stateSno": 504
+  },
+  {
+    "score": 537,
+    "rank": 48439,
+    "stateSno": 517
+  },
+  {
+    "score": 536,
+    "rank": 49235,
+    "stateSno": 530
+  },
+  {
+    "score": 535,
+    "rank": 50213,
+    "stateSno": 544
+  },
+  {
+    "score": 534,
+    "rank": 51291,
+    "stateSno": 553
+  },
+  {
+    "score": 533,
+    "rank": 52115,
+    "stateSno": 562
+  },
+  {
+    "score": 532,
+    "rank": 53321,
+    "stateSno": 571
+  },
+  {
+    "score": 531,
+    "rank": 54100,
+    "stateSno": 578
+  },
+  {
+    "score": 530,
+    "rank": 55151,
+    "stateSno": 590
+  },
+  {
+    "score": 529,
+    "rank": 56152,
+    "stateSno": 607
+  },
+  {
+    "score": 528,
+    "rank": 57190,
+    "stateSno": 624
+  },
+  {
+    "score": 527,
+    "rank": 58377,
+    "stateSno": 637
+  },
+  {
+    "score": 526,
+    "rank": 59180,
+    "stateSno": 652
+  },
+  {
+    "score": 525,
+    "rank": 60250,
+    "stateSno": 667
+  },
+  {
+    "score": 524,
+    "rank": 61218,
+    "stateSno": 679
+  },
+  {
+    "score": 523,
+    "rank": 62073,
+    "stateSno": 694
+  },
+  {
+    "score": 522,
+    "rank": 63161,
+    "stateSno": 710
+  },
+  {
+    "score": 521,
+    "rank": 64551,
+    "stateSno": 727
+  },
+  {
+    "score": 520,
+    "rank": 65702,
+    "stateSno": 745
+  },
+  {
+    "score": 519,
+    "rank": 66908,
+    "stateSno": 760
+  },
+  {
+    "score": 518,
+    "rank": 68127,
+    "stateSno": 769
+  },
+  {
+    "score": 517,
+    "rank": 69090,
+    "stateSno": 780
+  },
+  {
+    "score": 516,
+    "rank": 70089,
+    "stateSno": 798
+  },
+  {
+    "score": 515,
+    "rank": 71360,
+    "stateSno": 819
+  },
+  {
+    "score": 514,
+    "rank": 72351,
+    "stateSno": 836
+  },
+  {
+    "score": 513,
+    "rank": 73603,
+    "stateSno": 852
+  },
+  {
+    "score": 512,
+    "rank": 75108,
+    "stateSno": 869
+  },
+  {
+    "score": 511,
+    "rank": 75994,
+    "stateSno": 888
+  },
+  {
+    "score": 510,
+    "rank": 77037,
+    "stateSno": 907
+  },
+  {
+    "score": 509,
+    "rank": 78310,
+    "stateSno": 926
+  },
+  {
+    "score": 508,
+    "rank": 79561,
+    "stateSno": 946
+  },
+  {
+    "score": 507,
+    "rank": 80888,
+    "stateSno": 967
+  },
+  {
+    "score": 506,
+    "rank": 82134,
+    "stateSno": 989
+  },
+  {
+    "score": 505,
+    "rank": 83342,
+    "stateSno": 1013
+  },
+  {
+    "score": 504,
+    "rank": 84466,
+    "stateSno": 1038
+  },
+  {
+    "score": 503,
+    "rank": 85885,
+    "stateSno": 1063
+  },
+  {
+    "score": 502,
+    "rank": 87066,
+    "stateSno": 1085
+  },
+  {
+    "score": 501,
+    "rank": 88287,
+    "stateSno": 1110
+  },
+  {
+    "score": 500,
+    "rank": 89670,
+    "stateSno": 1140
+  },
+  {
+    "score": 499,
+    "rank": 91169,
+    "stateSno": 1168
+  },
+  {
+    "score": 498,
+    "rank": 92238,
+    "stateSno": 1191
+  },
+  {
+    "score": 497,
+    "rank": 93519,
+    "stateSno": 1215
+  },
+  {
+    "score": 496,
+    "rank": 95089,
+    "stateSno": 1240
+  },
+  {
+    "score": 495,
+    "rank": 96256,
+    "stateSno": 1266
+  },
+  {
+    "score": 494,
+    "rank": 97757,
+    "stateSno": 1298
+  },
+  {
+    "score": 493,
+    "rank": 99197,
+    "stateSno": 1328
+  },
+  {
+    "score": 492,
+    "rank": 100151,
+    "stateSno": 1354
+  },
+  {
+    "score": 491,
+    "rank": 101861,
+    "stateSno": 1381
+  },
+  {
+    "score": 490,
+    "rank": 103176,
+    "stateSno": 1409
+  },
+  {
+    "score": 489,
+    "rank": 104641,
+    "stateSno": 1439
+  },
+  {
+    "score": 488,
+    "rank": 105911,
+    "stateSno": 1473
+  },
+  {
+    "score": 487,
+    "rank": 107285,
+    "stateSno": 1509
+  },
+  {
+    "score": 486,
+    "rank": 108852,
+    "stateSno": 1541
+  },
+  {
+    "score": 485,
+    "rank": 110127,
+    "stateSno": 1573
+  },
+  {
+    "score": 484,
+    "rank": 111545,
+    "stateSno": 1605
+  },
+  {
+    "score": 483,
+    "rank": 113153,
+    "stateSno": 1636
+  },
+  {
+    "score": 482,
+    "rank": 114523,
+    "stateSno": 1668
+  },
+  {
+    "score": 481,
+    "rank": 116034,
+    "stateSno": 1697
+  },
+  {
+    "score": 480,
+    "rank": 117608,
+    "stateSno": 1731
+  },
+  {
+    "score": 479,
+    "rank": 119188,
+    "stateSno": 1765
+  },
+  {
+    "score": 478,
+    "rank": 120454,
+    "stateSno": 1798
+  },
+  {
+    "score": 477,
+    "rank": 121856,
+    "stateSno": 1835
+  },
+  {
+    "score": 476,
+    "rank": 123376,
+    "stateSno": 1870
+  },
+  {
+    "score": 475,
+    "rank": 125090,
+    "stateSno": 1910
+  },
+  {
+    "score": 474,
+    "rank": 126722,
+    "stateSno": 1958
+  },
+  {
+    "score": 473,
+    "rank": 128152,
+    "stateSno": 2003
+  },
+  {
+    "score": 472,
+    "rank": 129740,
+    "stateSno": 2048
+  },
+  {
+    "score": 471,
+    "rank": 131211,
+    "stateSno": 2091
+  },
+  {
+    "score": 470,
+    "rank": 132873,
+    "stateSno": 2136
+  },
+  {
+    "score": 469,
+    "rank": 134384,
+    "stateSno": 2185
+  },
+  {
+    "score": 468,
+    "rank": 136036,
+    "stateSno": 2232
+  },
+  {
+    "score": 467,
+    "rank": 137504,
+    "stateSno": 2280
+  },
+  {
+    "score": 466,
+    "rank": 139063,
+    "stateSno": 2335
+  },
+  {
+    "score": 465,
+    "rank": 140725,
+    "stateSno": 2389
+  },
+  {
+    "score": 464,
+    "rank": 142564,
+    "stateSno": 2443
+  },
+  {
+    "score": 463,
+    "rank": 144003,
+    "stateSno": 2494
+  },
+  {
+    "score": 462,
+    "rank": 145682,
+    "stateSno": 2547
+  },
+  {
+    "score": 461,
+    "rank": 147496,
+    "stateSno": 2607
+  },
+  {
+    "score": 460,
+    "rank": 149252,
+    "stateSno": 2671
+  },
+  {
+    "score": 459,
+    "rank": 151129,
+    "stateSno": 2728
+  },
+  {
+    "score": 458,
+    "rank": 152719,
+    "stateSno": 2784
+  },
+  {
+    "score": 457,
+    "rank": 154468,
+    "stateSno": 2843
+  },
+  {
+    "score": 456,
+    "rank": 156082,
+    "stateSno": 2901
+  },
+  {
+    "score": 455,
+    "rank": 157849,
+    "stateSno": 2962
+  },
+  {
+    "score": 454,
+    "rank": 159681,
+    "stateSno": 3027
+  },
+  {
+    "score": 453,
+    "rank": 161424,
+    "stateSno": 3092
+  },
+  {
+    "score": 452,
+    "rank": 163261,
+    "stateSno": 3151
+  },
+  {
+    "score": 451,
+    "rank": 165059,
+    "stateSno": 3208
+  },
+  {
+    "score": 450,
+    "rank": 166790,
+    "stateSno": 3271
+  },
+  {
+    "score": 449,
+    "rank": 168760,
+    "stateSno": 3334
+  },
+  {
+    "score": 448,
+    "rank": 170480,
+    "stateSno": 3399
+  },
+  {
+    "score": 447,
+    "rank": 172222,
+    "stateSno": 3473
+  },
+  {
+    "score": 446,
+    "rank": 174172,
+    "stateSno": 3539
+  },
+  {
+    "score": 445,
+    "rank": 176110,
+    "stateSno": 3601
+  },
+  {
+    "score": 444,
+    "rank": 178034,
+    "stateSno": 3670
+  },
+  {
+    "score": 443,
+    "rank": 179673,
+    "stateSno": 3743
+  },
+  {
+    "score": 442,
+    "rank": 181598,
+    "stateSno": 3821
+  },
+  {
+    "score": 441,
+    "rank": 183307,
+    "stateSno": 3895
+  },
+  {
+    "score": 440,
+    "rank": 185474,
+    "stateSno": 3970
+  },
+  {
+    "score": 439,
+    "rank": 187347,
+    "stateSno": 4049
+  },
+  {
+    "score": 438,
+    "rank": 189404,
+    "stateSno": 4118
+  },
+  {
+    "score": 437,
+    "rank": 191225,
+    "stateSno": 4186
+  },
+  {
+    "score": 436,
+    "rank": 193135,
+    "stateSno": 4264
+  },
+  {
+    "score": 435,
+    "rank": 195259,
+    "stateSno": 4345
+  },
+  {
+    "score": 434,
+    "rank": 197166,
+    "stateSno": 4428
+  },
+  {
+    "score": 433,
+    "rank": 199144,
+    "stateSno": 4504
+  },
+  {
+    "score": 432,
+    "rank": 201245,
+    "stateSno": 4579
+  },
+  {
+    "score": 431,
+    "rank": 203045,
+    "stateSno": 4658
+  },
+  {
+    "score": 430,
+    "rank": 205237,
+    "stateSno": 4741
+  },
+  {
+    "score": 429,
+    "rank": 207337,
+    "stateSno": 4812
+  },
+  {
+    "score": 428,
+    "rank": 209454,
+    "stateSno": 4882
+  },
+  {
+    "score": 427,
+    "rank": 211235,
+    "stateSno": 4963
+  },
+  {
+    "score": 426,
+    "rank": 213398,
+    "stateSno": 5059
+  },
+  {
+    "score": 425,
+    "rank": 215485,
+    "stateSno": 5169
+  },
+  {
+    "score": 424,
+    "rank": 217705,
+    "stateSno": 5273
+  },
+  {
+    "score": 423,
+    "rank": 219792,
+    "stateSno": 5380
+  },
+  {
+    "score": 422,
+    "rank": 221824,
+    "stateSno": 5473
+  },
+  {
+    "score": 421,
+    "rank": 223947,
+    "stateSno": 5563
+  },
+  {
+    "score": 420,
+    "rank": 225995,
+    "stateSno": 5663
+  },
+  {
+    "score": 419,
+    "rank": 228451,
+    "stateSno": 5753
+  },
+  {
+    "score": 418,
+    "rank": 230508,
+    "stateSno": 5838
+  },
+  {
+    "score": 417,
+    "rank": 232666,
+    "stateSno": 5927
+  },
+  {
+    "score": 416,
+    "rank": 235048,
+    "stateSno": 6027
+  },
+  {
+    "score": 415,
+    "rank": 237065,
+    "stateSno": 6129
+  },
+  {
+    "score": 414,
+    "rank": 239556,
+    "stateSno": 6226
+  },
+  {
+    "score": 413,
+    "rank": 241677,
+    "stateSno": 6328
+  },
+  {
+    "score": 412,
+    "rank": 243847,
+    "stateSno": 6428
+  },
+  {
+    "score": 411,
+    "rank": 246048,
+    "stateSno": 6522
+  },
+  {
+    "score": 410,
+    "rank": 248647,
+    "stateSno": 6634
+  },
+  {
+    "score": 409,
+    "rank": 251017,
+    "stateSno": 6749
+  },
+  {
+    "score": 408,
+    "rank": 253271,
+    "stateSno": 6854
+  },
+  {
+    "score": 407,
+    "rank": 255473,
+    "stateSno": 6955
+  },
+  {
+    "score": 406,
+    "rank": 257929,
+    "stateSno": 7065
+  },
+  {
+    "score": 405,
+    "rank": 260282,
+    "stateSno": 7177
+  },
+  {
+    "score": 404,
+    "rank": 262804,
+    "stateSno": 7292
+  },
+  {
+    "score": 403,
+    "rank": 265216,
+    "stateSno": 7399
+  },
+  {
+    "score": 402,
+    "rank": 267470,
+    "stateSno": 7507
+  },
+  {
+    "score": 401,
+    "rank": 269864,
+    "stateSno": 7609
+  },
+  {
+    "score": 400,
+    "rank": 272513,
+    "stateSno": 7705
+  },
+  {
+    "score": 399,
+    "rank": 275019,
+    "stateSno": 7810
+  },
+  {
+    "score": 398,
+    "rank": 277350,
+    "stateSno": 7908
+  },
+  {
+    "score": 397,
+    "rank": 279988,
+    "stateSno": 7997
+  },
+  {
+    "score": 396,
+    "rank": 282327,
+    "stateSno": 8098
+  },
+  {
+    "score": 395,
+    "rank": 284888,
+    "stateSno": 8207
+  },
+  {
+    "score": 394,
+    "rank": 287686,
+    "stateSno": 8312
+  },
+  {
+    "score": 393,
+    "rank": 290306,
+    "stateSno": 8419
+  },
+  {
+    "score": 392,
+    "rank": 292604,
+    "stateSno": 8528
+  },
+  {
+    "score": 391,
+    "rank": 295235,
+    "stateSno": 8629
+  },
+  {
+    "score": 390,
+    "rank": 297656,
+    "stateSno": 8733
+  },
+  {
+    "score": 389,
+    "rank": 300569,
+    "stateSno": 8835
+  },
+  {
+    "score": 388,
+    "rank": 303253,
+    "stateSno": 8937
+  },
+  {
+    "score": 387,
+    "rank": 305650,
+    "stateSno": 9037
+  },
+  {
+    "score": 386,
+    "rank": 308308,
+    "stateSno": 9148
+  },
+  {
+    "score": 385,
+    "rank": 310823,
+    "stateSno": 9263
+  },
+  {
+    "score": 384,
+    "rank": 313623,
+    "stateSno": 9359
+  },
+  {
+    "score": 383,
+    "rank": 316144,
+    "stateSno": 9455
+  },
+  {
+    "score": 382,
+    "rank": 318900,
+    "stateSno": 9555
+  },
+  {
+    "score": 381,
+    "rank": 321556,
+    "stateSno": 9653
+  },
+  {
+    "score": 380,
+    "rank": 324455,
+    "stateSno": 9751
+  },
+  {
+    "score": 379,
+    "rank": 327456,
+    "stateSno": 9853
+  },
+  {
+    "score": 378,
+    "rank": 330022,
+    "stateSno": 9953
+  },
+  {
+    "score": 377,
+    "rank": 332806,
+    "stateSno": 10050
+  },
+  {
+    "score": 376,
+    "rank": 335550,
+    "stateSno": 10137
+  },
+  {
+    "score": 375,
+    "rank": 338608,
+    "stateSno": 10226
+  },
+  {
+    "score": 374,
+    "rank": 341550,
+    "stateSno": 10321
+  },
+  {
+    "score": 373,
+    "rank": 344417,
+    "stateSno": 10413
+  },
+  {
+    "score": 372,
+    "rank": 347137,
+    "stateSno": 10506
+  },
+  {
+    "score": 371,
+    "rank": 349985,
+    "stateSno": 10591
+  },
+  {
+    "score": 370,
+    "rank": 353046,
+    "stateSno": 10680
+  },
+  {
+    "score": 369,
+    "rank": 356186,
+    "stateSno": 10781
+  },
+  {
+    "score": 368,
+    "rank": 359012,
+    "stateSno": 10869
+  },
+  {
+    "score": 367,
+    "rank": 362013,
+    "stateSno": 10951
+  },
+  {
+    "score": 366,
+    "rank": 364640,
+    "stateSno": 11041
+  },
+  {
+    "score": 365,
+    "rank": 367612,
+    "stateSno": 11130
+  },
+  {
+    "score": 364,
+    "rank": 371181,
+    "stateSno": 11212
+  },
+  {
+    "score": 363,
+    "rank": 374007,
+    "stateSno": 11298
+  },
+  {
+    "score": 362,
+    "rank": 376882,
+    "stateSno": 11380
+  },
+  {
+    "score": 361,
+    "rank": 379984,
+    "stateSno": 11465
+  },
+  {
+    "score": 360,
+    "rank": 383071,
+    "stateSno": 11551
+  },
+  {
+    "score": 359,
+    "rank": 386467,
+    "stateSno": 11622
+  },
+  {
+    "score": 358,
+    "rank": 389466,
+    "stateSno": 11694
+  },
+  {
+    "score": 357,
+    "rank": 392381,
+    "stateSno": 11775
+  },
+  {
+    "score": 356,
+    "rank": 395345,
+    "stateSno": 11855
+  },
+  {
+    "score": 355,
+    "rank": 398477,
+    "stateSno": 11951
+  },
+  {
+    "score": 354,
+    "rank": 402010,
+    "stateSno": 12048
+  },
+  {
+    "score": 353,
+    "rank": 405612,
+    "stateSno": 12123
+  },
+  {
+    "score": 352,
+    "rank": 408210,
+    "stateSno": 12184
+  },
+  {
+    "score": 351,
+    "rank": 411423,
+    "stateSno": 12253
+  },
+  {
+    "score": 350,
+    "rank": 414498,
+    "stateSno": 12338
+  },
+  {
+    "score": 349,
+    "rank": 418454,
+    "stateSno": 12428
+  },
+  {
+    "score": 348,
+    "rank": 421508,
+    "stateSno": 12516
+  },
+  {
+    "score": 347,
+    "rank": 424694,
+    "stateSno": 12599
+  },
+  {
+    "score": 346,
+    "rank": 427681,
+    "stateSno": 12666
+  },
+  {
+    "score": 345,
+    "rank": 430929,
+    "stateSno": 12736
+  },
+  {
+    "score": 344,
+    "rank": 434777,
+    "stateSno": 12809
+  },
+  {
+    "score": 343,
+    "rank": 438108,
+    "stateSno": 12872
+  },
+  {
+    "score": 342,
+    "rank": 441306,
+    "stateSno": 12943
+  },
+  {
+    "score": 341,
+    "rank": 444737,
+    "stateSno": 13025
+  },
+  {
+    "score": 340,
+    "rank": 447964,
+    "stateSno": 13114
+  },
+  {
+    "score": 339,
+    "rank": 451735,
+    "stateSno": 13194
+  },
+  {
+    "score": 338,
+    "rank": 455031,
+    "stateSno": 13262
+  },
+  {
+    "score": 337,
+    "rank": 458251,
+    "stateSno": 13332
+  },
+  {
+    "score": 336,
+    "rank": 462104,
+    "stateSno": 13404
+  },
+  {
+    "score": 335,
+    "rank": 465621,
+    "stateSno": 13464
+  },
+  {
+    "score": 334,
+    "rank": 469216,
+    "stateSno": 13521
+  },
+  {
+    "score": 333,
+    "rank": 472790,
+    "stateSno": 13578
+  },
+  {
+    "score": 332,
+    "rank": 476100,
+    "stateSno": 13640
+  },
+  {
+    "score": 331,
+    "rank": 479414,
+    "stateSno": 13706
+  },
+  {
+    "score": 330,
+    "rank": 483128,
+    "stateSno": 13778
+  },
+  {
+    "score": 329,
+    "rank": 486874,
+    "stateSno": 13854
+  },
+  {
+    "score": 328,
+    "rank": 490355,
+    "stateSno": 13925
+  },
+  {
+    "score": 327,
+    "rank": 493644,
+    "stateSno": 13996
+  },
+  {
+    "score": 326,
+    "rank": 497312,
+    "stateSno": 14061
+  },
+  {
+    "score": 325,
+    "rank": 500928,
+    "stateSno": 14125
+  },
+  {
+    "score": 324,
+    "rank": 504866,
+    "stateSno": 14184
+  },
+  {
+    "score": 323,
+    "rank": 508636,
+    "stateSno": 14236
+  },
+  {
+    "score": 322,
+    "rank": 511674,
+    "stateSno": 14298
+  },
+  {
+    "score": 321,
+    "rank": 515256,
+    "stateSno": 14363
+  },
+  {
+    "score": 320,
+    "rank": 519215,
+    "stateSno": 14429
+  },
+  {
+    "score": 319,
+    "rank": 523201,
+    "stateSno": 14500
+  },
+  {
+    "score": 318,
+    "rank": 526920,
+    "stateSno": 14568
+  },
+  {
+    "score": 317,
+    "rank": 530091,
+    "stateSno": 14633
+  },
+  {
+    "score": 316,
+    "rank": 534492,
+    "stateSno": 14689
+  },
+  {
+    "score": 315,
+    "rank": 537887,
+    "stateSno": 14752
+  },
+  {
+    "score": 314,
+    "rank": 542095,
+    "stateSno": 14814
+  },
+  {
+    "score": 313,
+    "rank": 545793,
+    "stateSno": 14872
+  },
+  {
+    "score": 312,
+    "rank": 548923,
+    "stateSno": 14925
+  },
+  {
+    "score": 311,
+    "rank": 552715,
+    "stateSno": 14975
+  },
+  {
+    "score": 310,
+    "rank": 556556,
+    "stateSno": 15037
+  },
+  {
+    "score": 309,
+    "rank": 560933,
+    "stateSno": 15098
+  },
+  {
+    "score": 308,
+    "rank": 564285,
+    "stateSno": 15152
+  },
+  {
+    "score": 307,
+    "rank": 568424,
+    "stateSno": 15204
+  },
+  {
+    "score": 306,
+    "rank": 571979,
+    "stateSno": 15255
+  },
+  {
+    "score": 305,
+    "rank": 575701,
+    "stateSno": 15313
+  },
+  {
+    "score": 304,
+    "rank": 579925,
+    "stateSno": 15370
+  },
+  {
+    "score": 303,
+    "rank": 583979,
+    "stateSno": 15419
+  },
+  {
+    "score": 302,
+    "rank": 587559,
+    "stateSno": 15462
+  },
+  {
+    "score": 301,
+    "rank": 591790,
+    "stateSno": 15507
+  },
+  {
+    "score": 300,
+    "rank": 595172,
+    "stateSno": 15560
+  },
+  {
+    "score": 299,
+    "rank": 600117,
+    "stateSno": 15611
+  },
+  {
+    "score": 298,
+    "rank": 603732,
+    "stateSno": 15655
+  },
+  {
+    "score": 297,
+    "rank": 607793,
+    "stateSno": 15698
+  },
+  {
+    "score": 296,
+    "rank": 611490,
+    "stateSno": 15741
+  },
+  {
+    "score": 295,
+    "rank": 615783,
+    "stateSno": 15783
+  },
+  {
+    "score": 294,
+    "rank": 619712,
+    "stateSno": 15822
+  },
+  {
+    "score": 293,
+    "rank": 624113,
+    "stateSno": 15855
+  },
+  {
+    "score": 292,
+    "rank": 627615,
+    "stateSno": 15890
+  },
+  {
+    "score": 291,
+    "rank": 631872,
+    "stateSno": 15928
+  },
+  {
+    "score": 290,
+    "rank": 636214,
+    "stateSno": 15973
+  },
+  {
+    "score": 289,
+    "rank": 640508,
+    "stateSno": 16022
+  },
+  {
+    "score": 288,
+    "rank": 644310,
+    "stateSno": 16057
+  },
+  {
+    "score": 287,
+    "rank": 648687,
+    "stateSno": 16092
+  },
+  {
+    "score": 286,
+    "rank": 652569,
+    "stateSno": 16131
+  },
+  {
+    "score": 285,
+    "rank": 657409,
+    "stateSno": 16160
+  },
+  {
+    "score": 284,
+    "rank": 661056,
+    "stateSno": 16188
+  },
+  {
+    "score": 283,
+    "rank": 665317,
+    "stateSno": 16221
+  },
+  {
+    "score": 282,
+    "rank": 669358,
+    "stateSno": 16253
+  },
+  {
+    "score": 281,
+    "rank": 673238,
+    "stateSno": 16288
+  },
+  {
+    "score": 280,
+    "rank": 678402,
+    "stateSno": 16328
+  },
+  {
+    "score": 279,
+    "rank": 682079,
+    "stateSno": 16362
+  },
+  {
+    "score": 278,
+    "rank": 686902,
+    "stateSno": 16392
+  },
+  {
+    "score": 277,
+    "rank": 690639,
+    "stateSno": 16421
+  },
+  {
+    "score": 276,
+    "rank": 694460,
+    "stateSno": 16455
+  },
+  {
+    "score": 275,
+    "rank": 698742,
+    "stateSno": 16487
+  },
+  {
+    "score": 274,
+    "rank": 703528,
+    "stateSno": 16521
+  },
+  {
+    "score": 273,
+    "rank": 708111,
+    "stateSno": 16557
+  },
+  {
+    "score": 272,
+    "rank": 712247,
+    "stateSno": 16587
+  },
+  {
+    "score": 271,
+    "rank": 717235,
+    "stateSno": 16616
+  },
+  {
+    "score": 270,
+    "rank": 720738,
+    "stateSno": 16646
+  },
+  {
+    "score": 269,
+    "rank": 725926,
+    "stateSno": 16676
+  },
+  {
+    "score": 268,
+    "rank": 729884,
+    "stateSno": 16702
+  },
+  {
+    "score": 267,
+    "rank": 733962,
+    "stateSno": 16732
+  },
+  {
+    "score": 266,
+    "rank": 738439,
+    "stateSno": 16764
+  },
+  {
+    "score": 265,
+    "rank": 742659,
+    "stateSno": 16793
+  },
+  {
+    "score": 264,
+    "rank": 748086,
+    "stateSno": 16824
+  },
+  {
+    "score": 263,
+    "rank": 752075,
+    "stateSno": 16854
+  },
+  {
+    "score": 262,
+    "rank": 756486,
+    "stateSno": 16881
+  },
+  {
+    "score": 261,
+    "rank": 760459,
+    "stateSno": 16908
+  },
+  {
+    "score": 260,
+    "rank": 766255,
+    "stateSno": 16938
+  },
+  {
+    "score": 259,
+    "rank": 770519,
+    "stateSno": 16969
+  },
+  {
+    "score": 258,
+    "rank": 774952,
+    "stateSno": 17001
+  },
+  {
+    "score": 257,
+    "rank": 779429,
+    "stateSno": 17031
+  },
+  {
+    "score": 256,
+    "rank": 783957,
+    "stateSno": 17059
+  },
+  {
+    "score": 255,
+    "rank": 788344,
+    "stateSno": 17089
+  },
+  {
+    "score": 254,
+    "rank": 793098,
+    "stateSno": 17120
+  },
+  {
+    "score": 253,
+    "rank": 797956,
+    "stateSno": 17148
+  },
+  {
+    "score": 252,
+    "rank": 802255,
+    "stateSno": 17174
+  },
+  {
+    "score": 251,
+    "rank": 806869,
+    "stateSno": 17198
+  },
+  {
+    "score": 250,
+    "rank": 811597,
+    "stateSno": 17223
+  },
+  {
+    "score": 249,
+    "rank": 815972,
+    "stateSno": 17249
+  },
+  {
+    "score": 248,
+    "rank": 821630,
+    "stateSno": 17272
+  },
+  {
+    "score": 247,
+    "rank": 825624,
+    "stateSno": 17298
+  },
+  {
+    "score": 246,
+    "rank": 829424,
+    "stateSno": 17326
+  },
+  {
+    "score": 245,
+    "rank": 834926,
+    "stateSno": 17353
+  },
+  {
+    "score": 244,
+    "rank": 839462,
+    "stateSno": 17381
+  },
+  {
+    "score": 243,
+    "rank": 844338,
+    "stateSno": 17406
+  },
+  {
+    "score": 242,
+    "rank": 849262,
+    "stateSno": 17431
+  },
+  {
+    "score": 241,
+    "rank": 853808,
+    "stateSno": 17463
+  },
+  {
+    "score": 240,
+    "rank": 858579,
+    "stateSno": 17493
+  },
+  {
+    "score": 239,
+    "rank": 863117,
+    "stateSno": 17517
+  },
+  {
+    "score": 238,
+    "rank": 868587,
+    "stateSno": 17539
+  },
+  {
+    "score": 237,
+    "rank": 873179,
+    "stateSno": 17560
+  },
+  {
+    "score": 236,
+    "rank": 877359,
+    "stateSno": 17580
+  },
+  {
+    "score": 235,
+    "rank": 882780,
+    "stateSno": 17599
+  },
+  {
+    "score": 234,
+    "rank": 887561,
+    "stateSno": 17622
+  },
+  {
+    "score": 233,
+    "rank": 892850,
+    "stateSno": 17647
+  },
+  {
+    "score": 232,
+    "rank": 897112,
+    "stateSno": 17670
+  },
+  {
+    "score": 231,
+    "rank": 901920,
+    "stateSno": 17688
+  },
+  {
+    "score": 230,
+    "rank": 907500,
+    "stateSno": 17708
+  },
+  {
+    "score": 229,
+    "rank": 913076,
+    "stateSno": 17736
+  },
+  {
+    "score": 228,
+    "rank": 917522,
+    "stateSno": 17763
+  },
+  {
+    "score": 227,
+    "rank": 923000,
+    "stateSno": 17783
+  },
+  {
+    "score": 226,
+    "rank": 926657,
+    "stateSno": 17806
+  },
+  {
+    "score": 225,
+    "rank": 931617,
+    "stateSno": 17832
+  },
+  {
+    "score": 224,
+    "rank": 937275,
+    "stateSno": 17854
+  },
+  {
+    "score": 223,
+    "rank": 942285,
+    "stateSno": 17873
+  },
+  {
+    "score": 222,
+    "rank": 947201,
+    "stateSno": 17894
+  },
+  {
+    "score": 221,
+    "rank": 951753,
+    "stateSno": 17915
+  },
+  {
+    "score": 220,
+    "rank": 957355,
+    "stateSno": 17938
+  },
+  {
+    "score": 219,
+    "rank": 963553,
+    "stateSno": 17958
+  },
+  {
+    "score": 218,
+    "rank": 967794,
+    "stateSno": 17974
+  },
+  {
+    "score": 217,
+    "rank": 972941,
+    "stateSno": 17991
+  },
+  {
+    "score": 216,
+    "rank": 977948,
+    "stateSno": 18011
+  },
+  {
+    "score": 215,
+    "rank": 983578,
+    "stateSno": 18037
+  },
+  {
+    "score": 214,
+    "rank": 988910,
+    "stateSno": 18062
+  },
+  {
+    "score": 213,
+    "rank": 993872,
+    "stateSno": 18079
+  },
+  {
+    "score": 212,
+    "rank": 998751,
+    "stateSno": 18094
+  },
+  {
+    "score": 211,
+    "rank": 1003384,
+    "stateSno": 18108
+  },
+  {
+    "score": 210,
+    "rank": 1009649,
+    "stateSno": 18124
+  },
+  {
+    "score": 209,
+    "rank": 1015512,
+    "stateSno": 18141
+  },
+  {
+    "score": 208,
+    "rank": 1019625,
+    "stateSno": 18159
+  },
+  {
+    "score": 207,
+    "rank": 1026177,
+    "stateSno": 18178
+  },
+  {
+    "score": 206,
+    "rank": 1029447,
+    "stateSno": 18197
+  },
+  {
+    "score": 205,
+    "rank": 1035150,
+    "stateSno": 18215
+  },
+  {
+    "score": 204,
+    "rank": 1041776,
+    "stateSno": 18229
+  },
+  {
+    "score": 203,
+    "rank": 1047299,
+    "stateSno": 18246
+  },
+  {
+    "score": 202,
+    "rank": 1052837,
+    "stateSno": 18264
+  },
+  {
+    "score": 201,
+    "rank": 1056788,
+    "stateSno": 18279
+  },
+  {
+    "score": 200,
+    "rank": 1062437,
+    "stateSno": 18301
+  },
+  {
+    "score": 199,
+    "rank": 1068820,
+    "stateSno": 18322
+  },
+  {
+    "score": 198,
+    "rank": 1074626,
+    "stateSno": 18333
+  },
+  {
+    "score": 197,
+    "rank": 1079616,
+    "stateSno": 18346
+  },
+  {
+    "score": 196,
+    "rank": 1085292,
+    "stateSno": 18359
+  },
+  {
+    "score": 195,
+    "rank": 1091103,
+    "stateSno": 18375
+  },
+  {
+    "score": 194,
+    "rank": 1095995,
+    "stateSno": 18392
+  },
+  {
+    "score": 193,
+    "rank": 1102674,
+    "stateSno": 18404
+  },
+  {
+    "score": 192,
+    "rank": 1106192,
+    "stateSno": 18412
+  },
+  {
+    "score": 191,
+    "rank": 1112844,
+    "stateSno": 18421
+  },
+  {
+    "score": 190,
+    "rank": 1117738,
+    "stateSno": 18433
+  },
+  {
+    "score": 189,
+    "rank": 1124686,
+    "stateSno": 18444
+  },
+  {
+    "score": 188,
+    "rank": 1129159,
+    "stateSno": 18453
+  },
+  {
+    "score": 187,
+    "rank": 1135455,
+    "stateSno": 18460
+  },
+  {
+    "score": 186,
+    "rank": 1139485,
+    "stateSno": 18469
+  },
+  {
+    "score": 185,
+    "rank": 1145952,
+    "stateSno": 18486
+  },
+  {
+    "score": 184,
+    "rank": 1152177,
+    "stateSno": 18505
+  },
+  {
+    "score": 183,
+    "rank": 1157490,
+    "stateSno": 18516
+  },
+  {
+    "score": 182,
+    "rank": 1162499,
+    "stateSno": 18526
+  },
+  {
+    "score": 181,
+    "rank": 1168064,
+    "stateSno": 18538
+  },
+  {
+    "score": 180,
+    "rank": 1175018,
+    "stateSno": 18553
+  },
+  {
+    "score": 179,
+    "rank": 1180407,
+    "stateSno": 18567
+  },
+  {
+    "score": 178,
+    "rank": 1186297,
+    "stateSno": 18578
+  },
+  {
+    "score": 177,
+    "rank": 1191494,
+    "stateSno": 18593
+  }
+]

@@ -1,0 +1,560 @@
+[
+  {
+    "sno": "1",
+    "name": "1 MUSHEERABAD, SECUNDERABAD M | 546 | 515 | 501 | 537 | 496 | 537 | 535 | 400 | 474 | 481 | 460",
+    "type": "GOVT",
+    "sc2RankStr": "85048",
+    "sc2ScoreStr": "474",
+    "sc2Rank": 85048,
+    "sc2Score": 474
+  },
+  {
+    "sno": "2",
+    "name": "1 MUSHEERABAD, SECUNDERABAD M | 546 | 515 | 501 | 537 | 496 | 537 | 535 | 400 | 474 | 481 | 460 2 HYDERABAD, 500095 M | 535 | 509 | 456 | 511 | 451 | 511 | 519 | 375 | 455 | 462 | 457",
+    "type": "GOVT",
+    "sc2RankStr": "113527",
+    "sc2ScoreStr": "455",
+    "sc2Rank": 113527,
+    "sc2Score": 455
+  },
+  {
+    "sno": "3",
+    "name": "2 HYDERABAD, 500095 M | 535 | 509 | 456 | 511 | 451 | 511 | 519 | 375 | 455 | 462 | 457 3 SANATHNAGAR, HYD M | 531 | 496 | 454 | 503 | 466 | 507 | 517 | 373 | 448 | 460 | 444",
+    "type": "GOVT",
+    "sc2RankStr": "124447",
+    "sc2ScoreStr": "448",
+    "sc2Rank": 124447,
+    "sc2Score": 448
+  },
+  {
+    "sno": "4",
+    "name": "3 SANATHNAGAR, HYD M | 531 | 496 | 454 | 503 | 466 | 507 | 517 | 373 | 448 | 460 | 444 4 WARANGAL M | 517 | 480 | 435 | 477 | 449 | 492 | 490 | 350 | 442 | 452 | 446",
+    "type": "GOVT",
+    "sc2RankStr": "134111",
+    "sc2ScoreStr": "442",
+    "sc2Rank": 134111,
+    "sc2Score": 442
+  },
+  {
+    "sno": "5",
+    "name": "4 WARANGAL M | 517 | 480 | 435 | 477 | 449 | 492 | 490 | 350 | 442 | 452 | 446 5 KHALEELWADI, NIZAMABAD M | 487 | 466 | 409 | 474 | 455 | 481 | 468 | 344 | 429 | 442 | 439",
+    "type": "GOVT",
+    "sc2RankStr": "156753",
+    "sc2ScoreStr": "429",
+    "sc2Rank": 156753,
+    "sc2Score": 429
+  },
+  {
+    "sno": "6",
+    "name": "5 KHALEELWADI, NIZAMABAD M | 487 | 466 | 409 | 474 | 455 | 481 | 468 | 344 | 429 | 442 | 439 6 MAHABOOBNAGAR M | 478 | 466 | 412 | 469 | 439 | 471 | 471 | 349 | 422 | 432 | 432",
+    "type": "GOVT",
+    "sc2RankStr": "169137",
+    "sc2ScoreStr": "422",
+    "sc2Rank": 169137,
+    "sc2Score": 422
+  },
+  {
+    "sno": "8",
+    "name": "7 MEDICAL SCIENCES ADILABAD M | 466 | 450 | 399 | 458 | 406 | 464 | 445 | 306 | 407 | 419 | 424 8 SIDDIPET M | 480 | 464 | 410 | 468 | 423 | 473 | 473 | 338 | 420 | 428 | 431",
+    "type": "GOVT",
+    "sc2RankStr": "172340",
+    "sc2ScoreStr": "420",
+    "sc2Rank": 172340,
+    "sc2Score": 420
+  },
+  {
+    "sno": "38",
+    "name": "36 SCIENCES & RESEARCH",
+    "type": "PVT-A",
+    "sc2RankStr": "186685",
+    "sc2ScoreStr": "412",
+    "sc2Rank": 186685,
+    "sc2Score": 412
+  },
+  {
+    "sno": "9",
+    "name": "8 SIDDIPET M | 480 | 464 | 410 | 468 | 423 | 473 | 473 | 338 | 420 | 428 | 431 9 SURYAPET M | 471 | 462 | 397 | 460 | 446 | 465 | 449 | 336 | 412 | 413 | 425",
+    "type": "GOVT",
+    "sc2RankStr": "186920",
+    "sc2ScoreStr": "412",
+    "sc2Rank": 186920,
+    "sc2Score": 412
+  },
+  {
+    "sno": "7",
+    "name": "6 MAHABOOBNAGAR M | 478 | 466 | 412 | 469 | 439 | 471 | 471 | 349 | 422 | 432 | 432 7 MEDICAL SCIENCES ADILABAD M | 466 | 450 | 399 | 458 | 406 | 464 | 445 | 306 | 407 | 419 | 424",
+    "type": "GOVT",
+    "sc2RankStr": "195963",
+    "sc2ScoreStr": "407",
+    "sc2Rank": 195963,
+    "sc2Score": 407
+  },
+  {
+    "sno": "10",
+    "name": "9 SURYAPET M | 471 | 462 | 397 | 460 | 446 | 465 | 449 | 336 | 412 | 413 | 425 10 NALGONDA M | 463 | 454 | 395 | 453 | 428 | 458 | 449 | 315 | 406 | 412 | 421",
+    "type": "GOVT",
+    "sc2RankStr": "198185",
+    "sc2ScoreStr": "406",
+    "sc2Rank": 198185,
+    "sc2Score": 406
+  },
+  {
+    "sno": "11",
+    "name": "11 SANGAREDDY M | 466 | 457 | 393 | 455 | 412 | 461 | 463 | 361 | 405 | 420 | 418",
+    "type": "GOVT",
+    "sc2RankStr": "199823",
+    "sc2ScoreStr": "405",
+    "sc2Rank": 199823,
+    "sc2Score": 405
+  },
+  {
+    "sno": "16",
+    "name": "14 WANAPATHY M | 441 | 437 | 384 | 435 | 387 | 439 | 439 | 329 | 392 | 397 | 405 R | 84460 | 110199 | 224244 | 118022 | 216174 | 106760 | 110719 | 355539 | 203607 | 191184 | 192570 Govt Medical College, Quthbullapur M | 475 | 457 | 393 | 452 | 397 | 460 | 457 | 333 | 403 | 410 | 409",
+    "type": "GOVT",
+    "sc2RankStr": "203607",
+    "sc2ScoreStr": "403",
+    "sc2Rank": 203607,
+    "sc2Score": 403
+  },
+  {
+    "sno": "12",
+    "name": "11 SANGAREDDY M | 466 | 457 | 393 | 455 | 412 | 461 | 463 | 361 | 405 | 420 | 418 12 NAGAR KURNOOL M | 453 | 447 | 389 | 455 | 402 | 449 | 446 | 368 | 401 | 402 | 417",
+    "type": "GOVT",
+    "sc2RankStr": "207936",
+    "sc2ScoreStr": "401",
+    "sc2Rank": 207936,
+    "sc2Score": 401
+  },
+  {
+    "sno": "17",
+    "name": "16 Khammam M | 441 | 437 | 379 | 434 | 378 | 439 | 433 | 291 | 393 | 406 | 409 17 RAMAGUNDEM M | 448 | - | 380 | 438 | 417 | 445 | 437 | 310 | 397 | 408 | 408",
+    "type": "GOVT",
+    "sc2RankStr": "215542",
+    "sc2ScoreStr": "397",
+    "sc2Rank": 215542,
+    "sc2Score": 397
+  },
+  {
+    "sno": "38",
+    "name": "SCIENCES & RESEARCH SCIENCES",
+    "type": "PVT-A",
+    "sc2RankStr": "219082",
+    "sc2ScoreStr": "395",
+    "sc2Rank": 219082,
+    "sc2Score": 395
+  },
+  {
+    "sno": "16",
+    "name": "R | 84460 | 110199 | 224244 | 118022 | 216174 | 106760 | 110719 | 355539 | 203607 | 191184 | 192570 Govt Medical College, Quthbullapur M | 475 | 457 | 393 | 452 | 397 | 460 | 457 | 333 | 403 | 410 | 409 16 Khammam M | 441 | 437 | 379 | 434 | 378 | 439 | 433 | 291 | 393 | 406 | 409",
+    "type": "GOVT",
+    "sc2RankStr": "223389",
+    "sc2ScoreStr": "393",
+    "sc2Rank": 223389,
+    "sc2Score": 393
+  },
+  {
+    "sno": "13",
+    "name": "12 NAGAR KURNOOL M | 453 | 447 | 389 | 455 | 402 | 449 | 446 | 368 | 401 | 402 | 417 13 Karimnagar M | 453 | 444 | 375 | 436 | 394 | 443 | 440 | 274 | 392 | 407 | 410",
+    "type": "GOVT",
+    "sc2RankStr": "225030",
+    "sc2ScoreStr": "392",
+    "sc2Rank": 225030,
+    "sc2Score": 392
+  },
+  {
+    "sno": "14",
+    "name": "13 Karimnagar M | 453 | 444 | 375 | 436 | 394 | 443 | 440 | 274 | 392 | 407 | 410 14 WANAPATHY M | 441 | 437 | 384 | 435 | 387 | 439 | 439 | 329 | 392 | 397 | 405",
+    "type": "GOVT",
+    "sc2RankStr": "225652",
+    "sc2ScoreStr": "392",
+    "sc2Rank": 225652,
+    "sc2Score": 392
+  },
+  {
+    "sno": "18",
+    "name": "17 RAMAGUNDEM M | 448 | - | 380 | 438 | 417 | 445 | 437 | 310 | 397 | 408 | 408 18 MAHESHWARAM M | 448 | 439 | 383 | 432 | - | 436 | 440 | 271 | 388 | 385 | 398",
+    "type": "GOVT",
+    "sc2RankStr": "233671",
+    "sc2ScoreStr": "388",
+    "sc2Rank": 233671,
+    "sc2Score": 388
+  },
+  {
+    "sno": "23",
+    "name": "22 JAGITYAL M | 426 | - | 359 | 422 | 375 | 422 | 422 | 290 | 382 | 392 | 395 23 Vikarabad M | 426 | 421 | 363 | 419 | 371 | 423 | - | 229 | 387 | 382 | 393",
+    "type": "GOVT",
+    "sc2RankStr": "235342",
+    "sc2ScoreStr": "387",
+    "sc2Rank": 235342,
+    "sc2Score": 387
+  },
+  {
+    "sno": "18",
+    "name": "18 MAHESHWARAM M | 448 | 439 | 383 | 432 | - | 436 | 440 | 271 | 388 | 385 | 398 COLLEGE,MAHABUBABAD M | 433 | - | 372 | 427 | 376 | 427 | 422 | 293 | 385 | 385 | 405",
+    "type": "GOVT",
+    "sc2RankStr": "238999",
+    "sc2ScoreStr": "385",
+    "sc2Rank": 238999,
+    "sc2Score": 385
+  },
+  {
+    "sno": "27",
+    "name": "25 MANCHERIAL M | 420 | - | 362 | 417 | 382 | 418 | 416 | 226 | 378 | 381 | 392 26 R | 151620 | 153633 | 281458 | 152892 | 288322 | 158335 | 157332 | - | 241435 | 209582 | 221195",
+    "type": "GOVT",
+    "sc2RankStr": "239294",
+    "sc2ScoreStr": "385",
+    "sc2Rank": 239294,
+    "sc2Score": 385
+  },
+  {
+    "sno": "24",
+    "name": "24 Jangaon M | 428 | - | 362 | 421 | 385 | 422 | 426 | 339 | 384 | 384 | 399",
+    "type": "GOVT",
+    "sc2RankStr": "241363",
+    "sc2ScoreStr": "384",
+    "sc2Rank": 241363,
+    "sc2Score": 384
+  },
+  {
+    "sno": "28",
+    "name": "26 R | 151620 | 153633 | 281458 | 152892 | 288322 | 158335 | 157332 | - | 241435 | 209582 | 221195 Govt Medical College, Yadadri M | 432 | 431 | 365 | 431 | 362 | 428 | 429 | - | 384 | 400 | 394",
+    "type": "GOVT",
+    "sc2RankStr": "241435",
+    "sc2ScoreStr": "384",
+    "sc2Rank": 241435,
+    "sc2Score": 384
+  },
+  {
+    "sno": "20",
+    "name": "COLLEGE,MAHABUBABAD M | 433 | - | 372 | 427 | 376 | 427 | 422 | 293 | 385 | 385 | 405 20 KOTHAGUDEM M | 424 | 419 | 366 | 417 | 367 | 415 | 408 | 310 | 383 | 384 | 398",
+    "type": "GOVT",
+    "sc2RankStr": "243774",
+    "sc2ScoreStr": "383",
+    "sc2Rank": 243774,
+    "sc2Score": 383
+  },
+  {
+    "sno": "36",
+    "name": "34 35",
+    "type": "GOVT",
+    "sc2RankStr": "243784",
+    "sc2ScoreStr": "383",
+    "sc2Rank": 243784,
+    "sc2Score": 383
+  },
+  {
+    "sno": "22",
+    "name": "21 Kamareddy M | 432 | 431 | 361 | 430 | 393 | 430 | 428 | 303 | 380 | 386 | 404 22 JAGITYAL M | 426 | - | 359 | 422 | 375 | 422 | 422 | 290 | 382 | 392 | 395",
+    "type": "GOVT",
+    "sc2RankStr": "246469",
+    "sc2ScoreStr": "382",
+    "sc2Rank": 246469,
+    "sc2Score": 382
+  },
+  {
+    "sno": "21",
+    "name": "20 KOTHAGUDEM M | 424 | 419 | 366 | 417 | 367 | 415 | 408 | 310 | 383 | 384 | 398 21 Kamareddy M | 432 | 431 | 361 | 430 | 393 | 430 | 428 | 303 | 380 | 386 | 404",
+    "type": "GOVT",
+    "sc2RankStr": "249402",
+    "sc2ScoreStr": "380",
+    "sc2Rank": 249402,
+    "sc2Score": 380
+  },
+  {
+    "sno": "35",
+    "name": "R | 179216 | - | 305901 | 197028 | 261867 | 181391 | 192188 | - | 260591 | 255909 | 241631 Govt Medical College, Mulugu M | 417 | - | 354 | 407 | 375 | 415 | 409 | - | 375 | 377 | 384 34",
+    "type": "GOVT",
+    "sc2RankStr": "249992",
+    "sc2ScoreStr": "380",
+    "sc2Rank": 249992,
+    "sc2Score": 380
+  },
+  {
+    "sno": "31",
+    "name": "29 R | 165625 | 175787 | 297425 | 178265 | 269686 | 167267 | 174982 | 629196 | 252420 | 249786 | 223207 Govt Medical College, Medak M | 424 | 418 | 358 | 417 | 371 | 423 | 419 | 242 | 379 | 380 | 393",
+    "type": "GOVT",
+    "sc2RankStr": "252420",
+    "sc2ScoreStr": "379",
+    "sc2Rank": 252420,
+    "sc2Score": 379
+  },
+  {
+    "sno": "25",
+    "name": "24 Jangaon M | 428 | - | 362 | 421 | 385 | 422 | 426 | 339 | 384 | 384 | 399 25 MANCHERIAL M | 420 | - | 362 | 417 | 382 | 418 | 416 | 226 | 378 | 381 | 392",
+    "type": "GOVT",
+    "sc2RankStr": "254010",
+    "sc2ScoreStr": "378",
+    "sc2Rank": 254010,
+    "sc2Score": 378
+  },
+  {
+    "sno": "30",
+    "name": "28 29 R | 165625 | 175787 | 297425 | 178265 | 269686 | 167267 | 174982 | 629196 | 252420 | 249786 | 223207",
+    "type": "GOVT",
+    "sc2RankStr": "255779",
+    "sc2ScoreStr": "377",
+    "sc2Rank": 255779,
+    "sc2Score": 377
+  },
+  {
+    "sno": "33",
+    "name": "31 32 R | 179216 | - | 305901 | 197028 | 261867 | 181391 | 192188 | - | 260591 | 255909 | 241631",
+    "type": "GOVT",
+    "sc2RankStr": "255860",
+    "sc2ScoreStr": "377",
+    "sc2Rank": 255860,
+    "sc2Score": 377
+  },
+  {
+    "sno": "39",
+    "name": "39 SCIENCES, BACHUPALLY M | 485 | 476 | 386 | 448 | 404 | 461 | 447 | 334 | 375 | 413 | 395",
+    "type": "PVT-A",
+    "sc2RankStr": "259979",
+    "sc2ScoreStr": "375",
+    "sc2Rank": 259979,
+    "sc2Score": 375
+  },
+  {
+    "sno": "34",
+    "name": "32 R | 179216 | - | 305901 | 197028 | 261867 | 181391 | 192188 | - | 260591 | 255909 | 241631 Govt Medical College, Mulugu M | 417 | - | 354 | 407 | 375 | 415 | 409 | - | 375 | 377 | 384",
+    "type": "GOVT",
+    "sc2RankStr": "260591",
+    "sc2ScoreStr": "375",
+    "sc2Rank": 260591,
+    "sc2Score": 375
+  },
+  {
+    "sno": "37",
+    "name": "35 36",
+    "type": "PVT-A",
+    "sc2RankStr": "264377",
+    "sc2ScoreStr": "373",
+    "sc2Rank": 264377,
+    "sc2Score": 373
+  },
+  {
+    "sno": "29",
+    "name": "R | 151620 | 153633 | 281458 | 152892 | 288322 | 158335 | 157332 | - | 241435 | 209582 | 221195 Govt Medical College, Yadadri M | 432 | 431 | 365 | 431 | 362 | 428 | 429 | - | 384 | 400 | 394 28",
+    "type": "GOVT",
+    "sc2RankStr": "264391",
+    "sc2ScoreStr": "373",
+    "sc2Rank": 264391,
+    "sc2Score": 373
+  },
+  {
+    "sno": "32",
+    "name": "R | 165625 | 175787 | 297425 | 178265 | 269686 | 167267 | 174982 | 629196 | 252420 | 249786 | 223207 Govt Medical College, Medak M | 424 | 418 | 358 | 417 | 371 | 423 | 419 | 242 | 379 | 380 | 393 31",
+    "type": "GOVT",
+    "sc2RankStr": "266602",
+    "sc2ScoreStr": "372",
+    "sc2Rank": 266602,
+    "sc2Score": 372
+  },
+  {
+    "sno": "41",
+    "name": "39 SCIENCES, BACHUPALLY M | 485 | 476 | 386 | 448 | 404 | 461 | 447 | 334 | 375 | 413 | 395 YENUGONDA(V),",
+    "type": "PVT-A",
+    "sc2RankStr": "266874",
+    "sc2ScoreStr": "372",
+    "sc2Rank": 266874,
+    "sc2Score": 372
+  },
+  {
+    "sno": "42",
+    "name": "YENUGONDA(V), SCIENCES &",
+    "type": "PVT-A",
+    "sc2RankStr": "275433",
+    "sc2ScoreStr": "368",
+    "sc2Rank": 275433,
+    "sc2Score": 368
+  },
+  {
+    "sno": "43",
+    "name": "SCIENCES & D.NO, 4-2-161, OPP : ROTARY NAGAR,",
+    "type": "PVT-A",
+    "sc2RankStr": "283759",
+    "sc2ScoreStr": "364",
+    "sc2Rank": 283759,
+    "sc2Score": 364
+  },
+  {
+    "sno": "44",
+    "name": "D.NO, 4-2-161, OPP : ROTARY NAGAR, YENKAPALLY (V), MOINA BAD(M),",
+    "type": "PVT-A",
+    "sc2RankStr": "284119",
+    "sc2ScoreStr": "364",
+    "sc2Rank": 284119,
+    "sc2Score": 364
+  },
+  {
+    "sno": "45",
+    "name": "YENKAPALLY (V), MOINA BAD(M), MEDICAL SCIENCES &",
+    "type": "PVT-A",
+    "sc2RankStr": "285991",
+    "sc2ScoreStr": "363",
+    "sc2Rank": 285991,
+    "sc2Score": 363
+  },
+  {
+    "sno": "47",
+    "name": "SCIENCES SCIENCES NAGANUR ROAD, KARIMNAGAR M | 414 | - | 345 | 404 | 356 | 412 | 399 | 363 | 362 | 374 | 381",
+    "type": "PVT-A",
+    "sc2RankStr": "288916",
+    "sc2ScoreStr": "362",
+    "sc2Rank": 288916,
+    "sc2Score": 362
+  },
+  {
+    "sno": "46",
+    "name": "MEDICAL SCIENCES & SCIENCES",
+    "type": "PVT-A",
+    "sc2RankStr": "291198",
+    "sc2ScoreStr": "361",
+    "sc2Rank": 291198,
+    "sc2Score": 361
+  },
+  {
+    "sno": "48",
+    "name": "SCIENCES NAGANUR ROAD, KARIMNAGAR M | 414 | - | 345 | 404 | 356 | 412 | 399 | 363 | 362 | 374 | 381 LAXMAKKAPALLY(V),MULUGU(M),MEDAK",
+    "type": "PVT-A",
+    "sc2RankStr": "297282",
+    "sc2ScoreStr": "358",
+    "sc2Rank": 297282,
+    "sc2Score": 358
+  },
+  {
+    "sno": "52",
+    "name": "R | 185102 | - | 319936 | 204053 | 299302 | 189363 | 207468 | 299827 | 300927 | 260190 | 259976 CMR Institute of Medical Sciences M | 413 | - | 348 | 403 | 357 | 411 | 401 | 357 | 357 | 375 | 375 51",
+    "type": "PVT-A",
+    "sc2RankStr": "297967",
+    "sc2ScoreStr": "358",
+    "sc2Rank": 297967,
+    "sc2Score": 358
+  },
+  {
+    "sno": "51",
+    "name": "OF MEDICAL SCIENCES, CHEVELLA, R | 185102 | - | 319936 | 204053 | 299302 | 189363 | 207468 | 299827 | 300927 | 260190 | 259976 CMR Institute of Medical Sciences M | 413 | - | 348 | 403 | 357 | 411 | 401 | 357 | 357 | 375 | 375",
+    "type": "PVT-A",
+    "sc2RankStr": "300927",
+    "sc2ScoreStr": "357",
+    "sc2Rank": 300927,
+    "sc2Score": 357
+  },
+  {
+    "sno": "54",
+    "name": "53",
+    "type": "PVT-A",
+    "sc2RankStr": "301251",
+    "sc2ScoreStr": "356",
+    "sc2Rank": 301251,
+    "sc2Score": 356
+  },
+  {
+    "sno": "49",
+    "name": "LAXMAKKAPALLY(V),MULUGU(M),MEDAK MNR NAGAR NARASAPUR ROAD",
+    "type": "PVT-A",
+    "sc2RankStr": "303084",
+    "sc2ScoreStr": "356",
+    "sc2Rank": 303084,
+    "sc2Score": 356
+  },
+  {
+    "sno": "58",
+    "name": "57 HAYATNAGAR M | 403 | - | 339 | 395 | 341 | 398 | 394 | 352 | 351 | 367 | 370 58 COLLEGE, WARANGAL M | 403 | - | 342 | 398 | 345 | 401 | 399 | 357 | 354 | 369 | 372",
+    "type": "PVT-A",
+    "sc2RankStr": "305883",
+    "sc2ScoreStr": "354",
+    "sc2Rank": 305883,
+    "sc2Score": 354
+  },
+  {
+    "sno": "52",
+    "name": "51 52",
+    "type": "PVT-A",
+    "sc2RankStr": "306698",
+    "sc2ScoreStr": "354",
+    "sc2Rank": 306698,
+    "sc2Score": 354
+  },
+  {
+    "sno": "50",
+    "name": "MNR NAGAR NARASAPUR ROAD OF MEDICAL SCIENCES, CHEVELLA, R | 185102 | - | 319936 | 204053 | 299302 | 189363 | 207468 | 299827 | 300927 | 260190 | 259976",
+    "type": "PVT-A",
+    "sc2RankStr": "307197",
+    "sc2ScoreStr": "354",
+    "sc2Rank": 307197,
+    "sc2Score": 354
+  },
+  {
+    "sno": "55",
+    "name": "53 54",
+    "type": "PVT-A",
+    "sc2RankStr": "308667",
+    "sc2ScoreStr": "353",
+    "sc2Rank": 308667,
+    "sc2Score": 353
+  },
+  {
+    "sno": "56",
+    "name": "55 SIDDIPET M | 404 | - | 340 | 396 | 345 | 400 | 395 | 352 | 352 | 368 | 371 56 PATANCHERU M | 403 | - | 338 | 396 | 343 | 400 | 394 | 352 | 351 | 367 | 371",
+    "type": "PVT-A",
+    "sc2RankStr": "312689",
+    "sc2ScoreStr": "351",
+    "sc2Rank": 312689,
+    "sc2Score": 351
+  },
+  {
+    "sno": "57",
+    "name": "56 PATANCHERU M | 403 | - | 338 | 396 | 343 | 400 | 394 | 352 | 351 | 367 | 371 57 HAYATNAGAR M | 403 | - | 339 | 395 | 341 | 398 | 394 | 352 | 351 | 367 | 370",
+    "type": "PVT-A",
+    "sc2RankStr": "312829",
+    "sc2ScoreStr": "351",
+    "sc2Rank": 312829,
+    "sc2Score": 351
+  },
+  {
+    "sno": "55",
+    "name": "54 55 SIDDIPET M | 404 | - | 340 | 396 | 345 | 400 | 395 | 352 | 352 | 368 | 371",
+    "type": "PVT-A",
+    "sc2RankStr": "340620",
+    "sc2ScoreStr": "352",
+    "sc2Rank": 340620,
+    "sc2Score": 352
+  },
+  {
+    "sno": "59",
+    "name": "58 COLLEGE, WARANGAL M | 403 | - | 342 | 398 | 345 | 401 | 399 | 357 | 354 | 369 | 372 59 HYDERABAD(Minorty) M | 446 | - | - | - | - | - | 446 | - | - | -",
+    "type": "PVT-A",
+    "sc2RankStr": "-",
+    "sc2ScoreStr": "-",
+    "sc2Rank": 9999999,
+    "sc2Score": 0
+  },
+  {
+    "sno": "60",
+    "name": "59 HYDERABAD(Minorty) M | 446 | - | - | - | - | - | 446 | - | - | - 60 HYDERABAD(Minorty) M | 416 | - | - | 420 | - | - | 416 | - | - | -",
+    "type": "PVT-A",
+    "sc2RankStr": "-",
+    "sc2ScoreStr": "-",
+    "sc2Rank": 9999999,
+    "sc2Score": 0
+  },
+  {
+    "sno": "62",
+    "name": "60 HYDERABAD(Minorty) M | 416 | - | - | 420 | - | - | 416 | - | - | - COLLEGE,HYDERABAD",
+    "type": "PVT-A",
+    "sc2RankStr": "-",
+    "sc2ScoreStr": "-",
+    "sc2Rank": 9999999,
+    "sc2Score": 0
+  },
+  {
+    "sno": "62",
+    "name": "COLLEGE,HYDERABAD 62 COLLEGE, HYDERABAD(Minorty) M | 399 | - | - | 398 | - | - | 399 | - | - | -",
+    "type": "PVT-A",
+    "sc2RankStr": "-",
+    "sc2ScoreStr": "-",
+    "sc2Rank": 9999999,
+    "sc2Score": 0
+  }
+]

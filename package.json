@@ -1,0 +1,32 @@
+{
+  "name": "mseat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kprsnt2/mSeat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kprsnt2/mSeat/issues"
+  },
+  "homepage": "https://github.com/kprsnt2/mSeat#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "pdf-parse": "^2.4.5",
+    "pdfjs-dist": "^4.0.379"
+  }
+}

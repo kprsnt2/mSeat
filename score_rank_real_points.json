@@ -1,0 +1,3970 @@
+[
+  {
+    "score": 705,
+    "minRank": 13,
+    "maxRank": 13,
+    "minSno": 1,
+    "maxSno": 1,
+    "count": 1
+  },
+  {
+    "score": 701,
+    "minRank": 19,
+    "maxRank": 19,
+    "minSno": 2,
+    "maxSno": 2,
+    "count": 1
+  },
+  {
+    "score": 700,
+    "minRank": 21,
+    "maxRank": 42,
+    "minSno": 3,
+    "maxSno": 5,
+    "count": 3
+  },
+  {
+    "score": 693,
+    "minRank": 83,
+    "maxRank": 83,
+    "minSno": 6,
+    "maxSno": 6,
+    "count": 1
+  },
+  {
+    "score": 691,
+    "minRank": 91,
+    "maxRank": 91,
+    "minSno": 7,
+    "maxSno": 7,
+    "count": 1
+  },
+  {
+    "score": 690,
+    "minRank": 123,
+    "maxRank": 123,
+    "minSno": 8,
+    "maxSno": 8,
+    "count": 1
+  },
+  {
+    "score": 686,
+    "minRank": 156,
+    "maxRank": 158,
+    "minSno": 9,
+    "maxSno": 10,
+    "count": 2
+  },
+  {
+    "score": 685,
+    "minRank": 199,
+    "maxRank": 199,
+    "minSno": 11,
+    "maxSno": 11,
+    "count": 1
+  },
+  {
+    "score": 682,
+    "minRank": 223,
+    "maxRank": 231,
+    "minSno": 12,
+    "maxSno": 13,
+    "count": 2
+  },
+  {
+    "score": 680,
+    "minRank": 268,
+    "maxRank": 277,
+    "minSno": 14,
+    "maxSno": 17,
+    "count": 4
+  },
+  {
+    "score": 675,
+    "minRank": 400,
+    "maxRank": 400,
+    "minSno": 18,
+    "maxSno": 18,
+    "count": 1
+  },
+  {
+    "score": 670,
+    "minRank": 494,
+    "maxRank": 533,
+    "minSno": 19,
+    "maxSno": 20,
+    "count": 2
+  },
+  {
+    "score": 667,
+    "minRank": 596,
+    "maxRank": 621,
+    "minSno": 21,
+    "maxSno": 23,
+    "count": 3
+  },
+  {
+    "score": 666,
+    "minRank": 639,
+    "maxRank": 652,
+    "minSno": 24,
+    "maxSno": 26,
+    "count": 3
+  },
+  {
+    "score": 665,
+    "minRank": 668,
+    "maxRank": 729,
+    "minSno": 27,
+    "maxSno": 30,
+    "count": 4
+  },
+  {
+    "score": 661,
+    "minRank": 822,
+    "maxRank": 822,
+    "minSno": 31,
+    "maxSno": 31,
+    "count": 1
+  },
+  {
+    "score": 660,
+    "minRank": 862,
+    "maxRank": 905,
+    "minSno": 32,
+    "maxSno": 35,
+    "count": 4
+  },
+  {
+    "score": 659,
+    "minRank": 941,
+    "maxRank": 941,
+    "minSno": 36,
+    "maxSno": 36,
+    "count": 1
+  },
+  {
+    "score": 658,
+    "minRank": 960,
+    "maxRank": 967,
+    "minSno": 37,
+    "maxSno": 40,
+    "count": 4
+  },
+  {
+    "score": 657,
+    "minRank": 1008,
+    "maxRank": 1008,
+    "minSno": 41,
+    "maxSno": 41,
+    "count": 1
+  },
+  {
+    "score": 656,
+    "minRank": 1053,
+    "maxRank": 1069,
+    "minSno": 42,
+    "maxSno": 44,
+    "count": 3
+  },
+  {
+    "score": 655,
+    "minRank": 1124,
+    "maxRank": 1182,
+    "minSno": 45,
+    "maxSno": 48,
+    "count": 4
+  },
+  {
+    "score": 653,
+    "minRank": 1235,
+    "maxRank": 1277,
+    "minSno": 49,
+    "maxSno": 51,
+    "count": 3
+  },
+  {
+    "score": 652,
+    "minRank": 1292,
+    "maxRank": 1324,
+    "minSno": 52,
+    "maxSno": 54,
+    "count": 3
+  },
+  {
+    "score": 651,
+    "minRank": 1333,
+    "maxRank": 1352,
+    "minSno": 55,
+    "maxSno": 57,
+    "count": 3
+  },
+  {
+    "score": 650,
+    "minRank": 1491,
+    "maxRank": 1491,
+    "minSno": 58,
+    "maxSno": 58,
+    "count": 1
+  },
+  {
+    "score": 649,
+    "minRank": 1502,
+    "maxRank": 1540,
+    "minSno": 59,
+    "maxSno": 60,
+    "count": 2
+  },
+  {
+    "score": 648,
+    "minRank": 1546,
+    "maxRank": 1598,
+    "minSno": 61,
+    "maxSno": 63,
+    "count": 3
+  },
+  {
+    "score": 647,
+    "minRank": 1667,
+    "maxRank": 1669,
+    "minSno": 64,
+    "maxSno": 65,
+    "count": 2
+  },
+  {
+    "score": 646,
+    "minRank": 1686,
+    "maxRank": 1769,
+    "minSno": 66,
+    "maxSno": 67,
+    "count": 2
+  },
+  {
+    "score": 645,
+    "minRank": 1839,
+    "maxRank": 1861,
+    "minSno": 68,
+    "maxSno": 69,
+    "count": 2
+  },
+  {
+    "score": 643,
+    "minRank": 1973,
+    "maxRank": 1976,
+    "minSno": 70,
+    "maxSno": 71,
+    "count": 2
+  },
+  {
+    "score": 642,
+    "minRank": 2079,
+    "maxRank": 2079,
+    "minSno": 72,
+    "maxSno": 72,
+    "count": 1
+  },
+  {
+    "score": 641,
+    "minRank": 2105,
+    "maxRank": 2128,
+    "minSno": 73,
+    "maxSno": 75,
+    "count": 3
+  },
+  {
+    "score": 640,
+    "minRank": 2216,
+    "maxRank": 2343,
+    "minSno": 76,
+    "maxSno": 79,
+    "count": 4
+  },
+  {
+    "score": 639,
+    "minRank": 2374,
+    "maxRank": 2424,
+    "minSno": 80,
+    "maxSno": 82,
+    "count": 3
+  },
+  {
+    "score": 638,
+    "minRank": 2460,
+    "maxRank": 2460,
+    "minSno": 83,
+    "maxSno": 83,
+    "count": 1
+  },
+  {
+    "score": 637,
+    "minRank": 2541,
+    "maxRank": 2592,
+    "minSno": 84,
+    "maxSno": 88,
+    "count": 5
+  },
+  {
+    "score": 636,
+    "minRank": 2663,
+    "maxRank": 2770,
+    "minSno": 89,
+    "maxSno": 90,
+    "count": 2
+  },
+  {
+    "score": 635,
+    "minRank": 2789,
+    "maxRank": 2895,
+    "minSno": 91,
+    "maxSno": 95,
+    "count": 5
+  },
+  {
+    "score": 634,
+    "minRank": 2947,
+    "maxRank": 2976,
+    "minSno": 96,
+    "maxSno": 98,
+    "count": 3
+  },
+  {
+    "score": 633,
+    "minRank": 3037,
+    "maxRank": 3144,
+    "minSno": 99,
+    "maxSno": 104,
+    "count": 6
+  },
+  {
+    "score": 632,
+    "minRank": 3251,
+    "maxRank": 3279,
+    "minSno": 105,
+    "maxSno": 106,
+    "count": 2
+  },
+  {
+    "score": 631,
+    "minRank": 3371,
+    "maxRank": 3371,
+    "minSno": 107,
+    "maxSno": 107,
+    "count": 1
+  },
+  {
+    "score": 630,
+    "minRank": 3415,
+    "maxRank": 3532,
+    "minSno": 108,
+    "maxSno": 112,
+    "count": 5
+  },
+  {
+    "score": 629,
+    "minRank": 3597,
+    "maxRank": 3651,
+    "minSno": 113,
+    "maxSno": 115,
+    "count": 3
+  },
+  {
+    "score": 628,
+    "minRank": 3740,
+    "maxRank": 3810,
+    "minSno": 116,
+    "maxSno": 119,
+    "count": 4
+  },
+  {
+    "score": 627,
+    "minRank": 3852,
+    "maxRank": 3852,
+    "minSno": 120,
+    "maxSno": 120,
+    "count": 1
+  },
+  {
+    "score": 625,
+    "minRank": 4120,
+    "maxRank": 4280,
+    "minSno": 121,
+    "maxSno": 126,
+    "count": 6
+  },
+  {
+    "score": 624,
+    "minRank": 4336,
+    "maxRank": 4447,
+    "minSno": 127,
+    "maxSno": 132,
+    "count": 6
+  },
+  {
+    "score": 623,
+    "minRank": 4537,
+    "maxRank": 4552,
+    "minSno": 133,
+    "maxSno": 134,
+    "count": 2
+  },
+  {
+    "score": 622,
+    "minRank": 4669,
+    "maxRank": 4731,
+    "minSno": 135,
+    "maxSno": 136,
+    "count": 2
+  },
+  {
+    "score": 621,
+    "minRank": 4788,
+    "maxRank": 4949,
+    "minSno": 137,
+    "maxSno": 141,
+    "count": 5
+  },
+  {
+    "score": 620,
+    "minRank": 4981,
+    "maxRank": 5170,
+    "minSno": 142,
+    "maxSno": 149,
+    "count": 8
+  },
+  {
+    "score": 619,
+    "minRank": 5217,
+    "maxRank": 5352,
+    "minSno": 150,
+    "maxSno": 152,
+    "count": 3
+  },
+  {
+    "score": 618,
+    "minRank": 5451,
+    "maxRank": 5451,
+    "minSno": 153,
+    "maxSno": 153,
+    "count": 1
+  },
+  {
+    "score": 617,
+    "minRank": 5675,
+    "maxRank": 5753,
+    "minSno": 154,
+    "maxSno": 156,
+    "count": 3
+  },
+  {
+    "score": 616,
+    "minRank": 5857,
+    "maxRank": 5857,
+    "minSno": 157,
+    "maxSno": 157,
+    "count": 1
+  },
+  {
+    "score": 615,
+    "minRank": 5972,
+    "maxRank": 6167,
+    "minSno": 158,
+    "maxSno": 162,
+    "count": 5
+  },
+  {
+    "score": 614,
+    "minRank": 6228,
+    "maxRank": 6275,
+    "minSno": 163,
+    "maxSno": 164,
+    "count": 2
+  },
+  {
+    "score": 613,
+    "minRank": 6411,
+    "maxRank": 6411,
+    "minSno": 165,
+    "maxSno": 165,
+    "count": 1
+  },
+  {
+    "score": 612,
+    "minRank": 6730,
+    "maxRank": 6781,
+    "minSno": 166,
+    "maxSno": 167,
+    "count": 2
+  },
+  {
+    "score": 611,
+    "minRank": 7049,
+    "maxRank": 7073,
+    "minSno": 168,
+    "maxSno": 170,
+    "count": 3
+  },
+  {
+    "score": 610,
+    "minRank": 7108,
+    "maxRank": 7373,
+    "minSno": 171,
+    "maxSno": 177,
+    "count": 7
+  },
+  {
+    "score": 609,
+    "minRank": 7535,
+    "maxRank": 7545,
+    "minSno": 178,
+    "maxSno": 179,
+    "count": 2
+  },
+  {
+    "score": 608,
+    "minRank": 7640,
+    "maxRank": 7640,
+    "minSno": 180,
+    "maxSno": 180,
+    "count": 1
+  },
+  {
+    "score": 607,
+    "minRank": 7862,
+    "maxRank": 8055,
+    "minSno": 181,
+    "maxSno": 184,
+    "count": 4
+  },
+  {
+    "score": 606,
+    "minRank": 8182,
+    "maxRank": 8311,
+    "minSno": 185,
+    "maxSno": 189,
+    "count": 5
+  },
+  {
+    "score": 605,
+    "minRank": 8511,
+    "maxRank": 8648,
+    "minSno": 190,
+    "maxSno": 191,
+    "count": 2
+  },
+  {
+    "score": 604,
+    "minRank": 8690,
+    "maxRank": 8855,
+    "minSno": 192,
+    "maxSno": 195,
+    "count": 4
+  },
+  {
+    "score": 603,
+    "minRank": 9122,
+    "maxRank": 9175,
+    "minSno": 196,
+    "maxSno": 197,
+    "count": 2
+  },
+  {
+    "score": 602,
+    "minRank": 9265,
+    "maxRank": 9465,
+    "minSno": 198,
+    "maxSno": 201,
+    "count": 4
+  },
+  {
+    "score": 601,
+    "minRank": 9521,
+    "maxRank": 9800,
+    "minSno": 202,
+    "maxSno": 206,
+    "count": 5
+  },
+  {
+    "score": 600,
+    "minRank": 9846,
+    "maxRank": 9965,
+    "minSno": 207,
+    "maxSno": 208,
+    "count": 2
+  },
+  {
+    "score": 599,
+    "minRank": 10270,
+    "maxRank": 10270,
+    "minSno": 209,
+    "maxSno": 209,
+    "count": 1
+  },
+  {
+    "score": 598,
+    "minRank": 10557,
+    "maxRank": 10778,
+    "minSno": 210,
+    "maxSno": 215,
+    "count": 6
+  },
+  {
+    "score": 597,
+    "minRank": 10828,
+    "maxRank": 11012,
+    "minSno": 216,
+    "maxSno": 219,
+    "count": 4
+  },
+  {
+    "score": 596,
+    "minRank": 11249,
+    "maxRank": 11472,
+    "minSno": 220,
+    "maxSno": 223,
+    "count": 4
+  },
+  {
+    "score": 595,
+    "minRank": 11481,
+    "maxRank": 11742,
+    "minSno": 224,
+    "maxSno": 234,
+    "count": 11
+  },
+  {
+    "score": 594,
+    "minRank": 11900,
+    "maxRank": 12060,
+    "minSno": 235,
+    "maxSno": 238,
+    "count": 4
+  },
+  {
+    "score": 593,
+    "minRank": 12261,
+    "maxRank": 12482,
+    "minSno": 239,
+    "maxSno": 247,
+    "count": 9
+  },
+  {
+    "score": 592,
+    "minRank": 12808,
+    "maxRank": 13006,
+    "minSno": 248,
+    "maxSno": 249,
+    "count": 2
+  },
+  {
+    "score": 590,
+    "minRank": 13499,
+    "maxRank": 13849,
+    "minSno": 250,
+    "maxSno": 253,
+    "count": 4
+  },
+  {
+    "score": 589,
+    "minRank": 13975,
+    "maxRank": 14044,
+    "minSno": 254,
+    "maxSno": 255,
+    "count": 2
+  },
+  {
+    "score": 588,
+    "minRank": 14425,
+    "maxRank": 14588,
+    "minSno": 256,
+    "maxSno": 257,
+    "count": 2
+  },
+  {
+    "score": 587,
+    "minRank": 14649,
+    "maxRank": 14836,
+    "minSno": 258,
+    "maxSno": 260,
+    "count": 3
+  },
+  {
+    "score": 586,
+    "minRank": 15127,
+    "maxRank": 15127,
+    "minSno": 261,
+    "maxSno": 261,
+    "count": 1
+  },
+  {
+    "score": 585,
+    "minRank": 15470,
+    "maxRank": 15699,
+    "minSno": 262,
+    "maxSno": 267,
+    "count": 6
+  },
+  {
+    "score": 584,
+    "minRank": 16015,
+    "maxRank": 16299,
+    "minSno": 268,
+    "maxSno": 272,
+    "count": 5
+  },
+  {
+    "score": 583,
+    "minRank": 16357,
+    "maxRank": 16668,
+    "minSno": 273,
+    "maxSno": 277,
+    "count": 5
+  },
+  {
+    "score": 582,
+    "minRank": 16824,
+    "maxRank": 17060,
+    "minSno": 278,
+    "maxSno": 281,
+    "count": 4
+  },
+  {
+    "score": 581,
+    "minRank": 17290,
+    "maxRank": 17586,
+    "minSno": 282,
+    "maxSno": 287,
+    "count": 6
+  },
+  {
+    "score": 580,
+    "minRank": 17756,
+    "maxRank": 18251,
+    "minSno": 288,
+    "maxSno": 294,
+    "count": 7
+  },
+  {
+    "score": 579,
+    "minRank": 18443,
+    "maxRank": 18711,
+    "minSno": 295,
+    "maxSno": 297,
+    "count": 3
+  },
+  {
+    "score": 578,
+    "minRank": 18853,
+    "maxRank": 19199,
+    "minSno": 298,
+    "maxSno": 304,
+    "count": 7
+  },
+  {
+    "score": 577,
+    "minRank": 19537,
+    "maxRank": 19537,
+    "minSno": 305,
+    "maxSno": 305,
+    "count": 1
+  },
+  {
+    "score": 576,
+    "minRank": 19732,
+    "maxRank": 19942,
+    "minSno": 306,
+    "maxSno": 309,
+    "count": 4
+  },
+  {
+    "score": 575,
+    "minRank": 20272,
+    "maxRank": 20758,
+    "minSno": 310,
+    "maxSno": 314,
+    "count": 5
+  },
+  {
+    "score": 574,
+    "minRank": 20845,
+    "maxRank": 21324,
+    "minSno": 315,
+    "maxSno": 323,
+    "count": 9
+  },
+  {
+    "score": 573,
+    "minRank": 21597,
+    "maxRank": 21760,
+    "minSno": 324,
+    "maxSno": 326,
+    "count": 3
+  },
+  {
+    "score": 572,
+    "minRank": 21954,
+    "maxRank": 22427,
+    "minSno": 327,
+    "maxSno": 332,
+    "count": 6
+  },
+  {
+    "score": 571,
+    "minRank": 22582,
+    "maxRank": 22828,
+    "minSno": 333,
+    "maxSno": 337,
+    "count": 5
+  },
+  {
+    "score": 570,
+    "minRank": 23129,
+    "maxRank": 23480,
+    "minSno": 338,
+    "maxSno": 340,
+    "count": 3
+  },
+  {
+    "score": 569,
+    "minRank": 23978,
+    "maxRank": 24290,
+    "minSno": 341,
+    "maxSno": 344,
+    "count": 4
+  },
+  {
+    "score": 568,
+    "minRank": 24334,
+    "maxRank": 24851,
+    "minSno": 345,
+    "maxSno": 351,
+    "count": 7
+  },
+  {
+    "score": 567,
+    "minRank": 24934,
+    "maxRank": 25053,
+    "minSno": 352,
+    "maxSno": 353,
+    "count": 2
+  },
+  {
+    "score": 566,
+    "minRank": 25448,
+    "maxRank": 25965,
+    "minSno": 354,
+    "maxSno": 359,
+    "count": 6
+  },
+  {
+    "score": 565,
+    "minRank": 26053,
+    "maxRank": 26739,
+    "minSno": 360,
+    "maxSno": 371,
+    "count": 12
+  },
+  {
+    "score": 564,
+    "minRank": 26813,
+    "maxRank": 27366,
+    "minSno": 372,
+    "maxSno": 381,
+    "count": 10
+  },
+  {
+    "score": 563,
+    "minRank": 27420,
+    "maxRank": 28015,
+    "minSno": 382,
+    "maxSno": 391,
+    "count": 10
+  },
+  {
+    "score": 562,
+    "minRank": 28084,
+    "maxRank": 28662,
+    "minSno": 392,
+    "maxSno": 400,
+    "count": 9
+  },
+  {
+    "score": 561,
+    "minRank": 28792,
+    "maxRank": 29396,
+    "minSno": 401,
+    "maxSno": 408,
+    "count": 8
+  },
+  {
+    "score": 560,
+    "minRank": 29491,
+    "maxRank": 30178,
+    "minSno": 409,
+    "maxSno": 418,
+    "count": 10
+  },
+  {
+    "score": 559,
+    "minRank": 30250,
+    "maxRank": 30745,
+    "minSno": 419,
+    "maxSno": 425,
+    "count": 7
+  },
+  {
+    "score": 558,
+    "minRank": 31383,
+    "maxRank": 31383,
+    "minSno": 426,
+    "maxSno": 426,
+    "count": 1
+  },
+  {
+    "score": 557,
+    "minRank": 31678,
+    "maxRank": 32152,
+    "minSno": 427,
+    "maxSno": 432,
+    "count": 6
+  },
+  {
+    "score": 556,
+    "minRank": 32371,
+    "maxRank": 32974,
+    "minSno": 433,
+    "maxSno": 442,
+    "count": 10
+  },
+  {
+    "score": 555,
+    "minRank": 33092,
+    "maxRank": 33627,
+    "minSno": 443,
+    "maxSno": 450,
+    "count": 8
+  },
+  {
+    "score": 554,
+    "minRank": 33937,
+    "maxRank": 34485,
+    "minSno": 451,
+    "maxSno": 460,
+    "count": 10
+  },
+  {
+    "score": 553,
+    "minRank": 34593,
+    "maxRank": 35204,
+    "minSno": 461,
+    "maxSno": 465,
+    "count": 5
+  },
+  {
+    "score": 552,
+    "minRank": 35398,
+    "maxRank": 35948,
+    "minSno": 466,
+    "maxSno": 471,
+    "count": 6
+  },
+  {
+    "score": 551,
+    "minRank": 36115,
+    "maxRank": 36724,
+    "minSno": 472,
+    "maxSno": 483,
+    "count": 12
+  },
+  {
+    "score": 550,
+    "minRank": 36902,
+    "maxRank": 37574,
+    "minSno": 484,
+    "maxSno": 491,
+    "count": 8
+  },
+  {
+    "score": 549,
+    "minRank": 37734,
+    "maxRank": 38433,
+    "minSno": 492,
+    "maxSno": 500,
+    "count": 9
+  },
+  {
+    "score": 548,
+    "minRank": 38581,
+    "maxRank": 39089,
+    "minSno": 501,
+    "maxSno": 507,
+    "count": 7
+  },
+  {
+    "score": 547,
+    "minRank": 39344,
+    "maxRank": 39755,
+    "minSno": 508,
+    "maxSno": 510,
+    "count": 3
+  },
+  {
+    "score": 546,
+    "minRank": 40145,
+    "maxRank": 40924,
+    "minSno": 511,
+    "maxSno": 517,
+    "count": 7
+  },
+  {
+    "score": 545,
+    "minRank": 41018,
+    "maxRank": 41363,
+    "minSno": 518,
+    "maxSno": 526,
+    "count": 9
+  },
+  {
+    "score": 544,
+    "minRank": 41877,
+    "maxRank": 42232,
+    "minSno": 527,
+    "maxSno": 534,
+    "count": 8
+  },
+  {
+    "score": 543,
+    "minRank": 42741,
+    "maxRank": 43350,
+    "minSno": 535,
+    "maxSno": 546,
+    "count": 12
+  },
+  {
+    "score": 542,
+    "minRank": 43565,
+    "maxRank": 44056,
+    "minSno": 547,
+    "maxSno": 561,
+    "count": 15
+  },
+  {
+    "score": 541,
+    "minRank": 44390,
+    "maxRank": 45013,
+    "minSno": 562,
+    "maxSno": 572,
+    "count": 11
+  },
+  {
+    "score": 540,
+    "minRank": 45215,
+    "maxRank": 46156,
+    "minSno": 573,
+    "maxSno": 585,
+    "count": 13
+  },
+  {
+    "score": 539,
+    "minRank": 46378,
+    "maxRank": 47111,
+    "minSno": 586,
+    "maxSno": 589,
+    "count": 4
+  },
+  {
+    "score": 538,
+    "minRank": 47183,
+    "maxRank": 47962,
+    "minSno": 590,
+    "maxSno": 605,
+    "count": 16
+  },
+  {
+    "score": 537,
+    "minRank": 48078,
+    "maxRank": 48855,
+    "minSno": 606,
+    "maxSno": 615,
+    "count": 10
+  },
+  {
+    "score": 536,
+    "minRank": 49009,
+    "maxRank": 49951,
+    "minSno": 616,
+    "maxSno": 632,
+    "count": 17
+  },
+  {
+    "score": 535,
+    "minRank": 49996,
+    "maxRank": 50833,
+    "minSno": 633,
+    "maxSno": 644,
+    "count": 12
+  },
+  {
+    "score": 534,
+    "minRank": 50979,
+    "maxRank": 51547,
+    "minSno": 645,
+    "maxSno": 650,
+    "count": 6
+  },
+  {
+    "score": 533,
+    "minRank": 51928,
+    "maxRank": 52504,
+    "minSno": 651,
+    "maxSno": 664,
+    "count": 14
+  },
+  {
+    "score": 532,
+    "minRank": 52967,
+    "maxRank": 53823,
+    "minSno": 665,
+    "maxSno": 672,
+    "count": 8
+  },
+  {
+    "score": 531,
+    "minRank": 53922,
+    "maxRank": 54610,
+    "minSno": 673,
+    "maxSno": 681,
+    "count": 9
+  },
+  {
+    "score": 530,
+    "minRank": 54808,
+    "maxRank": 55717,
+    "minSno": 682,
+    "maxSno": 694,
+    "count": 13
+  },
+  {
+    "score": 529,
+    "minRank": 55914,
+    "maxRank": 56839,
+    "minSno": 695,
+    "maxSno": 716,
+    "count": 22
+  },
+  {
+    "score": 528,
+    "minRank": 56894,
+    "maxRank": 57593,
+    "minSno": 717,
+    "maxSno": 731,
+    "count": 15
+  },
+  {
+    "score": 527,
+    "minRank": 57935,
+    "maxRank": 58686,
+    "minSno": 732,
+    "maxSno": 742,
+    "count": 11
+  },
+  {
+    "score": 526,
+    "minRank": 58873,
+    "maxRank": 59804,
+    "minSno": 743,
+    "maxSno": 761,
+    "count": 19
+  },
+  {
+    "score": 525,
+    "minRank": 59975,
+    "maxRank": 60884,
+    "minSno": 762,
+    "maxSno": 773,
+    "count": 12
+  },
+  {
+    "score": 524,
+    "minRank": 61065,
+    "maxRank": 61899,
+    "minSno": 774,
+    "maxSno": 786,
+    "count": 13
+  },
+  {
+    "score": 523,
+    "minRank": 61999,
+    "maxRank": 62687,
+    "minSno": 787,
+    "maxSno": 801,
+    "count": 15
+  },
+  {
+    "score": 522,
+    "minRank": 63054,
+    "maxRank": 63899,
+    "minSno": 802,
+    "maxSno": 816,
+    "count": 15
+  },
+  {
+    "score": 521,
+    "minRank": 64176,
+    "maxRank": 65327,
+    "minSno": 817,
+    "maxSno": 836,
+    "count": 20
+  },
+  {
+    "score": 520,
+    "minRank": 65370,
+    "maxRank": 66410,
+    "minSno": 837,
+    "maxSno": 856,
+    "count": 20
+  },
+  {
+    "score": 519,
+    "minRank": 66570,
+    "maxRank": 67351,
+    "minSno": 857,
+    "maxSno": 867,
+    "count": 11
+  },
+  {
+    "score": 518,
+    "minRank": 67648,
+    "maxRank": 68340,
+    "minSno": 868,
+    "maxSno": 877,
+    "count": 10
+  },
+  {
+    "score": 517,
+    "minRank": 68785,
+    "maxRank": 69680,
+    "minSno": 878,
+    "maxSno": 893,
+    "count": 16
+  },
+  {
+    "score": 516,
+    "minRank": 69824,
+    "maxRank": 70983,
+    "minSno": 894,
+    "maxSno": 919,
+    "count": 26
+  },
+  {
+    "score": 515,
+    "minRank": 70987,
+    "maxRank": 72117,
+    "minSno": 920,
+    "maxSno": 938,
+    "count": 19
+  },
+  {
+    "score": 514,
+    "minRank": 72207,
+    "maxRank": 73031,
+    "minSno": 939,
+    "maxSno": 957,
+    "count": 19
+  },
+  {
+    "score": 513,
+    "minRank": 73337,
+    "maxRank": 74263,
+    "minSno": 958,
+    "maxSno": 973,
+    "count": 16
+  },
+  {
+    "score": 512,
+    "minRank": 74552,
+    "maxRank": 75527,
+    "minSno": 974,
+    "maxSno": 997,
+    "count": 24
+  },
+  {
+    "score": 511,
+    "minRank": 75676,
+    "maxRank": 76811,
+    "minSno": 998,
+    "maxSno": 1013,
+    "count": 16
+  },
+  {
+    "score": 510,
+    "minRank": 76878,
+    "maxRank": 78033,
+    "minSno": 1014,
+    "maxSno": 1037,
+    "count": 24
+  },
+  {
+    "score": 509,
+    "minRank": 78156,
+    "maxRank": 79058,
+    "minSno": 1038,
+    "maxSno": 1053,
+    "count": 16
+  },
+  {
+    "score": 508,
+    "minRank": 79360,
+    "maxRank": 80395,
+    "minSno": 1054,
+    "maxSno": 1080,
+    "count": 27
+  },
+  {
+    "score": 507,
+    "minRank": 80602,
+    "maxRank": 81537,
+    "minSno": 1081,
+    "maxSno": 1098,
+    "count": 18
+  },
+  {
+    "score": 506,
+    "minRank": 81744,
+    "maxRank": 82743,
+    "minSno": 1099,
+    "maxSno": 1124,
+    "count": 26
+  },
+  {
+    "score": 505,
+    "minRank": 82981,
+    "maxRank": 84240,
+    "minSno": 1125,
+    "maxSno": 1149,
+    "count": 25
+  },
+  {
+    "score": 504,
+    "minRank": 84350,
+    "maxRank": 85367,
+    "minSno": 1150,
+    "maxSno": 1179,
+    "count": 29
+  },
+  {
+    "score": 503,
+    "minRank": 85599,
+    "maxRank": 86762,
+    "minSno": 1180,
+    "maxSno": 1204,
+    "count": 25
+  },
+  {
+    "score": 502,
+    "minRank": 86820,
+    "maxRank": 87811,
+    "minSno": 1205,
+    "maxSno": 1225,
+    "count": 21
+  },
+  {
+    "score": 501,
+    "minRank": 88047,
+    "maxRank": 89153,
+    "minSno": 1226,
+    "maxSno": 1257,
+    "count": 32
+  },
+  {
+    "score": 500,
+    "minRank": 89342,
+    "maxRank": 90566,
+    "minSno": 1258,
+    "maxSno": 1291,
+    "count": 34
+  },
+  {
+    "score": 499,
+    "minRank": 90796,
+    "maxRank": 92022,
+    "minSno": 1292,
+    "maxSno": 1319,
+    "count": 28
+  },
+  {
+    "score": 498,
+    "minRank": 92034,
+    "maxRank": 92940,
+    "minSno": 1320,
+    "maxSno": 1340,
+    "count": 21
+  },
+  {
+    "score": 497,
+    "minRank": 93323,
+    "maxRank": 94581,
+    "minSno": 1341,
+    "maxSno": 1372,
+    "count": 32
+  },
+  {
+    "score": 496,
+    "minRank": 94623,
+    "maxRank": 95914,
+    "minSno": 1373,
+    "maxSno": 1399,
+    "count": 27
+  },
+  {
+    "score": 495,
+    "minRank": 96025,
+    "maxRank": 97383,
+    "minSno": 1400,
+    "maxSno": 1430,
+    "count": 31
+  },
+  {
+    "score": 494,
+    "minRank": 97439,
+    "maxRank": 98622,
+    "minSno": 1431,
+    "maxSno": 1465,
+    "count": 35
+  },
+  {
+    "score": 493,
+    "minRank": 98747,
+    "maxRank": 99723,
+    "minSno": 1466,
+    "maxSno": 1492,
+    "count": 27
+  },
+  {
+    "score": 492,
+    "minRank": 100057,
+    "maxRank": 101041,
+    "minSno": 1493,
+    "maxSno": 1521,
+    "count": 29
+  },
+  {
+    "score": 491,
+    "minRank": 101448,
+    "maxRank": 102809,
+    "minSno": 1522,
+    "maxSno": 1548,
+    "count": 27
+  },
+  {
+    "score": 490,
+    "minRank": 102869,
+    "maxRank": 104093,
+    "minSno": 1549,
+    "maxSno": 1583,
+    "count": 35
+  },
+  {
+    "score": 489,
+    "minRank": 104289,
+    "maxRank": 105648,
+    "minSno": 1584,
+    "maxSno": 1613,
+    "count": 30
+  },
+  {
+    "score": 488,
+    "minRank": 105656,
+    "maxRank": 106799,
+    "minSno": 1614,
+    "maxSno": 1652,
+    "count": 39
+  },
+  {
+    "score": 487,
+    "minRank": 107040,
+    "maxRank": 108172,
+    "minSno": 1653,
+    "maxSno": 1687,
+    "count": 35
+  },
+  {
+    "score": 486,
+    "minRank": 108439,
+    "maxRank": 109717,
+    "minSno": 1688,
+    "maxSno": 1717,
+    "count": 30
+  },
+  {
+    "score": 485,
+    "minRank": 109874,
+    "maxRank": 111243,
+    "minSno": 1718,
+    "maxSno": 1757,
+    "count": 40
+  },
+  {
+    "score": 484,
+    "minRank": 111343,
+    "maxRank": 112619,
+    "minSno": 1758,
+    "maxSno": 1787,
+    "count": 30
+  },
+  {
+    "score": 483,
+    "minRank": 112755,
+    "maxRank": 114058,
+    "minSno": 1788,
+    "maxSno": 1818,
+    "count": 31
+  },
+  {
+    "score": 482,
+    "minRank": 114232,
+    "maxRank": 115727,
+    "minSno": 1819,
+    "maxSno": 1852,
+    "count": 34
+  },
+  {
+    "score": 481,
+    "minRank": 115768,
+    "maxRank": 116836,
+    "minSno": 1853,
+    "maxSno": 1883,
+    "count": 31
+  },
+  {
+    "score": 480,
+    "minRank": 117180,
+    "maxRank": 118632,
+    "minSno": 1884,
+    "maxSno": 1924,
+    "count": 41
+  },
+  {
+    "score": 479,
+    "minRank": 118764,
+    "maxRank": 120092,
+    "minSno": 1925,
+    "maxSno": 1954,
+    "count": 30
+  },
+  {
+    "score": 478,
+    "minRank": 120176,
+    "maxRank": 121497,
+    "minSno": 1955,
+    "maxSno": 1993,
+    "count": 39
+  },
+  {
+    "score": 477,
+    "minRank": 121646,
+    "maxRank": 122780,
+    "minSno": 1994,
+    "maxSno": 2032,
+    "count": 39
+  },
+  {
+    "score": 476,
+    "minRank": 123152,
+    "maxRank": 124511,
+    "minSno": 2033,
+    "maxSno": 2066,
+    "count": 34
+  },
+  {
+    "score": 475,
+    "minRank": 124650,
+    "maxRank": 126280,
+    "minSno": 2067,
+    "maxSno": 2118,
+    "count": 52
+  },
+  {
+    "score": 474,
+    "minRank": 126324,
+    "maxRank": 127622,
+    "minSno": 2119,
+    "maxSno": 2160,
+    "count": 42
+  },
+  {
+    "score": 473,
+    "minRank": 127844,
+    "maxRank": 129301,
+    "minSno": 2161,
+    "maxSno": 2213,
+    "count": 53
+  },
+  {
+    "score": 472,
+    "minRank": 129401,
+    "maxRank": 130539,
+    "minSno": 2214,
+    "maxSno": 2261,
+    "count": 48
+  },
+  {
+    "score": 471,
+    "minRank": 130922,
+    "maxRank": 132363,
+    "minSno": 2262,
+    "maxSno": 2308,
+    "count": 47
+  },
+  {
+    "score": 470,
+    "minRank": 132457,
+    "maxRank": 134025,
+    "minSno": 2309,
+    "maxSno": 2358,
+    "count": 50
+  },
+  {
+    "score": 469,
+    "minRank": 134078,
+    "maxRank": 135550,
+    "minSno": 2359,
+    "maxSno": 2413,
+    "count": 55
+  },
+  {
+    "score": 468,
+    "minRank": 135613,
+    "maxRank": 136888,
+    "minSno": 2414,
+    "maxSno": 2453,
+    "count": 40
+  },
+  {
+    "score": 467,
+    "minRank": 137128,
+    "maxRank": 138662,
+    "minSno": 2454,
+    "maxSno": 2510,
+    "count": 57
+  },
+  {
+    "score": 466,
+    "minRank": 138737,
+    "maxRank": 140193,
+    "minSno": 2511,
+    "maxSno": 2569,
+    "count": 59
+  },
+  {
+    "score": 465,
+    "minRank": 140392,
+    "maxRank": 141903,
+    "minSno": 2570,
+    "maxSno": 2622,
+    "count": 53
+  },
+  {
+    "score": 464,
+    "minRank": 142139,
+    "maxRank": 143722,
+    "minSno": 2623,
+    "maxSno": 2683,
+    "count": 61
+  },
+  {
+    "score": 463,
+    "minRank": 143730,
+    "maxRank": 145329,
+    "minSno": 2684,
+    "maxSno": 2734,
+    "count": 51
+  },
+  {
+    "score": 462,
+    "minRank": 145375,
+    "maxRank": 147077,
+    "minSno": 2735,
+    "maxSno": 2791,
+    "count": 57
+  },
+  {
+    "score": 461,
+    "minRank": 147172,
+    "maxRank": 148722,
+    "minSno": 2792,
+    "maxSno": 2859,
+    "count": 68
+  },
+  {
+    "score": 460,
+    "minRank": 148853,
+    "maxRank": 150578,
+    "minSno": 2860,
+    "maxSno": 2923,
+    "count": 64
+  },
+  {
+    "score": 459,
+    "minRank": 150728,
+    "maxRank": 152126,
+    "minSno": 2924,
+    "maxSno": 2978,
+    "count": 55
+  },
+  {
+    "score": 458,
+    "minRank": 152374,
+    "maxRank": 153996,
+    "minSno": 2979,
+    "maxSno": 3037,
+    "count": 59
+  },
+  {
+    "score": 457,
+    "minRank": 154071,
+    "maxRank": 155472,
+    "minSno": 3038,
+    "maxSno": 3098,
+    "count": 61
+  },
+  {
+    "score": 456,
+    "minRank": 155736,
+    "maxRank": 157154,
+    "minSno": 3099,
+    "maxSno": 3161,
+    "count": 63
+  },
+  {
+    "score": 455,
+    "minRank": 157455,
+    "maxRank": 159024,
+    "minSno": 3162,
+    "maxSno": 3225,
+    "count": 64
+  },
+  {
+    "score": 454,
+    "minRank": 159298,
+    "maxRank": 161107,
+    "minSno": 3226,
+    "maxSno": 3294,
+    "count": 69
+  },
+  {
+    "score": 453,
+    "minRank": 161131,
+    "maxRank": 162609,
+    "minSno": 3295,
+    "maxSno": 3359,
+    "count": 65
+  },
+  {
+    "score": 452,
+    "minRank": 162887,
+    "maxRank": 164379,
+    "minSno": 3360,
+    "maxSno": 3420,
+    "count": 60
+  },
+  {
+    "score": 451,
+    "minRank": 164607,
+    "maxRank": 166112,
+    "minSno": 3421,
+    "maxSno": 3480,
+    "count": 60
+  },
+  {
+    "score": 450,
+    "minRank": 166373,
+    "maxRank": 168267,
+    "minSno": 3481,
+    "maxSno": 3555,
+    "count": 75
+  },
+  {
+    "score": 449,
+    "minRank": 168312,
+    "maxRank": 169898,
+    "minSno": 3556,
+    "maxSno": 3614,
+    "count": 59
+  },
+  {
+    "score": 448,
+    "minRank": 170088,
+    "maxRank": 171460,
+    "minSno": 3615,
+    "maxSno": 3687,
+    "count": 73
+  },
+  {
+    "score": 447,
+    "minRank": 171908,
+    "maxRank": 173362,
+    "minSno": 3688,
+    "maxSno": 3765,
+    "count": 77
+  },
+  {
+    "score": 446,
+    "minRank": 173719,
+    "maxRank": 175359,
+    "minSno": 3766,
+    "maxSno": 3822,
+    "count": 57
+  },
+  {
+    "score": 445,
+    "minRank": 175530,
+    "maxRank": 177443,
+    "minSno": 3823,
+    "maxSno": 3891,
+    "count": 69
+  },
+  {
+    "score": 444,
+    "minRank": 177532,
+    "maxRank": 179204,
+    "minSno": 3892,
+    "maxSno": 3966,
+    "count": 75
+  },
+  {
+    "score": 443,
+    "minRank": 179338,
+    "maxRank": 181050,
+    "minSno": 3967,
+    "maxSno": 4042,
+    "count": 76
+  },
+  {
+    "score": 442,
+    "minRank": 181164,
+    "maxRank": 182764,
+    "minSno": 4043,
+    "maxSno": 4127,
+    "count": 85
+  },
+  {
+    "score": 441,
+    "minRank": 182959,
+    "maxRank": 184547,
+    "minSno": 4128,
+    "maxSno": 4199,
+    "count": 72
+  },
+  {
+    "score": 440,
+    "minRank": 184874,
+    "maxRank": 186862,
+    "minSno": 4200,
+    "maxSno": 4282,
+    "count": 83
+  },
+  {
+    "score": 439,
+    "minRank": 186992,
+    "maxRank": 188910,
+    "minSno": 4283,
+    "maxSno": 4357,
+    "count": 75
+  },
+  {
+    "score": 438,
+    "minRank": 188947,
+    "maxRank": 190342,
+    "minSno": 4358,
+    "maxSno": 4424,
+    "count": 67
+  },
+  {
+    "score": 437,
+    "minRank": 190803,
+    "maxRank": 192469,
+    "minSno": 4425,
+    "maxSno": 4501,
+    "count": 77
+  },
+  {
+    "score": 436,
+    "minRank": 192739,
+    "maxRank": 194772,
+    "minSno": 4502,
+    "maxSno": 4582,
+    "count": 81
+  },
+  {
+    "score": 435,
+    "minRank": 194780,
+    "maxRank": 196433,
+    "minSno": 4583,
+    "maxSno": 4668,
+    "count": 85
+  },
+  {
+    "score": 434,
+    "minRank": 196842,
+    "maxRank": 198455,
+    "minSno": 4669,
+    "maxSno": 4753,
+    "count": 85
+  },
+  {
+    "score": 433,
+    "minRank": 198793,
+    "maxRank": 200617,
+    "minSno": 4754,
+    "maxSno": 4826,
+    "count": 73
+  },
+  {
+    "score": 432,
+    "minRank": 200742,
+    "maxRank": 202634,
+    "minSno": 4827,
+    "maxSno": 4907,
+    "count": 81
+  },
+  {
+    "score": 431,
+    "minRank": 202654,
+    "maxRank": 204461,
+    "minSno": 4908,
+    "maxSno": 4993,
+    "count": 84
+  },
+  {
+    "score": 430,
+    "minRank": 204662,
+    "maxRank": 206745,
+    "minSno": 4994,
+    "maxSno": 5080,
+    "count": 87
+  },
+  {
+    "score": 429,
+    "minRank": 206919,
+    "maxRank": 208764,
+    "minSno": 5081,
+    "maxSno": 5139,
+    "count": 59
+  },
+  {
+    "score": 428,
+    "minRank": 208908,
+    "maxRank": 210856,
+    "minSno": 5140,
+    "maxSno": 5227,
+    "count": 88
+  },
+  {
+    "score": 427,
+    "minRank": 210912,
+    "maxRank": 212547,
+    "minSno": 5228,
+    "maxSno": 5309,
+    "count": 82
+  },
+  {
+    "score": 426,
+    "minRank": 212917,
+    "maxRank": 214770,
+    "minSno": 5310,
+    "maxSno": 5423,
+    "count": 114
+  },
+  {
+    "score": 425,
+    "minRank": 214970,
+    "maxRank": 217159,
+    "minSno": 5424,
+    "maxSno": 5534,
+    "count": 111
+  },
+  {
+    "score": 424,
+    "minRank": 217249,
+    "maxRank": 219231,
+    "minSno": 5535,
+    "maxSno": 5643,
+    "count": 109
+  },
+  {
+    "score": 423,
+    "minRank": 219320,
+    "maxRank": 221227,
+    "minSno": 5644,
+    "maxSno": 5754,
+    "count": 111
+  },
+  {
+    "score": 422,
+    "minRank": 221357,
+    "maxRank": 223294,
+    "minSno": 5755,
+    "maxSno": 5840,
+    "count": 86
+  },
+  {
+    "score": 421,
+    "minRank": 223469,
+    "maxRank": 225406,
+    "minSno": 5841,
+    "maxSno": 5945,
+    "count": 105
+  },
+  {
+    "score": 420,
+    "minRank": 225586,
+    "maxRank": 227940,
+    "minSno": 5946,
+    "maxSno": 6048,
+    "count": 103
+  },
+  {
+    "score": 419,
+    "minRank": 227955,
+    "maxRank": 229724,
+    "minSno": 6049,
+    "maxSno": 6132,
+    "count": 84
+  },
+  {
+    "score": 418,
+    "minRank": 230069,
+    "maxRank": 232141,
+    "minSno": 6133,
+    "maxSno": 6227,
+    "count": 95
+  },
+  {
+    "score": 417,
+    "minRank": 232218,
+    "maxRank": 234229,
+    "minSno": 6228,
+    "maxSno": 6324,
+    "count": 97
+  },
+  {
+    "score": 416,
+    "minRank": 234397,
+    "maxRank": 236452,
+    "minSno": 6325,
+    "maxSno": 6439,
+    "count": 115
+  },
+  {
+    "score": 415,
+    "minRank": 236602,
+    "maxRank": 238715,
+    "minSno": 6440,
+    "maxSno": 6538,
+    "count": 99
+  },
+  {
+    "score": 414,
+    "minRank": 239083,
+    "maxRank": 241121,
+    "minSno": 6539,
+    "maxSno": 6643,
+    "count": 105
+  },
+  {
+    "score": 413,
+    "minRank": 241192,
+    "maxRank": 243309,
+    "minSno": 6644,
+    "maxSno": 6757,
+    "count": 114
+  },
+  {
+    "score": 412,
+    "minRank": 243395,
+    "maxRank": 245427,
+    "minSno": 6758,
+    "maxSno": 6853,
+    "count": 96
+  },
+  {
+    "score": 411,
+    "minRank": 245672,
+    "maxRank": 247955,
+    "minSno": 6854,
+    "maxSno": 6959,
+    "count": 106
+  },
+  {
+    "score": 410,
+    "minRank": 248044,
+    "maxRank": 250251,
+    "minSno": 6960,
+    "maxSno": 7089,
+    "count": 129
+  },
+  {
+    "score": 409,
+    "minRank": 250508,
+    "maxRank": 252548,
+    "minSno": 7090,
+    "maxSno": 7203,
+    "count": 114
+  },
+  {
+    "score": 408,
+    "minRank": 252777,
+    "maxRank": 254868,
+    "minSno": 7204,
+    "maxSno": 7305,
+    "count": 102
+  },
+  {
+    "score": 407,
+    "minRank": 255006,
+    "maxRank": 257080,
+    "minSno": 7306,
+    "maxSno": 7417,
+    "count": 112
+  },
+  {
+    "score": 406,
+    "minRank": 257289,
+    "maxRank": 259708,
+    "minSno": 7418,
+    "maxSno": 7542,
+    "count": 124
+  },
+  {
+    "score": 405,
+    "minRank": 259718,
+    "maxRank": 262127,
+    "minSno": 7543,
+    "maxSno": 7658,
+    "count": 115
+  },
+  {
+    "score": 404,
+    "minRank": 262324,
+    "maxRank": 264478,
+    "minSno": 7659,
+    "maxSno": 7776,
+    "count": 117
+  },
+  {
+    "score": 403,
+    "minRank": 264623,
+    "maxRank": 266937,
+    "minSno": 7777,
+    "maxSno": 7887,
+    "count": 111
+  },
+  {
+    "score": 402,
+    "minRank": 266985,
+    "maxRank": 269310,
+    "minSno": 7888,
+    "maxSno": 8014,
+    "count": 127
+  },
+  {
+    "score": 401,
+    "minRank": 269364,
+    "maxRank": 271478,
+    "minSno": 8015,
+    "maxSno": 8106,
+    "count": 92
+  },
+  {
+    "score": 400,
+    "minRank": 271817,
+    "maxRank": 274439,
+    "minSno": 8107,
+    "maxSno": 8221,
+    "count": 115
+  },
+  {
+    "score": 399,
+    "minRank": 274537,
+    "maxRank": 276872,
+    "minSno": 8222,
+    "maxSno": 8338,
+    "count": 117
+  },
+  {
+    "score": 398,
+    "minRank": 276889,
+    "maxRank": 279105,
+    "minSno": 8339,
+    "maxSno": 8439,
+    "count": 101
+  },
+  {
+    "score": 397,
+    "minRank": 279326,
+    "maxRank": 281376,
+    "minSno": 8440,
+    "maxSno": 8542,
+    "count": 103
+  },
+  {
+    "score": 396,
+    "minRank": 281749,
+    "maxRank": 284170,
+    "minSno": 8543,
+    "maxSno": 8672,
+    "count": 130
+  },
+  {
+    "score": 395,
+    "minRank": 284241,
+    "maxRank": 287027,
+    "minSno": 8673,
+    "maxSno": 8782,
+    "count": 110
+  },
+  {
+    "score": 394,
+    "minRank": 287171,
+    "maxRank": 289469,
+    "minSno": 8783,
+    "maxSno": 8898,
+    "count": 116
+  },
+  {
+    "score": 393,
+    "minRank": 289606,
+    "maxRank": 291893,
+    "minSno": 8899,
+    "maxSno": 9021,
+    "count": 122
+  },
+  {
+    "score": 392,
+    "minRank": 292125,
+    "maxRank": 294462,
+    "minSno": 9022,
+    "maxSno": 9146,
+    "count": 125
+  },
+  {
+    "score": 391,
+    "minRank": 294594,
+    "maxRank": 296746,
+    "minSno": 9147,
+    "maxSno": 9271,
+    "count": 124
+  },
+  {
+    "score": 390,
+    "minRank": 297116,
+    "maxRank": 299752,
+    "minSno": 9272,
+    "maxSno": 9392,
+    "count": 121
+  },
+  {
+    "score": 389,
+    "minRank": 299946,
+    "maxRank": 302503,
+    "minSno": 9393,
+    "maxSno": 9506,
+    "count": 114
+  },
+  {
+    "score": 388,
+    "minRank": 302558,
+    "maxRank": 304945,
+    "minSno": 9507,
+    "maxSno": 9630,
+    "count": 123
+  },
+  {
+    "score": 387,
+    "minRank": 305084,
+    "maxRank": 307369,
+    "minSno": 9631,
+    "maxSno": 9743,
+    "count": 112
+  },
+  {
+    "score": 386,
+    "minRank": 307542,
+    "maxRank": 310127,
+    "minSno": 9744,
+    "maxSno": 9895,
+    "count": 152
+  },
+  {
+    "score": 385,
+    "minRank": 310161,
+    "maxRank": 312988,
+    "minSno": 9896,
+    "maxSno": 10017,
+    "count": 122
+  },
+  {
+    "score": 384,
+    "minRank": 313030,
+    "maxRank": 315242,
+    "minSno": 10018,
+    "maxSno": 10135,
+    "count": 118
+  },
+  {
+    "score": 383,
+    "minRank": 315598,
+    "maxRank": 317970,
+    "minSno": 10136,
+    "maxSno": 10253,
+    "count": 118
+  },
+  {
+    "score": 382,
+    "minRank": 318169,
+    "maxRank": 320864,
+    "minSno": 10254,
+    "maxSno": 10386,
+    "count": 133
+  },
+  {
+    "score": 381,
+    "minRank": 320889,
+    "maxRank": 323415,
+    "minSno": 10387,
+    "maxSno": 10502,
+    "count": 116
+  },
+  {
+    "score": 380,
+    "minRank": 323542,
+    "maxRank": 326515,
+    "minSno": 10503,
+    "maxSno": 10644,
+    "count": 142
+  },
+  {
+    "score": 379,
+    "minRank": 326682,
+    "maxRank": 329223,
+    "minSno": 10645,
+    "maxSno": 10775,
+    "count": 131
+  },
+  {
+    "score": 378,
+    "minRank": 329464,
+    "maxRank": 332120,
+    "minSno": 10776,
+    "maxSno": 10910,
+    "count": 135
+  },
+  {
+    "score": 377,
+    "minRank": 332137,
+    "maxRank": 334843,
+    "minSno": 10911,
+    "maxSno": 11030,
+    "count": 120
+  },
+  {
+    "score": 376,
+    "minRank": 334867,
+    "maxRank": 337478,
+    "minSno": 11031,
+    "maxSno": 11147,
+    "count": 116
+  },
+  {
+    "score": 375,
+    "minRank": 337570,
+    "maxRank": 340683,
+    "minSno": 11148,
+    "maxSno": 11274,
+    "count": 126
+  },
+  {
+    "score": 374,
+    "minRank": 340790,
+    "maxRank": 343294,
+    "minSno": 11275,
+    "maxSno": 11411,
+    "count": 137
+  },
+  {
+    "score": 373,
+    "minRank": 343601,
+    "maxRank": 346353,
+    "minSno": 11412,
+    "maxSno": 11529,
+    "count": 117
+  },
+  {
+    "score": 372,
+    "minRank": 346371,
+    "maxRank": 349159,
+    "minSno": 11530,
+    "maxSno": 11658,
+    "count": 129
+  },
+  {
+    "score": 371,
+    "minRank": 349255,
+    "maxRank": 351849,
+    "minSno": 11659,
+    "maxSno": 11775,
+    "count": 117
+  },
+  {
+    "score": 370,
+    "minRank": 352111,
+    "maxRank": 355063,
+    "minSno": 11776,
+    "maxSno": 11928,
+    "count": 153
+  },
+  {
+    "score": 369,
+    "minRank": 355432,
+    "maxRank": 357967,
+    "minSno": 11929,
+    "maxSno": 12056,
+    "count": 128
+  },
+  {
+    "score": 368,
+    "minRank": 358265,
+    "maxRank": 361029,
+    "minSno": 12057,
+    "maxSno": 12174,
+    "count": 118
+  },
+  {
+    "score": 367,
+    "minRank": 361112,
+    "maxRank": 363976,
+    "minSno": 12175,
+    "maxSno": 12305,
+    "count": 131
+  },
+  {
+    "score": 366,
+    "minRank": 363991,
+    "maxRank": 366918,
+    "minSno": 12306,
+    "maxSno": 12456,
+    "count": 151
+  },
+  {
+    "score": 365,
+    "minRank": 366956,
+    "maxRank": 370424,
+    "minSno": 12457,
+    "maxSno": 12594,
+    "count": 138
+  },
+  {
+    "score": 364,
+    "minRank": 370457,
+    "maxRank": 373310,
+    "minSno": 12595,
+    "maxSno": 12730,
+    "count": 135
+  },
+  {
+    "score": 363,
+    "minRank": 373338,
+    "maxRank": 376019,
+    "minSno": 12731,
+    "maxSno": 12852,
+    "count": 121
+  },
+  {
+    "score": 362,
+    "minRank": 376272,
+    "maxRank": 378877,
+    "minSno": 12853,
+    "maxSno": 12973,
+    "count": 121
+  },
+  {
+    "score": 361,
+    "minRank": 379192,
+    "maxRank": 382153,
+    "minSno": 12974,
+    "maxSno": 13111,
+    "count": 138
+  },
+  {
+    "score": 360,
+    "minRank": 382188,
+    "maxRank": 385629,
+    "minSno": 13112,
+    "maxSno": 13232,
+    "count": 120
+  },
+  {
+    "score": 359,
+    "minRank": 385672,
+    "maxRank": 388568,
+    "minSno": 13233,
+    "maxSno": 13351,
+    "count": 119
+  },
+  {
+    "score": 358,
+    "minRank": 388584,
+    "maxRank": 391532,
+    "minSno": 13352,
+    "maxSno": 13466,
+    "count": 113
+  },
+  {
+    "score": 357,
+    "minRank": 391618,
+    "maxRank": 394411,
+    "minSno": 13467,
+    "maxSno": 13618,
+    "count": 152
+  },
+  {
+    "score": 356,
+    "minRank": 394498,
+    "maxRank": 397353,
+    "minSno": 13619,
+    "maxSno": 13745,
+    "count": 127
+  },
+  {
+    "score": 355,
+    "minRank": 397663,
+    "maxRank": 401207,
+    "minSno": 13746,
+    "maxSno": 13897,
+    "count": 152
+  },
+  {
+    "score": 354,
+    "minRank": 401225,
+    "maxRank": 404205,
+    "minSno": 13898,
+    "maxSno": 14043,
+    "count": 146
+  },
+  {
+    "score": 353,
+    "minRank": 404310,
+    "maxRank": 407391,
+    "minSno": 14044,
+    "maxSno": 14169,
+    "count": 126
+  },
+  {
+    "score": 352,
+    "minRank": 407429,
+    "maxRank": 410515,
+    "minSno": 14170,
+    "maxSno": 14293,
+    "count": 123
+  },
+  {
+    "score": 351,
+    "minRank": 410549,
+    "maxRank": 413751,
+    "minSno": 14294,
+    "maxSno": 14416,
+    "count": 123
+  },
+  {
+    "score": 350,
+    "minRank": 413787,
+    "maxRank": 417334,
+    "minSno": 14417,
+    "maxSno": 14570,
+    "count": 154
+  },
+  {
+    "score": 349,
+    "minRank": 417474,
+    "maxRank": 420364,
+    "minSno": 14571,
+    "maxSno": 14715,
+    "count": 145
+  },
+  {
+    "score": 348,
+    "minRank": 420654,
+    "maxRank": 423654,
+    "minSno": 14716,
+    "maxSno": 14848,
+    "count": 133
+  },
+  {
+    "score": 347,
+    "minRank": 423782,
+    "maxRank": 426904,
+    "minSno": 14849,
+    "maxSno": 14979,
+    "count": 131
+  },
+  {
+    "score": 346,
+    "minRank": 427017,
+    "maxRank": 430022,
+    "minSno": 14980,
+    "maxSno": 15110,
+    "count": 131
+  },
+  {
+    "score": 345,
+    "minRank": 430167,
+    "maxRank": 433796,
+    "minSno": 15111,
+    "maxSno": 15263,
+    "count": 153
+  },
+  {
+    "score": 344,
+    "minRank": 433953,
+    "maxRank": 437278,
+    "minSno": 15264,
+    "maxSno": 15377,
+    "count": 114
+  },
+  {
+    "score": 343,
+    "minRank": 437280,
+    "maxRank": 440115,
+    "minSno": 15378,
+    "maxSno": 15500,
+    "count": 123
+  },
+  {
+    "score": 342,
+    "minRank": 440438,
+    "maxRank": 443583,
+    "minSno": 15501,
+    "maxSno": 15638,
+    "count": 138
+  },
+  {
+    "score": 341,
+    "minRank": 443721,
+    "maxRank": 446911,
+    "minSno": 15639,
+    "maxSno": 15769,
+    "count": 130
+  },
+  {
+    "score": 340,
+    "minRank": 446982,
+    "maxRank": 450680,
+    "minSno": 15770,
+    "maxSno": 15919,
+    "count": 149
+  },
+  {
+    "score": 339,
+    "minRank": 450926,
+    "maxRank": 454239,
+    "minSno": 15920,
+    "maxSno": 16046,
+    "count": 127
+  },
+  {
+    "score": 338,
+    "minRank": 454270,
+    "maxRank": 457259,
+    "minSno": 16047,
+    "maxSno": 16164,
+    "count": 118
+  },
+  {
+    "score": 337,
+    "minRank": 457517,
+    "maxRank": 460769,
+    "minSno": 16165,
+    "maxSno": 16300,
+    "count": 136
+  },
+  {
+    "score": 336,
+    "minRank": 460882,
+    "maxRank": 464259,
+    "minSno": 16301,
+    "maxSno": 16431,
+    "count": 130
+  },
+  {
+    "score": 335,
+    "minRank": 464303,
+    "maxRank": 468100,
+    "minSno": 16432,
+    "maxSno": 16574,
+    "count": 142
+  },
+  {
+    "score": 334,
+    "minRank": 468287,
+    "maxRank": 471661,
+    "minSno": 16575,
+    "maxSno": 16704,
+    "count": 129
+  },
+  {
+    "score": 333,
+    "minRank": 471704,
+    "maxRank": 474562,
+    "minSno": 16705,
+    "maxSno": 16828,
+    "count": 123
+  },
+  {
+    "score": 332,
+    "minRank": 475002,
+    "maxRank": 478162,
+    "minSno": 16829,
+    "maxSno": 16958,
+    "count": 130
+  },
+  {
+    "score": 331,
+    "minRank": 478329,
+    "maxRank": 481421,
+    "minSno": 16959,
+    "maxSno": 17081,
+    "count": 122
+  },
+  {
+    "score": 330,
+    "minRank": 481735,
+    "maxRank": 485715,
+    "minSno": 17082,
+    "maxSno": 17244,
+    "count": 163
+  },
+  {
+    "score": 329,
+    "minRank": 485840,
+    "maxRank": 489182,
+    "minSno": 17245,
+    "maxSno": 17385,
+    "count": 140
+  },
+  {
+    "score": 328,
+    "minRank": 489297,
+    "maxRank": 492505,
+    "minSno": 17386,
+    "maxSno": 17536,
+    "count": 150
+  },
+  {
+    "score": 327,
+    "minRank": 492755,
+    "maxRank": 496158,
+    "minSno": 17537,
+    "maxSno": 17673,
+    "count": 137
+  },
+  {
+    "score": 326,
+    "minRank": 496226,
+    "maxRank": 499749,
+    "minSno": 17674,
+    "maxSno": 17824,
+    "count": 151
+  },
+  {
+    "score": 325,
+    "minRank": 499799,
+    "maxRank": 503643,
+    "minSno": 17825,
+    "maxSno": 17966,
+    "count": 142
+  },
+  {
+    "score": 324,
+    "minRank": 503970,
+    "maxRank": 507000,
+    "minSno": 17967,
+    "maxSno": 18099,
+    "count": 132
+  },
+  {
+    "score": 323,
+    "minRank": 507283,
+    "maxRank": 510718,
+    "minSno": 18100,
+    "maxSno": 18225,
+    "count": 125
+  },
+  {
+    "score": 322,
+    "minRank": 510797,
+    "maxRank": 514325,
+    "minSno": 18226,
+    "maxSno": 18369,
+    "count": 142
+  },
+  {
+    "score": 321,
+    "minRank": 514429,
+    "maxRank": 517903,
+    "minSno": 18370,
+    "maxSno": 18497,
+    "count": 127
+  },
+  {
+    "score": 320,
+    "minRank": 518053,
+    "maxRank": 522135,
+    "minSno": 18498,
+    "maxSno": 18661,
+    "count": 164
+  },
+  {
+    "score": 319,
+    "minRank": 522238,
+    "maxRank": 525628,
+    "minSno": 18662,
+    "maxSno": 18806,
+    "count": 145
+  },
+  {
+    "score": 318,
+    "minRank": 525754,
+    "maxRank": 529320,
+    "minSno": 18807,
+    "maxSno": 18957,
+    "count": 149
+  },
+  {
+    "score": 317,
+    "minRank": 529471,
+    "maxRank": 532828,
+    "minSno": 18958,
+    "maxSno": 19083,
+    "count": 125
+  },
+  {
+    "score": 316,
+    "minRank": 533010,
+    "maxRank": 536581,
+    "minSno": 19084,
+    "maxSno": 19222,
+    "count": 138
+  },
+  {
+    "score": 315,
+    "minRank": 536679,
+    "maxRank": 540741,
+    "minSno": 19223,
+    "maxSno": 19383,
+    "count": 159
+  },
+  {
+    "score": 314,
+    "minRank": 540929,
+    "maxRank": 544198,
+    "minSno": 19384,
+    "maxSno": 19525,
+    "count": 141
+  },
+  {
+    "score": 313,
+    "minRank": 544576,
+    "maxRank": 548071,
+    "minSno": 19526,
+    "maxSno": 19653,
+    "count": 127
+  },
+  {
+    "score": 312,
+    "minRank": 548280,
+    "maxRank": 551716,
+    "minSno": 19654,
+    "maxSno": 19766,
+    "count": 113
+  },
+  {
+    "score": 311,
+    "minRank": 551868,
+    "maxRank": 555184,
+    "minSno": 19767,
+    "maxSno": 19902,
+    "count": 136
+  },
+  {
+    "score": 310,
+    "minRank": 555420,
+    "maxRank": 559807,
+    "minSno": 19903,
+    "maxSno": 20073,
+    "count": 170
+  },
+  {
+    "score": 309,
+    "minRank": 559869,
+    "maxRank": 563260,
+    "minSno": 20074,
+    "maxSno": 20222,
+    "count": 148
+  },
+  {
+    "score": 308,
+    "minRank": 563372,
+    "maxRank": 566853,
+    "minSno": 20223,
+    "maxSno": 20369,
+    "count": 147
+  },
+  {
+    "score": 307,
+    "minRank": 567137,
+    "maxRank": 570605,
+    "minSno": 20370,
+    "maxSno": 20507,
+    "count": 138
+  },
+  {
+    "score": 306,
+    "minRank": 570760,
+    "maxRank": 574469,
+    "minSno": 20508,
+    "maxSno": 20640,
+    "count": 132
+  },
+  {
+    "score": 305,
+    "minRank": 574482,
+    "maxRank": 578927,
+    "minSno": 20641,
+    "maxSno": 20806,
+    "count": 166
+  },
+  {
+    "score": 304,
+    "minRank": 579023,
+    "maxRank": 582654,
+    "minSno": 20807,
+    "maxSno": 20964,
+    "count": 156
+  },
+  {
+    "score": 303,
+    "minRank": 582743,
+    "maxRank": 586583,
+    "minSno": 20965,
+    "maxSno": 21098,
+    "count": 133
+  },
+  {
+    "score": 302,
+    "minRank": 586604,
+    "maxRank": 590235,
+    "minSno": 21099,
+    "maxSno": 21219,
+    "count": 121
+  },
+  {
+    "score": 301,
+    "minRank": 590428,
+    "maxRank": 594204,
+    "minSno": 21220,
+    "maxSno": 21347,
+    "count": 128
+  },
+  {
+    "score": 300,
+    "minRank": 594279,
+    "maxRank": 598795,
+    "minSno": 21348,
+    "maxSno": 21492,
+    "count": 145
+  },
+  {
+    "score": 299,
+    "minRank": 598868,
+    "maxRank": 602587,
+    "minSno": 21493,
+    "maxSno": 21633,
+    "count": 140
+  },
+  {
+    "score": 298,
+    "minRank": 602802,
+    "maxRank": 606564,
+    "minSno": 21634,
+    "maxSno": 21783,
+    "count": 150
+  },
+  {
+    "score": 297,
+    "minRank": 606708,
+    "maxRank": 610209,
+    "minSno": 21784,
+    "maxSno": 21922,
+    "count": 139
+  },
+  {
+    "score": 296,
+    "minRank": 610422,
+    "maxRank": 613880,
+    "minSno": 21923,
+    "maxSno": 22054,
+    "count": 131
+  },
+  {
+    "score": 295,
+    "minRank": 614298,
+    "maxRank": 618849,
+    "minSno": 22055,
+    "maxSno": 22217,
+    "count": 162
+  },
+  {
+    "score": 294,
+    "minRank": 618946,
+    "maxRank": 622819,
+    "minSno": 22218,
+    "maxSno": 22358,
+    "count": 141
+  },
+  {
+    "score": 293,
+    "minRank": 622916,
+    "maxRank": 626424,
+    "minSno": 22359,
+    "maxSno": 22480,
+    "count": 121
+  },
+  {
+    "score": 292,
+    "minRank": 626756,
+    "maxRank": 630364,
+    "minSno": 22481,
+    "maxSno": 22616,
+    "count": 135
+  },
+  {
+    "score": 291,
+    "minRank": 630610,
+    "maxRank": 634509,
+    "minSno": 22617,
+    "maxSno": 22758,
+    "count": 142
+  },
+  {
+    "score": 290,
+    "minRank": 634647,
+    "maxRank": 639313,
+    "minSno": 22759,
+    "maxSno": 22946,
+    "count": 188
+  },
+  {
+    "score": 289,
+    "minRank": 639466,
+    "maxRank": 643296,
+    "minSno": 22947,
+    "maxSno": 23088,
+    "count": 142
+  },
+  {
+    "score": 288,
+    "minRank": 643379,
+    "maxRank": 647162,
+    "minSno": 23089,
+    "maxSno": 23236,
+    "count": 148
+  },
+  {
+    "score": 287,
+    "minRank": 647315,
+    "maxRank": 650901,
+    "minSno": 23237,
+    "maxSno": 23377,
+    "count": 140
+  },
+  {
+    "score": 286,
+    "minRank": 651297,
+    "maxRank": 655195,
+    "minSno": 23378,
+    "maxSno": 23510,
+    "count": 133
+  },
+  {
+    "score": 285,
+    "minRank": 655346,
+    "maxRank": 659921,
+    "minSno": 23511,
+    "maxSno": 23642,
+    "count": 132
+  },
+  {
+    "score": 284,
+    "minRank": 660096,
+    "maxRank": 663927,
+    "minSno": 23643,
+    "maxSno": 23773,
+    "count": 131
+  },
+  {
+    "score": 283,
+    "minRank": 664129,
+    "maxRank": 667879,
+    "minSno": 23774,
+    "maxSno": 23903,
+    "count": 130
+  },
+  {
+    "score": 282,
+    "minRank": 668114,
+    "maxRank": 671954,
+    "minSno": 23904,
+    "maxSno": 24047,
+    "count": 144
+  },
+  {
+    "score": 281,
+    "minRank": 672116,
+    "maxRank": 676165,
+    "minSno": 24048,
+    "maxSno": 24194,
+    "count": 147
+  },
+  {
+    "score": 280,
+    "minRank": 676176,
+    "maxRank": 680975,
+    "minSno": 24195,
+    "maxSno": 24358,
+    "count": 164
+  },
+  {
+    "score": 279,
+    "minRank": 681013,
+    "maxRank": 685026,
+    "minSno": 24359,
+    "maxSno": 24499,
+    "count": 141
+  },
+  {
+    "score": 278,
+    "minRank": 685063,
+    "maxRank": 688875,
+    "minSno": 24500,
+    "maxSno": 24619,
+    "count": 120
+  },
+  {
+    "score": 277,
+    "minRank": 689004,
+    "maxRank": 692971,
+    "minSno": 24620,
+    "maxSno": 24740,
+    "count": 119
+  },
+  {
+    "score": 276,
+    "minRank": 693097,
+    "maxRank": 697385,
+    "minSno": 24741,
+    "maxSno": 24887,
+    "count": 146
+  },
+  {
+    "score": 275,
+    "minRank": 697426,
+    "maxRank": 702442,
+    "minSno": 24888,
+    "maxSno": 25028,
+    "count": 141
+  },
+  {
+    "score": 274,
+    "minRank": 702493,
+    "maxRank": 706711,
+    "minSno": 25029,
+    "maxSno": 25185,
+    "count": 155
+  },
+  {
+    "score": 273,
+    "minRank": 706758,
+    "maxRank": 710796,
+    "minSno": 25186,
+    "maxSno": 25321,
+    "count": 135
+  },
+  {
+    "score": 272,
+    "minRank": 710874,
+    "maxRank": 714896,
+    "minSno": 25322,
+    "maxSno": 25470,
+    "count": 149
+  },
+  {
+    "score": 271,
+    "minRank": 715055,
+    "maxRank": 719114,
+    "minSno": 25471,
+    "maxSno": 25621,
+    "count": 150
+  },
+  {
+    "score": 270,
+    "minRank": 719235,
+    "maxRank": 724370,
+    "minSno": 25622,
+    "maxSno": 25785,
+    "count": 164
+  },
+  {
+    "score": 269,
+    "minRank": 724539,
+    "maxRank": 728482,
+    "minSno": 25786,
+    "maxSno": 25915,
+    "count": 130
+  },
+  {
+    "score": 268,
+    "minRank": 728526,
+    "maxRank": 732538,
+    "minSno": 25916,
+    "maxSno": 26022,
+    "count": 106
+  },
+  {
+    "score": 267,
+    "minRank": 732566,
+    "maxRank": 736598,
+    "minSno": 26023,
+    "maxSno": 26148,
+    "count": 126
+  },
+  {
+    "score": 266,
+    "minRank": 736784,
+    "maxRank": 741017,
+    "minSno": 26149,
+    "maxSno": 26281,
+    "count": 133
+  },
+  {
+    "score": 265,
+    "minRank": 741103,
+    "maxRank": 746380,
+    "minSno": 26282,
+    "maxSno": 26466,
+    "count": 185
+  },
+  {
+    "score": 264,
+    "minRank": 746417,
+    "maxRank": 750584,
+    "minSno": 26467,
+    "maxSno": 26620,
+    "count": 153
+  },
+  {
+    "score": 263,
+    "minRank": 750614,
+    "maxRank": 754912,
+    "minSno": 26621,
+    "maxSno": 26758,
+    "count": 138
+  },
+  {
+    "score": 262,
+    "minRank": 754983,
+    "maxRank": 759047,
+    "minSno": 26759,
+    "maxSno": 26913,
+    "count": 155
+  },
+  {
+    "score": 261,
+    "minRank": 759257,
+    "maxRank": 763579,
+    "minSno": 26914,
+    "maxSno": 27050,
+    "count": 137
+  },
+  {
+    "score": 260,
+    "minRank": 763682,
+    "maxRank": 768920,
+    "minSno": 27051,
+    "maxSno": 27226,
+    "count": 176
+  },
+  {
+    "score": 259,
+    "minRank": 768968,
+    "maxRank": 773340,
+    "minSno": 27227,
+    "maxSno": 27377,
+    "count": 151
+  },
+  {
+    "score": 258,
+    "minRank": 773371,
+    "maxRank": 777418,
+    "minSno": 27378,
+    "maxSno": 27515,
+    "count": 137
+  },
+  {
+    "score": 257,
+    "minRank": 777653,
+    "maxRank": 781854,
+    "minSno": 27516,
+    "maxSno": 27639,
+    "count": 124
+  },
+  {
+    "score": 256,
+    "minRank": 781992,
+    "maxRank": 786368,
+    "minSno": 27640,
+    "maxSno": 27792,
+    "count": 153
+  },
+  {
+    "score": 255,
+    "minRank": 786379,
+    "maxRank": 791843,
+    "minSno": 27793,
+    "maxSno": 27965,
+    "count": 173
+  },
+  {
+    "score": 254,
+    "minRank": 791851,
+    "maxRank": 796223,
+    "minSno": 27966,
+    "maxSno": 28092,
+    "count": 127
+  },
+  {
+    "score": 253,
+    "minRank": 796440,
+    "maxRank": 800677,
+    "minSno": 28093,
+    "maxSno": 28220,
+    "count": 128
+  },
+  {
+    "score": 252,
+    "minRank": 800680,
+    "maxRank": 804948,
+    "minSno": 28221,
+    "maxSno": 28352,
+    "count": 132
+  },
+  {
+    "score": 251,
+    "minRank": 805013,
+    "maxRank": 809168,
+    "minSno": 28353,
+    "maxSno": 28469,
+    "count": 117
+  },
+  {
+    "score": 250,
+    "minRank": 809431,
+    "maxRank": 814861,
+    "minSno": 28470,
+    "maxSno": 28635,
+    "count": 166
+  },
+  {
+    "score": 249,
+    "minRank": 814899,
+    "maxRank": 819294,
+    "minSno": 28636,
+    "maxSno": 28774,
+    "count": 139
+  },
+  {
+    "score": 248,
+    "minRank": 819344,
+    "maxRank": 823586,
+    "minSno": 28775,
+    "maxSno": 28926,
+    "count": 152
+  },
+  {
+    "score": 247,
+    "minRank": 823756,
+    "maxRank": 828136,
+    "minSno": 28927,
+    "maxSno": 29053,
+    "count": 127
+  },
+  {
+    "score": 246,
+    "minRank": 828224,
+    "maxRank": 832685,
+    "minSno": 29054,
+    "maxSno": 29193,
+    "count": 139
+  },
+  {
+    "score": 245,
+    "minRank": 832779,
+    "maxRank": 838403,
+    "minSno": 29194,
+    "maxSno": 29357,
+    "count": 164
+  },
+  {
+    "score": 244,
+    "minRank": 838450,
+    "maxRank": 842934,
+    "minSno": 29358,
+    "maxSno": 29493,
+    "count": 135
+  },
+  {
+    "score": 243,
+    "minRank": 842941,
+    "maxRank": 847156,
+    "minSno": 29494,
+    "maxSno": 29636,
+    "count": 143
+  },
+  {
+    "score": 242,
+    "minRank": 847424,
+    "maxRank": 851891,
+    "minSno": 29637,
+    "maxSno": 29787,
+    "count": 151
+  },
+  {
+    "score": 241,
+    "minRank": 851992,
+    "maxRank": 856495,
+    "minSno": 29788,
+    "maxSno": 29949,
+    "count": 162
+  },
+  {
+    "score": 240,
+    "minRank": 856623,
+    "maxRank": 862170,
+    "minSno": 29950,
+    "maxSno": 30120,
+    "count": 171
+  },
+  {
+    "score": 239,
+    "minRank": 862211,
+    "maxRank": 866448,
+    "minSno": 30121,
+    "maxSno": 30275,
+    "count": 155
+  },
+  {
+    "score": 238,
+    "minRank": 866905,
+    "maxRank": 871244,
+    "minSno": 30276,
+    "maxSno": 30410,
+    "count": 135
+  },
+  {
+    "score": 237,
+    "minRank": 871366,
+    "maxRank": 875771,
+    "minSno": 30411,
+    "maxSno": 30553,
+    "count": 143
+  },
+  {
+    "score": 236,
+    "minRank": 875965,
+    "maxRank": 880626,
+    "minSno": 30554,
+    "maxSno": 30702,
+    "count": 149
+  },
+  {
+    "score": 235,
+    "minRank": 880632,
+    "maxRank": 886171,
+    "minSno": 30703,
+    "maxSno": 30865,
+    "count": 163
+  },
+  {
+    "score": 234,
+    "minRank": 886310,
+    "maxRank": 890838,
+    "minSno": 30866,
+    "maxSno": 31012,
+    "count": 146
+  },
+  {
+    "score": 233,
+    "minRank": 890926,
+    "maxRank": 895459,
+    "minSno": 31013,
+    "maxSno": 31139,
+    "count": 127
+  },
+  {
+    "score": 232,
+    "minRank": 895488,
+    "maxRank": 900104,
+    "minSno": 31140,
+    "maxSno": 31281,
+    "count": 140
+  },
+  {
+    "score": 231,
+    "minRank": 900158,
+    "maxRank": 904830,
+    "minSno": 31282,
+    "maxSno": 31413,
+    "count": 132
+  },
+  {
+    "score": 230,
+    "minRank": 904943,
+    "maxRank": 910914,
+    "minSno": 31414,
+    "maxSno": 31583,
+    "count": 170
+  },
+  {
+    "score": 229,
+    "minRank": 910958,
+    "maxRank": 915696,
+    "minSno": 31584,
+    "maxSno": 31746,
+    "count": 162
+  },
+  {
+    "score": 228,
+    "minRank": 915711,
+    "maxRank": 920374,
+    "minSno": 31747,
+    "maxSno": 31877,
+    "count": 131
+  },
+  {
+    "score": 227,
+    "minRank": 920440,
+    "maxRank": 925167,
+    "minSno": 31878,
+    "maxSno": 32019,
+    "count": 141
+  },
+  {
+    "score": 226,
+    "minRank": 925212,
+    "maxRank": 929877,
+    "minSno": 32020,
+    "maxSno": 32160,
+    "count": 140
+  },
+  {
+    "score": 225,
+    "minRank": 929959,
+    "maxRank": 935872,
+    "minSno": 32161,
+    "maxSno": 32313,
+    "count": 152
+  },
+  {
+    "score": 224,
+    "minRank": 935997,
+    "maxRank": 940813,
+    "minSno": 32314,
+    "maxSno": 32457,
+    "count": 144
+  },
+  {
+    "score": 223,
+    "minRank": 940871,
+    "maxRank": 945559,
+    "minSno": 32458,
+    "maxSno": 32602,
+    "count": 145
+  },
+  {
+    "score": 222,
+    "minRank": 945640,
+    "maxRank": 950273,
+    "minSno": 32603,
+    "maxSno": 32743,
+    "count": 140
+  },
+  {
+    "score": 221,
+    "minRank": 950367,
+    "maxRank": 955308,
+    "minSno": 32744,
+    "maxSno": 32894,
+    "count": 151
+  },
+  {
+    "score": 220,
+    "minRank": 955342,
+    "maxRank": 961416,
+    "minSno": 32895,
+    "maxSno": 33064,
+    "count": 169
+  },
+  {
+    "score": 219,
+    "minRank": 961481,
+    "maxRank": 966270,
+    "minSno": 33065,
+    "maxSno": 33213,
+    "count": 149
+  },
+  {
+    "score": 218,
+    "minRank": 966372,
+    "maxRank": 971104,
+    "minSno": 33214,
+    "maxSno": 33354,
+    "count": 141
+  },
+  {
+    "score": 217,
+    "minRank": 971170,
+    "maxRank": 975841,
+    "minSno": 33355,
+    "maxSno": 33498,
+    "count": 143
+  },
+  {
+    "score": 216,
+    "minRank": 975937,
+    "maxRank": 980751,
+    "minSno": 33499,
+    "maxSno": 33650,
+    "count": 152
+  },
+  {
+    "score": 215,
+    "minRank": 980785,
+    "maxRank": 987027,
+    "minSno": 33651,
+    "maxSno": 33844,
+    "count": 193
+  },
+  {
+    "score": 214,
+    "minRank": 987090,
+    "maxRank": 991966,
+    "minSno": 33845,
+    "maxSno": 34001,
+    "count": 157
+  },
+  {
+    "score": 213,
+    "minRank": 992160,
+    "maxRank": 996931,
+    "minSno": 34002,
+    "maxSno": 34154,
+    "count": 151
+  },
+  {
+    "score": 212,
+    "minRank": 996958,
+    "maxRank": 1001717,
+    "minSno": 34155,
+    "maxSno": 34261,
+    "count": 106
+  },
+  {
+    "score": 211,
+    "minRank": 1001888,
+    "maxRank": 1006778,
+    "minSno": 34262,
+    "maxSno": 34360,
+    "count": 98
+  },
+  {
+    "score": 210,
+    "minRank": 1006811,
+    "maxRank": 1012991,
+    "minSno": 34361,
+    "maxSno": 34484,
+    "count": 122
+  },
+  {
+    "score": 209,
+    "minRank": 1013143,
+    "maxRank": 1018114,
+    "minSno": 34485,
+    "maxSno": 34601,
+    "count": 114
+  },
+  {
+    "score": 208,
+    "minRank": 1018175,
+    "maxRank": 1023280,
+    "minSno": 34602,
+    "maxSno": 34723,
+    "count": 119
+  },
+  {
+    "score": 207,
+    "minRank": 1023299,
+    "maxRank": 1027942,
+    "minSno": 34724,
+    "maxSno": 34836,
+    "count": 113
+  },
+  {
+    "score": 206,
+    "minRank": 1028208,
+    "maxRank": 1033201,
+    "minSno": 34837,
+    "maxSno": 34926,
+    "count": 90
+  },
+  {
+    "score": 205,
+    "minRank": 1033358,
+    "maxRank": 1039753,
+    "minSno": 34927,
+    "maxSno": 35048,
+    "count": 120
+  },
+  {
+    "score": 204,
+    "minRank": 1039827,
+    "maxRank": 1044593,
+    "minSno": 35049,
+    "maxSno": 35130,
+    "count": 82
+  },
+  {
+    "score": 203,
+    "minRank": 1044901,
+    "maxRank": 1049865,
+    "minSno": 35131,
+    "maxSno": 35240,
+    "count": 109
+  },
+  {
+    "score": 202,
+    "minRank": 1049969,
+    "maxRank": 1054964,
+    "minSno": 35241,
+    "maxSno": 35334,
+    "count": 93
+  },
+  {
+    "score": 201,
+    "minRank": 1055117,
+    "maxRank": 1060147,
+    "minSno": 35335,
+    "maxSno": 35436,
+    "count": 102
+  },
+  {
+    "score": 200,
+    "minRank": 1060331,
+    "maxRank": 1066904,
+    "minSno": 35437,
+    "maxSno": 35580,
+    "count": 143
+  },
+  {
+    "score": 199,
+    "minRank": 1067069,
+    "maxRank": 1071892,
+    "minSno": 35581,
+    "maxSno": 35668,
+    "count": 88
+  },
+  {
+    "score": 198,
+    "minRank": 1072178,
+    "maxRank": 1077060,
+    "minSno": 35669,
+    "maxSno": 35768,
+    "count": 100
+  },
+  {
+    "score": 197,
+    "minRank": 1077270,
+    "maxRank": 1082384,
+    "minSno": 35769,
+    "maxSno": 35864,
+    "count": 96
+  },
+  {
+    "score": 196,
+    "minRank": 1082453,
+    "maxRank": 1087560,
+    "minSno": 35865,
+    "maxSno": 35962,
+    "count": 98
+  },
+  {
+    "score": 195,
+    "minRank": 1087648,
+    "maxRank": 1094505,
+    "minSno": 35963,
+    "maxSno": 36097,
+    "count": 135
+  },
+  {
+    "score": 194,
+    "minRank": 1094518,
+    "maxRank": 1099688,
+    "minSno": 36098,
+    "maxSno": 36208,
+    "count": 110
+  },
+  {
+    "score": 193,
+    "minRank": 1099786,
+    "maxRank": 1104795,
+    "minSno": 36209,
+    "maxSno": 36321,
+    "count": 113
+  },
+  {
+    "score": 192,
+    "minRank": 1104867,
+    "maxRank": 1109824,
+    "minSno": 36322,
+    "maxSno": 36397,
+    "count": 76
+  },
+  {
+    "score": 191,
+    "minRank": 1110001,
+    "maxRank": 1115152,
+    "minSno": 36398,
+    "maxSno": 36494,
+    "count": 97
+  },
+  {
+    "score": 190,
+    "minRank": 1115229,
+    "maxRank": 1121944,
+    "minSno": 36495,
+    "maxSno": 36607,
+    "count": 113
+  },
+  {
+    "score": 189,
+    "minRank": 1122140,
+    "maxRank": 1127472,
+    "minSno": 36608,
+    "maxSno": 36723,
+    "count": 115
+  },
+  {
+    "score": 188,
+    "minRank": 1127576,
+    "maxRank": 1132661,
+    "minSno": 36724,
+    "maxSno": 36832,
+    "count": 109
+  },
+  {
+    "score": 187,
+    "minRank": 1132795,
+    "maxRank": 1137862,
+    "minSno": 36833,
+    "maxSno": 36937,
+    "count": 104
+  },
+  {
+    "score": 186,
+    "minRank": 1138077,
+    "maxRank": 1143310,
+    "minSno": 36938,
+    "maxSno": 37048,
+    "count": 111
+  },
+  {
+    "score": 185,
+    "minRank": 1143385,
+    "maxRank": 1150311,
+    "minSno": 37049,
+    "maxSno": 37171,
+    "count": 123
+  },
+  {
+    "score": 184,
+    "minRank": 1150386,
+    "maxRank": 1155566,
+    "minSno": 37172,
+    "maxSno": 37281,
+    "count": 110
+  },
+  {
+    "score": 183,
+    "minRank": 1155709,
+    "maxRank": 1160867,
+    "minSno": 37282,
+    "maxSno": 37381,
+    "count": 100
+  },
+  {
+    "score": 182,
+    "minRank": 1161083,
+    "maxRank": 1166028,
+    "minSno": 37382,
+    "maxSno": 37476,
+    "count": 95
+  },
+  {
+    "score": 181,
+    "minRank": 1166179,
+    "maxRank": 1171432,
+    "minSno": 37477,
+    "maxSno": 37568,
+    "count": 92
+  },
+  {
+    "score": 180,
+    "minRank": 1171474,
+    "maxRank": 1178487,
+    "minSno": 37569,
+    "maxSno": 37699,
+    "count": 131
+  },
+  {
+    "score": 179,
+    "minRank": 1178680,
+    "maxRank": 1183795,
+    "minSno": 37700,
+    "maxSno": 37814,
+    "count": 114
+  },
+  {
+    "score": 178,
+    "minRank": 1184234,
+    "maxRank": 1189534,
+    "minSno": 37815,
+    "maxSno": 37914,
+    "count": 100
+  },
+  {
+    "score": 177,
+    "minRank": 1189561,
+    "maxRank": 1194725,
+    "minSno": 37915,
+    "maxSno": 38021,
+    "count": 107
+  }
+]
